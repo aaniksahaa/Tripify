@@ -1,5 +1,24 @@
 # Tripify
 
+# Tripify - Frontend
+
+## Demonstration:
+
+## 1. Hotels Dashboard
+
+![Screenshot (111)](https://github.com/aaniksahaa/Tripify/assets/63545621/746fd124-0870-4def-a88a-b4599988c033)
+
+## 2. Hotel Viewer ( Dark Mode )
+
+![Screenshot (114)](https://github.com/aaniksahaa/Tripify/assets/63545621/869ae9c7-5e93-412d-bbb5-9f285a278169)
+
+## 3. User Dashboard ( Dark Mode )
+
+![Screenshot (112)](https://github.com/aaniksahaa/Tripify/assets/63545621/24b2c4a0-4229-4c9e-b653-725efb6baf92)
+
+
+# Tripify - Backend 
+
 # Tripify API Documentation
 
 # API Endpoints
