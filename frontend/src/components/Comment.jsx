@@ -3,10 +3,10 @@ import React from 'react'
 import { BiChat, BiLike, BiShare } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 
-function Review() {
+function Comment() {
     return (
-        <div>
-            <Card className='card'>
+        <Box>
+            <Card>
                 <CardHeader>
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
@@ -31,19 +31,9 @@ function Review() {
                         create a screen.
                     </Text>
                 </CardBody>
-                <CardFooter
-                    justify='space-between'
-                    flexWrap='wrap'
-                    sx={{
-                        '& > button': {
-                            minW: '136px',
-                        },
-                    }}
-                >
-                </CardFooter>
             </Card>
-        </div>
+        </Box>
     )
 }
 
-export default Review
+export default Comment

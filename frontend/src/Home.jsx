@@ -134,18 +134,16 @@ export default function Home() {
             <Input variant='outline' placeholder='Where do you wanna go?' onChange={(e) => setSearch(e.target.value)} />
           </InputGroup> */}
 
-        {hotels.length > 0 && <Box>
+        {/* {hotels.length > 0 && <Box>
           <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'centers' }}>
             <Heading>Hotels</Heading>
           </Box>
           <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'centers' }}>
-            {/* <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, xl: 5 }} spacing={5} style={{ width: '100%' }} p='30px'> */}
               {
                 hotels.map((item, index) => (
                   <HotelCard style={{width:'400px'}} props={item} />
                 ))
               }
-            {/* </SimpleGrid> */}
           </Box>
         </Box>
         }
@@ -164,7 +162,7 @@ export default function Home() {
             </SimpleGrid>
           </Box>
         </Box>
-        }
+        } */}
 
       </Box>
     </Box >

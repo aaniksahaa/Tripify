@@ -35,9 +35,13 @@ import {
     ModalBody,
     Textarea,
     useDisclosure,
-    Card,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper,
 } from '@chakra-ui/react'
-import { MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
+import { MdCategory, MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
 import Carousel from './Carousel'
 import Carousel2 from './Carousel2'
 import { ImPriceTag } from 'react-icons/im'
@@ -52,36 +56,41 @@ import RatingBox from './RatingBox'
 import Review from './Review'
 import EmblaCarousel from './EmblaCarousel'
 // import { EmblaCarousel } from './EmblaCarousel'
-import React, { useState } from 'react'
-import { addToList } from '../LocalStorage';
-import CardSlider from './CardSlider';
-import ActivityDetails from './ActivityDetails';
+import React, { useEffect, useState } from 'react'
+import { addToDict, addToList } from '../LocalStorage';
+import { BiSolidHourglassBottom, BiSolidHourglassTop } from 'react-icons/bi';
 
-export default function DestDetails({ props }) {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-
+export default function ActivityDetails({ props, price, destination, destinationId }) {
+    const [date, setDate] = useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
-
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
-    const [activity, setActivity] = useState({})
-    function activityClick(id) {
-        setActivity(props.activities[id])
-        onOpen2()
+    const [destinations, setDestinations] = useState([])
+    const [persons, setPersons] = useState(1)
+
+    async function load() {
+        var url = api_base + '/destination/?'
+        const r = await fetch(url)
+        const j = await r.json()
+        setDests(j)
     }
-    function addClick() {
-        const data = {
-            id: props.destination_id,
+    function okClick() {
+        const t = {
+            id: props.activity_id,
             name: props.name,
-            start: startDate,
-            end: endDate,
-            address: props.address
+            destination: destination,
+            destination_id: destinationId,
+            date: date,
+            persons: persons,
+            cost: persons * price,
         }
-        addToList('_destinations', data)
+        // alert(JSON.stringify(t))
+        addToList('_activities', t)
         onClose()
     }
+    useEffect(() => {
+
+    }, [])
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -151,82 +160,102 @@ export default function DestDetails({ props }) {
                             <TableContainer>
                                 <Table variant='striped'>
                                     <Tbody>
+                                        {
+                                            price && <Tr>
+                                                <Td>
+                                                    <Flex alignItems='center'>
+                                                        <Box><ImPriceTag size={30} /></Box><Box>&emsp;Price Per Person</Box>
+                                                    </Flex>
+                                                </Td>
+                                                <Td>
+                                                    ৳{price}
+                                                </Td>
+                                            </Tr>
+                                        }
+                                        {
+                                            destination && <Tr>
+                                                <Td>
+                                                    <Flex alignItems='center'>
+                                                        <Box><FaMapMarkerAlt size={30} /></Box><Box>&emsp;Destination</Box>
+                                                    </Flex>
+                                                </Td>
+                                                <Td>
+                                                    {destination}
+                                                </Td>
+                                            </Tr>
+                                        }
                                         <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
-                                                    <Box><ImPriceTag size={30} /></Box><Box>&emsp;City</Box>
+                                                    <Box><MdCategory size={30} /></Box><Box>&emsp;Category</Box>
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                {props.city_id}
+                                                {props.category}
                                             </Td>
                                         </Tr>
                                         <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
                                                     <Box>
-                                                        <FaMapMarkerAlt size={30} />
+                                                        <BiSolidHourglassBottom size={30} />
                                                     </Box>
                                                     <Box>
-                                                        &emsp;Address
+                                                        &emsp;Minimum Age
                                                     </Box>
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                {props.address}
+                                                {props.min_age}
                                             </Td>
                                         </Tr>
                                         <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
                                                     <Box>
-                                                        <AiOutlineMail size={30} />
+                                                        <BiSolidHourglassTop size={30} />
                                                     </Box>
                                                     <Box>
-                                                        Map
+                                                        &emsp;Maximum Age
                                                     </Box>
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                <iframe style={{ width: '100%', height: '300px' }} src={`https://maps.google.com/maps?q=${props.latitude},${props.longitude}&output=embed`}></iframe>
+                                                {props.max_age}
                                             </Td>
                                         </Tr>
                                     </Tbody>
                                 </Table>
                             </TableContainer>
                         </Box>
-                        <Button
-                            onClick={onOpen}
-                            rounded={'none'}
-                            w={'full'}
-                            size={'lg'}
-                            bg={useColorModeValue('gray.900', 'gray.50')}
-                            color={useColorModeValue('white', 'gray.900')}
-                            textTransform={'uppercase'}
-                            _hover={{
-                                transform: 'translateY(2px)',
-                                boxShadow: 'lg',
-                            }}>
-                            Add to Trip
-                        </Button>
+                        {
+                            price && <Button
+                                onClick={onOpen}
+                                rounded={'none'}
+                                w={'full'}
+                                size={'lg'}
+                                bg={useColorModeValue('gray.900', 'gray.50')}
+                                color={useColorModeValue('white', 'gray.900')}
+                                textTransform={'uppercase'}
+                                _hover={{
+                                    transform: 'translateY(2px)',
+                                    boxShadow: 'lg',
+                                }}>
+                                Add to Trip
+                            </Button>
+                        }
                         <Box>
-                            <Stack spacing={{ base: 6, md: 10 }}>
-                                <Text fontSize={'3xl'}>
-                                    Activities
-                                </Text>
-                                <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
-                                    {props.activities && props.activities.map((item, index) =>
-                                        <Box onClick={() => activityClick(index)} key={index}>
-                                            <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                                                <CardSlider price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
-                                            </Card>
-                                        </Box>
-                                    )}
-                                </SimpleGrid>
-                            </Stack>
+                            <Text fontSize={'3xl'}>
+                                Destinations
+                            </Text>
+                            <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                                {destinations && destinations.map((obj, idx) => {
+                                    return <DestinationCard key={idx} props={obj} />
+                                }
+                                )}
+                            </SimpleGrid>
                         </Box>
                     </Stack>
-
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
@@ -239,55 +268,59 @@ export default function DestDetails({ props }) {
                         <Box marginTop='20px'>
                             <EmblaCarousel />
                         </Box>
-
+                        <Box marginTop={'20px'}>
+                            <Text fontSize='3xl' textAlign={'center'}>
+                                Write a Review
+                            </Text>
+                            <Box margin='10px'>
+                                <Box marginBottom={'10px'}>
+                                    <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                </Box>
+                                <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                    setReview(e.target.value)
+                                }} />
+                                <Button colorScheme="blue" size={'md'}>Post</Button>
+                            </Box>
+                        </Box>
                     </Box>
                 </Stack>
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
-            <Modal onClose={onClose2} isOpen={isOpen2} isCentered size={'5xl'}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>
-                        Activity Details
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody display={'flex'} justifyContent={'space-between'}>
-                        <ActivityDetails props={activity.activity} price={activity.price} destination={props.name} destinationId={props.destination_id}/>
-                    </ModalBody>
-                    <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
-                        <Box>
-                            <Button margin='10px' onClick={onClose2}>Cancel</Button>
-                        </Box>
-                    </Box>
-                </ModalContent>
-            </Modal>
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Add Destination to Trip</ModalHeader>
+                    <ModalHeader>Add Activity to Trip</ModalHeader>
                     <ModalCloseButton />
-                    <ModalBody display={'flex'} justifyContent={'space-between'}>
-                        <Box>
-                            <Box>
-                                <Text fontSize='xl'>Start</Text>
-                            </Box>
-                            <Box>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                            </Box>
-                        </Box>
-                        <Box>
-                            <Box>
-                                <Text fontSize='xl'>End</Text>
-                            </Box>
-                            <Box>
-                                <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
-                            </Box>
-                        </Box>
+                    <ModalBody>
+                        <Stack>
+                            <Stack direction={'row'} alignItems={'center'}>
+                                <Box>
+                                    <Text fontSize='xl'>Date</Text>
+                                </Box>
+                                <Box>
+                                    <DatePicker selected={date} onChange={(date) => setDate(date)} />
+                                </Box>
+                            </Stack>
+                            <Stack direction={'row'} alignItems={'center'}>
+                                <Box>
+                                    <Text fontSize='xl'>Persons</Text>
+                                </Box>
+                                <Box>
+                                    <NumberInput maxW={100} defaultValue={1} min={1} value={persons} onChange={(v) => setPersons(v)}>
+                                        <NumberInputField />
+                                        <NumberInputStepper>
+                                            <NumberIncrementStepper />
+                                            <NumberDecrementStepper />
+                                        </NumberInputStepper>
+                                    </NumberInput>
+                                </Box>
+                            </Stack>
+                        </Stack>
                     </ModalBody>
                     <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
                         <Box>
-                            <Button margin='10px' colorScheme='blue' onClick={addClick}>OK</Button>
+                            <Button margin='10px' colorScheme='blue' onClick={okClick}>OK</Button>
                         </Box>
                         <Box>
                             <Button margin='10px' onClick={onClose}>Cancel</Button>
@@ -295,7 +328,6 @@ export default function DestDetails({ props }) {
                     </Box>
                 </ModalContent>
             </Modal>
-
         </Container>
     )
 }

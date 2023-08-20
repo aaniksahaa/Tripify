@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
-import { Box, Button, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, FormControl, FormLabel, Heading, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, useDisclosure } from '@chakra-ui/react'
-import { api_base } from './Config'
+import { Box, Button, Card, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, FormControl, FormLabel, GridItem, Heading, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { api_base } from './Constants'
 import HotelCard from './components/HotelCard'
-import { MultiSelect } from 'chakra-multiselect'
 import { Select } from 'chakra-react-select'
-import { FormField } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { BiFilterAlt } from 'react-icons/bi'
 import Navbar2 from './components/Navbar2'
+import CardSlider from './components/CardSlider'
+import { getCities, getHotels } from './API'
+import ReactPaginate from 'react-paginate'
 
 function Hotels() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
-
   const [hotels, setHotels] = useState([])
   const [cities, setCities] = useState([])
   const [filter, setFilter] = useState({
@@ -25,85 +23,52 @@ function Hotels() {
     has_wifi: '',
     has_parking: '',
     has_gym: '',
+    orderby: 'name',
+    ordertype: 'asc',
+    page: 1,
+    per_page: 10
   })
-  const [page, setPage] = useState(1)
-  const [value, setValue] = useState([])
   async function searchClick() {
-    // var url = api_base + '/hotel/?'
-    // Object.keys(filter).forEach(x => {
-    //   url = url + x + '=' + filter[x] + '&'
-    // })
-    // console.log(url)
-    // alert(url)
-    await load()
+    var f = filter
+    f['page'] = 1
+    await load(f)
+    setFilter(f)
   }
-  async function getCities() {
-    const url = api_base + '/city?name=a&country_name=ban'
-    const r = await fetch(url)
-    const j = await r.json()
-    var tmp = []
-    for (var i = 0; i < j.length; i++) {
-      tmp.push({
-        label: j[i].name,
-        value: j[i].city_id
-      })
-    }
-    setCities(tmp)
-    console.log(tmp)
+  async function load(t) {
+    const _hotels = await getHotels(t)
+    setHotels(_hotels)
   }
-  async function load() {
-    var url = api_base + '/hotel/?'
-    Object.keys(filter).forEach(x => {
-      url = url + x + '=' + filter[x] + '&'
-    })
-    console.log(url)
-    const r = await fetch(url)
-    const j = await r.json()
-    setHotels(j)
+  async function initialize() {
+    const _cities = await getCities({})
+    setCities(_cities)
+    load({ orderby: 'name', ordertype: 'asc' })
   }
   useEffect(() => {
-    getCities()
-    load()
+    initialize()
   }, [])
+
+  function nextPage() {
+    var f = filter
+    f['page'] = Math.min(1000, f['page'] + 1)
+    setFilter(f)
+    load(f)
+  }
+  function prevPage() {
+    var f = filter
+    f['page'] = Math.max(1, f['page'] - 1)
+    setFilter(f)
+    load(f)
+  }
   return (
-    <div>
+    <Box>
       <Navbar2 />
-      <Container maxW='1880px'>
-        <Box style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Box style={{ margin: '10px' }}>
-            <Heading>Hotels</Heading>
-          </Box>
-          <Box>
-            <Button leftIcon={<BiFilterAlt />} variant='solid' ref={btnRef} onClick={onOpen}>
-              Filter
-            </Button>
-          </Box>
+      <Container maxW='2000px' >
+        <Box margin='20px' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Text fontSize='4xl'>Hotels</Text>
         </Box>
-
-        <center>
-          <SimpleGrid columns={{ sm: 1, md: 3, lg: 4, xl: 4 }} spacing={30} style={{ width: '100%' }} p='30px'>
-            {
-              hotels.map((item, index) => (
-                <Link to={`/hotel/${item.hotel_id}`}>
-                  <HotelCard props={item} />
-                </Link>
-              ))
-            }
-          </SimpleGrid>
-        </center>
-
-        <Drawer
-          size='md'
-          isOpen={isOpen}
-          placement='right'
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Filters</DrawerHeader>
-            <DrawerBody>
+        <SimpleGrid columns={{ base: 1, sm: 1, md: 3, lg: 4, xl: 5 }} >
+          <GridItem colSpan={{ base: 1, sm: 1, md: 1, lg: 1, xl: 1 }} padding='20px'>
+            <Stack spacing={'10px'}>
               <FormControl>
                 <FormLabel>Name</FormLabel>
                 <Input variant='filled' placeholder='' value={filter.name} onChange={(e) => {
@@ -120,9 +85,8 @@ function Hotels() {
                   setFilter(obj)
                 }} />
               </FormControl>
-              <br />
               <FormControl>
-                <FormField>Price per day</FormField>
+                <FormLabel>Price per day</FormLabel>
                 <RangeSlider min={0} max={5000} step={30} value={[filter.min_price, filter.max_price]} onChange={(val) => {
                   var obj = { ...filter }
                   obj.min_price = val[0]
@@ -144,7 +108,7 @@ function Hotels() {
               </FormControl>
               <br />
               <FormControl>
-                <FormField>City</FormField>
+                <FormLabel>City</FormLabel>
                 <Select
                   isMulti
                   options={cities}
@@ -158,9 +122,8 @@ function Hotels() {
                   }}
                 />
               </FormControl>
-              <br />
               <FormControl>
-                <FormField>Facilities</FormField>
+                <FormLabel>Facilities</FormLabel>
                 <Select
                   isMulti
                   options={
@@ -191,26 +154,101 @@ function Hotels() {
                   classNamePrefix="select"
                 />
               </FormControl>
-              <br />
               <FormControl>
-                <FormField>Sort by</FormField>
-                <Select placeholder='Select option'>
-                  <option value='price_per_day'>Price</option>
-                  <option value='name'>Name</option>
-                </Select>
+                <FormLabel>Sort by</FormLabel>
+                <Select
+                  options={
+                    [
+                      {
+                        label: "Name (Ascending)",
+                        value: '1',
+                        orderby: 'name',
+                        ordertype: 'asc'
+                      },
+                      {
+                        label: "Price Per Day (Ascending)",
+                        value: '2',
+                        orderby: 'price_per_day',
+                        ordertype: 'asc'
+                      },
+                      {
+                        label: "Rating (Descending)",
+                        value: '3',
+                        orderby: 'price_per_day',
+                        ordertype: 'asc'
+                      },
+                      {
+                        label: "Review Count (Descending)",
+                        value: '4',
+                        orderby: 'price_per_day',
+                        ordertype: 'asc'
+                      },
+                      {
+                        label: "Name (Descending)",
+                        value: '5',
+                        orderby: 'name',
+                        ordertype: 'desc'
+                      },
+                      {
+                        label: "Price Per Day (Descending)",
+                        value: '6',
+                        orderby: 'price_per_day',
+                        ordertype: 'desc'
+                      },
+                      {
+                        label: "Rating (Ascending)",
+                        value: '7',
+                        orderby: 'price_per_day',
+                        ordertype: 'asc'
+                      },
+                      {
+                        label: "Review Count (Ascending)",
+                        value: '8',
+                        orderby: 'price_per_day',
+                        ordertype: 'asc'
+                      }
+                    ]
+                  }
+                  defaultValue={
+                    {
+                      label: "Name (Ascending)",
+                      value: '1',
+                      orderby: 'name',
+                      ordertype: 'asc'
+                    }
+                  }
+                  onChange={(v) => {
+                    var obj = { ...filter }
+                    obj['orderby'] = v.orderby
+                    obj['ordertype'] = v.ordertype
+                    setFilter(obj)
+                  }}
+                  useBasicStyles 
+                />
               </FormControl>
               <Button onClick={searchClick}>Search</Button>
-            </DrawerBody>
-            {/* <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter> */}
-          </DrawerContent>
-        </Drawer>
+            </Stack>
+          </GridItem>
+          <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }}>
+            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5} style={{ width: '100%' }} p='30px'>
+              {
+                hotels.map((item, index) => (
+                  <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                    <CardSlider price={item.price_per_day} href={`/hotel/${item.hotel_id}`} title={item.name} info={item.address} rating={3} />
+                  </Card>
+                ))
+              }
+            </SimpleGrid>
+            <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
+              <Button variant={'solid'} colorScheme={'blue'} onClick={prevPage}>Previous Page</Button>
+              <Button variant={'solid'} colorScheme={'blue'} onClick={nextPage}>Next Page</Button>
+            </Stack>
+          </GridItem>
+          <Box height={'200px'}>
+          </Box>
+        </SimpleGrid>
       </Container>
-    </div>  
+    </Box >
   )
 }
 

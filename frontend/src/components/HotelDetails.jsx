@@ -1,5 +1,6 @@
 'use client'
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {
     Box,
     chakra,
@@ -25,6 +26,14 @@ import {
     Tr,
     Td,
     Tfoot,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    Textarea,
+    useDisclosure,
 } from '@chakra-ui/react'
 import { MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
 import CaptionCarousel from './Carousel'
@@ -41,8 +50,28 @@ import RatingBox from './RatingBox'
 import Review from './Review'
 import EmblaCarousel from './EmblaCarousel'
 // import { EmblaCarousel } from './EmblaCarousel'
+import React from 'react'
+import Carousel from "./Carousel";
+import { addToDict, addToList, setDict } from "../LocalStorage";
 
 export default function HotelDetails({ props }) {
+    const [startDate, setStartDate] = React.useState(new Date());
+    const [endDate, setEndDate] = React.useState(new Date());
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [rating, setRating] = React.useState(0)
+    const [review, setReview] = React.useState('')
+
+    function addClick() {
+        const data = {
+            id: props.hotel_id,
+            name: props.name,
+            start: startDate,
+            end: endDate,
+            cost: Math.round(Math.abs((endDate - startDate) / 86400000)) * props.price_per_day
+        }
+        addToList('_hotels', data)
+        onClose()
+    }
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -53,7 +82,7 @@ export default function HotelDetails({ props }) {
             >
                 <Box>
                     <Box>
-                        <CaptionCarousel />
+                        <Carousel />
                     </Box>
                 </Box>
                 <Stack>
@@ -161,7 +190,8 @@ export default function HotelDetails({ props }) {
                                             <Td>
                                                 {props.phone}
                                             </Td>
-                                        </Tr><Tr>
+                                        </Tr>
+                                        <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
                                                     <Box>
@@ -176,14 +206,29 @@ export default function HotelDetails({ props }) {
                                                 {props.email}
                                             </Td>
                                         </Tr>
+                                        <Tr>
+                                            <Td>
+                                                <Flex alignItems='center'>
+                                                    <Box>
+                                                        <AiOutlineMail size={30} />
+                                                    </Box>
+                                                    <Box>
+                                                        Map
+                                                    </Box>
+                                                </Flex>
+                                            </Td>
+                                            <Td>
+                                                <iframe style={{ width: '100%', height: '300px' }} src={`https://maps.google.com/maps?q=${props.address}&output=embed`}></iframe>
+                                            </Td>
+                                        </Tr>
                                     </Tbody>
 
                                 </Table>
                             </TableContainer>
                         </Box>
                     </Stack>
-
                     <Button
+                        onClick={onOpen}
                         rounded={'none'}
                         w={'full'}
                         size={'lg'}
@@ -201,39 +246,73 @@ export default function HotelDetails({ props }) {
                     <Flex justifyContent={'center'}>
                         <RatingBox />
                     </Flex>
-
-
+                    <Box>
+                        <Text fontSize='3xl' textAlign={'center'}>
+                            Reviews
+                        </Text>
+                        <Box marginTop='20px'>
+                            <EmblaCarousel />
+                        </Box>
+                        <Box marginTop={'20px'}>
+                            <Text fontSize='3xl' textAlign={'center'}>
+                                Write a Review
+                            </Text>
+                            <Box margin='10px'>
+                                <Box marginBottom={'10px'}>
+                                    <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                </Box>
+                                <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                    setReview(e.target.value)
+                                }} />
+                                <Button colorScheme="blue" size={'md'}>Post</Button>
+                            </Box>
+                        </Box>
+                    </Box>
                 </Stack>
             </SimpleGrid>
-            <Box>
-                <EmblaCarousel />
-                <Text fontSize='3xl'>
-                    Reviews
-                </Text>
-                <Flex>
-                    <Review />
-                    <Review />
-                    <Review />
-                </Flex>
+            <Box height={'500px'}>
             </Box>
-            <Box>
-                <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </pre>
-            </Box>
+            <Modal onClose={onClose} isOpen={isOpen} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Add Hotel to Trip</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <Stack>
+                            <Flex justifyContent={'space-between'}>
+                                <Box>
+                                    <Box>
+                                        <Text fontSize='xl'>Start</Text>
+                                    </Box>
+                                    <Box>
+                                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                    </Box>
+                                </Box>
+                                <Box>
+                                    <Box>
+                                        <Text fontSize='xl'>End</Text>
+                                    </Box>
+                                    <Box>
+                                        <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
+                                    </Box>
+                                </Box>
+                            </Flex>
+                            <Box>
+                                <Text fontSize={'xl'}>Cost</Text>
+                                ৳{Math.round(Math.abs((endDate - startDate) / 86400000)) * props.price_per_day}
+                            </Box>
+                        </Stack>
+                    </ModalBody>
+                    <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
+                        <Box>
+                            <Button margin='10px' colorScheme='blue' onClick={addClick}>OK</Button>
+                        </Box>
+                        <Box>
+                            <Button margin='10px' onClick={onClose}>Cancel</Button>
+                        </Box>
+                    </Box>
+                </ModalContent>
+            </Modal>
         </Container>
     )
 }
