@@ -1,0 +1,107 @@
+
+# Hotel
+
+## a. Get Single Hotel by user_id
+
+Endpoint URL:    
+```
+GET
+```
+```
+/api/v1/hotel/1
+```  
+Request Body: 
+```
+None
+```
+Example Response:    
+```json
+
+```
+
+## b. Get Hotels by querying on attributes ( Paginated )  
+
+#### Note that, all attributes are optional, you can either mention, not mention or leave them blank    
+
+Endpoint URL:  
+```
+GET
+```
+```
+/api/v1/hotel?query=value
+```
+Request Body: 
+```
+None
+```
+Example Response:    
+```json
+
+```
+
+## c. Create New Hotel
+
+Endpoint URL: 
+```
+POST
+```
+```
+/api/v1/hotel/
+```  
+Request Body:    
+```json
+
+```
+Example Response:  
+```json
+
+```
+## d. Update a Hotel
+Endpoint URL: 
+```
+PUT
+```
+```
+/api/v1/hotel/
+```  
+Request Body:    
+```json
+
+```
+Example Response:  
+```json
+
+```
+
+## e. Delete a Hotel ( Soft Delete )
+
+Endpoint URL:  
+```
+DELETE
+```
+```
+api/v1/hotel/4
+```  
+Request Body: 
+```
+None
+```
+Example Response:    
+```json
+
+```
+
+## f. Delete a Hotel ( Permanent Delete )
+
+Endpoint URL:
+```
+DELETE
+```
+```
+/api/v1/hotel/danger/5
+``` 
+Request Body: `None`    
+Example Response:    
+```json
+
+```

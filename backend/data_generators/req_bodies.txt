@@ -1,0 +1,47 @@
+
+--- Adding a Trip
+
+{
+    "from_city_id" : 1,
+    "to_city_id" : 2,
+    "name" : "Sunset Sceneries",
+    "description" : "A wonderful Trip, it will be.",
+    "image_url" : "dummy.jpg",
+    "start_date" : "2023-07-01",
+    "end_date" : "2023-07-25",
+    "contains" : [
+        {
+            "destination_id" : 1,
+            "activity_id" : 4,
+            "tentative_date" : "2023-07-15"
+        },
+        {
+            "destination_id" : 1,
+            "activity_id" : 1,
+            "tentative_date" : "2023-07-17"
+        }
+    ],
+    "hotels" : [
+        {
+            "hotel_id" : 1,
+            "checkin_date" : "2023-07-01",
+            "checkout_date" : "2023-07-07"
+        },
+        {
+            "hotel_id" : 2,
+            "checkin_date" : "2023-07-15",
+            "checkout_date" : "2023-07-18"
+        }
+    ],
+    "restaurants" : [
+        {
+            "restaurant_id" : 1
+        },
+        {
+            "restaurant_id" : 2
+        },
+        {
+            "restaurant_id" : 3
+        }
+    ]
+}
