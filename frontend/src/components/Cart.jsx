@@ -88,8 +88,8 @@ export default function Cart({ open, setOpen }) {
                 <AccordionPanel pb={4}>
                   <Table variant={'simple'} size='sm'>
                     <Tbody>
-                      <Tr><Th>Name</Th><Td><Input name={'name'} variant={'outline'} borderWidth={'2px'} value={body.name} onChange={handleChange} /></Td></Tr>
-                      <Tr><Th>Description</Th><Td><Textarea name={'description'} value={body.description} onChange={handleChange} /></Td></Tr>
+                      <Tr><Th>Name</Th><Td><Input name={'name'} variant={'solid'} borderWidth={'2px'} value={body.name} onChange={handleChange} /></Td></Tr>
+                      <Tr><Th>Description</Th><Td><Textarea variant={'solid'} borderWidth={'2px'} name={'description'} value={body.description} onChange={handleChange} /></Td></Tr>
                       <Tr><Th>Start Date</Th><Td>
                         <DatePicker selected={body.startDate} onChange={x => handleChange_('startDate', x)} />
                       </Td></Tr>
