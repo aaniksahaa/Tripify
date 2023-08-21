@@ -19,7 +19,7 @@ function Navbar2({ openDrawer }) {
                 <Flex alignItems="center" justifyContent="space-between" mx="auto">
                     <Flex>
                         <chakra.a href="/" title="Choc Home Page" display="flex" alignItems="center" style={{ padding: '2px' }}>
-                            <img src='logo.png'
+                            <img src={colorMode==='light'?'/logo.png':'/logo_dark.png'}
                                 width='200px' />
                         </chakra.a>
                     </Flex>
