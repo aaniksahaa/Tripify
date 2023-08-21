@@ -61,7 +61,7 @@ SELECT * FROM CITIES;
 CREATE TABLE Users(
 		user_id NUMBER DEFAULT user_seq.NEXTVAL PRIMARY KEY,
 		username VARCHAR2(100) UNIQUE NOT NULL,
-    email VARCHAR2(100) NOT NULL CONSTRAINT check_valid_email CHECK (email LIKE '%@%.%'),
+    email VARCHAR2(100) NOT NULL, 
     password_hash VARCHAR2(100) NOT NULL,
     role VARCHAR2(50) DEFAULT 'client',
     name VARCHAR2(100) NOT NULL,
@@ -77,7 +77,8 @@ CREATE TABLE Users(
 		created_on DATE DEFAULT CURRENT_DATE,
     last_updated_on DATE DEFAULT CURRENT_DATE,
     deleted_on DATE,  -- will be null until soft deleted
-		FOREIGN KEY (city_id) REFERENCES Cities(city_id) ON DELETE SET NULL
+		FOREIGN KEY (city_id) REFERENCES Cities(city_id) ON DELETE SET NULL,
+		CONSTRAINT check_valid_email CHECK (REGEXP_LIKE(email, '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$'))
 )
 LOGGING
 NOCOMPRESS
@@ -98,6 +99,7 @@ DISABLE ROW MOVEMENT
 -- dummy user insertion 
 /*
 INSERT INTO Users (
+    username,
     email,
     password_hash,
     role,
@@ -111,8 +113,9 @@ INSERT INTO Users (
     status,
     dob
 ) VALUES (
+	  'aaniksahaa',
     'abc@gmail.com',
-    '123',
+     MY_HASH_PASSWORD('123'),
     'client',
     'Anik Saha',
 		'Little Coder',
@@ -126,29 +129,31 @@ INSERT INTO Users (
 );
 
 INSERT INTO Users (
+		username,
     email,
     password_hash,
     role,
     name,
 		bio,
+		city_id,
     facebook_url,
     twitter_url,
     instagram_url,
     profile_picture,
-    registration_date,
     status,
     dob
 ) VALUES (
+		'jab3r',
     'xyz@gmail.com',
-    '456',
+     MY_HASH_PASSWORD('456'),
     'client',
     'Jaber Ahmed Deeder',
 		'Pro Coder',
+		 1,
     'facebook.com/xyz',
     'twitter.com/xyz',
     'instagram.com/xyz',
     'dummy.jpg',
-    TO_DATE('2023-07-29', 'YYYY-MM-DD'),
     'active',
     TO_DATE('2002-09-17', 'YYYY-MM-DD')
 );

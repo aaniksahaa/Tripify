@@ -38,7 +38,7 @@ EXCEPTION
 END;
 /
 
---- Add a whole Trip to the database, inserts to 4 tables
+--- Add a whole Trip to the database, inserts to 5 tables
 
 --- DROP PROCEDURE AddTrip;
 
@@ -103,6 +103,8 @@ EXCEPTION
     RAISE;
 END;
 /
+
+--- Update a Trip to the database, update to 5 tables
 
 CREATE OR REPLACE PROCEDURE UpdateTrip(
   p_trip_id IN NUMBER,
