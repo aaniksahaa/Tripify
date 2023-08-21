@@ -1,3 +1,4 @@
 1. Add authentic images links and remove dummy links
 2. Add Rooms
 3. Add Travel Guides
+4. Ensure uniqueness in usernames in user_gen.py

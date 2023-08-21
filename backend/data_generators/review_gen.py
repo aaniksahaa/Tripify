@@ -39,7 +39,7 @@ def generate_trip_review():
         f"During my {opinion} trip, I had the pleasure of {activity} diverse landscapes. The {restaurant} we dined at was exceptional, and the {tour_guide} made every moment unforgettable.",
         f"From {activity} breathtaking sights to savoring exquisite cuisines at {restaurant}, my {opinion} trip was enriched by a {tour_guide} who shared fascinating insights.",
         f"Unwinding in {hotel} and {activity} the surroundings, I cherished the culinary delights at {restaurant}. Our {tour_guide} brought unique perspectives to every experience.",
-        f"Through {activity} local culture, I marveled at {opinion} scenes. The {tour_guide}'s passion and knowledge added depth to my journey, as did the delectable offerings at {restaurant}.",
+        f"Through {activity} local culture, I marveled at {opinion} scenes. The {tour_guide}s passion and knowledge added depth to my journey, as did the delectable offerings at {restaurant}.",
         f"Each day was filled with {activity} captivating landscapes. I felt secure at {hotel} and enjoyed memorable meals at {restaurant}, while our {tour_guide} infused the trip with cultural richness.",
     ]
     

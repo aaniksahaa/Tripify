@@ -1144,7 +1144,7 @@ SELECT * FROM GROUPMESSAGES;
 CREATE TABLE Guides (
     user_id NUMBER PRIMARY KEY,
     guide_id NUMBER DEFAULT guide_seq.NEXTVAL UNIQUE,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 )
 LOGGING
 NOCOMPRESS
@@ -1249,7 +1249,7 @@ CREATE TABLE ProcedureLog (
     calling_date DATE DEFAULT CURRENT_DATE NOT NULL,
     user_id NUMBER,
     parameters VARCHAR2(4000),
-		FOREIGN KEY (user_id) REFERENCES Users(user_id)
+		FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE SET NULL
 )
 LOGGING
 NOCOMPRESS

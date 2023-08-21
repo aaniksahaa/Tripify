@@ -11,6 +11,8 @@ DELETE FROM Flights;
 DELETE FROM Restaurants;
 DELETE FROM Flights;
 DELETE FROM Provides;
+DELETE FROM Trips;
+DELETE FROM Reviews;
 
 -- Insert Dummy City for inserting Admin
 
@@ -58,26 +60,17 @@ INSERT INTO Cities (name, country_name, population, weather_type) VALUES ('Chand
 INSERT INTO Users ( username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 'aaniksahaa', 'abc@gmail.com', MY_HASH_PASSWORD('123'), 'client', 'Anik Saha', 'Little Coder', 1, 'facebook.com/abc', 'twitter.com/abc', 'instagram.com/abc', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );
 INSERT INTO Users ( username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 'jab3r', 'xyz@gmail.com', MY_HASH_PASSWORD('456'), 'client', 'Jaber Ahmed Deeder', 'Pro Coder', 1, 'facebook.com/xyz', 'twitter.com/xyz', 'instagram.com/xyz', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );
 
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nasreen_nasrin', 'nasreen_nasrin@yahoo.com', MY_HASH_PASSWORD('2zkVKsElGLQ'), 'Nasreen Nasrin', 9 , TO_DATE('1964-12-07','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'rina_haque', 'rina_haque@gmail.com', MY_HASH_PASSWORD('qgjsXME9'), 'Rina Haque', 8 , TO_DATE('1944-12-28','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'faria.akter', 'faria.akter@gmail.com', MY_HASH_PASSWORD('RJZXCDuRf'), 'Faria Akter', 25 , TO_DATE('1996-09-15','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'anis_kabir', 'anis_kabir@gmail.com', MY_HASH_PASSWORD('uFxSxaQZoWUa'), 'Anis Kabir', 14 , TO_DATE('1958-12-11','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'rabeya.islam', 'rabeya.islam@gmail.com', MY_HASH_PASSWORD('troFa3dvhlM'), 'Rabeya Islam', 14 , TO_DATE('1984-12-14','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'khalid.mahmud', 'khalid.mahmud@yahoo.com', MY_HASH_PASSWORD('B9bthjcy'), 'Khalid Mahmud', 2 , TO_DATE('1980-09-12','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'mahmud_hossain', 'mahmud_hossain@gmail.com', MY_HASH_PASSWORD('wTCNl3nRF'), 'Mahmud Hossain', 10 , TO_DATE('1983-03-19','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'rabeya.khanom', 'rabeya.khanom@yahoo.com', MY_HASH_PASSWORD('5a8neF9f0'), 'Rabeya Khanom', 19 , TO_DATE('1955-06-18','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nazia.nasrin', 'nazia.nasrin@gmail.com', MY_HASH_PASSWORD('yxDthoEsyQ'), 'Nazia Nasrin', 20 , TO_DATE('1974-01-20','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'mustafiz.ahmed', 'mustafiz.ahmed@gmail.com', MY_HASH_PASSWORD('Qbcf9bQGBpZ'), 'Mustafiz Ahmed', 15 , TO_DATE('1954-05-16','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'shafiq.begum', 'shafiq.begum@yahoo.com', MY_HASH_PASSWORD('RZvPfEzd'), 'Shafiq Begum', 24 , TO_DATE('1989-09-28','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'shakil_begum', 'shakil_begum@gmail.com', MY_HASH_PASSWORD('Hh9CpNdqHh6'), 'Shakil Begum', 18 , TO_DATE('2008-09-27','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'khalid.akter', 'khalid.akter@yahoo.com', MY_HASH_PASSWORD('TnqDtd48'), 'Khalid Akter', 30 , TO_DATE('1962-06-21','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nusrat_siddique', 'nusrat_siddique@yahoo.com', MY_HASH_PASSWORD('VaSbcjh5rfe'), 'Nusrat Siddique', 3 , TO_DATE('1986-02-23','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'shakil_chowdhury', 'shakil_chowdhury@yahoo.com', MY_HASH_PASSWORD('LwNum2J6'), 'Shakil Chowdhury', 26 , TO_DATE('1982-07-09','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nazia_nasrin', 'nazia_nasrin@yahoo.com', MY_HASH_PASSWORD('TfyiBFcrD'), 'Nazia Nasrin', 22 , TO_DATE('1997-09-11','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'rina.rahman', 'rina.rahman@gmail.com', MY_HASH_PASSWORD('aby18wAcM8Fn'), 'Rina Rahman', 14 , TO_DATE('1952-12-27','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nafisa_haque', 'nafisa_haque@gmail.com', MY_HASH_PASSWORD('NCYKgrrx'), 'Nafisa Haque', 11 , TO_DATE('1974-04-11','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'nusrat.chowdhury', 'nusrat.chowdhury@gmail.com', MY_HASH_PASSWORD('pTo6qA7k3yFz'), 'Nusrat Chowdhury', 9 , TO_DATE('1969-03-09','YYYY-MM-DD'));
-INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'mahbub_miah', 'mahbub_miah@gmail.com', MY_HASH_PASSWORD('7DNXynawiK'), 'Mahbub Miah', 14 , TO_DATE('1987-12-01','YYYY-MM-DD'));
+
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'shabnam_rahman', 'shabnam_rahman@yahoo.com', MY_HASH_PASSWORD('Ld1bNOOX7GB'), 'Shabnam Rahman', 3 , TO_DATE('1997-09-15','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'rashid.haque', 'rashid.haque@gmail.com', MY_HASH_PASSWORD('gkSwVfvT'), 'Rashid Haque', 16 , TO_DATE('1994-03-17','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'asif.ali', 'asif.ali@gmail.com', MY_HASH_PASSWORD('3oARHXJre4'), 'Asif Ali', 13 , TO_DATE('1977-01-08','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'sumaiya_islam', 'sumaiya_islam@yahoo.com', MY_HASH_PASSWORD('TndVym1b'), 'Sumaiya Islam', 25 , TO_DATE('1966-03-28','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'sanjida.haque', 'sanjida.haque@yahoo.com', MY_HASH_PASSWORD('CkbDXFDT'), 'Sanjida Haque', 7 , TO_DATE('1992-09-16','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'amina.begum', 'amina.begum@yahoo.com', MY_HASH_PASSWORD('jemMSk3vtPY'), 'Amina Begum', 21 , TO_DATE('1999-09-19','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'sharmin_sultana', 'sharmin_sultana@gmail.com', MY_HASH_PASSWORD('rY4D6o78K7PA'), 'Sharmin Sultana', 1 , TO_DATE('1946-08-18','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'arif_khanom', 'arif_khanom@gmail.com', MY_HASH_PASSWORD('iPWaKrv7j'), 'Arif Khanom', 16 , TO_DATE('1981-10-18','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'sanjida.nasrin', 'sanjida.nasrin@yahoo.com', MY_HASH_PASSWORD('zO86JIK0r'), 'Sanjida Nasrin', 14 , TO_DATE('1961-05-11','YYYY-MM-DD'));
+INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( 'tasnim_haque', 'tasnim_haque@yahoo.com', MY_HASH_PASSWORD('xkNft5f0'), 'Tasnim Haque', 30 , TO_DATE('1984-01-14','YYYY-MM-DD'));
 
 ---Guides
 
@@ -531,244 +524,244 @@ INSERT INTO Restaurants (name, reservation_price, address, city_id, description,
 
 ---Provides
 
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 1, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 4, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 6, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (2, 8, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 1, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 4, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (1, 6, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (2, 8, 450, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (2, 9, 250, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (2, 20, 50, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (3, 3, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (3, 6, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (3, 7, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 10, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 12, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 45, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 8, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 9, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 20, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 2, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 5, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 36, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 4, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 5, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 44, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 8, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 21, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 45, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 2, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 5, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 15, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 3, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 7, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 15, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (3, 6, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (3, 7, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 10, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 12, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (4, 45, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 8, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 9, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (5, 20, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 2, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 5, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (6, 36, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 4, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 5, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (7, 44, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 8, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 21, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (8, 45, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 2, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 5, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (9, 15, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 3, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 7, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (10, 15, 300, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (11, 2, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (11, 6, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (11, 36, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (11, 6, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (11, 36, 400, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (12, 25, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (12, 29, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (12, 29, 50, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (12, 45, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 4, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 15, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 18, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 7, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 14, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 31, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (15, 8, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 4, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 15, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (13, 18, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 7, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 14, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (14, 31, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (15, 8, 250, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (15, 9, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (15, 25, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 29, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 30, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 31, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (17, 28, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (17, 30, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (15, 25, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 29, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 30, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (16, 31, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (17, 28, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (17, 30, 500, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (17, 34, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 2, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 9, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 12, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 2, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 9, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (18, 12, 400, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (19, 8, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (19, 9, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (19, 20, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 3, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 6, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 34, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 8, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 9, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 20, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (22, 1, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (22, 2, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (19, 9, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (19, 20, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 3, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 6, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (20, 34, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 8, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 9, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (21, 20, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (22, 1, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (22, 2, 50, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (22, 3, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 24, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 25, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 28, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 2, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 5, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 33, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (25, 8, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (25, 9, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 24, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 25, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (23, 28, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 2, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 5, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (24, 33, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (25, 8, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (25, 9, 350, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (25, 20, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 3, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 6, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 7, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (27, 8, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (27, 9, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 3, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 6, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (26, 7, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (27, 8, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (27, 9, 250, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (27, 20, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 26, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 28, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 34, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 11, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 29, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 32, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 11, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 29, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 32, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 30, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 31, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 34, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 13, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 15, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 16, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 10, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 29, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 30, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 3, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 6, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 26, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (35, 17, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (35, 19, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 26, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 28, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (28, 34, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 11, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 29, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (29, 32, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 11, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 29, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (30, 32, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 30, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 31, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (31, 34, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 13, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 15, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (32, 16, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 10, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 29, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (33, 30, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 3, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 6, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (34, 26, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (35, 17, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (35, 19, 100, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (35, 36, 350, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (36, 17, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (36, 19, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (36, 19, 400, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (36, 36, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 3, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 6, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 7, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (38, 11, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (38, 29, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 3, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 6, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (37, 7, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (38, 11, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (38, 29, 150, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (38, 32, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 13, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 15, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 16, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 8, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 9, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 20, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 30, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 31, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 34, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 13, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 15, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 16, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 13, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 15, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (39, 16, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 8, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 9, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (40, 20, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 30, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 31, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (41, 34, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 13, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 15, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (42, 16, 50, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (43, 3, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (43, 6, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (43, 7, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 13, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 15, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 16, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 11, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 29, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 32, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 3, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 6, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 7, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (47, 17, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (43, 6, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (43, 7, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 13, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 15, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (44, 16, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 11, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 29, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (45, 32, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 3, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 6, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (46, 7, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (47, 17, 200, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (47, 19, 300, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (47, 36, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (48, 8, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (48, 8, 500, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (48, 9, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (48, 20, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 3, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 6, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 7, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 26, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 28, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 34, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 21, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 22, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 24, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (52, 26, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (48, 20, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 3, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 6, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (49, 7, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 26, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 28, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (50, 34, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 21, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 22, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (51, 24, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (52, 26, 400, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (52, 28, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (52, 34, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 10, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 11, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 49, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 18, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 19, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 25, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 13, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 15, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 16, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (52, 34, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 10, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 11, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (53, 49, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 18, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 19, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (54, 25, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 13, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 15, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (55, 16, 250, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (56, 11, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (56, 29, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (56, 32, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 28, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 30, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 34, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 10, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 11, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 49, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 37, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 38, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 43, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 38, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 39, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 48, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (56, 29, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (56, 32, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 28, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 30, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (57, 34, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 10, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 11, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (58, 49, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 37, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 38, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (59, 43, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 38, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 39, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (60, 48, 50, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (61, 30, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (61, 31, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (61, 34, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 13, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 15, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 16, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 13, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 15, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 16, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 26, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 28, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 34, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 41, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 42, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 43, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 26, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 28, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 34, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 38, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 39, 500, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 48, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (68, 49, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (68, 50, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (69, 49, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (69, 50, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 26, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 28, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 34, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 30, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 31, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 34, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 10, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 11, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 49, 150, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 13, 400, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 15, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 16, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 17, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 19, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 36, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 17, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 19, 100, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 36, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 13, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 15, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 16, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 28, 450, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 30, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 34, 350, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 10, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 11, 200, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 49, 250, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 3, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 6, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 7, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (61, 31, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (61, 34, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 13, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 15, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (62, 16, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 13, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 15, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (63, 16, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 26, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 28, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (64, 34, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 41, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 42, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (65, 43, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 26, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 28, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (66, 34, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 38, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 39, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (67, 48, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (68, 49, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (68, 50, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (69, 49, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (69, 50, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 26, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 28, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (70, 34, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 30, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 31, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (71, 34, 300, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 10, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 11, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (72, 49, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 13, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 15, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (73, 16, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 17, 350, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 19, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (74, 36, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 17, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 19, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (75, 36, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 13, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 15, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (76, 16, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 28, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 30, 500, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (77, 34, 400, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 10, 200, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 11, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (78, 49, 50, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 3, 150, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 6, 450, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (79, 7, 200, 1);
 INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (80, 17, 300, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (80, 19, 50, 1);
-INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (80, 36, 250, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (80, 19, 100, 1);
+INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES (80, 36, 300, 1);
 
 
 -- Insert dummy trips
@@ -831,6 +824,5007 @@ END;
 /
 
 
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(77, TO_DATE('2023-08-18', 'YYYY-MM-DD'), TO_DATE('2023-08-23', 'YYYY-MM-DD')),
+HotelDates(87, TO_DATE('2023-08-18', 'YYYY-MM-DD'), TO_DATE('2023-08-21', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(22, 2, 46, 87);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(60, 48, TO_DATE('2023-08-19', 'YYYY-MM-DD')),
+DestinationActivity(33, 10, TO_DATE('2023-08-19', 'YYYY-MM-DD')),
+DestinationActivity(44, 16, TO_DATE('2023-08-17', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(1, 2);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(18, 10, 'Mountainous Adventure', 'Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.', 'dummy.jpg', TO_DATE('2023-08-16', 'YYYY-MM-DD'), TO_DATE('2023-08-29', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(48, TO_DATE('2023-08-18', 'YYYY-MM-DD'), TO_DATE('2023-08-23', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(73, 83, 98, 38, 50);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(69, 49, TO_DATE('2023-08-17', 'YYYY-MM-DD')),
+DestinationActivity(48, 20, TO_DATE('2023-08-19', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2, 1);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(25, 8, 'Cultural Discovery', 'Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.', 'dummy.jpg', TO_DATE('2023-08-16', 'YYYY-MM-DD'), TO_DATE('2023-08-29', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(80, TO_DATE('2023-08-14', 'YYYY-MM-DD'), TO_DATE('2023-08-18', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(60, 51, 65, 10);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(72, 11, TO_DATE('2023-08-13', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2, 1);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(12, 19, 'Relaxation Retreat', 'This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.', 'dummy.jpg', TO_DATE('2023-08-12', 'YYYY-MM-DD'), TO_DATE('2023-08-30', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(3, TO_DATE('2023-08-20', 'YYYY-MM-DD'), TO_DATE('2023-08-23', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(22, 26, 73, 4, 76);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(37, 3, TO_DATE('2023-08-18', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(1);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(2, 9, 'Urban Exploration', 'Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.', 'dummy.jpg', TO_DATE('2023-08-17', 'YYYY-MM-DD'), TO_DATE('2023-08-31', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(82, TO_DATE('2023-08-17', 'YYYY-MM-DD'), TO_DATE('2023-08-22', 'YYYY-MM-DD')),
+HotelDates(60, TO_DATE('2023-08-16', 'YYYY-MM-DD'), TO_DATE('2023-08-21', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(53, 16);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(58, 10, TO_DATE('2023-08-17', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(22, 24, 'Wilderness Retreat', 'Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.', 'dummy.jpg', TO_DATE('2023-08-15', 'YYYY-MM-DD'), TO_DATE('2023-08-28', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(36, TO_DATE('2023-08-19', 'YYYY-MM-DD'), TO_DATE('2023-08-22', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(34, 83, 65);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(21, 8, TO_DATE('2023-08-19', 'YYYY-MM-DD')),
+DestinationActivity(40, 8, TO_DATE('2023-08-17', 'YYYY-MM-DD')),
+DestinationActivity(36, 19, TO_DATE('2023-08-17', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(6, 4, 'Wilderness Retreat', 'Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.', 'dummy.jpg', TO_DATE('2023-08-16', 'YYYY-MM-DD'), TO_DATE('2023-09-01', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(74, TO_DATE('2023-08-17', 'YYYY-MM-DD'), TO_DATE('2023-08-22', 'YYYY-MM-DD')),
+HotelDates(59, TO_DATE('2023-08-16', 'YYYY-MM-DD'), TO_DATE('2023-08-20', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(34);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(26, 3, TO_DATE('2023-08-16', 'YYYY-MM-DD')),
+DestinationActivity(7, 4, TO_DATE('2023-08-16', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2, 1);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(7, 17, 'Tropical Getaway', 'Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.', 'dummy.jpg', TO_DATE('2023-08-15', 'YYYY-MM-DD'), TO_DATE('2023-08-27', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(52, TO_DATE('2023-08-13', 'YYYY-MM-DD'), TO_DATE('2023-08-18', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(43);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(46, 6, TO_DATE('2023-08-15', 'YYYY-MM-DD')),
+DestinationActivity(3, 6, TO_DATE('2023-08-13', 'YYYY-MM-DD')),
+DestinationActivity(74, 36, TO_DATE('2023-08-13', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2, 1);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(7, 16, 'Relaxation Retreat', 'Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.', 'dummy.jpg', TO_DATE('2023-08-12', 'YYYY-MM-DD'), TO_DATE('2023-08-31', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(66, TO_DATE('2023-08-18', 'YYYY-MM-DD'), TO_DATE('2023-08-24', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(78, 9);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(76, 16, TO_DATE('2023-08-20', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(1, 2);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(30, 25, 'Eco-Friendly Escape', 'Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.', 'dummy.jpg', TO_DATE('2023-08-17', 'YYYY-MM-DD'), TO_DATE('2023-09-01', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    HotelDates(27, TO_DATE('2023-08-19', 'YYYY-MM-DD'), TO_DATE('2023-08-22', 'YYYY-MM-DD'))
+);
+l_restaurants RestaurantList := RestaurantList(73, 53, 51, 72);
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    DestinationActivity(14, 14, TO_DATE('2023-08-18', 'YYYY-MM-DD'))
+);
+l_guides GuideList := GuideList(2);
+p_trip_id NUMBER;
+BEGIN
+AddTrip(14, 1, 'Cultural Discovery', 'This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.', 'dummy.jpg', TO_DATE('2023-08-17', 'YYYY-MM-DD'), TO_DATE('2023-09-01', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    
+
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Through discovering local culture, I marveled at unforgettable scenes. The cultural connoisseurss passion and knowledge added depth to my journey, as did the delectable offerings at ethnic cuisine spots.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 83);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Each day was filled with immersing captivating landscapes. I felt secure at historic manors and enjoyed memorable meals at gourmet restaurants, while our cultural connoisseurs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 86);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 37);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule. Top-notch security enhanced our peace of mind.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 29);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds. Varied menu options satisfied different palates. Attentive service created a memorable dining experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 21);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'During my exquisite trip, I had the pleasure of unwinding diverse landscapes. The gourmet restaurants we dined at was exceptional, and the expert locals made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Varied menu options satisfied different palates.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 30);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'From adventuring breathtaking sights to savoring exquisite cuisines at street food stalls, my inspiring trip was enriched by a knowledgeable guides who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort. Fast WiFi contributed to a connected stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 45);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Delicious dishes delighted our taste buds. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 18);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 84);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Through enjoying local culture, I marveled at charming scenes. The friendly insiderss passion and knowledge added depth to my journey, as did the delectable offerings at local eateries.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Fast service contributed to a seamless meal. Varied menu options satisfied different palates. Presentation of dishes was visually appealing.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 19);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 63);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Presentation of dishes was visually appealing. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 67);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 79);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'From immersing breathtaking sights to savoring exquisite cuisines at gourmet restaurants, my unforgettable trip was enriched by a friendly insiders who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 14);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience. Varied menu options satisfied different palates. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 75);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 39);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Timely wake-up calls assisted our daily schedule. Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 41);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience. Varied menu options satisfied different palates.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 57);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Fast service contributed to a seamless meal. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Exceptional breakfast options set a positive tone. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 25);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Delicious dishes delighted our taste buds. Charming ambiance added to the overall enjoyment. Fast service contributed to a seamless meal. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 71);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 20);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 34);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Through experiencing local culture, I marveled at captivating scenes. The expert localss passion and knowledge added depth to my journey, as did the delectable offerings at gourmet restaurants.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 50);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Convenient location enhanced our dining convenience. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 76);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Each day was filled with enjoying captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at farm-to-table diners, while our adventure enthusiasts infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Attentive service created a memorable dining experience. Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 28);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 81);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 28);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort. Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 21);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with experiencing captivating landscapes. I felt secure at seaside resorts and enjoyed memorable meals at fusion food trucks, while our adventure enthusiasts infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Each day was filled with savoring captivating landscapes. I felt secure at seaside resorts and enjoyed memorable meals at rustic bistros, while our enthusiastic storytellers infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Varied menu options satisfied different palates. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 53);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 98);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Attentive staff created a welcoming experience. Top-notch security enhanced our peace of mind. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 32);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 100);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unwinding in quaint inns and savoring the surroundings, I cherished the culinary delights at hidden gems. Our knowledgeable guides brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'During my delightful trip, I had the pleasure of savoring diverse landscapes. The farm-to-table diners we dined at was exceptional, and the expert locals made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'During my charming trip, I had the pleasure of savoring diverse landscapes. The farm-to-table diners we dined at was exceptional, and the passionate explorers made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 41);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with savoring captivating landscapes. I felt secure at luxurious hotels and enjoyed memorable meals at hidden gems, while our adventure enthusiasts infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 79);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in cosy bed and breakfasts and adventuring the surroundings, I cherished the culinary delights at farm-to-table diners. Our cultural connoisseurs brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in mountain retreats and adventuring the surroundings, I cherished the culinary delights at rustic bistros. Our charming hosts brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 23);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Charming ambiance added to the overall enjoyment. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 83);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Unwinding in luxurious hotels and unwinding the surroundings, I cherished the culinary delights at fusion food trucks. Our cultural connoisseurs brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 49);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'During my enchanting trip, I had the pleasure of savoring diverse landscapes. The seaside cafes we dined at was exceptional, and the knowledgeable guides made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 13);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Fast service contributed to a seamless meal. Varied menu options satisfied different palates. Convenient location enhanced our dining convenience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 26);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Each day was filled with relaxing captivating landscapes. I felt secure at modern hostels and enjoyed memorable meals at street food stalls, while our enthusiastic storytellers infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 44);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Top-notch security enhanced our peace of mind.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 40);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unwinding in seaside resorts and experiencing the surroundings, I cherished the culinary delights at gourmet restaurants. Our insightful companions brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'During my enchanting trip, I had the pleasure of discovering diverse landscapes. The street food stalls we dined at was exceptional, and the knowledgeable guides made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Top-notch security enhanced our peace of mind. Efficient management ensured a smooth stay. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 11);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'During my delightful trip, I had the pleasure of exploring diverse landscapes. The ethnic cuisine spots we dined at was exceptional, and the expert locals made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From unwinding breathtaking sights to savoring exquisite cuisines at local eateries, my delightful trip was enriched by a cultural connoisseurs who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'From relaxing breathtaking sights to savoring exquisite cuisines at local eateries, my inspiring trip was enriched by a cultural connoisseurs who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 74);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 33);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Each day was filled with unwinding captivating landscapes. I felt secure at mountain retreats and enjoyed memorable meals at farm-to-table diners, while our friendly insiders infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Each day was filled with experiencing captivating landscapes. I felt secure at urban getaways and enjoyed memorable meals at rustic bistros, while our passionate explorers infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Each day was filled with immersing captivating landscapes. I felt secure at historic manors and enjoyed memorable meals at street food stalls, while our history buffs infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 37);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 13);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Attentive service created a memorable dining experience. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 50);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'From immersing breathtaking sights to savoring exquisite cuisines at local eateries, my amazing trip was enriched by a passionate explorers who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Varied menu options satisfied different palates. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 94);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'During my breathtaking trip, I had the pleasure of immersing diverse landscapes. The ethnic cuisine spots we dined at was exceptional, and the charming hosts made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Presentation of dishes was visually appealing. Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 12);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'During my exquisite trip, I had the pleasure of exploring diverse landscapes. The street food stalls we dined at was exceptional, and the charming hosts made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unwinding in cosy bed and breakfasts and enjoying the surroundings, I cherished the culinary delights at hidden gems. Our charming hosts brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'From adventuring breathtaking sights to savoring exquisite cuisines at gourmet restaurants, my captivating trip was enriched by a insightful companions who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'From unwinding breathtaking sights to savoring exquisite cuisines at hidden gems, my breathtaking trip was enriched by a charming hosts who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Through experiencing local culture, I marveled at amazing scenes. The cultural connoisseurss passion and knowledge added depth to my journey, as did the delectable offerings at ethnic cuisine spots.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Unwinding in luxurious hotels and unwinding the surroundings, I cherished the culinary delights at rustic bistros. Our expert locals brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 87);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'During my spectacular trip, I had the pleasure of adventuring diverse landscapes. The urban food markets we dined at was exceptional, and the knowledgeable guides made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 47);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Delicious dishes delighted our taste buds. Varied menu options satisfied different palates. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 63);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'During my amazing trip, I had the pleasure of relaxing diverse landscapes. The ethnic cuisine spots we dined at was exceptional, and the knowledgeable guides made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 73);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 29);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Convenient parking arrangements added to our comfort. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 90);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Unwinding in chic accommodations and discovering the surroundings, I cherished the culinary delights at hidden gems. Our adventure enthusiasts brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Attentive service created a memorable dining experience. Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 17);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Delicious dishes delighted our taste buds. Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Fast service contributed to a seamless meal. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 81);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in mountain retreats and relaxing the surroundings, I cherished the culinary delights at farm-to-table diners. Our insightful companions brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Through exploring local culture, I marveled at delightful scenes. The enthusiastic storytellerss passion and knowledge added depth to my journey, as did the delectable offerings at gourmet restaurants.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'From indulging breathtaking sights to savoring exquisite cuisines at street food stalls, my breathtaking trip was enriched by a cultural connoisseurs who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Through enjoying local culture, I marveled at breathtaking scenes. The insightful companionss passion and knowledge added depth to my journey, as did the delectable offerings at farm-to-table diners.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unwinding in quaint inns and exploring the surroundings, I cherished the culinary delights at seaside cafes. Our cultural connoisseurs brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 91);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unwinding in chic accommodations and experiencing the surroundings, I cherished the culinary delights at gourmet restaurants. Our insightful companions brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 44);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Charming ambiance added to the overall enjoyment. Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 97);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Varied menu options satisfied different palates. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 72);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Through adventuring local culture, I marveled at unforgettable scenes. The knowledgeable guidess passion and knowledge added depth to my journey, as did the delectable offerings at gourmet restaurants.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Each day was filled with savoring captivating landscapes. I felt secure at boutique lodges and enjoyed memorable meals at fusion food trucks, while our adventure enthusiasts infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience. Varied menu options satisfied different palates.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 64);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in mountain retreats and savoring the surroundings, I cherished the culinary delights at farm-to-table diners. Our passionate explorers brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Attentive staff created a welcoming experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 78);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 45);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Delicious dishes delighted our taste buds. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 93);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'From indulging breathtaking sights to savoring exquisite cuisines at local eateries, my charming trip was enriched by a passionate explorers who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'During my breathtaking trip, I had the pleasure of discovering diverse landscapes. The rustic bistros we dined at was exceptional, and the cultural connoisseurs made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'From experiencing breathtaking sights to savoring exquisite cuisines at rustic bistros, my spectacular trip was enriched by a expert locals who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Through adventuring local culture, I marveled at exquisite scenes. The passionate explorerss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'During my captivating trip, I had the pleasure of savoring diverse landscapes. The fusion food trucks we dined at was exceptional, and the enthusiastic storytellers made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Unwinding in chic accommodations and exploring the surroundings, I cherished the culinary delights at gourmet restaurants. Our insightful companions brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 26);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'From exploring breathtaking sights to savoring exquisite cuisines at urban food markets, my charming trip was enriched by a knowledgeable guides who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in seaside resorts and savoring the surroundings, I cherished the culinary delights at urban food markets. Our passionate explorers brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with indulging captivating landscapes. I felt secure at seaside resorts and enjoyed memorable meals at seaside cafes, while our passionate explorers infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 53);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 39);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds. Charming ambiance added to the overall enjoyment.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 76);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'From indulging breathtaking sights to savoring exquisite cuisines at urban food markets, my enchanting trip was enriched by a adventure enthusiasts who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with discovering captivating landscapes. I felt secure at urban getaways and enjoyed memorable meals at fusion food trucks, while our history buffs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 19);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Each day was filled with savoring captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at ethnic cuisine spots, while our passionate explorers infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 75);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'During my charming trip, I had the pleasure of experiencing diverse landscapes. The gourmet restaurants we dined at was exceptional, and the charming hosts made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Fast service contributed to a seamless meal. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Unique flavors and culinary creativity impressed us.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 28);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Charming ambiance added to the overall enjoyment. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 22);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Varied menu options satisfied different palates. Convenient location enhanced our dining convenience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 20);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 94);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unwinding in mountain retreats and savoring the surroundings, I cherished the culinary delights at street food stalls. Our adventure enthusiasts brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'During my exquisite trip, I had the pleasure of experiencing diverse landscapes. The rustic bistros we dined at was exceptional, and the history buffs made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Each day was filled with discovering captivating landscapes. I felt secure at modern hostels and enjoyed memorable meals at seaside cafes, while our passionate explorers infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Convenient parking arrangements added to our comfort. Modern gym facilities ensured a satisfying workout. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 72);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 89);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 86);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'During my spectacular trip, I had the pleasure of enjoying diverse landscapes. The farm-to-table diners we dined at was exceptional, and the cultural connoisseurs made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 99);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 67);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Modern gym facilities ensured a satisfying workout. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 100);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Each day was filled with exploring captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at local eateries, while our history buffs infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Each day was filled with relaxing captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at hidden gems, while our cultural connoisseurs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Each day was filled with savoring captivating landscapes. I felt secure at cosy bed and breakfasts and enjoyed memorable meals at urban food markets, while our expert locals infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Through discovering local culture, I marveled at spectacular scenes. The passionate explorerss passion and knowledge added depth to my journey, as did the delectable offerings at fusion food trucks.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 100);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 14);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'From enjoying breathtaking sights to savoring exquisite cuisines at fusion food trucks, my breathtaking trip was enriched by a friendly insiders who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 91);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Each day was filled with indulging captivating landscapes. I felt secure at seaside resorts and enjoyed memorable meals at gourmet restaurants, while our cultural connoisseurs infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 65);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Through enjoying local culture, I marveled at enchanting scenes. The cultural connoisseurss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 73);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 30);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 82);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 61);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Through immersing local culture, I marveled at spectacular scenes. The enthusiastic storytellerss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Varied menu options satisfied different palates.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Each day was filled with exploring captivating landscapes. I felt secure at quaint inns and enjoyed memorable meals at hidden gems, while our adventure enthusiasts infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 14);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Each day was filled with relaxing captivating landscapes. I felt secure at modern hostels and enjoyed memorable meals at ethnic cuisine spots, while our history buffs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'From indulging breathtaking sights to savoring exquisite cuisines at street food stalls, my spectacular trip was enriched by a friendly insiders who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 70);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'During my enchanting trip, I had the pleasure of discovering diverse landscapes. The seaside cafes we dined at was exceptional, and the charming hosts made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Varied menu options satisfied different palates. Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 30);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 27);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Unique flavors and culinary creativity impressed us. Delicious dishes delighted our taste buds. Varied menu options satisfied different palates.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 67);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 57);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 87);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'During my amazing trip, I had the pleasure of indulging diverse landscapes. The seaside cafes we dined at was exceptional, and the knowledgeable guides made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Unwinding in mountain retreats and indulging the surroundings, I cherished the culinary delights at fusion food trucks. Our charming hosts brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout. Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Top-notch security enhanced our peace of mind.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 18);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'During my enchanting trip, I had the pleasure of immersing diverse landscapes. The farm-to-table diners we dined at was exceptional, and the charming hosts made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'From adventuring breathtaking sights to savoring exquisite cuisines at ethnic cuisine spots, my charming trip was enriched by a expert locals who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 16);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 77);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Fast service contributed to a seamless meal. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 55);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 64);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 48);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Fast service contributed to a seamless meal.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 33);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Unwinding in chic accommodations and discovering the surroundings, I cherished the culinary delights at seaside cafes. Our adventure enthusiasts brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay. Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'During my inspiring trip, I had the pleasure of savoring diverse landscapes. The rustic bistros we dined at was exceptional, and the insightful companions made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Unwinding in seaside resorts and enjoying the surroundings, I cherished the culinary delights at fusion food trucks. Our friendly insiders brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 92);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Unwinding in historic manors and indulging the surroundings, I cherished the culinary delights at seaside cafes. Our charming hosts brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 39);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Charming ambiance added to the overall enjoyment. Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 75);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Through adventuring local culture, I marveled at amazing scenes. The insightful companionss passion and knowledge added depth to my journey, as did the delectable offerings at gourmet restaurants.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with exploring captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at hidden gems, while our cultural connoisseurs infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Through indulging local culture, I marveled at exquisite scenes. The passionate explorerss passion and knowledge added depth to my journey, as did the delectable offerings at local eateries.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unwinding in modern hostels and indulging the surroundings, I cherished the culinary delights at urban food markets. Our enthusiastic storytellers brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 90);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 33);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 64);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind. Timely wake-up calls assisted our daily schedule.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Attentive service created a memorable dining experience. Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 74);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Each day was filled with unwinding captivating landscapes. I felt secure at mountain retreats and enjoyed memorable meals at rustic bistros, while our adventure enthusiasts infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 28);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Unwinding in cosy bed and breakfasts and indulging the surroundings, I cherished the culinary delights at hidden gems. Our history buffs brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Through adventuring local culture, I marveled at breathtaking scenes. The passionate explorerss passion and knowledge added depth to my journey, as did the delectable offerings at rustic bistros.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Each day was filled with immersing captivating landscapes. I felt secure at chic accommodations and enjoyed memorable meals at fusion food trucks, while our cultural connoisseurs infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Presentation of dishes was visually appealing. Charming ambiance added to the overall enjoyment. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 29);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Unwinding in historic manors and experiencing the surroundings, I cherished the culinary delights at street food stalls. Our expert locals brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind. Efficient management ensured a smooth stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 62);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 82);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 27);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Top-notch security enhanced our peace of mind. Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 97);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 20);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort. Modern gym facilities ensured a satisfying workout. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 13);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 70);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Each day was filled with exploring captivating landscapes. I felt secure at cosy bed and breakfasts and enjoyed memorable meals at street food stalls, while our expert locals infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience. Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 91);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Exceptional breakfast options set a positive tone. Top-notch security enhanced our peace of mind. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 56);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Each day was filled with experiencing captivating landscapes. I felt secure at luxurious hotels and enjoyed memorable meals at farm-to-table diners, while our friendly insiders infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Varied menu options satisfied different palates. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Presentation of dishes was visually appealing. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 84);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 65);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Each day was filled with exploring captivating landscapes. I felt secure at quaint inns and enjoyed memorable meals at farm-to-table diners, while our passionate explorers infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Varied menu options satisfied different palates. Fast service contributed to a seamless meal. Charming ambiance added to the overall enjoyment. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds. Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 80);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Unwinding in luxurious hotels and enjoying the surroundings, I cherished the culinary delights at local eateries. Our expert locals brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unwinding in boutique lodges and adventuring the surroundings, I cherished the culinary delights at urban food markets. Our knowledgeable guides brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 60);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Modern gym facilities ensured a satisfying workout. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 95);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 99);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unwinding in luxurious hotels and exploring the surroundings, I cherished the culinary delights at fusion food trucks. Our charming hosts brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Charming ambiance added to the overall enjoyment. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Unique flavors and culinary creativity impressed us. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 52);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Each day was filled with unwinding captivating landscapes. I felt secure at urban getaways and enjoyed memorable meals at rustic bistros, while our charming hosts infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 55);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 68);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Charming ambiance added to the overall enjoyment. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 20);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule. Top-notch security enhanced our peace of mind.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 98);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 57);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 46);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 26);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 71);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unique flavors and culinary creativity impressed us. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 28);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Exceptional breakfast options set a positive tone. Convenient parking arrangements added to our comfort. Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 14);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Through experiencing local culture, I marveled at spectacular scenes. The passionate explorerss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Timely wake-up calls assisted our daily schedule. Efficient management ensured a smooth stay. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 78);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Fast WiFi contributed to a connected stay. Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 88);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Convenient location enhanced our dining convenience. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Charming ambiance added to the overall enjoyment.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 16);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Unwinding in chic accommodations and savoring the surroundings, I cherished the culinary delights at seaside cafes. Our adventure enthusiasts brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Delicious dishes delighted our taste buds. Attentive service created a memorable dining experience. Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Fast service contributed to a seamless meal.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 96);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 52);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 78);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Through unwinding local culture, I marveled at amazing scenes. The friendly insiderss passion and knowledge added depth to my journey, as did the delectable offerings at urban food markets.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Efficient management ensured a smooth stay. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Each day was filled with enjoying captivating landscapes. I felt secure at modern hostels and enjoyed memorable meals at urban food markets, while our passionate explorers infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 27);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From immersing breathtaking sights to savoring exquisite cuisines at hidden gems, my spectacular trip was enriched by a charming hosts who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unique flavors and culinary creativity impressed us. Delicious dishes delighted our taste buds. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 63);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Top-notch security enhanced our peace of mind. Efficient management ensured a smooth stay. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 52);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Presentation of dishes was visually appealing. Convenient location enhanced our dining convenience. Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Delicious dishes delighted our taste buds.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 64);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'During my spectacular trip, I had the pleasure of savoring diverse landscapes. The rustic bistros we dined at was exceptional, and the adventure enthusiasts made every moment unforgettable.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Varied menu options satisfied different palates. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 90);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Through adventuring local culture, I marveled at spectacular scenes. The history buffss passion and knowledge added depth to my journey, as did the delectable offerings at rustic bistros.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 90);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'During my spectacular trip, I had the pleasure of adventuring diverse landscapes. The seaside cafes we dined at was exceptional, and the friendly insiders made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Each day was filled with relaxing captivating landscapes. I felt secure at cosy bed and breakfasts and enjoyed memorable meals at street food stalls, while our insightful companions infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 68);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Exceptional breakfast options set a positive tone. Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 12);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Varied menu options satisfied different palates. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment. Unique flavors and culinary creativity impressed us. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 21);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 38);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 97);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Modern gym facilities ensured a satisfying workout. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Each day was filled with relaxing captivating landscapes. I felt secure at boutique lodges and enjoyed memorable meals at local eateries, while our cultural connoisseurs infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Unwinding in seaside resorts and unwinding the surroundings, I cherished the culinary delights at seaside cafes. Our insightful companions brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'During my amazing trip, I had the pleasure of adventuring diverse landscapes. The farm-to-table diners we dined at was exceptional, and the expert locals made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 56);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Attentive service created a memorable dining experience. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 99);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Varied menu options satisfied different palates. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Each day was filled with savoring captivating landscapes. I felt secure at cosy bed and breakfasts and enjoyed memorable meals at hidden gems, while our insightful companions infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Modern gym facilities ensured a satisfying workout. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Timely wake-up calls assisted our daily schedule. Exceptional breakfast options set a positive tone.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Each day was filled with exploring captivating landscapes. I felt secure at cosy bed and breakfasts and enjoyed memorable meals at seaside cafes, while our history buffs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unwinding in luxurious hotels and savoring the surroundings, I cherished the culinary delights at street food stalls. Our knowledgeable guides brought unique perspectives to every experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From unwinding breathtaking sights to savoring exquisite cuisines at rustic bistros, my breathtaking trip was enriched by a history buffs who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From immersing breathtaking sights to savoring exquisite cuisines at hidden gems, my exquisite trip was enriched by a enthusiastic storytellers who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Charming ambiance added to the overall enjoyment. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 46);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Through savoring local culture, I marveled at enchanting scenes. The expert localss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Convenient parking arrangements added to our comfort.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'From discovering breathtaking sights to savoring exquisite cuisines at fusion food trucks, my delightful trip was enriched by a adventure enthusiasts who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Attentive staff created a welcoming experience. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule. Top-notch security enhanced our peace of mind. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 71);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Convenient parking arrangements added to our comfort.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Convenient location enhanced our dining convenience. Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 53);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From discovering breathtaking sights to savoring exquisite cuisines at ethnic cuisine spots, my amazing trip was enriched by a passionate explorers who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Attentive service created a memorable dining experience. Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience. Fast service contributed to a seamless meal.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 96);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Delicious dishes delighted our taste buds. Fast service contributed to a seamless meal. Varied menu options satisfied different palates.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 42);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 51);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Each day was filled with savoring captivating landscapes. I felt secure at mountain retreats and enjoyed memorable meals at gourmet restaurants, while our knowledgeable guides infused the trip with cultural richness.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unwinding in mountain retreats and indulging the surroundings, I cherished the culinary delights at ethnic cuisine spots. Our enthusiastic storytellers brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'Top-notch security enhanced our peace of mind. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 50);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Through exploring local culture, I marveled at unforgettable scenes. The adventure enthusiastss passion and knowledge added depth to my journey, as did the delectable offerings at fusion food trucks.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Charming ambiance added to the overall enjoyment. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 70);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'From unwinding breathtaking sights to savoring exquisite cuisines at street food stalls, my spectacular trip was enriched by a charming hosts who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Each day was filled with savoring captivating landscapes. I felt secure at luxurious hotels and enjoyed memorable meals at fusion food trucks, while our history buffs infused the trip with cultural richness.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 7);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Unwinding in luxurious hotels and enjoying the surroundings, I cherished the culinary delights at seaside cafes. Our adventure enthusiasts brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Fast service contributed to a seamless meal. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 89);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 70);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience. Charming ambiance added to the overall enjoyment.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 40);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Attentive service created a memorable dining experience. Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 48);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 67);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (2, 'During my unforgettable trip, I had the pleasure of unwinding diverse landscapes. The hidden gems we dined at was exceptional, and the cultural connoisseurs made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 19);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal. Attentive service created a memorable dining experience. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 14);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Fast service contributed to a seamless meal. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 63);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Attentive staff created a welcoming experience. Top-notch security enhanced our peace of mind. Fast WiFi contributed to a connected stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 93);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Through experiencing local culture, I marveled at unforgettable scenes. The insightful companionss passion and knowledge added depth to my journey, as did the delectable offerings at street food stalls.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay. Top-notch security enhanced our peace of mind.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 18);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 96);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Delicious dishes delighted our taste buds. Varied menu options satisfied different palates. Fast service contributed to a seamless meal.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 21);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 20);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Unwinding in chic accommodations and relaxing the surroundings, I cherished the culinary delights at farm-to-table diners. Our expert locals brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Unwinding in urban getaways and discovering the surroundings, I cherished the culinary delights at seaside cafes. Our enthusiastic storytellers brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Attentive staff created a welcoming experience. Efficient management ensured a smooth stay. Fast WiFi contributed to a connected stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'From enjoying breathtaking sights to savoring exquisite cuisines at rustic bistros, my exquisite trip was enriched by a charming hosts who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 4);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From savoring breathtaking sights to savoring exquisite cuisines at seaside cafes, my enchanting trip was enriched by a knowledgeable guides who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Exceptional breakfast options set a positive tone. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 83);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'During my unforgettable trip, I had the pleasure of enjoying diverse landscapes. The gourmet restaurants we dined at was exceptional, and the charming hosts made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 1);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Efficient management ensured a smooth stay. Modern gym facilities ensured a satisfying workout. Exceptional breakfast options set a positive tone. Attentive staff created a welcoming experience. Top-notch security enhanced our peace of mind.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 17);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Charming ambiance added to the overall enjoyment. Presentation of dishes was visually appealing. Delicious dishes delighted our taste buds.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 71);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'During my inspiring trip, I had the pleasure of relaxing diverse landscapes. The local eateries we dined at was exceptional, and the charming hosts made every moment unforgettable.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Presentation of dishes was visually appealing.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 26);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Varied menu options satisfied different palates. Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 93);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'From relaxing breathtaking sights to savoring exquisite cuisines at seaside cafes, my spectacular trip was enriched by a knowledgeable guides who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Fast service contributed to a seamless meal. Convenient location enhanced our dining convenience. Unique flavors and culinary creativity impressed us. Varied menu options satisfied different palates. Attentive service created a memorable dining experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 30);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Convenient location enhanced our dining convenience. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds. Fast service contributed to a seamless meal.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 91);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 98);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Fast WiFi contributed to a connected stay. Timely wake-up calls assisted our daily schedule. Modern gym facilities ensured a satisfying workout. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 59);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Through exploring local culture, I marveled at spectacular scenes. The adventure enthusiastss passion and knowledge added depth to my journey, as did the delectable offerings at gourmet restaurants.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 6);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'From experiencing breathtaking sights to savoring exquisite cuisines at ethnic cuisine spots, my unforgettable trip was enriched by a history buffs who shared fascinating insights.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'From immersing breathtaking sights to savoring exquisite cuisines at gourmet restaurants, my enchanting trip was enriched by a cultural connoisseurs who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 10);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 52);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Convenient parking arrangements added to our comfort. Fast WiFi contributed to a connected stay. Modern gym facilities ensured a satisfying workout. Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 73);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Unique flavors and culinary creativity impressed us. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience. Charming ambiance added to the overall enjoyment.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 17);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Through enjoying local culture, I marveled at inspiring scenes. The expert localss passion and knowledge added depth to my journey, as did the delectable offerings at rustic bistros.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment. Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds. Convenient location enhanced our dining convenience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 76);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Unwinding in boutique lodges and enjoying the surroundings, I cherished the culinary delights at street food stalls. Our friendly insiders brought unique perspectives to every experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Presentation of dishes was visually appealing. Attentive service created a memorable dining experience. Delicious dishes delighted our taste buds. Unique flavors and culinary creativity impressed us. Charming ambiance added to the overall enjoyment.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 24);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Attentive service created a memorable dining experience. Unique flavors and culinary creativity impressed us. Fast service contributed to a seamless meal.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 53);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Charming ambiance added to the overall enjoyment. Varied menu options satisfied different palates. Convenient location enhanced our dining convenience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Convenient location enhanced our dining convenience. Delicious dishes delighted our taste buds. Varied menu options satisfied different palates.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 49);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Unwinding in chic accommodations and exploring the surroundings, I cherished the culinary delights at local eateries. Our expert locals brought unique perspectives to every experience.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 8);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (10, 'Convenient parking arrangements added to our comfort. Modern gym facilities ensured a satisfying workout. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 58);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'From unwinding breathtaking sights to savoring exquisite cuisines at seaside cafes, my exquisite trip was enriched by a expert locals who shared fascinating insights.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'During my amazing trip, I had the pleasure of exploring diverse landscapes. The hidden gems we dined at was exceptional, and the insightful companions made every moment unforgettable.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 9);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (1, 'Attentive staff created a welcoming experience. Modern gym facilities ensured a satisfying workout. Convenient parking arrangements added to our comfort. Timely wake-up calls assisted our daily schedule.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (6, 'Each day was filled with relaxing captivating landscapes. I felt secure at boutique lodges and enjoyed memorable meals at seaside cafes, while our insightful companions infused the trip with cultural richness.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Presentation of dishes was visually appealing. Fast service contributed to a seamless meal. Unique flavors and culinary creativity impressed us.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 91);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (7, 'Timely wake-up calls assisted our daily schedule. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Top-notch security enhanced our peace of mind. Attentive staff created a welcoming experience.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 33);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'From experiencing breathtaking sights to savoring exquisite cuisines at seaside cafes, my spectacular trip was enriched by a charming hosts who shared fascinating insights.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (9, 'Top-notch security enhanced our peace of mind. Modern gym facilities ensured a satisfying workout. Fast WiFi contributed to a connected stay. Attentive staff created a welcoming experience. Convenient parking arrangements added to our comfort.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 15);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Charming ambiance added to the overall enjoyment. Presentation of dishes was visually appealing. Varied menu options satisfied different palates. Delicious dishes delighted our taste buds.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 78);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (5, 'Through exploring local culture, I marveled at spectacular scenes. The knowledgeable guidess passion and knowledge added depth to my journey, as did the delectable offerings at seaside cafes.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 3);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Timely wake-up calls assisted our daily schedule. Attentive staff created a welcoming experience. Fast WiFi contributed to a connected stay. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay.', 4, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 70);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Through enjoying local culture, I marveled at exquisite scenes. The charming hostss passion and knowledge added depth to my journey, as did the delectable offerings at hidden gems.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO tripReviews(review_id, trip_id) VALUES(l_id, 5);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Timely wake-up calls assisted our daily schedule. Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay. Exceptional breakfast options set a positive tone.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 45);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (8, 'Convenient parking arrangements added to our comfort. Efficient management ensured a smooth stay. Top-notch security enhanced our peace of mind. Exceptional breakfast options set a positive tone. Timely wake-up calls assisted our daily schedule.', 3, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO hotelReviews(review_id, hotel_id) VALUES(l_id, 31);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (3, 'Fast service contributed to a seamless meal. Presentation of dishes was visually appealing. Attentive service created a memorable dining experience.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 2);
+END;
+/
+
+    
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES (4, 'Convenient location enhanced our dining convenience. Varied menu options satisfied different palates. Charming ambiance added to the overall enjoyment.', 5, 'dummy.jpg')
+    RETURNING review_id INTO l_id;
+    INSERT INTO restaurantReviews(review_id, restaurant_id) VALUES(l_id, 23);
+END;
+/
+
+    
 
 SELECT * FROM USERS;
 

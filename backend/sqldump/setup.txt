@@ -3,8 +3,8 @@ Run the sql files in following order:
 1. overview
 2. destroy 
 3. ddl 
-4. large_insert 
-5. custom_types 
-6. procedures 
-7. functions
-8. triggers
+4. custom_types
+5. procedures
+6. functions
+7. triggers
+8. large_insert 

@@ -6,6 +6,8 @@ from data.flights import flights
 from data.restaurants import restaurants
 from data.provides import provides
 from data.users import users
+from data.trips import trips
+from data.reviews import reviews
 
 
 sql = ""
@@ -24,7 +26,7 @@ seq_tables = ['user', 'destination', 'activity', 'trip', 'hotel', 'city', 'fligh
 
 sql += "\n---Deleting previous entries...\n\n"
 
-tables_to_be_modified = ['Users','Guides','Cities', 'Destinations', 'Activities', 'Hotels', 'Flights', 'Restaurants', 'Flights', 'Provides']
+tables_to_be_modified = ['Users','Guides','Cities', 'Destinations', 'Activities', 'Hotels', 'Flights', 'Restaurants', 'Flights', 'Provides', 'Trips', 'Reviews']
 
 for t in tables_to_be_modified:
     sql += f"DELETE FROM {t};\n"
@@ -168,6 +170,86 @@ END;
 /
 
 """
+
+
+
+def get_sql_from_trip(data):
+
+    # Extract data and format it for PL/SQL
+    from_city_id = data["from_city_id"]
+    to_city_id = data["to_city_id"]
+    name = data["name"]
+    description = data["description"]
+    image_url = data["image_url"]
+    start_date = data["start_date"]
+    end_date = data["end_date"]
+
+    # Extract and format contains data
+    contains_list = [
+        f"DestinationActivity({entry['destination_id']}, {entry['activity_id']}, TO_DATE('{entry['tentative_date']}', 'YYYY-MM-DD'))"
+        for entry in data["contains"]
+    ]
+    contains_str = ",\n".join(contains_list)
+
+    # Extract and format hotels data
+    hotels_list = [
+        f"HotelDates({entry['hotel_id']}, TO_DATE('{entry['checkin_date']}', 'YYYY-MM-DD'), TO_DATE('{entry['checkout_date']}', 'YYYY-MM-DD'))"
+        for entry in data["hotels"]
+    ]
+    hotels_str = ",\n".join(hotels_list)
+
+    # Extract and format restaurants data
+    restaurants_list = [str(entry["restaurant_id"]) for entry in data["restaurants"]]
+    restaurants_str = ", ".join(restaurants_list)
+
+    # Extract and format guides data
+    guides_list = [str(entry["guide_id"]) for entry in data["guides"]]
+    guides_str = ", ".join(guides_list)
+
+    # Generate PL/SQL code
+    plsql_code = f'''
+DECLARE
+l_hotels HotelDatesList := HotelDatesList(
+    {hotels_str}
+);
+l_restaurants RestaurantList := RestaurantList({restaurants_str});
+l_contains DestinationActivitiesList := DestinationActivitiesList(
+    {contains_str}
+);
+l_guides GuideList := GuideList({guides_str});
+p_trip_id NUMBER;
+BEGIN
+AddTrip({from_city_id}, {to_city_id}, '{name}', '{description}', '{image_url}', TO_DATE('{start_date}', 'YYYY-MM-DD'), TO_DATE('{end_date}', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
+
+DBMS_OUTPUT.PUT_LINE(p_trip_id);
+END;
+/
+    '''
+
+    return plsql_code
+
+for trip in trips:
+    sql += '\n'
+    sql += get_sql_from_trip(trip)
+    sql += '\n'
+
+
+for r in reviews:
+
+    sql += f"""
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES ({r['user_id']}, '{r['description']}', {r['rating']}, '{r['image_url']}')
+    RETURNING review_id INTO l_id;
+    INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES(l_id, {r['object_id']});
+END;
+/
+
+    """
+
 
 sql += "\n\nSELECT * FROM USERS;\n\n"
 

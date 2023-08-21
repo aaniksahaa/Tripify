@@ -4,43 +4,43 @@ from datetime import datetime, timedelta
 from data.destinations import destinations
 from data.activities import activities
 from data.cities import cities
-from config import hotel_count, restaurant_count, guide_count
+from data.provides import provides
+from config import hotel_count, restaurant_count, guide_count, trip_count
 
 city_count = len(cities)
 activity_count = len(activities)
 destination_count = len(destinations)
-
-nouns = ["Adventure", "Journey", "Excursion", "Exploration", "Odyssey", "Tour", "Getaway"]
-adjectives = ["Amazing", "Incredible", "Thrilling", "Memorable", "Enchanting", "Fantastic", "Unforgettable"]
-formats = ["{adj} {noun}", "{adj} {noun} to {dest}", "{dest} {noun}", "Discover {dest} - {adj} {noun}"]
+provides_count = len(provides)
 
 def generate_trip_name():
-    adj = random.choice(adjectives)
-    noun = random.choice(nouns)
-    dest = random.choice(destinations)
-    name_format = random.choice(formats)
-    trip_name = name_format.format(adj=adj, noun=noun, dest=dest)
-    return trip_name
+    name_options = [
+        "Adventure Expedition",
+        "Tropical Getaway",
+        "Cultural Discovery",
+        "Wilderness Retreat",
+        "Urban Exploration",
+        "Relaxation Retreat",
+        "Historical Journey",
+        "Eco-Friendly Escape",
+        "Mountainous Adventure",
+        "Coastal Odyssey"
+    ]
+    return random.choice(name_options)
 
 def generate_trip_description():
-    patterns = [
-        "Join us for a {adj} journey that promises to be {adj2} and {adj3}.",
-        "Embark on an {adj} adventure of a lifetime, filled with {noun} and {adj2} experiences.",
-        "Experience the {adj} charm of {dest} on this {adj2} {noun}.",
-        "Discover the {adj} beauty of {dest} while enjoying {activity} and {activity2}.",
-        "This {adj} trip offers a blend of {activity}, {activity2}, and {activity3}, making it truly {adj2}."
+    description_options = [
+        "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
+        "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+        "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+        "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
+        "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+        "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
+        "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
+        "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+        "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+        "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers."
     ]
-    
-    adj = random.choice(adjectives)
-    adj2 = random.choice(adjectives)
-    adj3 = random.choice(adjectives)
-    noun = random.choice(nouns)
-    dest = random.choice(destinations)
-    activity = random.choice(activities)
-    activity2 = random.choice(activities)
-    activity3 = random.choice(activities)
-    description = random.choice(patterns).format(adj=adj, adj2=adj2, adj3=adj3, noun=noun, dest=dest, activity=activity, activity2=activity2, activity3=activity3)
-    return description
+    return random.choice(description_options)
 
 def generate_trip_data():
     from_city_id = random.randint(1, city_count)
@@ -53,11 +53,74 @@ def generate_trip_data():
     days_before = random.randint(5, 10)
     days_after = random.randint(5, 10)
     
-    start_date = (today - timedelta(days=days_before)).strftime("%Y-%m-%d")
-    end_date = (today + timedelta(days=days_after)).strftime("%Y-%m-%d")
+    start_date = (today - timedelta(days=days_before))
+    end_date = (today + timedelta(days=days_after))
     
-    # Rest of the code remains the same...
+    pro = []
+    pro_ids = random.sample(range(1,provides_count-1),random.randint(1,3))
+
+    contains = []
+    for id in pro_ids:
+        contains.append({
+            "destination_id": provides[id]["destination_id"],
+            "activity_id": provides[id]["activity_id"],
+            "tentative_date": (start_date + timedelta(random.randint(1,3))).strftime("%Y-%m-%d")
+        })
+    # for _ in range(random.randint(1, 3)):
+    #     contains.append({
+    #         "destination_id": random.randint(1, destination_count),
+    #         "activity_id": random.randint(1, activity_count),
+    #         "tentative_date": (start_date + timedelta(random.randint(1,3))).strftime("%Y-%m-%d")
+    #     })
+    
+    hotels = []
+    for _ in range(random.randint(1, 2)):
+        hotels.append({
+            "hotel_id": random.randint(1, hotel_count),
+            "checkin_date": (start_date + timedelta(random.randint(1,3))).strftime("%Y-%m-%d"),
+            "checkout_date": (start_date + timedelta(random.randint(5,7))).strftime("%Y-%m-%d")
+        })
+    
+    restaurants = []
+    res_ids = random.sample(range(1,restaurant_count),random.randint(1,5))
+    for id in res_ids:
+        restaurants.append({"restaurant_id": id})
+
+    guides = []
+    guide_ids = random.sample(range(1,guide_count+1),random.randint(1,2))
+    for id in guide_ids:
+        guides.append({"guide_id": id})
+    
+    trip_data = {
+        "from_city_id": from_city_id,
+        "to_city_id": to_city_id,
+        "name": name,
+        "description": description,
+        "image_url": image_url,
+        "start_date": start_date.strftime("%Y-%m-%d"),
+        "end_date": end_date.strftime("%Y-%m-%d"),
+        "contains": contains,
+        "hotels": hotels,
+        "restaurants": restaurants,
+        "guides": guides
+    }
+    
+    return trip_data
 
 trip1 = generate_trip_data()
 
 print(trip1)
+
+trips = []
+
+for _ in range(trip_count):
+    trips.append(generate_trip_data())
+
+formatted_users = json.dumps(trips, indent=2)
+
+file_path = './data_generators/data/trips.py' 
+with open(file_path, 'w') as file:
+    file.write('trips = ')
+    file.write(formatted_users)
+
+print(trip_count)

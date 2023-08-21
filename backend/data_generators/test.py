@@ -1,9 +1,21 @@
-from data.users import users
+from data.reviews import reviews
+
 sql = ""
 
-for u in users:
-    s = f"INSERT INTO Users ( username, email, password_hash, name, city_id, dob) VALUES ( '{u['username']}', '{u['email']}', MY_HASH_PASSWORD('{u['password']}'), '{u['name']}', {u['city_id']} , TO_DATE('{u['dob']}','YYYY-MM-DD'));"
-    sql += s
-    sql += '\n'
+for r in reviews:
+
+    sql += f"""
+
+DECLARE
+    l_id NUMBER;
+BEGIN
+    INSERT INTO Reviews (user_id, description, rating, image_url)
+    VALUES ({r['user_id']}, '{r['description']}', {r['rating']}, '{r['image_url']}')
+    RETURNING review_id INTO l_id;
+    INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES(l_id, {r['object_id']});
+END;
+/
+
+    """
 
 print(sql)
