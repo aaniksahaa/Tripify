@@ -2,7 +2,7 @@
 
 # How to Run
 
-### 1. First clone the repository.
+#### 1. First clone the repository.
 ### 2. Open the Directory on VS Code and Open a new terminal. Click split terminal so that you may run frontend and backend both with convenience.
 ### 3. On one terminal, head over to the backend, install the dependencies and run the server.
 ```
