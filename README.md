@@ -27,6 +27,8 @@ npm run dev
 #### 5. Click on the localhost link that pops up on the client terminal.
 #### 6. You may also test the API separately on Postman or anything similar.   
 
+![Screenshot (115)](https://github.com/aaniksahaa/Tripify/assets/63545621/6328d778-7d29-4fb5-b8fa-83f15ade4d2e)
+
 # Tripify - Frontend
 
 ## Demonstration:
