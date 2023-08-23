@@ -1,0 +1,60 @@
+{
+    "status": true,
+    "message": "Success",
+    "timestamp": 1692827128440,
+    "data": [
+        {
+            "title": "<b>Chittagong City</b>",
+            "geoId": "loc;319837;g319837",
+            "documentId": "loc;319837;g319837",
+            "trackingItems": "geo",
+            "secondaryText": "Chittagong Division, Bangladesh"
+        },
+        {
+            "title": "<b>Chittagong Division</b>",
+            "geoId": "loc;667480;g667480",
+            "documentId": "loc;667480;g667480",
+            "trackingItems": "geo",
+            "secondaryText": "Bangladesh, Asia"
+        },
+        {
+            "title": "<b>The Peninsula Chittagong</b>",
+            "geoId": "loc;1021164",
+            "documentId": "loc;1021164",
+            "trackingItems": "hotel",
+            "secondaryText": "Chittagong City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 2075,
+                "maxWidth": 3570,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/c6/3b/41/hotel-entrance.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>Chittagong Club</b>",
+            "geoId": "loc;2459449",
+            "documentId": "loc;2459449",
+            "trackingItems": "hotel",
+            "secondaryText": "Chittagong City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 470,
+                "maxWidth": 800,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/b9/93/65/chittagong-club.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>Chittagong Chinese Guesthouse</b>",
+            "geoId": "loc;3297602",
+            "documentId": "loc;3297602",
+            "trackingItems": "hotel",
+            "secondaryText": "Chittagong City, Bangladesh"
+        },
+        {
+            "title": "Add a missing place",
+            "geoId": null,
+            "documentId": null,
+            "trackingItems": null
+        }
+    ]
+}

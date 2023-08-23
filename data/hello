@@ -1,0 +1,105 @@
+{
+    "status": true,
+    "message": "Success",
+    "timestamp": 1692826536356,
+    "data": [
+        {
+            "title": "<b>Dhaka City</b>",
+            "geoId": "loc;293936;g293936",
+            "documentId": "loc;293936;g293936",
+            "trackingItems": "geo",
+            "secondaryText": "Dhaka Division, Bangladesh"
+        },
+        {
+            "title": "<b>Dhaka Division</b>",
+            "geoId": "loc;667479;g667479",
+            "documentId": "loc;667479;g667479",
+            "trackingItems": "geo",
+            "secondaryText": "Bangladesh, Asia"
+        },
+        {
+            "title": "<b>Amari Dhaka Bangladesh</b>",
+            "geoId": "loc;6985943",
+            "documentId": "loc;6985943",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 585,
+                "maxWidth": 1123,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/08/c6/62/amari-dhaka-arial-shot.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>Radisson Blu Dhaka Water Garden</b>",
+            "geoId": "loc;603313",
+            "documentId": "loc;603313",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 670,
+                "maxWidth": 1023,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/72/27/7e/exterior.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>Pan Pacific Sonargaon Dhaka</b>",
+            "geoId": "loc;301905",
+            "documentId": "loc;301905",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 661,
+                "maxWidth": 1024,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/36/a3/58/international-suite.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>InterContinental Dhaka, an IHG Hotel</b>",
+            "geoId": "loc;9724717",
+            "documentId": "loc;9724717",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 2160,
+                "maxWidth": 3840,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/36/38/12/landscape.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>The Westin Dhaka</b>",
+            "geoId": "loc;628632",
+            "documentId": "loc;628632",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 2667,
+                "maxWidth": 4000,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/0c/cb/10/exterior.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "<b>Le M\u00e9ridien Dhaka</b>",
+            "geoId": "loc;7850970",
+            "documentId": "loc;7850970",
+            "trackingItems": "hotel",
+            "secondaryText": "Dhaka City, Bangladesh",
+            "image": {
+                "__typename": "AppPresentation_PhotoItemSizeDynamic",
+                "maxHeight": 3795,
+                "maxWidth": 4453,
+                "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/1e/5f/cf/exterior-of-the-hotel.jpg?w={width}&h={height}&s=1"
+            }
+        },
+        {
+            "title": "Add a missing place",
+            "geoId": null,
+            "documentId": null,
+            "trackingItems": null
+        }
+    ]
+}
