@@ -1,0 +1,82 @@
+[
+  {
+    "username": "sajjad_mahmud",
+    "email": "sajjad_mahmud@yahoo.com",
+    "password": "p53EOwWC",
+    "name": "Sajjad Mahmud",
+    "city_id": 13,
+    "dob": "1987-05-23"
+  },
+  {
+    "username": "jahanara.chowdhury",
+    "email": "jahanara.chowdhury@yahoo.com",
+    "password": "NynmgLsVsc4I",
+    "name": "Jahanara Chowdhury",
+    "city_id": 17,
+    "dob": "1953-11-09"
+  },
+  {
+    "username": "rafiq.haque",
+    "email": "rafiq.haque@gmail.com",
+    "password": "njNLG8Ol9F",
+    "name": "Rafiq Haque",
+    "city_id": 6,
+    "dob": "2007-10-17"
+  },
+  {
+    "username": "sohel_islam",
+    "email": "sohel_islam@yahoo.com",
+    "password": "IFCwnjiq",
+    "name": "Sohel Islam",
+    "city_id": 28,
+    "dob": "1957-08-12"
+  },
+  {
+    "username": "shahana_rahman",
+    "email": "shahana_rahman@gmail.com",
+    "password": "sM89bfUI9",
+    "name": "Shahana Rahman",
+    "city_id": 28,
+    "dob": "1964-11-01"
+  },
+  {
+    "username": "asif_rahman",
+    "email": "asif_rahman@yahoo.com",
+    "password": "UwZ65AFB0iEf",
+    "name": "Asif Rahman",
+    "city_id": 23,
+    "dob": "2002-01-06"
+  },
+  {
+    "username": "farzana.binte",
+    "email": "farzana.binte@yahoo.com",
+    "password": "2lqJ26goz",
+    "name": "Farzana Binte",
+    "city_id": 22,
+    "dob": "1950-10-13"
+  },
+  {
+    "username": "rabeya_khanom",
+    "email": "rabeya_khanom@gmail.com",
+    "password": "zbmFTBCM4",
+    "name": "Rabeya Khanom",
+    "city_id": 23,
+    "dob": "1968-10-19"
+  },
+  {
+    "username": "sanjida.binte",
+    "email": "sanjida.binte@yahoo.com",
+    "password": "ggqeoPxdbSnn",
+    "name": "Sanjida Binte",
+    "city_id": 14,
+    "dob": "1982-09-30"
+  },
+  {
+    "username": "mustafiz.haque",
+    "email": "mustafiz.haque@yahoo.com",
+    "password": "PUuwjfe1j9G",
+    "name": "Mustafiz Haque",
+    "city_id": 27,
+    "dob": "1951-12-06"
+  }
+]
