@@ -1037,13 +1037,14 @@ Example Response:
     "latitude": 23.7104,
     "longitude": 90.4074,
     "description": "Ahsan Manzil, also known as Pink Palace, is a historic mansion and museum in Dhaka.",
-    "image_url": "dummy.jpg",
-    "created_on": "2023-08-01T10:46:19.000Z",
-    "last_updated_on": "2023-08-01T10:46:19.000Z",
+    "image_url": "ahsan_manzil.jpg",
+    "created_on": "2023-08-24T20:53:16.000Z",
+    "last_updated_on": "2023-08-24T20:53:16.000Z",
+    "creator_user_id": 0,
     "activities": [
         {
             "activity_id": 1,
-            "price": 400,
+            "price": 500,
             "activity": {
                 "activity_id": 1,
                 "name": "Boat Tour",
@@ -1051,12 +1052,21 @@ Example Response:
                 "description": "Experience the breathtaking beauty of a boat tour in a mangrove forest.",
                 "image_url": "boat_tour.jpg",
                 "min_age": 8,
-                "max_age": 60
+                "max_age": 60,
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:21.000Z",
+                "last_updated_on": "2023-08-24T20:53:21.000Z",
+                "images": [
+                    "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                    "https://images.myguide-cdn.com/perth/companies/rottnest-island-day-trip-by-ferry-adventure-boat-tour/large/rottnest-island-day-trip-by-ferry-adventure-boat-tour-560869.jpg",
+                    "https://images.tripshock.com/activity/2761/1080x1080/Thriller-Miami-Speedboat-Tours.jpg",
+                    "https://fallsmeetings.com/wp-content/uploads/2017/04/Boat8.jpg"
+                ]
             }
         },
         {
             "activity_id": 4,
-            "price": 250,
+            "price": 50,
             "activity": {
                 "activity_id": 4,
                 "name": "Cultural Tour",
@@ -1064,12 +1074,21 @@ Example Response:
                 "description": "Immerse in the local culture and traditions with a guided cultural tour.",
                 "image_url": "cultural_tour.jpg",
                 "min_age": 15,
-                "max_age": 65
+                "max_age": 65,
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:21.000Z",
+                "last_updated_on": "2023-08-24T20:53:21.000Z",
+                "images": [
+                    "https://asahitreks.com/wp-content/uploads/2017/04/Cultural-Tour-in-Nepal-3.jpg",
+                    "https://www.shikhar.com/images/gallery/tours/117/2.jpg",
+                    "https://www.shikhar.com/blog/wp-content/uploads/2017/08/893_11.jpg",
+                    "https://asahitreks.com/wp-content/uploads/2017/04/Cultural-Tour-in-Nepal-800x420.jpg"
+                ]
             }
         },
         {
             "activity_id": 6,
-            "price": 400,
+            "price": 200,
             "activity": {
                 "activity_id": 6,
                 "name": "Wildlife Safari",
@@ -1077,7 +1096,16 @@ Example Response:
                 "description": "Embark on a thrilling wildlife safari and spot exotic animals.",
                 "image_url": "wildlife_safari.jpg",
                 "min_age": 18,
-                "max_age": 60
+                "max_age": 60,
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:21.000Z",
+                "last_updated_on": "2023-08-24T20:53:21.000Z",
+                "images": [
+                    "https://www.ngorongorocratertanzania.org/wp-content/uploads/2020/10/5-Days-Best-of-Tanzania-Wildlife-Safari.jpg",
+                    "https://www.expertafrica.com/images/background-image/d8aaade7bbcd42d4a0a39588bbf4aa7d-1600.jpg",
+                    "https://www.serengetiparktanzania.com/wp-content/uploads/2020/11/7-Days-Tanzania-Wildlife-Safaris.jpg",
+                    "https://www.expertafrica.com/images/background-image/01a037ba6e6b403a8c6cfe4d64a249f0-1600.jpg"
+                ]
             }
         }
     ],
@@ -1087,7 +1115,13 @@ Example Response:
         "country_name": "Bangladesh",
         "population": 168957745,
         "weather_type": "rainy"
-    }
+    },
+    "images": [
+        "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+        "https://2.bp.blogspot.com/-yrHnrrhqAQ0/Vs9-riUHavI/AAAAAAAACRY/JE2bdRmk27U/s1600/Ahsan-Manzil.jpg",
+        "https://i.ytimg.com/vi/3Nqg5jAsiVU/maxresdefault.jpg",
+        "https://4.bp.blogspot.com/-alMqK8AGxiQ/VrwxVfzAkSI/AAAAAAAAAb0/2Q4Y5_rTou0/s1600/Ahsan_Manzil22-1140x641_c.jpg"
+    ]
 }
 ```
 
@@ -1110,88 +1144,60 @@ Example Response:
 ```json
 [
     {
-        "destination_id": 12,
-        "name": "Jamuna Future Park",
-        "address": "Kuril, Dhaka",
+        "destination_id": 9,
+        "name": "Bangabandhu Memorial Museum",
+        "address": "Dhanmondi, Dhaka",
         "city_id": 1,
-        "latitude": 23.8166,
-        "longitude": 90.4232,
-        "description": "Jamuna Future Park is the largest shopping mall in South Asia, located in Dhaka.",
-        "image_url": "dummy.jpg",
-        "created_on": "2023-08-01T10:46:19.000Z",
-        "last_updated_on": "2023-08-01T10:46:19.000Z",
+        "latitude": 23.7465,
+        "longitude": 90.3863,
+        "description": "This museum is dedicated to Sheikh Mujibur Rahman, the founding father of Bangladesh.",
+        "image_url": "bangabandhu_museum.jpg",
+        "created_on": "2023-08-24T20:53:17.000Z",
+        "last_updated_on": "2023-08-24T20:53:17.000Z",
+        "creator_user_id": 0,
         "activities": [
             {
-                "activity_id": 25,
-                "price": 450,
+                "activity_id": 2,
+                "price": 350,
                 "activity": {
-                    "activity_id": 25,
-                    "name": "River Rafting",
+                    "activity_id": 2,
+                    "name": "Hiking",
                     "category": "Adventure",
-                    "description": "Challenge the rapids of the river with an exciting rafting adventure.",
-                    "image_url": "river_rafting.jpg",
-                    "min_age": 18,
-                    "max_age": 50
+                    "description": "Embark on a thrilling hiking adventure amidst picturesque hills.",
+                    "image_url": "hiking.jpg",
+                    "min_age": 12,
+                    "max_age": 55,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/10/best-hiking-trails-canada-1024x683.jpg",
+                        "http://www.lilkickerschicago.com/wp-content/uploads/2019/06/dawn-view-1200.jpg",
+                        "https://all.accor.com/middleware/media/1385716182466/1618327327711/hiking.jpg",
+                        "https://www.explore-mag.com/media/image/57291.jpg"
+                    ]
                 }
             },
             {
-                "activity_id": 29,
-                "price": 150,
+                "activity_id": 5,
+                "price": 350,
                 "activity": {
-                    "activity_id": 29,
-                    "name": "Educational Visit to Museum",
-                    "category": "Education",
-                    "description": "Discover the art, history, and culture of the region in museums.",
-                    "image_url": "museum_visits.jpg",
-                    "min_age": 8,
-                    "max_age": 80
-                }
-            },
-            {
-                "activity_id": 45,
-                "price": 100,
-                "activity": {
-                    "activity_id": 45,
-                    "name": "Jet Skiing",
-                    "category": "Adventure",
-                    "description": "Feel the rush of adrenaline with an exciting jet skiing adventure.",
-                    "image_url": "jet_skiing.jpg",
-                    "min_age": 16,
-                    "max_age": 55
-                }
-            }
-        ],
-        "city": {
-            "city_id": 1,
-            "name": "Dhaka",
-            "country_name": "Bangladesh",
-            "population": 168957745,
-            "weather_type": "rainy"
-        }
-    },
-    {
-        "destination_id": 13,
-        "name": "Lalbagh Kella Mosque",
-        "address": "Lalbagh, Old Dhaka",
-        "city_id": 1,
-        "latitude": 23.7176,
-        "longitude": 90.4041,
-        "description": "Lalbagh Kella Mosque is an ancient mosque within the premises of Lalbagh Fort.",
-        "image_url": "dummy.jpg",
-        "created_on": "2023-08-01T10:46:19.000Z",
-        "last_updated_on": "2023-08-01T10:46:19.000Z",
-        "activities": [
-            {
-                "activity_id": 4,
-                "price": 450,
-                "activity": {
-                    "activity_id": 4,
-                    "name": "Cultural Tour",
+                    "activity_id": 5,
+                    "name": "Historical Sites Visit",
                     "category": "Culture",
-                    "description": "Immerse in the local culture and traditions with a guided cultural tour.",
-                    "image_url": "cultural_tour.jpg",
-                    "min_age": 15,
-                    "max_age": 65
+                    "description": "Explore ancient historical sites and learn about their rich history.",
+                    "image_url": "historical_sites.jpg",
+                    "min_age": 12,
+                    "max_age": 70,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://www.oyorooms.com/blog/wp-content/uploads/2017/10/Taj-Mahal.jpg",
+                        "https://worldinsidepictures.com/wp-content/uploads/2013/10/7-1024x682.jpg",
+                        "https://yehaindia.com/wp-content/uploads/2019/05/tajmahal-garden.jpg",
+                        "https://www.tripsavvy.com/thmb/Vm-xdyjrWpZiQgtV-rVbd7EsUBk=/2125x1416/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-580758423-56c6ab0c3df78cfb37860807.jpg"
+                    ]
                 }
             },
             {
@@ -1204,20 +1210,16 @@ Example Response:
                     "description": "Rejuvenate your mind and body with a peaceful yoga retreat.",
                     "image_url": "yoga_retreat.jpg",
                     "min_age": 20,
-                    "max_age": 70
-                }
-            },
-            {
-                "activity_id": 18,
-                "price": 400,
-                "activity": {
-                    "activity_id": 18,
-                    "name": "Volunteer and Community Service",
-                    "category": "Culture",
-                    "description": "Contribute to the community by participating in volunteer activities.",
-                    "image_url": "volunteer_community_service.jpg",
-                    "min_age": 18,
-                    "max_age": 65
+                    "max_age": 70,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://bookretreats.com/blog/wp-content/uploads/2020/11/1000_1603815965.jpg",
+                        "https://magazine.bluekarmasecrets.com/wp-content/uploads/2019/10/retreatbox4.jpg",
+                        "https://retreatmehappy.com/wp-content/uploads/2019/10/Yoga-Retreat-e1574557062145.jpg",
+                        "https://breathingtravel.com/wp-content/uploads/2020/05/Yoga-retreat-Australia.jpg"
+                    ]
                 }
             }
         ],
@@ -1227,7 +1229,107 @@ Example Response:
             "country_name": "Bangladesh",
             "population": 168957745,
             "weather_type": "rainy"
-        }
+        },
+        "images": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/05/f3/69/85/bangabandhu-museum-terrace.jpg",
+            "https://i.pinimg.com/originals/e9/a7/e9/e9a7e99e45360d1618333636957d15ff.jpg",
+            "https://media-cdn.tripadvisor.com/media/photo-s/0a/8e/84/89/bangabandhu-memorial.jpg",
+            "https://media-cdn.tripadvisor.com/media/photo-s/05/f3/69/86/bangabandhu-museum-entrance.jpg"
+        ]
+    },
+    {
+        "destination_id": 18,
+        "name": "Bangladesh Liberation War Museum",
+        "address": "Agargaon, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7745,
+        "longitude": 90.3641,
+        "description": "This museum commemorates the Liberation War of Bangladesh with historical artifacts.",
+        "image_url": "liberation_war_museum.jpg",
+        "created_on": "2023-08-24T20:53:17.000Z",
+        "last_updated_on": "2023-08-24T20:53:17.000Z",
+        "creator_user_id": 0,
+        "activities": [
+            {
+                "activity_id": 2,
+                "price": 300,
+                "activity": {
+                    "activity_id": 2,
+                    "name": "Hiking",
+                    "category": "Adventure",
+                    "description": "Embark on a thrilling hiking adventure amidst picturesque hills.",
+                    "image_url": "hiking.jpg",
+                    "min_age": 12,
+                    "max_age": 55,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/10/best-hiking-trails-canada-1024x683.jpg",
+                        "http://www.lilkickerschicago.com/wp-content/uploads/2019/06/dawn-view-1200.jpg",
+                        "https://all.accor.com/middleware/media/1385716182466/1618327327711/hiking.jpg",
+                        "https://www.explore-mag.com/media/image/57291.jpg"
+                    ]
+                }
+            },
+            {
+                "activity_id": 9,
+                "price": 50,
+                "activity": {
+                    "activity_id": 9,
+                    "name": "Water Sports",
+                    "category": "Adventure",
+                    "description": "Indulge in various water sports activities like jet skiing, parasailing, and more.",
+                    "image_url": "water_sports.jpg",
+                    "min_age": 16,
+                    "max_age": 55,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://nomadparadise.com/wp-content/uploads/2020/08/water-sports-flyboard-flying.jpg",
+                        "https://www.tripsavvy.com/thmb/3sYPZPdIbNedmJj501qXWO7mCeE=/1261x835/filters:no_upscale():max_bytes(150000):strip_icc()/KorisRamos-56a34e515f9b58b7d0d16646.jpg",
+                        "https://multimedia.andalucia.org/media/80B4B346BD45484497680DC1229FE4F7/img/C43F415C44C0474A85D70F0F5BEE8CAC/CA_Tarifa_Playa_Valdevaqueros_11.jpg?responsive",
+                        "https://hellscanyon.tours/wp-content/uploads/2021/06/RiverAdventuresInc-73025-Water-Sports-Summer-image1-scaled.jpg"
+                    ]
+                }
+            },
+            {
+                "activity_id": 12,
+                "price": 350,
+                "activity": {
+                    "activity_id": 12,
+                    "name": "Fishing Adventure",
+                    "category": "Adventure",
+                    "description": "Go on a fishing expedition and test your angling skills.",
+                    "image_url": "fishing_adventure.jpg",
+                    "min_age": 10,
+                    "max_age": 65,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-24T20:53:21.000Z",
+                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "images": [
+                        "https://gametrex.com/wp-content/uploads/2019/12/Fishing-Adventure-Free-Download-1200x675.jpg",
+                        "https://cdn.akamai.steamstatic.com/steam/apps/1101140/capsule_616x353.jpg?t=1602851078",
+                        "https://outdooradventurelife.com/wp-content/uploads/2020/10/fishing-2.jpg",
+                        "https://i.ytimg.com/vi/UmmmTfU1npY/maxresdefault.jpg"
+                    ]
+                }
+            }
+        ],
+        "city": {
+            "city_id": 1,
+            "name": "Dhaka",
+            "country_name": "Bangladesh",
+            "population": 168957745,
+            "weather_type": "rainy"
+        },
+        "images": [
+            "https://c8.alamy.com/comp/2DE5E1P/dhaka-bangladesh-november-27-2020-the-liberation-war-museum-is-a-museum-in-sher-e-bangla-nagar-in-dhaka-bangladesh-which-commemorates-the-bangl-2DE5E1P.jpg",
+            "https://i.ytimg.com/vi/1jbcIooYUBQ/maxresdefault.jpg",
+            "https://c8.alamy.com/comp/2DE5E2K/dhaka-bangladesh-november-27-2020-the-liberation-war-museum-is-a-museum-in-sher-e-bangla-nagar-in-dhaka-bangladesh-which-commemorates-the-bangl-2DE5E2K.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/66/eb/81/newly-built-liberation.jpg?w=1200&h=-1&s=1"
+        ]
     }
 ]
 ```
@@ -1466,11 +1568,20 @@ Example Response:
     "description": "Experience the breathtaking beauty of a boat tour in a mangrove forest.",
     "image_url": "boat_tour.jpg",
     "min_age": 8,
-    "max_age": 60
+    "max_age": 60,
+    "creator_user_id": 0,
+    "created_on": "2023-08-24T20:53:21.000Z",
+    "last_updated_on": "2023-08-24T20:53:21.000Z",
+    "images": [
+        "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+        "https://images.myguide-cdn.com/perth/companies/rottnest-island-day-trip-by-ferry-adventure-boat-tour/large/rottnest-island-day-trip-by-ferry-adventure-boat-tour-560869.jpg",
+        "https://images.tripshock.com/activity/2761/1080x1080/Thriller-Miami-Speedboat-Tours.jpg",
+        "https://fallsmeetings.com/wp-content/uploads/2017/04/Boat8.jpg"
+    ]
 }
 ```
 
-## b. Get Activitys by querying on attributes ( Paginated )  
+## b. Get Activities by querying on attributes ( Paginated )  
 
 #### Note that, all attributes are optional, you can either mention, not mention or leave them blank    
 
@@ -1495,7 +1606,16 @@ Example Response:
         "description": "Discover the underwater world and vibrant marine life through snorkeling.",
         "image_url": "snorkeling.jpg",
         "min_age": 10,
-        "max_age": 50
+        "max_age": 50,
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:21.000Z",
+        "last_updated_on": "2023-08-24T20:53:21.000Z",
+        "images": [
+            "https://fthmb.tqn.com/XtDX5UROYmPakUeif3ahefihJoI=/1500x1050/filters:fill(auto,1)/SnorkelingWithKids_Getty-56effe365f9b5867a1c4bfb4.jpg",
+            "https://www.crystalsandsonsiestakey.com/wp-content/uploads/2020/08/siesta-key-snorkeling.jpg",
+            "https://diveukhurghada.co.uk/wp-content/uploads/2020/02/Snorkelling-1.jpg",
+            "https://www.sandals.com/blog/content/images/2019/04/3_islandroutes_38-Adv-Eco.jpg"
+        ]
     },
     {
         "activity_id": 7,
@@ -1504,7 +1624,16 @@ Example Response:
         "description": "Take peaceful walks in nature and enjoy the tranquility it offers.",
         "image_url": "nature_walks.jpg",
         "min_age": 8,
-        "max_age": 65
+        "max_age": 65,
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:21.000Z",
+        "last_updated_on": "2023-08-24T20:53:21.000Z",
+        "images": [
+            "https://www.naturalhealth365.com/wp-content/uploads/2020/04/nature-scaled.jpeg",
+            "https://www.atlmentalhealth.com/wp-content/uploads/2021/01/nature-walk.jpg",
+            "http://images.unsplash.com/photo-1559544948-da38a2615cb7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9",
+            "https://yogafeststatecollege.com/wp-content/uploads/2017/09/Nature-Walk-900px.jpg"
+        ]
     }
 ]
 ```
@@ -1608,7 +1737,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/trip/16
+/api/v1/trip/4
 ```
 Request Body: 
 ```
@@ -1617,15 +1746,30 @@ None
 Example Response:    
 ```json
 {
-    "trip_id": 16,
-    "from_city_id": 1,
-    "to_city_id": 2,
-    "name": "Very Cool trip",
-    "description": "A wonderful Trip, it will be.",
+    "trip_id": 4,
+    "from_city_id": 11,
+    "to_city_id": 12,
+    "from_city_name": "Gazipur",
+    "to_city_name": "Feni",
+    "name": "Coastal Odyssey",
+    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
     "image_url": "dummy.jpg",
-    "total_price": 33473,
-    "start_date": "2023-06-30T18:00:00.000Z",
-    "end_date": "2023-07-24T18:00:00.000Z"
+    "total_price": 69005,
+    "start_date": "2023-08-15T18:00:00.000Z",
+    "end_date": "2023-09-01T18:00:00.000Z",
+    "creator_user_id": 1,
+    "created_on": "2023-08-24T20:53:27.000Z",
+    "last_updated_on": "2023-08-24T20:53:27.000Z",
+    "deleted_on": null,
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 6,
+        "rating_3": 12,
+        "rating_4": 8,
+        "rating_5": 3,
+        "rating_avg": 3.28
+    },
+    "images": null
 }
 ```
 
@@ -1645,82 +1789,233 @@ Example Response:
 ```json
 {
     "trip_id": 2,
-    "from_city_id": 1,
-    "to_city_id": 2,
-    "from_city_name": "Dhaka",
-    "to_city_name": "Chittagong",
-    "name": "Mini Tour",
-    "description": "A wonderful Trip, it will be.",
-    "image_url": "dummy.jpg",
-    "total_price": 29728,
-    "start_date": "2023-06-30T18:00:00.000Z",
-    "end_date": "2023-07-24T18:00:00.000Z",
-    "created_on": "2023-08-01T13:07:00.000Z",
-    "last_updated_on": "2023-08-01T13:07:00.000Z",
+    "from_city_id": 3,
+    "to_city_id": 4,
+    "from_city_name": "Khulna",
+    "to_city_name": "Rajshahi",
+    "name": "Adventure in the Himalayas",
+    "description": "Experience thrilling adventure in the Himalayas",
+    "image_url": "himalayas_adventure.jpg",
+    "total_price": 192155,
+    "start_date": "2023-08-09T18:00:00.000Z",
+    "end_date": "2023-08-29T18:00:00.000Z",
+    "creator_user_id": 2,
+    "created_on": "2023-08-24T20:53:27.000Z",
+    "last_updated_on": "2023-08-24T20:53:27.000Z",
     "deleted_on": null,
     "contains": [
         {
-            "destination_id": 1,
-            "destination_name": "Ahsan Manzil",
-            "activity_id": 4,
-            "activity_name": "Cultural Tour",
-            "price": 250,
-            "tentative_date": "2023-07-14T18:00:00.000Z"
+            "destination_id": 2,
+            "destination_name": "Lalbagh Fort",
+            "activity_id": 8,
+            "activity_name": "Beach Relaxation",
+            "price": 400,
+            "tentative_date": "2023-08-14T18:00:00.000Z"
+        },
+        {
+            "destination_id": 2,
+            "destination_name": "Lalbagh Fort",
+            "activity_id": 9,
+            "activity_name": "Water Sports",
+            "price": 150,
+            "tentative_date": "2023-08-17T18:00:00.000Z"
         }
     ],
     "hotels": [
         {
-            "hotel_id": 1,
-            "checkin_date": "2023-06-30T18:00:00.000Z",
-            "checkout_date": "2023-07-06T18:00:00.000Z",
+            "hotel_id": 5,
+            "checkin_date": "2023-08-09T18:00:00.000Z",
+            "checkout_date": "2023-08-19T18:00:00.000Z",
             "hotel": {
-                "hotel_id": 1,
-                "name": "Quaint Villa Hotel",
-                "address": "48 Lakeview Drive Bhola , Bangladesh",
-                "city_id": 25,
-                "description": "A Exquisitely Rustic hotel in Bhola.",
+                "hotel_id": 5,
+                "name": "Best Western PLUS Maya",
+                "address": "1 Sunset Boulevard Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Gracefully Spectacular hotel in Dhaka.",
                 "image_url": "dummy.jpg",
-                "price_per_day": 4867,
-                "phone": "019157054121",
-                "email": "quaintvillahotel@gmail.com",
+                "price_per_day": 13357,
+                "phone": "014573464154",
+                "email": "best_western@gmail.com",
                 "has_wifi": 1,
                 "has_parking": 1,
                 "has_gym": 0,
-                "created_on": "2023-08-01T10:46:19.000Z",
-                "last_updated_on": "2023-08-01T10:46:19.000Z",
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:21.000Z",
+                "last_updated_on": "2023-08-24T20:53:21.000Z",
                 "city": {
-                    "city_id": 25,
-                    "name": "Bhola",
+                    "city_id": 1,
+                    "name": "Dhaka",
                     "country_name": "Bangladesh",
-                    "population": 183113,
-                    "weather_type": "sunny"
-                }
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 3,
+                    "rating_3": 11,
+                    "rating_4": 6,
+                    "rating_5": 3,
+                    "rating_avg": 3.39
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/00/1a/84/best-western-plus-maya.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/14/46/02/premium-room-2-single.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/14/46/01/standard-room.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/14/45/fd/executive-room.jpg?w=1500&h=1000&s=1"
+                ]
+            }
+        },
+        {
+            "hotel_id": 8,
+            "checkin_date": "2023-08-24T18:00:00.000Z",
+            "checkout_date": "2023-08-29T18:00:00.000Z",
+            "hotel": {
+                "hotel_id": 8,
+                "name": "Ascott Palace Dhaka",
+                "address": "56 Lakeview Drive Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Exquisitely Seaside hotel in Dhaka.",
+                "image_url": "dummy.jpg",
+                "price_per_day": 11201,
+                "phone": "013365955244",
+                "email": "ascott_palace@outlook.com",
+                "has_wifi": 1,
+                "has_parking": 0,
+                "has_gym": 0,
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:21.000Z",
+                "last_updated_on": "2023-08-24T20:53:21.000Z",
+                "city": {
+                    "city_id": 1,
+                    "name": "Dhaka",
+                    "country_name": "Bangladesh",
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 13,
+                    "rating_3": 9,
+                    "rating_4": 10,
+                    "rating_5": 9,
+                    "rating_avg": 3.37
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/30/46/ae/ascott-palace-limited.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/30/49/4a/ascott-palace-limited.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/30/49/38/ascott-palace-limited.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/30/49/22/ascott-palace-limited.jpg?w=1500&h=1000&s=1"
+                ]
             }
         }
     ],
     "restaurants": [
         {
-            "restaurant_id": 1,
+            "restaurant_id": 10,
             "restaurant": {
-                "restaurant_id": 1,
-                "name": "Authentic Eatery Dim Sum Restaurant",
-                "reservation_price": 276,
-                "address": "24 Culinary Avenue",
-                "city_id": 19,
-                "description": "A restaurant serving Authentically Cozy Italian Curry.",
+                "restaurant_id": 10,
+                "name": "Grandiose Restaurant",
+                "reservation_price": 470,
+                "address": "41 Dining Boulevard",
+                "city_id": 1,
+                "description": "A restaurant serving Delightfully Quaint French Steak.",
                 "image_url": "dummy.jpg",
-                "cuisine_type": "Italian",
-                "contact": "011242474493",
-                "email": "authenticeaterydimsumrestaurant@outlook.com",
-                "created_on": "2023-08-01T10:46:20.000Z",
-                "last_updated_on": "2023-08-01T10:46:20.000Z",
+                "cuisine_type": "Italian,Japanese",
+                "contact": "015318645120",
+                "email": "grandiose_restaurant@gmail.com",
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:25.000Z",
+                "last_updated_on": "2023-08-24T20:53:25.000Z",
                 "city": {
-                    "city_id": 19,
-                    "name": "Tangail",
+                    "city_id": 1,
+                    "name": "Dhaka",
                     "country_name": "Bangladesh",
-                    "population": 160937,
+                    "population": 168957745,
                     "weather_type": "rainy"
-                }
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 11,
+                    "rating_3": 8,
+                    "rating_4": 7,
+                    "rating_5": 8,
+                    "rating_avg": 3.35
+                },
+                "images": [
+                    "https://media-cdn.tripadvisor.com/media/photo-s/17/b6/2e/21/grandiose-restaurant.jpg"
+                ]
+            }
+        },
+        {
+            "restaurant_id": 15,
+            "restaurant": {
+                "restaurant_id": 15,
+                "name": "Barcode Cafe",
+                "reservation_price": 60,
+                "address": "24 Main Street",
+                "city_id": 2,
+                "description": "A restaurant serving Savoringly Charming Indian Tacos.",
+                "image_url": "dummy.jpg",
+                "cuisine_type": "Italian,Contemporary",
+                "contact": "019823167403",
+                "email": "barcode.cafe@outlook.com",
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:25.000Z",
+                "last_updated_on": "2023-08-24T20:53:25.000Z",
+                "city": {
+                    "city_id": 2,
+                    "name": "Chittagong",
+                    "country_name": "Bangladesh",
+                    "population": 28607074,
+                    "weather_type": "sunny"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 0,
+                    "rating_3": 0,
+                    "rating_4": 0,
+                    "rating_5": 0,
+                    "rating_avg": 2.5
+                },
+                "images": [
+                    "https://media-cdn.tripadvisor.com/media/photo-o/07/41/46/cb/barcode-cafe.jpg"
+                ]
+            }
+        },
+        {
+            "restaurant_id": 20,
+            "restaurant": {
+                "restaurant_id": 20,
+                "name": "Krave",
+                "reservation_price": 1500,
+                "address": "35 Culinary Avenue",
+                "city_id": 2,
+                "description": "A restaurant serving Wonderfully Elegant Thai Steak.",
+                "image_url": "dummy.jpg",
+                "cuisine_type": "Steakhouse,Italian",
+                "contact": "015625729520",
+                "email": "krave@yahoo.com",
+                "creator_user_id": 0,
+                "created_on": "2023-08-24T20:53:25.000Z",
+                "last_updated_on": "2023-08-24T20:53:25.000Z",
+                "city": {
+                    "city_id": 2,
+                    "name": "Chittagong",
+                    "country_name": "Bangladesh",
+                    "population": 28607074,
+                    "weather_type": "sunny"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 0,
+                    "rating_3": 0,
+                    "rating_4": 0,
+                    "rating_5": 0,
+                    "rating_avg": 2.5
+                },
+                "images": [
+                    "https://media-cdn.tripadvisor.com/media/photo-s/1c/0c/cf/95/krave.jpg"
+                ]
             }
         }
     ],
@@ -1729,21 +2024,21 @@ Example Response:
             "guide_id": 1,
             "guide": {
                 "user_id": 1,
-                "email": "changed_email@example.com",
-                "password_hash": "hashed_password",
-                "role": "user",
-                "name": "John Doe",
-                "bio": "I love traveling and exploring new places.",
+                "username": "aaniksahaa",
+                "email": "abc@gmail.com",
+                "role": "client",
+                "name": "Anik Saha",
+                "bio": "Little Coder",
                 "city_id": 1,
-                "facebook_url": "https://www.facebook.com/johndoe",
-                "twitter_url": "https://twitter.com/johndoe",
-                "instagram_url": "https://www.instagram.com/johndoe",
-                "profile_picture": "https://example.com/profile_picture.jpg",
-                "dob": "1990-05-14T18:00:00.000Z",
-                "registration_date": "2023-08-01T10:46:19.000Z",
+                "facebook_url": "facebook.com/abc",
+                "twitter_url": "twitter.com/abc",
+                "instagram_url": "instagram.com/abc",
+                "profile_picture": "dummy.jpg",
+                "dob": "2002-09-16T18:00:00.000Z",
+                "registration_date": "2023-08-24T20:53:16.000Z",
                 "status": "active",
-                "created_on": "2023-08-01T10:46:19.000Z",
-                "last_updated_on": "2023-08-01T11:46:58.000Z",
+                "created_on": "2023-08-24T20:53:16.000Z",
+                "last_updated_on": "2023-08-24T20:53:16.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -1753,7 +2048,16 @@ Example Response:
                 }
             }
         }
-    ]
+    ],
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 12,
+        "rating_3": 6,
+        "rating_4": 3,
+        "rating_5": 13,
+        "rating_avg": 3.5
+    },
+    "images": null
 }
 ```
 
@@ -1766,7 +2070,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/trip?from_city_id=1,2&to_city_id=2,3&name=new&price_min=10000&price_max=50000&start_date=2023-01-01&end_date=2024-01-01
+/api/v1/trip?from_city_id=1,2&to_city_id=1,2,3&price_min=10000&price_max=50000&start_date=2023-01-01&end_date=2024-01-01&orderby=rating&ordertype=desc
 ```
 Request Body: 
 ```
@@ -1776,38 +2080,56 @@ Example Response:
 ```json
 [
     {
-        "trip_id": 2,
-        "from_city_id": 1,
-        "to_city_id": 2,
-        "from_city_name": "Dhaka",
-        "to_city_name": "Chittagong",
-        "name": "New Mini Tour",
-        "description": "A wonderful Trip, it will be.",
-        "image_url": "dummy.jpg",
-        "total_price": 29728,
-        "start_date": "2023-06-30T18:00:00.000Z",
-        "end_date": "2023-07-24T18:00:00.000Z",
-        "creator_user_id": 1,
-        "created_on": "2023-08-02T14:14:10.000Z",
-        "last_updated_on": "2023-08-02T14:14:10.000Z",
-        "deleted_on": null
+        "trip_id": 3,
+        "from_city_id": 5,
+        "to_city_id": 6,
+        "from_city_name": "Comilla",
+        "to_city_name": "Mymensingh",
+        "name": "Relaxing Beach Vacation",
+        "description": "Unwind on the beautiful beaches of Maldives",
+        "image_url": "maldives_beach.jpg",
+        "total_price": 21080,
+        "start_date": "2023-09-04T18:00:00.000Z",
+        "end_date": "2023-09-19T18:00:00.000Z",
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:27.000Z",
+        "last_updated_on": "2023-08-24T20:53:27.000Z",
+        "deleted_on": null,
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 10,
+            "rating_3": 7,
+            "rating_4": 9,
+            "rating_5": 7,
+            "rating_avg": 3.39
+        },
+        "images": null
     },
     {
-        "trip_id": 3,
-        "from_city_id": 1,
-        "to_city_id": 2,
-        "from_city_name": "Dhaka",
-        "to_city_name": "Chittagong",
-        "name": "New   New Mini Tour",
-        "description": "A wonderful Trip, it will be.",
+        "trip_id": 8,
+        "from_city_id": 12,
+        "to_city_id": 7,
+        "from_city_name": "Feni",
+        "to_city_name": "Rangpur",
+        "name": "Relaxation Retreat",
+        "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
         "image_url": "dummy.jpg",
-        "total_price": 29728,
-        "start_date": "2023-06-30T18:00:00.000Z",
-        "end_date": "2023-07-24T18:00:00.000Z",
+        "total_price": 43491,
+        "start_date": "2023-08-14T18:00:00.000Z",
+        "end_date": "2023-09-01T18:00:00.000Z",
         "creator_user_id": 1,
-        "created_on": "2023-08-02T14:14:17.000Z",
-        "last_updated_on": "2023-08-02T14:14:17.000Z",
-        "deleted_on": null
+        "created_on": "2023-08-24T20:53:27.000Z",
+        "last_updated_on": "2023-08-24T20:53:27.000Z",
+        "deleted_on": null,
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 11,
+            "rating_3": 7,
+            "rating_4": 6,
+            "rating_5": 4,
+            "rating_avg": 3.11
+        },
+        "images": null
     }
 ]
 ```
@@ -2242,7 +2564,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/hotel/21
+/api/v1/hotel/6
 ``` 
 Request Body: 
 ```
@@ -2251,18 +2573,42 @@ None
 Example Response:    
 ```json
 {
-    "hotel_id": 21,
-    "name": "Seaside Lodge Hotel",
-    "address": "68 Garden Lane Coxs Bazar , Bangladesh",
-    "city_id": 27,
-    "description": "A Gracefully Charming hotel in Coxs Bazar.",
+    "hotel_id": 6,
+    "name": "The Westin Dhaka",
+    "address": "40 Mountain Street Dhaka , Bangladesh",
+    "city_id": 1,
+    "description": "A Serenely Boutique hotel in Dhaka.",
     "image_url": "dummy.jpg",
-    "price_per_day": 4080,
-    "phone": "016748298191",
-    "email": "seasidelodgehotel@yahoo.com",
+    "price_per_day": 22526,
+    "phone": "019032452045",
+    "email": "the.westin@gmail.com",
     "has_wifi": 1,
-    "has_parking": 1,
-    "has_gym": 1
+    "has_parking": 0,
+    "has_gym": 0,
+    "creator_user_id": 0,
+    "created_on": "2023-08-24T20:53:21.000Z",
+    "last_updated_on": "2023-08-24T20:53:21.000Z",
+    "city": {
+        "city_id": 1,
+        "name": "Dhaka",
+        "country_name": "Bangladesh",
+        "population": 168957745,
+        "weather_type": "rainy"
+    },
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 10,
+        "rating_3": 13,
+        "rating_4": 10,
+        "rating_5": 14,
+        "rating_avg": 3.6
+    },
+    "images": [
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/0c/cb/10/exterior.jpg?w=1500&h=1000&s=1",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/b2/69/7e/seasonal-tastes.jpg?w=1500&h=1000&s=1",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/e0/22/cb/the-westin-dhaka.jpg?w=1500&h=1000&s=1",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/b2/69/38/prego.jpg?w=1500&h=1000&s=1"
+    ]
 }
 ```
 
@@ -2275,7 +2621,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/hotel?name=hotel&address=bangladesh&city_id=24,25,26,1,2,3&min_price=500&max_price=8000&has_wifi=1&has_parking=1&has_gym=1&orderby=price_per_day&ordertype=desc&page=1&per_page=2
+/api/v1/hotel?name=hotel&address=bangladesh&city_id=24,25,26,1,2,3&min_price=500&max_price=30000&has_wifi=1&has_parking=1&has_gym=1&orderby=price_per_day&ordertype=desc&page=1&per_page=2
 ```
 Request Body: 
 ```
@@ -2285,32 +2631,80 @@ Example Response:
 ```json
 [
     {
-        "hotel_id": 50,
-        "name": "Elegant Retreat Hotel",
-        "address": "69 Main Street Bandarban , Bangladesh",
-        "city_id": 24,
-        "description": "A Wonderfully Charming hotel in Bandarban.",
+        "hotel_id": 252,
+        "name": "Grand Prince Hotel",
+        "address": "20 Mountain Street Manikganj , Bangladesh",
+        "city_id": 26,
+        "description": "A Enchantingly Elevated hotel in Manikganj.",
         "image_url": "dummy.jpg",
-        "price_per_day": 4820,
-        "phone": "014815893554",
-        "email": "elegantretreathotel@outlook.com",
+        "price_per_day": 12470,
+        "phone": "014948799839",
+        "email": "grand.prince@gmail.com",
         "has_wifi": 1,
         "has_parking": 1,
-        "has_gym": 1
+        "has_gym": 1,
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:24.000Z",
+        "last_updated_on": "2023-08-24T20:53:24.000Z",
+        "city": {
+            "city_id": 26,
+            "name": "Manikganj",
+            "country_name": "Bangladesh",
+            "population": 160093,
+            "weather_type": "rainy"
+        },
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 0,
+            "rating_3": 0,
+            "rating_4": 0,
+            "rating_5": 0,
+            "rating_avg": 2.5
+        },
+        "images": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/5f/9d/78/grand-prince-hotel-in.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/81/61/16/bangladesh-national-cricket.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/81/61/15/global-asus-brand-manager.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/81/61/14/super-shop.jpg?w=1500&h=1000&s=1"
+        ]
     },
     {
-        "hotel_id": 70,
-        "name": "Modern Castle Hotel",
-        "address": "57 Park Avenue Manikganj , Bangladesh",
-        "city_id": 26,
-        "description": "A Exquisitely Elevated hotel in Manikganj.",
+        "hotel_id": 29,
+        "name": "Divine Centre Ltd, Hotel and Convention Centre",
+        "address": "40 Garden Lane Khulna , Bangladesh",
+        "city_id": 3,
+        "description": "A Exceptionally Boutique hotel in Khulna.",
         "image_url": "dummy.jpg",
-        "price_per_day": 3764,
-        "phone": "011338126183",
-        "email": "moderncastlehotel@yahoo.com",
+        "price_per_day": 9299,
+        "phone": "016793349880",
+        "email": "divine.centre@yahoo.com",
         "has_wifi": 1,
         "has_parking": 1,
-        "has_gym": 1
+        "has_gym": 1,
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:21.000Z",
+        "last_updated_on": "2023-08-24T20:53:21.000Z",
+        "city": {
+            "city_id": 3,
+            "name": "Khulna",
+            "country_name": "Bangladesh",
+            "population": 15563000,
+            "weather_type": "rainy"
+        },
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 0,
+            "rating_3": 0,
+            "rating_4": 0,
+            "rating_5": 0,
+            "rating_avg": 2.5
+        },
+        "images": [
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/a9/60/super-deluxe-couple-room.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/a8/f3/super-deluxe-suit-room.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/a8/6c/super-deluxe-twin-room.jpg?w=1500&h=1000&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/c7/40/87/kopotakkha-meeting-rooms.jpg?w=1500&h=1000&s=1"
+        ]
     }
 ]
 ```
@@ -2455,24 +2849,36 @@ Example Response:
 ```json
 {
     "restaurant_id": 3,
-    "name": "Quaint Brasserie Curry Restaurant",
-    "reservation_price": 421,
-    "address": "92 Riverfront",
-    "city_id": 4,
-    "description": "A restaurant serving Enchantingly Authentic Bangladeshi Kebab.",
+    "name": "The Garden Kitchen at Sheraton Dhaka",
+    "reservation_price": 1540,
+    "address": "63 Restaurant Row",
+    "city_id": 1,
+    "description": "A restaurant serving Wonderfully Charming Spanish Steak.",
     "image_url": "dummy.jpg",
-    "cuisine_type": "Chinese",
-    "contact": "012735241493",
-    "email": "quaintbrasseriecurryrestaurant@outlook.com",
-    "created_on": "2023-08-01T10:46:20.000Z",
-    "last_updated_on": "2023-08-01T10:46:20.000Z",
+    "cuisine_type": "International,Sushi",
+    "contact": "018029299017",
+    "email": "the.garden@outlook.com",
+    "creator_user_id": 0,
+    "created_on": "2023-08-24T20:53:25.000Z",
+    "last_updated_on": "2023-08-24T20:53:25.000Z",
     "city": {
-        "city_id": 4,
-        "name": "Rajshahi",
+        "city_id": 1,
+        "name": "Dhaka",
         "country_name": "Bangladesh",
-        "population": 9536714,
-        "weather_type": "sunny"
-    }
+        "population": 168957745,
+        "weather_type": "rainy"
+    },
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 10,
+        "rating_3": 9,
+        "rating_4": 11,
+        "rating_5": 7,
+        "rating_avg": 3.41
+    },
+    "images": [
+        "https://media-cdn.tripadvisor.com/media/photo-s/22/44/b4/32/restaurant-interior.jpg"
+    ]
 }
 ```
 
@@ -2485,7 +2891,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/restaurant?name=cafe&city_id=6,22,28&min_price=50&max_price=300&page=1&per_page=2&orderby=price&ordertype=desc
+/api/v1/restaurant?city_id=1,6,22,28&min_price=50&max_price=3000&page=1&per_page=3&orderby=rating&ordertype=desc
 ```  
 Request Body: 
 ```
@@ -2495,46 +2901,103 @@ Example Response:
 ```json
 [
     {
-        "restaurant_id": 22,
-        "name": "Cozy Cafe Seafood Restaurant",
-        "reservation_price": 175,
-        "address": "37 Main Street",
-        "city_id": 22,
-        "description": "A restaurant serving Exquisitely Rustic Mediterranean Burger.",
+        "restaurant_id": 1,
+        "name": "Elements - Global Dining at InterContinental Dhaka",
+        "reservation_price": 1420,
+        "address": "58 Culinary Avenue",
+        "city_id": 1,
+        "description": "A restaurant serving Wonderfully Quaint Thai Pasta.",
         "image_url": "dummy.jpg",
-        "cuisine_type": "Indian",
-        "contact": "015311347085",
-        "email": "cozycafeseafoodrestaurant@yahoo.com",
-        "created_on": "2023-08-01T10:46:20.000Z",
-        "last_updated_on": "2023-08-01T10:46:20.000Z",
+        "cuisine_type": "American,European",
+        "contact": "018826094479",
+        "email": "elements_-@gmail.com",
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:25.000Z",
+        "last_updated_on": "2023-08-24T20:53:25.000Z",
         "city": {
-            "city_id": 22,
-            "name": "Narsingdi",
+            "city_id": 1,
+            "name": "Dhaka",
             "country_name": "Bangladesh",
-            "population": 705768,
-            "weather_type": "cold"
-        }
+            "population": 168957745,
+            "weather_type": "rainy"
+        },
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 5,
+            "rating_3": 5,
+            "rating_4": 10,
+            "rating_5": 10,
+            "rating_avg": 3.83
+        },
+        "images": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg"
+        ]
     },
     {
-        "restaurant_id": 43,
-        "name": "Gourmet Cafe Pasta Restaurant",
-        "reservation_price": 85,
-        "address": "98 Restaurant Row",
-        "city_id": 6,
-        "description": "A restaurant serving Delightfully Delicious Mexican Seafood.",
+        "restaurant_id": 5,
+        "name": "Risotto by Sarina",
+        "reservation_price": 1180,
+        "address": "93 Lakeview Drive",
+        "city_id": 1,
+        "description": "A restaurant serving Delightfully Exquisite Mexican Dim Sum.",
         "image_url": "dummy.jpg",
-        "cuisine_type": "Indian",
-        "contact": "019843367500",
-        "email": "gourmetcafepastarestaurant@outlook.com",
-        "created_on": "2023-08-01T10:46:20.000Z",
-        "last_updated_on": "2023-08-01T10:46:20.000Z",
+        "cuisine_type": "Italian",
+        "contact": "018775861678",
+        "email": "risotto.by@outlook.com",
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:25.000Z",
+        "last_updated_on": "2023-08-24T20:53:25.000Z",
         "city": {
-            "city_id": 6,
-            "name": "Mymensingh",
+            "city_id": 1,
+            "name": "Dhaka",
             "country_name": "Bangladesh",
-            "population": 22058771,
-            "weather_type": "cold"
-        }
+            "population": 168957745,
+            "weather_type": "rainy"
+        },
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 5,
+            "rating_3": 8,
+            "rating_4": 9,
+            "rating_5": 8,
+            "rating_avg": 3.67
+        },
+        "images": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/29/76/7b/a8/lounge-area.jpg"
+        ]
+    },
+    {
+        "restaurant_id": 7,
+        "name": "Olea Turkish Restaurant at Le Meridien Dhaka",
+        "reservation_price": 690,
+        "address": "14 Restaurant Row",
+        "city_id": 1,
+        "description": "A restaurant serving Delightfully Authentic Mexican Burger.",
+        "image_url": "dummy.jpg",
+        "cuisine_type": "Chinese",
+        "contact": "014783917035",
+        "email": "olea.turkish@gmail.com",
+        "creator_user_id": 0,
+        "created_on": "2023-08-24T20:53:25.000Z",
+        "last_updated_on": "2023-08-24T20:53:25.000Z",
+        "city": {
+            "city_id": 1,
+            "name": "Dhaka",
+            "country_name": "Bangladesh",
+            "population": 168957745,
+            "weather_type": "rainy"
+        },
+        "rating_info": {
+            "rating_1": 0,
+            "rating_2": 8,
+            "rating_3": 6,
+            "rating_4": 6,
+            "rating_5": 10,
+            "rating_avg": 3.6
+        },
+        "images": [
+            "https://media-cdn.tripadvisor.com/media/photo-s/0e/ce/63/ab/salivating-seafood.jpg"
+        ]
     }
 ]
 ```
