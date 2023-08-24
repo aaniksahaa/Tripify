@@ -6,6 +6,9 @@ from data.cities import cities
 from config import user_count
 import string
 
+
+base_path = './backend/data_generators'
+
 city_count = len(cities)
 
 def generate_random_password(length):
@@ -32,16 +35,26 @@ def generate_random_user():
         "dob": dob.strftime('%Y-%m-%d')
     }
 
-users = []
+def generate_random_users():
 
-for _ in range(user_count):
-    users.append(generate_random_user())
+    unique_usernames = []
 
-formatted_users = json.dumps(users, indent=2)
+    users = []
 
-file_path = './data_generators/data/users.py' 
-with open(file_path, 'w') as file:
-    file.write('users = ')
-    file.write(formatted_users)
+    while(len(users) < user_count):
+        random_user = generate_random_user()
+        if(random_user['username'] in unique_usernames): # clash
+            print('clash')
+            continue
+        users.append(random_user)
+        unique_usernames.append(random_user['username'])
 
-print(user_count)
+    formatted_users = json.dumps(users, indent=2)
+
+    file_path = base_path + '/data/users.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted_users)
+
+    print(user_count,'users successfully generated and written to ',file_path)
+
+#generate_random_users()

@@ -78,7 +78,7 @@ cities = [
     },
     {
         "city_id": 12,
-        "name": "Narsingdi",
+        "name": "Feni",
         "country_name": "Bangladesh",
         "population": 705768,
         "weather_type": "rainy"
@@ -141,28 +141,28 @@ cities = [
     },
     {
         "city_id": 21,
-        "name": "Noakhali",
+        "name": "Savar",
         "country_name": "Bangladesh",
         "population": 160242,
         "weather_type": "sunny"
     },
     {
         "city_id": 22,
-        "name": "Narsingdi",
+        "name": "Bhairab",
         "country_name": "Bangladesh",
         "population": 705768,
         "weather_type": "cold"
     },
     {
         "city_id": 23,
-        "name": "Faridpur",
+        "name": "Bagerhat",
         "country_name": "Bangladesh",
         "population": 114277,
         "weather_type": "sunny"
     },
     {
         "city_id": 24,
-        "name": "Bandarban",
+        "name": "Jhenaidah",
         "country_name": "Bangladesh",
         "population": 126379,
         "weather_type": "rainy"

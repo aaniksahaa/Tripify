@@ -1,21 +1,19 @@
-from data.reviews import reviews
 
-sql = ""
+import json 
+from data.activities import activities
 
-for r in reviews:
+print(activities)
 
-    sql += f"""
+base_path = './backend/data_generators'
+raw_activities_filename = 'prereq/raw_activities.json'
 
-DECLARE
-    l_id NUMBER;
-BEGIN
-    INSERT INTO Reviews (user_id, description, rating, image_url)
-    VALUES ({r['user_id']}, '{r['description']}', {r['rating']}, '{r['image_url']}')
-    RETURNING review_id INTO l_id;
-    INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES(l_id, {r['object_id']});
-END;
-/
+def nice_print(json_object):
+    print(json.dumps(json_object, indent=4))
 
-    """
+formatted = json.dumps(activities, indent=2)
+print(formatted)
+file_path = base_path + '/scrapers/' + raw_activities_filename
+with open(file_path, 'w') as file:
+    file.write(formatted)
 
-print(sql)
+print('written to', file_path)

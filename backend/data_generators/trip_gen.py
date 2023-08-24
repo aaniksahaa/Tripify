@@ -7,6 +7,19 @@ from data.cities import cities
 from data.provides import provides
 from config import hotel_count, restaurant_count, guide_count, trip_count
 
+import json
+
+base_path = './backend/data_generators'
+
+def read_json_file(filename):
+    json_file_path = base_path + '/data/' + filename
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+destinations = read_json_file('destinations.json')
+activities = read_json_file('activities.json')
+
 city_count = len(cities)
 activity_count = len(activities)
 destination_count = len(destinations)
@@ -107,20 +120,19 @@ def generate_trip_data():
     
     return trip_data
 
-trip1 = generate_trip_data()
+def generate_random_trips():
 
-print(trip1)
+    trips = []
 
-trips = []
+    for _ in range(trip_count):
+        trips.append(generate_trip_data())
 
-for _ in range(trip_count):
-    trips.append(generate_trip_data())
+    formatted_users = json.dumps(trips, indent=2)
 
-formatted_users = json.dumps(trips, indent=2)
+    file_path = base_path + '/data/trips.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted_users)
 
-file_path = './data_generators/data/trips.py' 
-with open(file_path, 'w') as file:
-    file.write('trips = ')
-    file.write(formatted_users)
+    print(trip_count,'trips successfully generated and written to ',file_path)
 
-print(trip_count)
+#generate_random_trips()

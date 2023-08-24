@@ -155,7 +155,7 @@ cities = [
     },
     {
         "city_id": 23,
-        "name": "Faridpur",
+        "name": "Bagerhat",
         "country_name": "Bangladesh",
         "population": 114277,
         "weather_type": "sunny"

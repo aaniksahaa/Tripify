@@ -399,8 +399,8 @@ CREATE TABLE Restaurants (
     city_id NUMBER NOT NULL,
     description VARCHAR2(1000),
     image_url VARCHAR2(200),
-    cuisine_type VARCHAR2(20),
-    contact VARCHAR2(20),
+    cuisine_type VARCHAR2(200),
+    contact VARCHAR2(50),
     email VARCHAR2(100),
 		created_on DATE DEFAULT CURRENT_DATE,
 		last_updated_on DATE DEFAULT CURRENT_DATE,
@@ -1218,7 +1218,7 @@ CREATE TABLE Favorites (
     added_on DATE DEFAULT CURRENT_DATE,
 		PRIMARY KEY (user_id, object_type, object_id ),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
-		CHECK (object_type IN ('destination', 'activity', 'hotel', 'restaurant', 'trip', 'city', 'flight'))
+		CHECK (object_type IN ('destination', 'activity', 'hotel', 'restaurant', 'trip', 'city', 'flight','post'))
 )
 LOGGING
 NOCOMPRESS
@@ -1271,6 +1271,39 @@ DISABLE ROW MOVEMENT
 /*
 INSERT INTO ProcedureLog( procedure_name, user_id, parameters )
 VALUES( 'dummy procedure', 0, 'a = 5' );
+*/
+
+-- 32. ImageCart
+
+CREATE TABLE ImageCart (
+    image_url VARCHAR2(300),
+    object_id NUMBER,
+    object_type VARCHAR2(50),
+		PRIMARY KEY (image_url, object_type, object_id ),
+		CHECK (object_type IN ('destination', 'activity', 'hotel', 'restaurant', 'trip', 'city', 'flight','post'))
+)
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- Dummy ImageCart Insert
+
+/*
+INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('dummy.jpg','hotel',2);
+
+SELECT * FROM ImageCart;
 */
 
 SELECT * FROM USERS;

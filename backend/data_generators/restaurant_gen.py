@@ -3,6 +3,8 @@ import json
 from data.cities import cities
 from config import restaurant_count
 
+base_path = './backend/data_generators'
+
 city_count = len(cities)
 
 adjectives = [
@@ -51,17 +53,20 @@ def generate_random_restaurant():
         "image_url": "dummy.jpg",
         "cuisine_type": random.choice(cuisines),
         "contact": f"01{random.randint(100, 999)}{random.randint(100, 999)}{random.randint(1000, 9999)}",
-        "email": email
+        "email": email,
+        "images": ["dummy.jpg"]
     }
 
-for i in range(restaurant_count):
-    restaurants.append(generate_random_restaurant())
+def generate_random_restaurants():
+    for i in range(restaurant_count):
+        restaurants.append(generate_random_restaurant())
 
-formatted = json.dumps(restaurants, indent=2)
+    formatted = json.dumps(restaurants, indent=2)
 
-file_path = './data_generators/data/restaurants.py' 
-with open(file_path, 'w') as file:
-    file.write('restaurants = ')
-    file.write(formatted)
+    file_path = base_path + '/data/restaurants.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted)
 
-print(restaurant_count)
+    print(restaurant_count,'restaurants successfully generated and written to ',file_path)
+
+#generate_random_restaurants()

@@ -6,6 +6,7 @@ const { getSingleRestaurant } = require('./restaurant');
 const { getSingleUser } = require('./user');
 const { getUserIdofGuide } = require('./guide');
 const { getSingleCity } = require('./city');
+const { getRatingInfoFromObject, getImagesFromObject } = require('./global_helpers');
 
 // Helper Functions
 
@@ -374,7 +375,11 @@ const getSingleTrip = async (payload) => {
     try{
        const result = (await db.execute(sql, binds, db.options)).rows;
        if(result.length > 0){
-            return result[0];
+            trip = result[0]
+            object = {'object_type':'trip','object_id':trip_id}
+            trip.rating_info = await getRatingInfoFromObject(object)
+            trip.images = await getImagesFromObject(object)
+            return trip;
        }
        else{
             return null;
@@ -455,6 +460,14 @@ const getSingleTripDetails = async (payload) => {
       result.hotels = hotels_result;
       result.restaurants = restaurants_result;
       result.guides = guides_result;
+
+      trip = result
+      object = {'object_type':'trip','object_id':trip_id}
+      trip.rating_info = await getRatingInfoFromObject(object)
+      trip.images = await getImagesFromObject(object)
+
+      return trip;
+
       //console.log(result.rows)
       return result;
     }
@@ -476,7 +489,7 @@ const getTrips = async (payload) => {
     let orderby = 'trip_id';
     let ordertype = 'asc';
 
-    const attributes = ["trip_id", "from_city_id", "to_city_id", "name", "description", "image_url", "total_price", "start_date", "end_date", "creator_user_id"];
+    const attributes = ["trip_id", "from_city_id", "to_city_id", "name", "description", "image_url", "total_price", "start_date", "end_date", "creator_user_id", "rating"];
     const ordertypes = ["asc", "desc"];
 
     const binds = {};
@@ -607,6 +620,10 @@ const getTrips = async (payload) => {
     }
 
     offset = (page - 1) * per_page;
+    if(orderby == 'rating')
+    {
+        orderby = "GET_AVG_RATING('trip',TRIP_ID)"
+    }
 
     sql += `
     ORDER BY ${orderby} ${ordertype}
@@ -618,8 +635,13 @@ const getTrips = async (payload) => {
 
     try {
         console.log(sql);
-        const result = await db.execute(sql, binds, db.options);
-        return result.rows;
+        const result = (await db.execute(sql, binds, db.options)).rows;
+        result_trips = []
+        for(let trip of result)
+        {
+            result_trips.push(await getSingleTrip({'trip_id':trip.trip_id}))
+        }
+        return result_trips;
     } catch (err) {
         console.log(err);
     }

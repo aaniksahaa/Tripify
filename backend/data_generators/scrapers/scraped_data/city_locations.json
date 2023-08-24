@@ -103,7 +103,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 1
+        "city_id": 1,
+        "city_name": "Dhaka"
     },
     {
         "status": true,
@@ -164,7 +165,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 2
+        "city_id": 2,
+        "city_name": "Chittagong"
     },
     {
         "status": true,
@@ -212,7 +214,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 3
+        "city_id": 3,
+        "city_name": "Khulna"
     },
     {
         "status": true,
@@ -253,7 +256,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 4
+        "city_id": 4,
+        "city_name": "Rajshahi"
     },
     {
         "status": true,
@@ -274,7 +278,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 5
+        "city_id": 5,
+        "city_name": "Comilla"
     },
     {
         "status": true,
@@ -315,7 +320,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 6
+        "city_id": 6,
+        "city_name": "Mymensingh"
     },
     {
         "status": true,
@@ -369,7 +375,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 7
+        "city_id": 7,
+        "city_name": "Rangpur"
     },
     {
         "status": true,
@@ -410,7 +417,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 8
+        "city_id": 8,
+        "city_name": "Sylhet"
     },
     {
         "status": true,
@@ -451,7 +459,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 9
+        "city_id": 9,
+        "city_name": "Barisal"
     },
     {
         "status": true,
@@ -472,7 +481,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 10
+        "city_id": 10,
+        "city_name": "Narayanganj"
     },
     {
         "status": true,
@@ -493,25 +503,20 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 11
+        "city_id": 11,
+        "city_name": "Gazipur"
     },
     {
         "status": true,
         "message": "Success",
-        "timestamp": 1692829640768,
+        "timestamp": 1692866589721,
         "data": [
             {
-                "title": "<b>Hotel X - Narsingdi</b>",
-                "geoId": "loc;26068234",
-                "documentId": "loc;26068234",
-                "trackingItems": "hotel",
-                "secondaryText": "Dhaka City, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 460,
-                    "maxWidth": 840,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/partner/bookingcom/photo-o/29/e9/dc/1a/caption.jpg?w={width}&h={height}&s=1"
-                }
+                "title": "<b>Feni</b>",
+                "geoId": "loc;17484422;g17484422",
+                "documentId": "loc;17484422;g17484422",
+                "trackingItems": "geo",
+                "secondaryText": "Chittagong Division, Bangladesh"
             },
             {
                 "title": "Add a missing place",
@@ -520,7 +525,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 12
+        "city_id": 12,
+        "city_name": "Feni"
     },
     {
         "status": true,
@@ -541,7 +547,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 13
+        "city_id": 13,
+        "city_name": "Bogra"
     },
     {
         "status": true,
@@ -562,7 +569,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 14
+        "city_id": 14,
+        "city_name": "Pabna"
     },
     {
         "status": true,
@@ -609,7 +617,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 15
+        "city_id": 15,
+        "city_name": "Bandarban"
     },
     {
         "status": true,
@@ -630,7 +639,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 16
+        "city_id": 16,
+        "city_name": "Jessore"
     },
     {
         "status": true,
@@ -651,7 +661,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 17
+        "city_id": 17,
+        "city_name": "Dinajpur"
     },
     {
         "status": true,
@@ -672,7 +683,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 18
+        "city_id": 18,
+        "city_name": "Naogaon"
     },
     {
         "status": true,
@@ -693,7 +705,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 19
+        "city_id": 19,
+        "city_name": "Tangail"
     },
     {
         "status": true,
@@ -714,118 +727,32 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 20
+        "city_id": 20,
+        "city_name": "Netrokona"
     },
     {
         "status": true,
         "message": "Success",
-        "timestamp": 1692829651185,
+        "timestamp": 1692874829848,
         "data": [
             {
-                "title": "<b>Noakhali</b>",
-                "geoId": "loc;6602003;g6602003",
-                "documentId": "loc;6602003;g6602003",
+                "title": "<b>Savar</b>",
+                "geoId": "loc;2167645;g2167645",
+                "documentId": "loc;2167645;g2167645",
                 "trackingItems": "geo",
-                "secondaryText": "Chittagong Division, Bangladesh"
+                "secondaryText": "Dhaka Division, Bangladesh"
             },
             {
-                "title": "Add a missing place",
-                "geoId": null,
-                "documentId": null,
-                "trackingItems": null
-            }
-        ],
-        "city_id": 21
-    },
-    {
-        "status": true,
-        "message": "Success",
-        "timestamp": 1692829652323,
-        "data": [
-            {
-                "title": "<b>Hotel X - Narsingdi</b>",
-                "geoId": "loc;26068234",
-                "documentId": "loc;26068234",
+                "title": "<b>BRAC CDM Savar</b>",
+                "geoId": "loc;12679650",
+                "documentId": "loc;12679650",
                 "trackingItems": "hotel",
-                "secondaryText": "Dhaka City, Bangladesh",
+                "secondaryText": "Savar, Bangladesh",
                 "image": {
                     "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 460,
-                    "maxWidth": 840,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/partner/bookingcom/photo-o/29/e9/dc/1a/caption.jpg?w={width}&h={height}&s=1"
-                }
-            },
-            {
-                "title": "Add a missing place",
-                "geoId": null,
-                "documentId": null,
-                "trackingItems": null
-            }
-        ],
-        "city_id": 22
-    },
-    {
-        "status": true,
-        "message": "Success",
-        "timestamp": 1692829774310,
-        "data": [
-            {
-                "title": "<b>Bangladesh</b>",
-                "geoId": "293935",
-                "documentId": "293935",
-                "trackingItems": "geo",
-                "secondaryText": "Asia"
-            },
-            {
-                "title": "<b>Amari Dhaka Bangladesh</b>",
-                "geoId": "6985943",
-                "documentId": "6985943",
-                "trackingItems": "hotel",
-                "secondaryText": "Dhaka City, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 585,
-                    "maxWidth": 1123,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/08/c6/62/amari-dhaka-arial-shot.jpg?w={width}&h={height}&s=1"
-                }
-            },
-            {
-                "title": "<b>Tiger Garden International Hotel, Khulna Bangladesh</b>",
-                "geoId": "3218407",
-                "documentId": "3218407",
-                "trackingItems": "hotel",
-                "secondaryText": "Khulna City, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 1333,
+                    "maxHeight": 1186,
                     "maxWidth": 2000,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/9c/05/91/presidential-suite-master.jpg?w={width}&h={height}&s=1"
-                }
-            },
-            {
-                "title": "<b>Greenscape Eco Resort Bangladesh</b>",
-                "geoId": "23657903",
-                "documentId": "23657903",
-                "trackingItems": "hotel",
-                "secondaryText": "Mymensingh, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 1393,
-                    "maxWidth": 2560,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1e/ac/76/fa/greenscape-resort-bangladesh.jpg?w={width}&h={height}&s=1"
-                }
-            },
-            {
-                "title": "<b>The Base Camp, Bangladesh</b>",
-                "geoId": "9464098",
-                "documentId": "9464098",
-                "trackingItems": "hotel",
-                "secondaryText": "Gazipur, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 2048,
-                    "maxWidth": 2048,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/8b/a7/89/photo3jpg.jpg?w={width}&h={height}&s=1"
+                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/0c/bc/8a/deluxe-twin-room.jpg?w={width}&h={height}&s=1"
                 }
             },
             {
@@ -835,45 +762,20 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 23
+        "city_id": 21,
+        "city_name": "Savar"
     },
     {
         "status": true,
         "message": "Success",
-        "timestamp": 1692829775376,
+        "timestamp": 1692875360133,
         "data": [
             {
-                "title": "<b>Bandarban</b>",
-                "geoId": "loc;2368232;g2368232",
-                "documentId": "loc;2368232;g2368232",
+                "title": "<b>Bhairab Bazaar</b>",
+                "geoId": "loc;20054980;g20054980",
+                "documentId": "loc;20054980;g20054980",
                 "trackingItems": "geo",
-                "secondaryText": "Chittagong Division, Bangladesh"
-            },
-            {
-                "title": "<b>Bandarban Bono Nibas Hill Resort</b>",
-                "geoId": "loc;13085442",
-                "documentId": "loc;13085442",
-                "trackingItems": "hotel",
-                "secondaryText": "Bandarban, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 720,
-                    "maxWidth": 1080,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/10/6c/6f/bono-nibas-hill-resort.jpg?w={width}&h={height}&s=1"
-                }
-            },
-            {
-                "title": "<b>Bandarban Parjatan Motel</b>",
-                "geoId": "loc;3557279",
-                "documentId": "loc;3557279",
-                "trackingItems": "hotel",
-                "secondaryText": "Bandarban, Bangladesh",
-                "image": {
-                    "__typename": "AppPresentation_PhotoItemSizeDynamic",
-                    "maxHeight": 1536,
-                    "maxWidth": 2048,
-                    "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/67/32/66/bandarban-is-a-hill-are.jpg?w={width}&h={height}&s=1"
-                }
+                "secondaryText": "Dhaka Division, Bangladesh"
             },
             {
                 "title": "Add a missing place",
@@ -882,7 +784,52 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 24
+        "city_id": 22,
+        "city_name": "Bhairab"
+    },
+    {
+        "status": true,
+        "message": "Success",
+        "timestamp": 1692861489836,
+        "data": [
+            {
+                "title": "<b>Bagerhat</b>",
+                "geoId": "loc;325571;g325571",
+                "documentId": "loc;325571;g325571",
+                "trackingItems": "geo",
+                "secondaryText": "Khulna Division, Bangladesh"
+            },
+            {
+                "title": "Add a missing place",
+                "geoId": null,
+                "documentId": null,
+                "trackingItems": null
+            }
+        ],
+        "city_id": 23,
+        "city_name": "Bagerhat"
+    },
+    {
+        "status": true,
+        "message": "Success",
+        "timestamp": 1692896987442,
+        "data": [
+            {
+                "title": "<b>Jhenaidah</b>",
+                "geoId": "loc;8552240;g8552240",
+                "documentId": "loc;8552240;g8552240",
+                "trackingItems": "geo",
+                "secondaryText": "Khulna Division, Bangladesh"
+            },
+            {
+                "title": "Add a missing place",
+                "geoId": null,
+                "documentId": null,
+                "trackingItems": null
+            }
+        ],
+        "city_id": 24,
+        "city_name": "Jhenaidah"
     },
     {
         "status": true,
@@ -903,7 +850,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 25
+        "city_id": 25,
+        "city_name": "Bhola"
     },
     {
         "status": true,
@@ -924,7 +872,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 26
+        "city_id": 26,
+        "city_name": "Manikganj"
     },
     {
         "status": true,
@@ -971,7 +920,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 27
+        "city_id": 27,
+        "city_name": "Coxs Bazar"
     },
     {
         "status": true,
@@ -1005,7 +955,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 28
+        "city_id": 28,
+        "city_name": "Rangamati"
     },
     {
         "status": true,
@@ -1026,7 +977,8 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 29
+        "city_id": 29,
+        "city_name": "Tangail"
     },
     {
         "status": true,
@@ -1047,6 +999,7 @@
                 "trackingItems": null
             }
         ],
-        "city_id": 30
+        "city_id": 30,
+        "city_name": "Chandpur"
     }
 ]

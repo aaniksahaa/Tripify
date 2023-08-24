@@ -4,6 +4,8 @@ import json
 from data.destinations import destinations
 from data.activities import activities
 
+base_path = './backend/data_generators'
+
 activities_by_destination = [
     {'destination_id': 1, 'activity_ids': [1, 4, 6]},  # Ahsan Manzil
     {'destination_id': 2, 'activity_ids': [8, 9, 20]},  # Cox's Bazar
@@ -87,29 +89,33 @@ activities_by_destination = [
     {'destination_id': 80, 'activity_ids': [17, 19, 36]},  # Chandpur Shilpakala Academy
 ]
 
-provides = []
 
-cnt = 0
+def generate_provides():
 
-for x in activities_by_destination:
-    d = x['destination_id']
-    for a in x['activity_ids']:
-        if(a > len(activities)):
-            continue
-        entry = {}
-        entry['destination_id'] = d 
-        entry['activity_id'] = a 
-        entry['price'] = 50*random.randint(1,10)
-        entry['is_available'] = 1
-        provides.append(entry)
-        cnt = cnt + 1
+    provides = []
 
-formatted = json.dumps(provides, indent=2)
+    cnt = 0
+
+    for x in activities_by_destination:
+        d = x['destination_id']
+        for a in x['activity_ids']:
+            if(a > len(activities)):
+                continue
+            entry = {}
+            entry['destination_id'] = d 
+            entry['activity_id'] = a 
+            entry['price'] = 50*random.randint(1,10)
+            entry['is_available'] = 1
+            provides.append(entry)
+            cnt = cnt + 1
+
+    formatted = json.dumps(provides, indent=2)
 
 
-file_path = './data_generators/data/provides.py' 
-with open(file_path, 'w') as file:
-    file.write('provides = ')
-    file.write(formatted)
+    file_path = base_path + '/data/provides.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted)
 
-print(cnt)
+    print(cnt,'provides successfully generated and written to ',file_path)
+
+#generate_provides()

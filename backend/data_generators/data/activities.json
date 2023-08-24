@@ -1,0 +1,752 @@
+[
+  {
+    "activity_id": 1,
+    "name": "Boat Tour",
+    "category": "Adventure",
+    "description": "Experience the breathtaking beauty of a boat tour in a mangrove forest.",
+    "image_url": "boat_tour.jpg",
+    "min_age": 8,
+    "max_age": 60,
+    "images": [
+      "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+      "https://images.myguide-cdn.com/perth/companies/rottnest-island-day-trip-by-ferry-adventure-boat-tour/large/rottnest-island-day-trip-by-ferry-adventure-boat-tour-560869.jpg",
+      "https://images.tripshock.com/activity/2761/1080x1080/Thriller-Miami-Speedboat-Tours.jpg",
+      "https://fallsmeetings.com/wp-content/uploads/2017/04/Boat8.jpg"
+    ]
+  },
+  {
+    "activity_id": 2,
+    "name": "Hiking",
+    "category": "Adventure",
+    "description": "Embark on a thrilling hiking adventure amidst picturesque hills.",
+    "image_url": "hiking.jpg",
+    "min_age": 12,
+    "max_age": 55,
+    "images": [
+      "https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/10/best-hiking-trails-canada-1024x683.jpg",
+      "http://www.lilkickerschicago.com/wp-content/uploads/2019/06/dawn-view-1200.jpg",
+      "https://all.accor.com/middleware/media/1385716182466/1618327327711/hiking.jpg",
+      "https://www.explore-mag.com/media/image/57291.jpg"
+    ]
+  },
+  {
+    "activity_id": 3,
+    "name": "Snorkeling",
+    "category": "Adventure",
+    "description": "Discover the underwater world and vibrant marine life through snorkeling.",
+    "image_url": "snorkeling.jpg",
+    "min_age": 10,
+    "max_age": 50,
+    "images": [
+      "https://fthmb.tqn.com/XtDX5UROYmPakUeif3ahefihJoI=/1500x1050/filters:fill(auto,1)/SnorkelingWithKids_Getty-56effe365f9b5867a1c4bfb4.jpg",
+      "https://www.crystalsandsonsiestakey.com/wp-content/uploads/2020/08/siesta-key-snorkeling.jpg",
+      "https://diveukhurghada.co.uk/wp-content/uploads/2020/02/Snorkelling-1.jpg",
+      "https://www.sandals.com/blog/content/images/2019/04/3_islandroutes_38-Adv-Eco.jpg"
+    ]
+  },
+  {
+    "activity_id": 4,
+    "name": "Cultural Tour",
+    "category": "Culture",
+    "description": "Immerse in the local culture and traditions with a guided cultural tour.",
+    "image_url": "cultural_tour.jpg",
+    "min_age": 15,
+    "max_age": 65,
+    "images": [
+      "https://asahitreks.com/wp-content/uploads/2017/04/Cultural-Tour-in-Nepal-3.jpg",
+      "https://www.shikhar.com/images/gallery/tours/117/2.jpg",
+      "https://www.shikhar.com/blog/wp-content/uploads/2017/08/893_11.jpg",
+      "https://asahitreks.com/wp-content/uploads/2017/04/Cultural-Tour-in-Nepal-800x420.jpg"
+    ]
+  },
+  {
+    "activity_id": 5,
+    "name": "Historical Sites Visit",
+    "category": "Culture",
+    "description": "Explore ancient historical sites and learn about their rich history.",
+    "image_url": "historical_sites.jpg",
+    "min_age": 12,
+    "max_age": 70,
+    "images": [
+      "https://www.oyorooms.com/blog/wp-content/uploads/2017/10/Taj-Mahal.jpg",
+      "https://worldinsidepictures.com/wp-content/uploads/2013/10/7-1024x682.jpg",
+      "https://yehaindia.com/wp-content/uploads/2019/05/tajmahal-garden.jpg",
+      "https://www.tripsavvy.com/thmb/Vm-xdyjrWpZiQgtV-rVbd7EsUBk=/2125x1416/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-580758423-56c6ab0c3df78cfb37860807.jpg"
+    ]
+  },
+  {
+    "activity_id": 6,
+    "name": "Wildlife Safari",
+    "category": "Adventure",
+    "description": "Embark on a thrilling wildlife safari and spot exotic animals.",
+    "image_url": "wildlife_safari.jpg",
+    "min_age": 18,
+    "max_age": 60,
+    "images": [
+      "https://www.ngorongorocratertanzania.org/wp-content/uploads/2020/10/5-Days-Best-of-Tanzania-Wildlife-Safari.jpg",
+      "https://www.expertafrica.com/images/background-image/d8aaade7bbcd42d4a0a39588bbf4aa7d-1600.jpg",
+      "https://www.serengetiparktanzania.com/wp-content/uploads/2020/11/7-Days-Tanzania-Wildlife-Safaris.jpg",
+      "https://www.expertafrica.com/images/background-image/01a037ba6e6b403a8c6cfe4d64a249f0-1600.jpg"
+    ]
+  },
+  {
+    "activity_id": 7,
+    "name": "Nature Walks",
+    "category": "Adventure",
+    "description": "Take peaceful walks in nature and enjoy the tranquility it offers.",
+    "image_url": "nature_walks.jpg",
+    "min_age": 8,
+    "max_age": 65,
+    "images": [
+      "https://www.naturalhealth365.com/wp-content/uploads/2020/04/nature-scaled.jpeg",
+      "https://www.atlmentalhealth.com/wp-content/uploads/2021/01/nature-walk.jpg",
+      "http://images.unsplash.com/photo-1559544948-da38a2615cb7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9",
+      "https://yogafeststatecollege.com/wp-content/uploads/2017/09/Nature-Walk-900px.jpg"
+    ]
+  },
+  {
+    "activity_id": 8,
+    "name": "Beach Relaxation",
+    "category": "Relaxation",
+    "description": "Relax and unwind on the beautiful sandy beaches with crystal clear waters.",
+    "image_url": "beach_relaxation.jpg",
+    "min_age": 5,
+    "max_age": 75,
+    "images": [
+      "https://i.pinimg.com/originals/63/d6/7a/63d67a8d785fb71f5227748bf1d8be8e.jpg",
+      "https://i.ytimg.com/vi/JXdl15owpME/maxresdefault.jpg",
+      "https://cdn.wallpapersafari.com/88/36/uHoe0w.jpg",
+      "http://i.ytimg.com/vi/Sa_VJceQBuE/maxresdefault.jpg"
+    ]
+  },
+  {
+    "activity_id": 9,
+    "name": "Water Sports",
+    "category": "Adventure",
+    "description": "Indulge in various water sports activities like jet skiing, parasailing, and more.",
+    "image_url": "water_sports.jpg",
+    "min_age": 16,
+    "max_age": 55,
+    "images": [
+      "https://nomadparadise.com/wp-content/uploads/2020/08/water-sports-flyboard-flying.jpg",
+      "https://www.tripsavvy.com/thmb/3sYPZPdIbNedmJj501qXWO7mCeE=/1261x835/filters:no_upscale():max_bytes(150000):strip_icc()/KorisRamos-56a34e515f9b58b7d0d16646.jpg",
+      "https://multimedia.andalucia.org/media/80B4B346BD45484497680DC1229FE4F7/img/C43F415C44C0474A85D70F0F5BEE8CAC/CA_Tarifa_Playa_Valdevaqueros_11.jpg?responsive",
+      "https://hellscanyon.tours/wp-content/uploads/2021/06/RiverAdventuresInc-73025-Water-Sports-Summer-image1-scaled.jpg"
+    ]
+  },
+  {
+    "activity_id": 10,
+    "name": "Sunset Cruise",
+    "category": "Adventure",
+    "description": "Enjoy the mesmerizing view of the sunset while on a cruise.",
+    "image_url": "sunset_cruise.jpg",
+    "min_age": 10,
+    "max_age": 60,
+    "images": [
+      "https://i0.wp.com/bloggeratlarge.com/wp-content/uploads/2020/02/Sunset-cruise-ship.jpg",
+      "https://www.best.mu/wp-content/uploads/2017/10/Sunset-Cruise-1_800x800.jpg",
+      "https://www.mauiboattrips.com/wp-content/uploads/2020/02/sunset-private-cruise-hero-header.jpg",
+      "http://tampabaydatenightguide.com/wp-content/uploads/sites/2/2018/05/starlite-1024x576.jpg"
+    ]
+  },
+  {
+    "activity_id": 11,
+    "name": "Local Food Tasting",
+    "category": "Cuisine",
+    "description": "Taste a variety of delicious local dishes and savor the flavors.",
+    "image_url": "local_food_tasting.jpg",
+    "min_age": 12,
+    "max_age": 70,
+    "images": [
+      "https://media.gettyimages.com/photos/thailand-bangkok-khao-san-road-group-of-friends-tasting-local-food-on-picture-id962627038",
+      "https://www.alderleyedge.com/img/w/720/h/480/s/749f78cdfdac582c4c6172a0fa1457c6.jpg",
+      "http://www.stylemotivation.com/wp-content/uploads/2019/05/201811518262645.jpg",
+      "https://res.cloudinary.com/northernthaiescape/image/upload/e_improve,w_1000/v1568344303/Food%20Tasting/20190806_194618_ddr7no.jpg"
+    ]
+  },
+  {
+    "activity_id": 12,
+    "name": "Fishing Adventure",
+    "category": "Adventure",
+    "description": "Go on a fishing expedition and test your angling skills.",
+    "image_url": "fishing_adventure.jpg",
+    "min_age": 10,
+    "max_age": 65,
+    "images": [
+      "https://gametrex.com/wp-content/uploads/2019/12/Fishing-Adventure-Free-Download-1200x675.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1101140/capsule_616x353.jpg?t=1602851078",
+      "https://outdooradventurelife.com/wp-content/uploads/2020/10/fishing-2.jpg",
+      "https://i.ytimg.com/vi/UmmmTfU1npY/maxresdefault.jpg"
+    ]
+  },
+  {
+    "activity_id": 13,
+    "name": "Art and Craft Workshop",
+    "category": "Culture",
+    "description": "Participate in traditional art and craft workshops and create unique souvenirs.",
+    "image_url": "art_craft_workshop.jpg",
+    "min_age": 8,
+    "max_age": 75,
+    "images": [
+      "https://www.trendz4friend.com/wp-content/uploads/2021/06/artclasses1.jpg",
+      "https://bk.asia-city.com/sites/default/files/u142691/mha_artcraft.jpg",
+      "https://clubfleurieu.com/wp-content/uploads/2017/03/art-craft-classes-foto.jpg",
+      "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/88463/images/W159ISlZR9uV6bX8LJvA_Creative_Crafting_Club_Class.jpg"
+    ]
+  },
+  {
+    "activity_id": 14,
+    "name": "Mountain Biking",
+    "category": "Adventure",
+    "description": "Explore the rugged terrains on a mountain biking adventure.",
+    "image_url": "mountain_biking.jpg",
+    "min_age": 18,
+    "max_age": 50,
+    "images": [
+      "http://vietchallenge.com/images/uploads/mountain-biking-in-da-lat-1.jpg",
+      "https://i.ytimg.com/vi/Ru1Vp4XSWAg/maxresdefault.jpg",
+      "http://1.bp.blogspot.com/-JccwRxfIRw0/UMlc9VcObLI/AAAAAAAADIk/KOCHJw0xfIk/s1600/Mountain+Biking+Free+Stock+Photos.jpg",
+      "https://www.australiangeographic.com.au/wp-content/uploads/2020/07/MJW2215.jpg"
+    ]
+  },
+  {
+    "activity_id": 15,
+    "name": "Yoga Retreat",
+    "category": "Relaxation",
+    "description": "Rejuvenate your mind and body with a peaceful yoga retreat.",
+    "image_url": "yoga_retreat.jpg",
+    "min_age": 20,
+    "max_age": 70,
+    "images": [
+      "https://bookretreats.com/blog/wp-content/uploads/2020/11/1000_1603815965.jpg",
+      "https://magazine.bluekarmasecrets.com/wp-content/uploads/2019/10/retreatbox4.jpg",
+      "https://retreatmehappy.com/wp-content/uploads/2019/10/Yoga-Retreat-e1574557062145.jpg",
+      "https://breathingtravel.com/wp-content/uploads/2020/05/Yoga-retreat-Australia.jpg"
+    ]
+  },
+  {
+    "activity_id": 16,
+    "name": "Hot Air Balloon Ride",
+    "category": "Adventure",
+    "description": "Experience the thrill of a hot air balloon ride with stunning aerial views.",
+    "image_url": "hot_air_balloon_ride.jpg",
+    "min_age": 12,
+    "max_age": 60,
+    "images": [
+      "https://media.breitbart.com/media/2023/08/Nick-Meleski-Hot-Air-Balloon-640x480.jpg",
+      "https://utahballoonflights.com/wp-content/uploads/2022/02/IMG_8011-769x1024.jpg",
+      "https://static.tripzilla.com/thumb/3/4/197940_800x.jpg",
+      "https://thumbs.dreamstime.com/b/air-balloons-smack-air-around-rocks-turkey-cappadocia-hot-air-balloon-ride-208326100.jpg"
+    ]
+  },
+  {
+    "activity_id": 17,
+    "name": "Local Market Shopping",
+    "category": "Cuisine",
+    "description": "Explore the vibrant local markets and shop for unique handicrafts.",
+    "image_url": "local_market_shopping.jpg",
+    "min_age": 8,
+    "max_age": 80,
+    "images": [
+      "https://trulocal.imgix.net/shared/media/blog/56/image.png?h=700&fit=max&auto=format,compress",
+      "https://www.holidify.com/images/cmsuploads/compressed/27217455627_bde73bce85_b_20190716095410.jpg",
+      "https://www.thespruceeats.com/thmb/cw-Ee_rFSGcWsoAF1sPzYgB0L0s=/1148x0/filters:no_upscale():max_bytes(150000):strip_icc()/Union-Square-Farmers-Market-579cacea3df78c32761d9711.jpg",
+      "https://cleanfoodcrush.com/wp-content/uploads/2016/07/shop-at-local-markets-1024x683.jpg"
+    ]
+  },
+  {
+    "activity_id": 18,
+    "name": "Volunteer and Community Service",
+    "category": "Culture",
+    "description": "Contribute to the community by participating in volunteer activities.",
+    "image_url": "volunteer_community_service.jpg",
+    "min_age": 18,
+    "max_age": 65,
+    "images": [
+      "https://students.1fbusa.com/hubfs/25%20Ways%20to%20Volunteer%20in%20Your%20Community.jpg",
+      "https://intermountainhealthcare.org/-/media/images/modules/blog/posts/2019/03/volunteering-is-good-for-you-and-your-kids.jpg?mw=1600",
+      "https://www.hrresolutions.com/wp-content/uploads/2017/06/volunteer.jpg",
+      "https://www.personalbrandingblog.com/wp-content/uploads/2018/01/Volunteer.jpg"
+    ]
+  },
+  {
+    "activity_id": 19,
+    "name": "Kayaking Adventure",
+    "category": "Adventure",
+    "description": "Paddle through the adventurous waters on a kayaking expedition.",
+    "image_url": "kayaking_adventure.jpg",
+    "min_age": 14,
+    "max_age": 60,
+    "images": [
+      "https://assets.thrillexperiences.com.au/content/product-img/kayaking-adventure-for-two-11.jpg",
+      "https://www.telegraph.co.uk/content/dam/Wellbeing/Spark/Voltarol/female-kayaking-xlarge.jpg",
+      "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/ycfhmscbsclejxwavtjn/RainforestKayakingAdventureinSarawak.jpg",
+      "https://a.rgbimg.com/cache1v3dl0/users/l/lu/lusi/600/ocPR7QM.jpg"
+    ]
+  },
+  {
+    "activity_id": 20,
+    "name": "Scuba Diving",
+    "category": "Adventure",
+    "description": "Dive into the ocean depths and explore the wonders of marine life.",
+    "image_url": "scuba_diving.jpg",
+    "min_age": 16,
+    "max_age": 55,
+    "images": [
+      "https://blog.pickyourtrail.com/wp-content/uploads/2014/06/scuba-diving-phuket-with-aussie-divers.jpg",
+      "https://www.haqqitours.com/wp-content/uploads/2020/07/Diving.jpg",
+      "https://www.amorgos-diving.com/wp-content/uploads/2021/03/adc-3-scaled.jpeg",
+      "http://3.bp.blogspot.com/-UuJ03gD--FI/UAd78REK3PI/AAAAAAAAAFQ/3GNRb_6E9iU/s1600/scuba-diving-certification.jpg"
+    ]
+  },
+  {
+    "activity_id": 21,
+    "name": "Camping",
+    "category": "Adventure",
+    "description": "Experience the thrill of camping under the starry night sky.",
+    "image_url": "camping.jpg",
+    "min_age": 12,
+    "max_age": 60,
+    "images": [
+      "https://s3.amazonaws.com/imagescloud/images/cards/camping/camping-tente.jpg",
+      "https://yt3.ggpht.com/a/AATXAJxQF-1zLuHhC_-tiwUPkKn_em6monJTkKLnhg=s900-c-k-c0xffffffff-no-rj-mo",
+      "https://i.pinimg.com/originals/83/1a/95/831a95074a62b84cd777d6487def4b74.jpg",
+      "https://independentwolf.com/wp-content/uploads/2017/09/three-camping-tents-on-top-of-mountain-1024x682.jpg"
+    ]
+  },
+  {
+    "activity_id": 22,
+    "name": "Cycling Tour",
+    "category": "Adventure",
+    "description": "Take a cycling tour and enjoy the scenic beauty at a leisurely pace.",
+    "image_url": "cycling_tour.jpg",
+    "min_age": 16,
+    "max_age": 65,
+    "images": [
+      "https://www.eatsleepcycle.com/wp-content/uploads/2020/01/EAT-SLEEP-CYCLE-Europen-custom-corporate-cycling-tours-1200x960-1.jpg",
+      "https://www.slovenija.eu.com/wp-content/uploads/2019/06/Slovenia-coast-bike-tour-8.jpg",
+      "https://www.backroads.com/sites/default/files/trips/2018/slideshow/secondary/BIRI-ireland-bike-tour-14.jpg",
+      "https://sfifa.co.uk/wp-content/uploads/2018/10/Cycling-Tour.jpg"
+    ]
+  },
+  {
+    "activity_id": 23,
+    "name": "Underwater Exploration",
+    "category": "Adventure",
+    "description": "Dive into the mesmerizing underwater world and explore the vibrant marine life.",
+    "image_url": "underwater_exploration.jpg",
+    "min_age": 18,
+    "max_age": 50,
+    "images": [
+      "https://i.natgeofe.com/n/a076261a-a4c8-45cf-bab8-70718bf555d3/18486.jpg?w=1200",
+      "https://th-thumbnailer.cdn-si-edu.com/X1d4NGnMygNEuq5zxqGg4AJMK4g=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/78d456f1-1a9f-49a1-b48b-f4435e23942b.jpg",
+      "https://www.thescubanews.com/wp-content/uploads/2018/10/underwater-05-10-18-1.jpg",
+      "https://ychef.files.bbci.co.uk/1600x900/p08htzrm.jpg"
+    ]
+  },
+  {
+    "activity_id": 24,
+    "name": "Photography Tour",
+    "category": "Adventure",
+    "description": "Capture the scenic beauty of the destination on a photography tour.",
+    "image_url": "photography_tour.jpg",
+    "min_age": 18,
+    "max_age": 70,
+    "images": [
+      "https://www.dicksnationals.com/wp-content/uploads/2019/10/photography-tour.jpg",
+      "https://tours.photos/wp-content/uploads/2017/08/Travel_Photography_tour-1024x768.jpg",
+      "https://cdn.tourradar.com/s3/serp/1436x540/17786_wqxXiczu.jpg",
+      "http://www.southeastasiabackpacker.com/wp-content/uploads/2012/06/Flash-Light-Photography-Competition-1200x800_c.jpg?x88525"
+    ]
+  },
+  {
+    "activity_id": 25,
+    "name": "River Rafting",
+    "category": "Adventure",
+    "description": "Challenge the rapids of the river with an exciting rafting adventure.",
+    "image_url": "river_rafting.jpg",
+    "min_age": 18,
+    "max_age": 50,
+    "images": [
+      "https://www.treebo.com/blog/wp-content/uploads/2018/07/The-Complete-Guide-to-River-Rafting-in-Coorg.jpg",
+      "http://www.tripdezire.com/wp-content/uploads/2018/03/river-rafting-rishikesh4-min.jpg",
+      "https://www.awanderlustadventure.com/wordpress/wp-content/uploads/2018/11/DSC7974.jpg",
+      "https://www.worldatlas.com/r/w1200/upload/f1/2c/74/shutterstock-114911380.jpg"
+    ]
+  },
+  {
+    "activity_id": 26,
+    "name": "Cooking Classes",
+    "category": "Cuisine",
+    "description": "Learn to cook the local dishes from expert chefs in cooking classes.",
+    "image_url": "cooking_classes.jpg",
+    "min_age": 12,
+    "max_age": 65,
+    "images": [
+      "https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg",
+      "https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2018/01/cooking-class.jpg?fit=1200%2C750&ssl=1",
+      "https://twincitieskidsclub.com/wp-content/uploads/2020/12/AdobeStock_262111171-1068x712.jpeg",
+      "https://www.tripsavvy.com/thmb/X2QVmOEdtVKzrV004s0nSHpv520=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-143073620-57c4a8cb3df78cc16eca2488.jpg"
+    ]
+  },
+  {
+    "activity_id": 27,
+    "name": "Helicopter Tour",
+    "category": "Adventure",
+    "description": "Get a birds eye view of the destination with an exciting helicopter tour.",
+    "image_url": "helicopter_tour.jpg",
+    "min_age": 10,
+    "max_age": 70,
+    "images": [
+      "https://cdn-imgix.headout.com/tour/18044/TOUR-IMAGE/05d478d0-2919-4ab4-8118-6632884f3f38-9874-new-york-nyc-helicopter-tour-15-minute-tour-01.jpg?auto=compress&fm=pjpg&w=1200&h=750&crop=faces&fit=min",
+      "https://www.thenavyblonde.com/wp-content/uploads/2018/02/paradise-helicopter-tours-hawaii-1024x683.jpg",
+      "https://baikalnova.com/wp-content/uploads/2019/11/6ac6d662bfb0f69dfcf9ee3ae9b35d2d.jpg",
+      "https://www.atriptourism.com/wp-content/uploads/2019/06/Helicopter-Tour-gal4.jpg"
+    ]
+  },
+  {
+    "activity_id": 28,
+    "name": "Sailing Adventure",
+    "category": "Adventure",
+    "description": "Embark on a sailing adventure and explore the coastline from the sea.",
+    "image_url": "sailing_adventure.jpg",
+    "min_age": 16,
+    "max_age": 60,
+    "images": [
+      "https://lirp-cdn.multiscreensite.com/87e050cf/dms3rep/multi/opt/C275+-+spin+LARGE-1920w.jpg",
+      "https://www.atlasandboots.com/wp-content/uploads/2017/10/adventure-sailing-holidays-gadventures-cuba.jpg",
+      "https://www.travelonline.com/fiji/tours/south-sea-cruises-t2/seaspray-sailing/seaspray-sailing-47155.jpg",
+      "https://www.visitagnes1770.com.au/wp-content/uploads/2020/02/sail1770one-1.jpg"
+    ]
+  },
+  {
+    "activity_id": 29,
+    "name": "Educational Visit to Museum",
+    "category": "Education",
+    "description": "Discover the art, history, and culture of the region in museums.",
+    "image_url": "museum_visits.jpg",
+    "min_age": 8,
+    "max_age": 80,
+    "images": [
+      "https://www.leisureopportunities.co.uk/images/HIGH14780_419927.jpg",
+      "https://icom.museum/wp-content/uploads/2020/07/ICOM_Voices_W-Maderbacher_IMG2-1024x683.jpeg",
+      "https://magazine.tcu.edu/wp-content/uploads/2017/08/SUM17-AM-Syllabus_Amon-Carter_2_C-1024x768.jpg",
+      "https://educulture.info/wp-content/uploads/2018/09/museum-education-erasmus-course.jpeg"
+    ]
+  },
+  {
+    "activity_id": 30,
+    "name": "Paragliding",
+    "category": "Adventure",
+    "description": "Experience the thrill of paragliding with an experienced pilot.",
+    "image_url": "paragliding.jpg",
+    "min_age": 16,
+    "max_age": 55,
+    "images": [
+      "https://img.redbull.com/images/c_crop,x_69,y_0,h_3546,w_5319/c_fill,w_1500,h_1000/q_auto,f_auto/redbullcom/2016/10/04/1331821774506_1/jack-pimblett-paragliding-in-catalonia",
+      "https://baliparaglidingtours.com/wp-content/uploads/2019/02/15501112109924941-1.jpg",
+      "https://www.visittnt.com/blog/wp-content/uploads/2018/05/shilong-paragliding.jpg",
+      "https://i0.wp.com/www.webgranth.com/wp-content/uploads/2014/07/HD-Paragliding-Wallpaper.jpg"
+    ]
+  },
+  {
+    "activity_id": 31,
+    "name": "Fruit Picking",
+    "category": "Cuisine",
+    "description": "Enjoy the fun of picking fresh fruits and tasting them at orchards.",
+    "image_url": "fruit_picking.jpg",
+    "min_age": 5,
+    "max_age": 75,
+    "images": [
+      "https://cdn6.dissolve.com/p/D943_21_508/D943_21_508_1200.jpg",
+      "https://www.raisingedmonton.com/wp-content/uploads/2017/07/Depositphotos_84554786_xl-2015.jpg",
+      "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/03/14/13/apple-pickers-getty.jpg",
+      "https://static.toiimg.com/photo/49933894/.jpg"
+    ]
+  },
+  {
+    "activity_id": 32,
+    "name": "Zip Lining",
+    "category": "Adventure",
+    "description": "Feel the adrenaline rush with an exciting zip-lining adventure.",
+    "image_url": "zip_lining.jpg",
+    "min_age": 12,
+    "max_age": 60,
+    "images": [
+      "https://www.choicehotels.com/cms/images/choice-hotels/pace/hero-explore-zip-lining-locations-ziplining/hero-explore-zip-lining-locations-ziplining.jpg",
+      "https://grandcanyonwest.com/wp-content/uploads/6434962_ImageLargeWidth.jpg",
+      "https://content.tripster.com/travelguide/wp-content/uploads/2014/06/rsz_guy_on_zipline_w_view_4e7132c3-cc8a-4804-b654-d9acb2039105.jpg",
+      "https://www.newyorkupstate.com/resizer/PhTXPDD6qIWHNhxupy8ZC_keHds=/1200x0/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.newyorkupstate.com/home/nyup-media/width2048/img/outdoors/photo/2015/06/13/zip-lining-at-hunter-mountain-in-the-catskills-7d227ecd15cd18be.jpg"
+    ]
+  },
+  {
+    "activity_id": 33,
+    "name": "Gardens and Parks",
+    "category": "Adventure",
+    "description": "Relax and take a leisurely stroll in beautiful gardens and parks.",
+    "image_url": "gardens_parks.jpg",
+    "min_age": 5,
+    "max_age": 80,
+    "images": [
+      "https://images.immediate.co.uk/production/volatile/sites/10/2018/04/Goodnestone-Park-Gardens-12f06d9.jpg?quality=45&resize=960,640",
+      "https://londonxlondon.com/wp-content/uploads/2020/02/London-Gardens-3.jpg",
+      "https://www.metcoaches.co.uk/wp-content/uploads/2019/05/shu-Hyde-Park-577597873-1500x1000-1024x683.jpg",
+      "https://www.visitnsw.com/sites/visitnsw/files/styles/open_graph/public/2020-04/162356-%20Tulip%20Time%20Festival%20in%20Corbett%20Gardens%20-%20Bowral_0.jpg?itok=OZskEHuE"
+    ]
+  },
+  {
+    "activity_id": 34,
+    "name": "Cave Exploration",
+    "category": "Adventure",
+    "description": "Explore the mysterious caves and marvel at their natural beauty.",
+    "image_url": "cave_exploration.jpg",
+    "min_age": 14,
+    "max_age": 70,
+    "images": [
+      "https://bloximages.chicago2.vip.townnews.com/poststar.com/content/tncms/assets/v3/editorial/a/4f/a4f6ad2e-4129-11e5-9eed-2782d3ad6b80/55cba09a2e333.image.jpg?resize=1200%2C766",
+      "https://img.jakpost.net/c/2018/07/10/2018_07_10_49018_1531210327._large.jpg",
+      "http://bcbstwelltuned.com/wp-content/uploads/2017/06/Spelunking-e1497553737173.jpg",
+      "https://assets3.thrillist.com/v1/image/2774746/size/gn-gift_guide_variable_c.jpg"
+    ]
+  },
+  {
+    "activity_id": 35,
+    "name": "Bird Watching",
+    "category": "Adventure",
+    "description": "Observe and identify various bird species in their natural habitats.",
+    "image_url": "bird_watching.jpg",
+    "min_age": 10,
+    "max_age": 75,
+    "images": [
+      "https://www.traveltipsor.com/wp-content/uploads/2015/03/bird-watching.jpg",
+      "https://unity.edu/wp-content/uploads/2021/03/hiker-watching-through-binoculars-wild-birds-in-the-jungle-picture-id1225597965.jpg",
+      "http://www.lifeopedia.com/wp-content/uploads/2016/05/iStock_000012687728_Large-1024x682.jpg",
+      "https://birdingoutdoors.com/wp-content/uploads/2020/10/people-2590415_1920.jpg"
+    ]
+  },
+  {
+    "activity_id": 36,
+    "name": "Local Music and Dance",
+    "category": "Culture",
+    "description": "Experience the local music and dance performances showcasing traditions.",
+    "image_url": "local_music_dance.jpg",
+    "min_age": 8,
+    "max_age": 70,
+    "images": [
+      "https://st3.depositphotos.com/1591375/12954/i/950/depositphotos_129543948-stock-photo-local-dancers-and-musicians-perform.jpg",
+      "https://i.ytimg.com/vi/dzfrX40zHAc/maxresdefault.jpg",
+      "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/03/Nepal-Folk-Dance.jpg?w=800&ssl=1",
+      "http://ww4.hdnux.com/photos/57/14/10/12370475/3/920x920.jpg"
+    ]
+  },
+  {
+    "activity_id": 37,
+    "name": "Safaris",
+    "category": "Adventure",
+    "description": "Embark on thrilling safaris and encounter the diverse wildlife.",
+    "image_url": "safaris.jpg",
+    "min_age": 18,
+    "max_age": 60,
+    "images": [
+      "https://foreignpolicyi.org/wp-content/uploads/2019/05/SafariTanzania.jpg",
+      "https://departurelounge.com/wp-content/uploads/2017/10/safarigiraffes.jpg",
+      "https://www.roadaffair.com/wp-content/uploads/2017/10/giraffe-safari-africa-shutterstock_314138468.jpg",
+      "https://whereintheworldisnina.com/wp-content/uploads/2017/01/elephant-289134_1280-min.jpg"
+    ]
+  },
+  {
+    "activity_id": 38,
+    "name": "Festivals and Events",
+    "category": "Culture",
+    "description": "Participate in vibrant festivals and events celebrating local traditions.",
+    "image_url": "festivals_events.jpg",
+    "min_age": 12,
+    "max_age": 70,
+    "images": [
+      "https://travel.home.sndimg.com/content/dam/images/travel/fullrights/2019/2/13/0/CI_Cheyenne_Frontier_Days_Wyoming_50_State_Festivals.jpg.rend.hgtvcom.616.411.suffix/1550058960154.jpeg",
+      "https://www.tripsavvy.com/thmb/8Zr40olbQj4kKTWWGqSdtd1EA7Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/chinese-new-year---spring-festival-2013-163323856-22c509ab36724d749d97d1e099ee76bb.jpg",
+      "https://img.muskokaradio.com/media/events/festivals.jpg",
+      "https://www.tripsavvy.com/thmb/QMusCoesprHkgzSb5a7RQPiaSjM=/2153x1393/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-148830980-5820c6333df78cc2e8942786.jpg"
+    ]
+  },
+  {
+    "activity_id": 39,
+    "name": "Rock Climbing",
+    "category": "Adventure",
+    "description": "Conquer the rocks and cliffs with the thrill of rock climbing.",
+    "image_url": "rock_climbing.jpg",
+    "min_age": 16,
+    "max_age": 50,
+    "images": [
+      "http://www.tradeready.ca/wp-content/uploads/2014/04/Rock-Climbing.jpg",
+      "https://wallpapercave.com/wp/wp2151196.jpg",
+      "https://coresites-cdn-adm.imgix.net/mpora_new/wp-content/uploads/2015/12/iStock_000052710440_Medium.jpg?fit=crop",
+      "https://www.sportsatlanta.org/wp-content/uploads/2017/10/1920x980.jpg"
+    ]
+  },
+  {
+    "activity_id": 40,
+    "name": "Spa and Wellness",
+    "category": "Relaxation",
+    "description": "Pamper yourself with rejuvenating spa treatments and wellness therapies.",
+    "image_url": "spa_wellness.jpg",
+    "min_age": 18,
+    "max_age": 70,
+    "images": [
+      "https://www.hospitalitynewsmag.com/wp-content/uploads/2018/12/hospitality-news-spa-and-wellness-fb.jpg",
+      "http://services.travelsavers.com/AMGService.svc/REST/GetImage?ImageID=f683b1d8-a8aa-e711-9eb5-782bcb66a2f2&Width=1200&Height=800&Enlarge=true",
+      "https://charltonhealth.com/wp-content/uploads/2019/04/Spas-Wellness-Centers1.jpg",
+      "https://domnanowo.pl/wp-content/uploads/2020/09/Wellness.jpg"
+    ]
+  },
+  {
+    "activity_id": 41,
+    "name": "Desert Adventure",
+    "category": "Adventure",
+    "description": "Experience the desert life and go on thrilling desert safaris.",
+    "image_url": "desert_adventure.jpg",
+    "min_age": 10,
+    "max_age": 60,
+    "images": [
+      "https://img.rezdy.com/PRODUCT_IMAGE/75131/BD_Hotel_Paracas_Dunas_6_lg.jpg",
+      "https://img.affordabletours.com/AffordableTours/Products/Images/130348__202009111607__.jpg.webp",
+      "https://cdn2.wanderlust.co.uk/media/1001/62.jpg?anchor=center&mode=crop&width=1200&height=0&rnd=132723778520000000",
+      "https://snaptoad.com/wp-content/uploads/2020/06/Desert-Safari-Adventure-1024x991.jpg"
+    ]
+  },
+  {
+    "activity_id": 42,
+    "name": "Pottery Classes",
+    "category": "Culture",
+    "description": "Learn the traditional art of pottery-making from skilled artisans.",
+    "image_url": "pottery_classes.jpg",
+    "min_age": 12,
+    "max_age": 75,
+    "images": [
+      "https://www.ceramicsstudio.coop/wp-content/uploads/2015/03/170503_Ceramics_COOP_0239-e1497444423853.jpg",
+      "https://thesmartlocal.com/wp-content/uploads/2020/01/Pottery-Classes-in-Singapore-6.jpg",
+      "https://kiddomag.com.au/wp-content/uploads/2021/03/pottery-classes-adelaide.jpeg",
+      "https://thesmartlocal.com/wp-content/uploads/2020/01/Pottery-Classes-in-Singapore-10-1024x768.jpg"
+    ]
+  },
+  {
+    "activity_id": 43,
+    "name": "Sightseeing Tours",
+    "category": "Adventure",
+    "description": "Explore the famous landmarks and attractions on sightseeing tours.",
+    "image_url": "sightseeing_tours.jpg",
+    "min_age": 8,
+    "max_age": 80,
+    "images": [
+      "https://cdn-az.allevents.in/events5/banners/5fa065135a3763aa542242c965bece78326b7a6fed40ef95f03738617b300998-rimg-w960-h640-gmir.jpg?v=1692795154",
+      "https://static.independent.co.uk/2023/08/22/19/newFile-5.jpg?quality=75&width=1200&auto=webp",
+      "https://thenexism.com/wp-content/uploads/2023/08/patrika-gate-6626520_640-1.jpg",
+      "https://en.mogaznews.com/temp/resized/medium_2023-08-23-5ee7273a59.jpg"
+    ]
+  },
+  {
+    "activity_id": 44,
+    "name": "Cultural Workshops",
+    "category": "Culture",
+    "description": "Engage in interactive cultural workshops and learn traditional skills.",
+    "image_url": "cultural_workshops.jpg",
+    "min_age": 10,
+    "max_age": 70,
+    "images": [
+      "http://www.sjsu.edu/ihouse/pics/workshops/cultural_workshop_spring16_1.JPG",
+      "https://unboxed-web-production.s3.amazonaws.com/media/images/tmptmpdsmi67a6.max-1028x464.jpg",
+      "https://teambuildingmadeeasy.com.au/wp-content/uploads/2019/01/PersonalityThatClick_Logo-1024x683.jpg",
+      "http://temp.worimi.org.au/wp-content/uploads/2019/02/cultural-workshops-1.jpg"
+    ]
+  },
+  {
+    "activity_id": 45,
+    "name": "Jet Skiing",
+    "category": "Adventure",
+    "description": "Feel the rush of adrenaline with an exciting jet skiing adventure.",
+    "image_url": "jet_skiing.jpg",
+    "min_age": 16,
+    "max_age": 55,
+    "images": [
+      "https://thailandretirementplans.com/wp-content/uploads/2019/08/best-jet-skis.jpg",
+      "https://cdn.luxatic.com/wp-content/uploads/2020/11/what-is-a-jet-ski.jpg",
+      "https://princeedwardcountyvacation.com/wp-content/uploads/2017/10/de3415b3-a58d-4963-9d55-e2db567b8f86.jpg",
+      "https://www.thesportsbank.net/wp-content/uploads/2020/07/jet-ski.jpg"
+    ]
+  },
+  {
+    "activity_id": 46,
+    "name": "Gastronomic Tour",
+    "category": "Cuisine",
+    "description": "Embark on a gastronomic tour and indulge in a variety of local cuisines.",
+    "image_url": "gastronomic_tour.jpg",
+    "min_age": 12,
+    "max_age": 70,
+    "images": [
+      "https://cdn.getyourguide.com/img/tour/5e7c94010ad59.jpeg/146.jpg",
+      "https://www.stylemotivation.com/wp-content/uploads/2019/05/201811518262645.jpg",
+      "https://happytovisit.com/glib/3/Gastronomy-Tour-in-Sao-Paulo-1-12672.png",
+      "https://travelsquire.com/ts/wp-content/uploads/2018/02/TS-Food-Tour-Feature-2-768x346.jpg"
+    ]
+  },
+  {
+    "activity_id": 47,
+    "name": "Archaeological Excavation",
+    "category": "Culture",
+    "description": "Participate in archaeological digs and uncover ancient artifacts.",
+    "image_url": "archaeological_excavation.jpg",
+    "min_age": 18,
+    "max_age": 65,
+    "images": [
+      "https://www.borderarchaeology.com/wp-content/uploads/2019/04/milton-keynes-archaeological-open-area-excavation-1024x768.jpg",
+      "https://www.archaeological.org/sites/default/files/08jul03_-_b1200_b1500_excavations_19.jpg",
+      "https://i.hurimg.com/i/hdn/75/0x0/5ed392c167b0a821589ee46f.jpg",
+      "https://i.pinimg.com/736x/e1/47/d7/e147d76647670a2f9b113c02b9054620.jpg"
+    ]
+  },
+  {
+    "activity_id": 48,
+    "name": "Forest Trek",
+    "category": "Adventure",
+    "description": "Embark on a trekking expedition through lush forests and diverse wildlife.",
+    "image_url": "forest_trek.jpg",
+    "min_age": 14,
+    "max_age": 60,
+    "images": [
+      "https://static.meraevents.com/content/dashboard/tinymce/uploads/Andharban-Trek-Start-copy1538661343.jpg",
+      "https://thumbs.dreamstime.com/b/traveler-trekking-poles-walks-mountain-forest-99918341.jpg",
+      "https://thumbs.dreamstime.com/b/people-trekking-forest-pokhara-nepal-oct-people-trekking-deep-forest-near-annapurna-massif-nepal-142739962.jpg",
+      "https://en-media.thebetterindia.com/uploads/2018/11/Trek.jpg"
+    ]
+  },
+  {
+    "activity_id": 49,
+    "name": "Cultural Performances",
+    "category": "Culture",
+    "description": "Witness captivating cultural performances showcasing local traditions.",
+    "image_url": "cultural_performances.jpg",
+    "min_age": 8,
+    "max_age": 70,
+    "images": [
+      "https://tianyuculture.us/wp-content/uploads/2019/04/Asset-4@3000x-100-1024x1024.jpg",
+      "https://i.pinimg.com/originals/77/98/c6/7798c681eb8c7a92c7714e71f2fc2117.jpg",
+      "https://ca-times.brightspotcdn.com/dims4/default/cb0019c/2147483647/strip/true/crop/2048x1311+0+0/resize/840x538!/quality/90/?url=https:%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F1c%2Fc5%2F9053389e0d8f119592414accf947%2Fsdut-2012-year-in-review-entertainm-20160904-039",
+      "https://www.thecampuscurrent.com/wp-content/uploads/2017/10/dance.jpg"
+    ]
+  },
+  {
+    "activity_id": 50,
+    "name": "Hot Spring Baths",
+    "category": "Relaxation",
+    "description": "Relax in natural hot spring baths and experience the healing properties.",
+    "image_url": "hot_spring_baths.jpg",
+    "min_age": 10,
+    "max_age": 75,
+    "images": [
+      "https://img.budgettravel.com/_galleryImage/1201hotspringsszechenyibaths2-1192012-11542_original.jpeg?mtime=20140903194335",
+      "https://www.ft.com/__origami/service/image/v2/images/raw/https://s3-ap-northeast-1.amazonaws.com/psh-ex-ftnikkei-3937bb4/images/2/7/1/5/20365172-4-eng-GB/Cropped-1555492776hotspring%20kohara.jpg?source=nar-cms",
+      "https://s1.at.atcdn.net/wp-content/uploads/2014/09/RS54_Peninsula-Hot-Springs-sunset.jpg",
+      "https://www.hoppa.com/resource/blog/uploads/2016/11/Thermae-Spa-Bath-England-e1478685690519.jpg"
+    ]
+  }
+]

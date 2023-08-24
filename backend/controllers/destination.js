@@ -2,6 +2,7 @@ const oracledb = require('oracledb');
 const db = require('../db/db');
 const { getSingleCity } = require('./city');
 const { getSingleActivity } = require('./activity');
+const { getImagesFromObject } = require('./global_helpers');
 
 const getActivitiesFromDestinationId = async (payload) => {
 
@@ -70,6 +71,10 @@ const getSingleDestination = async (payload) => {
         const destination = result[0];
         destination.activities = await getActivitiesFromDestinationId({ destination_id: destination.destination_id})
         destination.city = await getSingleCity({ city_id: destination.city_id });
+        
+        object = {'object_type':'destination','object_id':destination_id}
+        destination.images = await getImagesFromObject(object)
+
         return destination;
     } catch (err) {
         console.log(err);
@@ -199,11 +204,11 @@ const getDestinations = async (payload) => {
     try {
         console.log(sql);
         const result = (await db.execute(sql, binds, db.options)).rows;
+        result_destinations = []
         for (const destination of result) {
-            destination.activities = await getActivitiesFromDestinationId({ destination_id: destination.destination_id})
-            destination.city = await getSingleCity({ city_id: destination.city_id });
+            result_destinations.push(await getSingleDestination({'destination_id':destination.destination_id}))
         }
-        return result;
+        return result_destinations;
     } catch (err) {
         console.log(err);
     }

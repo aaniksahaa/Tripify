@@ -1,0 +1,3272 @@
+[
+    {
+        "destination_id": 1,
+        "name": "Ahsan Manzil",
+        "address": "Bangsha Road, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7104,
+        "longitude": 90.4074,
+        "description": "Ahsan Manzil, also known as Pink Palace, is a historic mansion and museum in Dhaka.",
+        "image_url": "ahsan_manzil.jpg"
+    },
+    {
+        "destination_id": 2,
+        "name": "Lalbagh Fort",
+        "address": "Lalbagh Road, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7115,
+        "longitude": 90.4036,
+        "description": "Lalbagh Fort is an unfinished Mughal palace fortress at the heart of Dhaka.",
+        "image_url": "lalbagh_fort.jpg"
+    },
+    {
+        "destination_id": 3,
+        "name": "Dhakeshwari Temple",
+        "address": "Dhakeshwari Road, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7113,
+        "longitude": 90.4075,
+        "description": "Dhakeshwari Temple is a Hindu temple in Dhaka, known for its architectural significance.",
+        "image_url": "dhakeshwari_temple.jpg"
+    },
+    {
+        "destination_id": 4,
+        "name": "Star Mosque",
+        "address": "Armanitola, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7166,
+        "longitude": 90.4087,
+        "description": "Star Mosque is a beautifully decorated mosque known for its star-patterned mosaic.",
+        "image_url": "star_mosque.jpg"
+    },
+    {
+        "destination_id": 5,
+        "name": "National Museum",
+        "address": "Shahbagh, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7285,
+        "longitude": 90.3955,
+        "description": "National Museum of Bangladesh exhibits artifacts representing the countrys history and culture.",
+        "image_url": "national_museum.jpg"
+    },
+    {
+        "destination_id": 6,
+        "name": "Sadarghat",
+        "address": "Sadarghat Riverfront, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7093,
+        "longitude": 90.4058,
+        "description": "Sadarghat is a bustling river port and a hub of activity on the Buriganga River.",
+        "image_url": "sadarghat.jpg"
+    },
+    {
+        "destination_id": 7,
+        "name": "Dhanmondi Lake",
+        "address": "Dhanmondi, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7463,
+        "longitude": 90.3755,
+        "description": "Dhanmondi Lake is a popular recreational spot with walking paths and boat rides.",
+        "image_url": "dhanmondi_lake.jpg"
+    },
+    {
+        "destination_id": 8,
+        "name": "Bangladesh National Zoo",
+        "address": "Mirpur, Dhaka",
+        "city_id": 1,
+        "latitude": 23.8053,
+        "longitude": 90.3441,
+        "description": "The National Zoo houses a variety of animals and is a great place for families.",
+        "image_url": "national_zoo.jpg"
+    },
+    {
+        "destination_id": 9,
+        "name": "Bangabandhu Memorial Museum",
+        "address": "Dhanmondi, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7465,
+        "longitude": 90.3863,
+        "description": "This museum is dedicated to Sheikh Mujibur Rahman, the founding father of Bangladesh.",
+        "image_url": "bangabandhu_museum.jpg"
+    },
+    {
+        "destination_id": 10,
+        "name": "Jatiya Sangsad Bhaban",
+        "address": "Sher-e-Bangla Nagar, Dhaka",
+        "city_id": 1,
+        "latitude": 23.8067,
+        "longitude": 90.3670,
+        "description": "Designed by Louis Kahn, this parliament complex is an architectural masterpiece.",
+        "image_url": "jatiya_sangsad_bhaban.jpg"
+    },
+    {
+        "destination_id": 11,
+        "name": "Curzon Hall",
+        "address": "University of Dhaka, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7305,
+        "longitude": 90.3945,
+        "description": "Curzon Hall is a historic building and part of the University of Dhaka campus.",
+        "image_url": "curzon_hall.jpg"
+    },
+    {
+        "destination_id": 12,
+        "name": "Bangladesh National Museum of Science and Technology",
+        "address": "Agargaon, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7746,
+        "longitude": 90.3657,
+        "description": "This museum showcases technological advancements and scientific achievements.",
+        "image_url": "science_museum.jpg"
+    },
+    {
+        "destination_id": 13,
+        "name": "Jatiya Smriti Soudho",
+        "address": "Savar, Dhaka",
+        "city_id": 1,
+        "latitude": 23.8856,
+        "longitude": 90.2580,
+        "description": "Jatiya Smriti Soudho is the National Martyrs Memorial, honoring those who died in the Liberation War.",
+        "image_url": "jatiya_smriti_soudho.jpg"
+    },
+    {
+        "destination_id": 14,
+        "name": "Baldha Garden",
+        "address": "Wari, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7152,
+        "longitude": 90.4109,
+        "description": "Baldha Garden is a historical botanical garden with a diverse collection of plants.",
+        "image_url": "baldha_garden.jpg"
+    },
+    {
+        "destination_id": 15,
+        "name": "Suhrawardy Udyan",
+        "address": "Ramna, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7323,
+        "longitude": 90.3947,
+        "description": "Suhrawardy Udyan is a historic park and a place of significant political events.",
+        "image_url": "suhrawardy_udyan.jpg"
+    },
+    {
+        "destination_id": 16,
+        "name": "Shankhari Bazaar",
+        "address": "Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7051,
+        "longitude": 90.4083,
+        "description": "Shankhari Bazaar is a traditional market known for conch shell products and religious items.",
+        "image_url": "shankhari_bazaar.jpg"
+    },
+    {
+        "destination_id": 17,
+        "name": "Shishu Park",
+        "address": "Shahbagh, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7419,
+        "longitude": 90.3893,
+        "description": "Shishu Park is a childrens amusement park offering various rides and entertainment.",
+        "image_url": "shishu_park.jpg"
+    },
+    {
+        "destination_id": 18,
+        "name": "Bangladesh Liberation War Museum",
+        "address": "Agargaon, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7745,
+        "longitude": 90.3641,
+        "description": "This museum commemorates the Liberation War of Bangladesh with historical artifacts.",
+        "image_url": "liberation_war_museum.jpg"
+    },
+    {
+        "destination_id": 19,
+        "name": "Hussaini Dalan",
+        "address": "Chankharpool, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7098,
+        "longitude": 90.4095,
+        "description": "Hussaini Dalan is a Shia shrine and an architectural gem with a vibrant atmosphere.",
+        "image_url": "hussaini_dalan.jpg"
+    },
+    {
+        "destination_id": 20,
+        "name": "Armenian Church of the Holy Resurrection",
+        "address": "Armanitola, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7165,
+        "longitude": 90.4083,
+        "description": "This historic church is one of the oldest Christian churches in Dhaka.",
+        "image_url": "armenian_church.jpg"
+    },
+    {
+        "destination_id": 21,
+        "name": "Hatirjheel",
+        "address": "Tejgaon, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7700,
+        "longitude": 90.4080,
+        "description": "Hatirjheel is an artificial lake with surrounding walkways, gardens, and recreational spaces.",
+        "image_url": "hatirjheel.jpg"
+    },
+    {
+        "destination_id": 22,
+        "name": "New Market",
+        "address": "Azimpur, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7273,
+        "longitude": 90.3986,
+        "description": "New Market is a bustling shopping complex offering a wide range of goods.",
+        "image_url": "new_market.jpg"
+    },
+    {
+        "destination_id": 23,
+        "name": "Liberation War Museum",
+        "address": "Segunbagicha, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7468,
+        "longitude": 90.3943,
+        "description": "Liberation War Museum showcases the history and stories of Bangladeshs struggle for independence.",
+        "image_url": "liberation_war_museum_2.jpg"
+    },
+    {
+        "destination_id": 24,
+        "name": "Bangladesh Military Museum",
+        "address": "Suhrawardy Udyan, Dhaka",
+        "city_id": 1,
+        "latitude": 23.7351,
+        "longitude": 90.3873,
+        "description": "This museum displays military artifacts and honors the armed forces of Bangladesh.",
+        "image_url": "military_museum.jpg"
+    },
+    {
+        "destination_id": 25,
+        "name": "Panam Nagar",
+        "address": "Sonargaon, Narayanganj (near Dhaka)",
+        "city_id": 1,
+        "latitude": 23.6233,
+        "longitude": 90.6121,
+        "description": "Panam Nagar is a historical city with well-preserved colonial architecture.",
+        "image_url": "panam_nagar.jpg"
+    },
+    {
+        "destination_id": 26,
+        "name": "Coxs Bazar Beach",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4272,
+        "longitude": 91.9758,
+        "description": "Coxs Bazar Beach is one of the longest natural sea beaches in the world.",
+        "image_url": "coxs_bazar_beach.jpg"
+    },
+    {
+        "destination_id": 27,
+        "name": "Inani Beach",
+        "address": "Ukhia, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4527,
+        "longitude": 92.0181,
+        "description": "Inani Beach is known for its golden sands, clear waters, and coral reefs.",
+        "image_url": "inani_beach.jpg"
+    },
+    {
+        "destination_id": 28,
+        "name": "Himchari National Park",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4325,
+        "longitude": 91.9628,
+        "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+        "image_url": "himchari_national_park.jpg"
+    },
+    {
+        "destination_id": 29,
+        "name": "Aggmeda Khyang",
+        "address": "Ramu, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.3872,
+        "longitude": 92.0905,
+        "description": "Aggmeda Khyang is a Buddhist monastery known for its intricate wood carvings.",
+        "image_url": "aggmeda_khyang.jpg"
+    },
+    {
+        "destination_id": 30,
+        "name": "Ramu Beach",
+        "address": "Ramu, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.3756,
+        "longitude": 92.1644,
+        "description": "Ramu Beach offers a serene and less crowded beach experience.",
+        "image_url": "ramu_beach.jpg"
+    },
+    {
+        "destination_id": 31,
+        "name": "Himchari National Park",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4325,
+        "longitude": 91.9628,
+        "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+        "image_url": "himchari_national_park.jpg"
+    },
+    {
+        "destination_id": 32,
+        "name": "Dulahazra Safari Park",
+        "address": "Chakaria, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.7697,
+        "longitude": 91.8432,
+        "description": "Dulahazra Safari Park is home to various wildlife species in their natural habitats.",
+        "image_url": "dulahazra_safari_park.jpg"
+    },
+    {
+        "destination_id": 33,
+        "name": "Ramu Buddhist Village",
+        "address": "Ramu, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.3641,
+        "longitude": 92.1709,
+        "description": "Ramu Buddhist Village is known for its numerous monasteries and Buddhist relics.",
+        "image_url": "ramu_buddhist_village.jpg"
+    },
+    {
+        "destination_id": 34,
+        "name": "Adinath Temple",
+        "address": "Maheshkhali Island, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.5726,
+        "longitude": 92.0205,
+        "description": "Adinath Temple is an ancient Hindu temple on Maheshkhali Island.",
+        "image_url": "adinath_temple.jpg"
+    },
+    {
+        "destination_id": 35,
+        "name": "Kolatoli Beach",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4153,
+        "longitude": 91.9833,
+        "description": "Kolatoli Beach is a popular spot for water sports and beachside entertainment.",
+        "image_url": "kolatoli_beach.jpg"
+    },
+    {
+        "destination_id": 36,
+        "name": "Moheshkhali Adinath Temple",
+        "address": "Maheshkhali Island, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.5734,
+        "longitude": 92.0193,
+        "description": "Moheshkhali Adinath Temple is a revered Hindu temple with scenic surroundings.",
+        "image_url": "moheshkhali_adinath_temple.jpg"
+    },
+    {
+        "destination_id": 37,
+        "name": "Marine Drive",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4034,
+        "longitude": 91.9919,
+        "description": "Marine Drive offers a scenic road along the coast with stunning views of the Bay of Bengal.",
+        "image_url": "marine_drive.jpg"
+    },
+    {
+        "destination_id": 38,
+        "name": "Nijhum Dwip",
+        "address": "Hatiya, Noakhali (accessible from Coxs Bazar)",
+        "city_id": 27,
+        "latitude": 21.5763,
+        "longitude": 91.9818,
+        "description": "Nijhum Dwip is a remote island known for its natural beauty and wildlife sanctuary.",
+        "image_url": "nijhum_dwip.jpg"
+    },
+    {
+        "destination_id": 39,
+        "name": "Himchari National Park",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4325,
+        "longitude": 91.9628,
+        "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+        "image_url": "himchari_national_park.jpg"
+    },
+    {
+        "destination_id": 40,
+        "name": "Sonadia Island",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4641,
+        "longitude": 91.9997,
+        "description": "Sonadia Island is a haven for birdwatchers and nature enthusiasts.",
+        "image_url": "sonadia_island.jpg"
+    },
+    {
+        "destination_id": 41,
+        "name": "Laboni Beach",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4153,
+        "longitude": 91.9770,
+        "description": "Laboni Beach is a popular beach for swimming and beachfront activities.",
+        "image_url": "laboni_beach.jpg"
+    },
+    {
+        "destination_id": 42,
+        "name": "Coxs Bazar Fish Market",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4415,
+        "longitude": 91.9863,
+        "description": "Coxs Bazar Fish Market offers a glimpse of the local fishing industry.",
+        "image_url": "coxs_bazar_fish_market.jpg"
+    },
+    {
+        "destination_id": 43,
+        "name": "Inani Beach",
+        "address": "Ukhia, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4527,
+        "longitude": 92.0181,
+        "description": "Inani Beach is known for its golden sands, clear waters, and coral reefs.",
+        "image_url": "inani_beach.jpg"
+    },
+    {
+        "destination_id": 44,
+        "name": "St. Martins Island",
+        "address": "St. Martins Island, Coxs Bazar",
+        "city_id": 27,
+        "latitude": 20.6351,
+        "longitude": 92.3235,
+        "description": "St. Martins Island offers stunning beaches, clear waters, and vibrant marine life.",
+        "image_url": "st_martins_island.jpg"
+    },
+    {
+        "destination_id": 45,
+        "name": "Himchari National Park",
+        "address": "Coxs Bazar",
+        "city_id": 27,
+        "latitude": 21.4325,
+        "longitude": 91.9628,
+        "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+        "image_url": "himchari_national_park.jpg"
+    },
+    {
+        "destination_id": 46,
+        "name": "Foys Lake",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.4645,
+        "longitude": 91.8002,
+        "description": "Foys Lake is a popular recreational area with a lake, amusement park, and paddle boats.",
+        "image_url": "foys_lake.jpg"
+    },
+    {
+        "destination_id": 47,
+        "name": "Patenga Beach",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.2411,
+        "longitude": 91.8188,
+        "description": "Patenga Beach is a bustling beach offering a mix of natural beauty and bustling markets.",
+        "image_url": "patenga_beach.jpg"
+    },
+    {
+        "destination_id": 48,
+        "name": "Vatiary Lake",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.3670,
+        "longitude": 91.8090,
+        "description": "Vatiary Lake is a serene lake popular for boating and picnicking.",
+        "image_url": "vatiary_lake.jpg"
+    },
+    {
+        "destination_id": 49,
+        "name": "Boga Lake",
+        "address": "Bandarban, Chittagong",
+        "city_id": 2,
+        "latitude": 21.8324,
+        "longitude": 92.4075,
+        "description": "Boga Lake is a high-altitude lake with breathtaking views and trekking opportunities.",
+        "image_url": "boga_lake.jpg"
+    },
+    {
+        "destination_id": 50,
+        "name": "Chittagong War Cemetery",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.3462,
+        "longitude": 91.8457,
+        "description": "Chittagong War Cemetery honors the soldiers who fought in World War II.",
+        "image_url": "chittagong_war_cemetery.jpg"
+    },
+    {
+        "destination_id": 51,
+        "name": "Ethnological Museum",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.3311,
+        "longitude": 91.8362,
+        "description": "Ethnological Museum showcases the cultural diversity of Chittagong and its surrounding areas.",
+        "image_url": "ethnological_museum.jpg"
+    },
+    {
+        "destination_id": 52,
+        "name": "Chandranath Temple",
+        "address": "Sitakunda, Chittagong",
+        "city_id": 2,
+        "latitude": 22.4253,
+        "longitude": 91.6353,
+        "description": "Chandranath Temple is a historic Hindu temple located atop a hill in Sitakunda.",
+        "image_url": "chandranath_temple.jpg"
+    },
+    {
+        "destination_id": 53,
+        "name": "Maheshkhali Island",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 21.5774,
+        "longitude": 92.0840,
+        "description": "Maheshkhali Island is known for its religious sites, hills, and natural beauty.",
+        "image_url": "maheshkhali_island.jpg"
+    },
+    {
+        "destination_id": 54,
+        "name": "Zia Memorial Museum",
+        "address": "Chittagong",
+        "city_id": 2,
+        "latitude": 22.3555,
+        "longitude": 91.8193,
+        "description": "Zia Memorial Museum is dedicated to former President Ziaur Rahman and his life.",
+        "image_url": "zia_memorial_museum.jpg"
+    },
+    {
+        "destination_id": 55,
+        "name": "Sajek Valley",
+        "address": "Rangamati, Chittagong",
+        "city_id": 2,
+        "latitude": 23.3864,
+        "longitude": 92.2300,
+        "description": "Sajek Valley offers stunning landscapes, tribal villages, and a peaceful atmosphere.",
+        "image_url": "sajek_valley.jpg"
+    },
+    {
+        "destination_id": 56,
+        "name": "Sundarbans",
+        "address": "Khulna",
+        "city_id": 3,
+        "latitude": 21.9497,
+        "longitude": 89.1833,
+        "description": "Sundarbans is a mangrove forest and UNESCO World Heritage Site, home to diverse wildlife.",
+        "image_url": "sundarbans.jpg"
+    },
+    {
+        "destination_id": 57,
+        "name": "Shat Gambuj Mosque",
+        "address": "Bagerhat, Khulna",
+        "city_id": 3,
+        "latitude": 22.6600,
+        "longitude": 89.7862,
+        "description": "Shat Gambuj Mosque is a stunning 60-dome mosque, a UNESCO World Heritage Site.",
+        "image_url": "shat_gambuj_mosque.jpg"
+    },
+    {
+        "destination_id": 58,
+        "name": "Mongla Port",
+        "address": "Mongla, Khulna",
+        "city_id": 3,
+        "latitude": 22.5773,
+        "longitude": 89.6027,
+        "description": "Mongla Port is a major seaport and gateway to the Sundarbans.",
+        "image_url": "mongla_port.jpg"
+    },
+    {
+        "destination_id": 59,
+        "name": "Dighinala Hill Tracts",
+        "address": "Khagrachari, Khulna",
+        "city_id": 3,
+        "latitude": 23.0409,
+        "longitude": 91.9671,
+        "description": "Dighinala Hill Tracts offers scenic landscapes, indigenous culture, and adventure.",
+        "image_url": "dighinala_hill_tracts.jpg"
+    },
+    {
+        "destination_id": 60,
+        "name": "Khulna Divisional Museum",
+        "address": "Khulna",
+        "city_id": 3,
+        "latitude": 22.8124,
+        "longitude": 89.5589,
+        "description": "Khulna Divisional Museum showcases historical artifacts and cultural heritage.",
+        "image_url": "khulna_divisional_museum.jpg"
+    },
+    {
+        "destination_id": 61,
+        "name": "Rabindranath Complex",
+        "address": "Shilaidaha, Khulna",
+        "city_id": 3,
+        "latitude": 23.2229,
+        "longitude": 89.9381,
+        "description": "Rabindranath Complex is associated with the poet Rabindranath Tagore.",
+        "image_url": "rabindranath_complex.jpg"
+    },
+    {
+        "destination_id": 62,
+        "name": "Jessore Benapol Museum",
+        "address": "Jessore, Khulna",
+        "city_id": 3,
+        "latitude": 23.1474,
+        "longitude": 89.2061,
+        "description": "Jessore Benapol Museum offers insights into local history and culture.",
+        "image_url": "jessore_benapol_museum.jpg"
+    },
+    {
+        "destination_id": 63,
+        "name": "Bhatiary Golf & Country Club",
+        "address": "Chittagong-Khulna Hwy, Khulna",
+        "city_id": 3,
+        "latitude": 22.8010,
+        "longitude": 89.5429,
+        "description": "Bhatiary Golf & Country Club is a popular golf course and recreational facility.",
+        "image_url": "bhatiary_golf_country_club.jpg"
+    },
+    {
+        "destination_id": 64,
+        "name": "Shrimp Culture Farming",
+        "address": "Khulna",
+        "city_id": 3,
+        "latitude": 22.8472,
+        "longitude": 89.5622,
+        "description": "Khulna is known for its shrimp farming and aquaculture activities.",
+        "image_url": "shrimp_culture_farming.jpg"
+    },
+    {
+        "destination_id": 65,
+        "name": "Jadu Babus Bazaar",
+        "address": "Meherpur, Khulna",
+        "city_id": 3,
+        "latitude": 23.7862,
+        "longitude": 88.6325,
+        "description": "Jadu Babus Bazaar is a historic market known for its architecture and cultural significance.",
+        "image_url": "jadu_babus_bazaar.jpg"
+    },
+    {
+        "destination_id": 66,
+        "name": "Puthia Temple Complex",
+        "address": "Rajshahi",
+        "city_id": 4,
+        "latitude": 24.3762,
+        "longitude": 88.7653,
+        "description": "Puthia Temple Complex is a collection of historic Hindu temples and ruins.",
+        "image_url": "puthia_temple_complex.jpg"
+    },
+    {
+        "destination_id": 67,
+        "name": "Varendra Research Museum",
+        "address": "Rajshahi",
+        "city_id": 4,
+        "latitude": 24.3762,
+        "longitude": 88.7660,
+        "description": "Varendra Research Museum is the oldest and most renowned museum in Bangladesh.",
+        "image_url": "varendra_research_museum.jpg"
+    },
+    {
+        "destination_id": 68,
+        "name": "Bagha Mosque",
+        "address": "Bagha, Rajshahi",
+        "city_id": 4,
+        "latitude": 24.3350,
+        "longitude": 88.8300,
+        "description": "Bagha Mosque is a significant archaeological site with a unique architectural style.",
+        "image_url": "bagha_mosque.jpg"
+    },
+    {
+        "destination_id": 69,
+        "name": "Sompur Mahavihara",
+        "address": "Paharpur, Rajshahi",
+        "city_id": 4,
+        "latitude": 25.0185,
+        "longitude": 88.9827,
+        "description": "Sompur Mahavihara is an ancient Buddhist monastery and UNESCO World Heritage Site.",
+        "image_url": "sompur_mahavihara.jpg"
+    },
+    {
+        "destination_id": 70,
+        "name": "Ramsagar National Park",
+        "address": "Dinajpur, Rajshahi",
+        "city_id": 4,
+        "latitude": 25.7234,
+        "longitude": 88.6091,
+        "description": "Ramsagar National Park features a large man-made lake and natural surroundings.",
+        "image_url": "ramsagar_national_park.jpg"
+    },
+    {
+        "destination_id": 71,
+        "name": "Chhoto Sona Mosque",
+        "address": "Gaur, Rajshahi",
+        "city_id": 4,
+        "latitude": 24.5139,
+        "longitude": 89.0202,
+        "description": "Chhoto Sona Mosque is a medieval mosque known for its ornate terracotta decorations.",
+        "image_url": "chhoto_sona_mosque.jpg"
+    },
+    {
+        "destination_id": 72,
+        "name": "Paharpur Museum",
+        "address": "Paharpur, Rajshahi",
+        "city_id": 4,
+        "latitude": 25.0196,
+        "longitude": 88.9825,
+        "description": "Paharpur Museum displays artifacts from the Sompur Mahavihara archaeological site.",
+        "image_url": "paharpur_museum.jpg"
+    },
+    {
+        "destination_id": 73,
+        "name": "Kantajew Temple",
+        "address": "Dinajpur, Rajshahi",
+        "city_id": 4,
+        "latitude": 25.6291,
+        "longitude": 88.6565,
+        "description": "Kantajew Temple is a stunning terracotta temple with intricate carvings.",
+        "image_url": "kantajew_temple.jpg"
+    },
+    {
+        "destination_id": 74,
+        "name": "Rajshahi Zoo",
+        "address": "Rajshahi",
+        "city_id": 4,
+        "latitude": 24.3786,
+        "longitude": 88.6047,
+        "description": "Rajshahi Zoo features a diverse collection of animals and is a popular family destination.",
+        "image_url": "rajshahi_zoo.jpg"
+    },
+    {
+        "destination_id": 75,
+        "name": "Natore Rajbari",
+        "address": "Natore, Rajshahi",
+        "city_id": 4,
+        "latitude": 24.4171,
+        "longitude": 88.9823,
+        "description": "Natore Rajbari is a historic palace known for its architectural beauty and history.",
+        "image_url": "natore_rajbari.jpg"
+    },
+    {
+        "destination_id": 76,
+        "name": "Mainamati Archaeological Site",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4310,
+        "longitude": 91.1887,
+        "description": "Mainamati Archaeological Site is home to ancient Buddhist ruins and relics.",
+        "image_url": "mainamati_archaeological_site.jpg"
+    },
+    {
+        "destination_id": 77,
+        "name": "Lalmai Hill",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4783,
+        "longitude": 91.2056,
+        "description": "Lalmai Hill offers panoramic views and ancient archaeological sites.",
+        "image_url": "lalmai_hill.jpg"
+    },
+    {
+        "destination_id": 78,
+        "name": "Comilla Victoria College",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4679,
+        "longitude": 91.1781,
+        "description": "Comilla Victoria College is one of the oldest and renowned educational institutions in Bangladesh.",
+        "image_url": "comilla_victoria_college.jpg"
+    },
+    {
+        "destination_id": 79,
+        "name": "Maynamati War Cemetery",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4510,
+        "longitude": 91.2243,
+        "description": "Maynamati War Cemetery honors the soldiers who died during World War II.",
+        "image_url": "maynamati_war_cemetery.jpg"
+    },
+    {
+        "destination_id": 80,
+        "name": "Bir Shrestha Ruhul Amin Monument",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4571,
+        "longitude": 91.1876,
+        "description": "Bir Shrestha Ruhul Amin Monument commemorates the bravery of a freedom fighter.",
+        "image_url": "bir_shrestha_ruhul_amin_monument.jpg"
+    },
+    {
+        "destination_id": 81,
+        "name": "Shalbon Bihar",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4852,
+        "longitude": 91.1696,
+        "description": "Shalbon Bihar is an ancient Buddhist monastery with significant historical value.",
+        "image_url": "shalbon_bihar.jpg"
+    },
+    {
+        "destination_id": 82,
+        "name": "Comilla Cantonment",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4449,
+        "longitude": 91.2041,
+        "description": "Comilla Cantonment is a military base with well-maintained surroundings.",
+        "image_url": "comilla_cantonment.jpg"
+    },
+    {
+        "destination_id": 83,
+        "name": "Kotbari",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4578,
+        "longitude": 91.1774,
+        "description": "Kotbari is a historic mansion known for its architectural significance.",
+        "image_url": "kotbari.jpg"
+    },
+    {
+        "destination_id": 84,
+        "name": "Comilla Zoo",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4393,
+        "longitude": 91.1626,
+        "description": "Comilla Zoo features a variety of animals and is a popular family outing spot.",
+        "image_url": "comilla_zoo.jpg"
+    },
+    {
+        "destination_id": 85,
+        "name": "Lalmai Hills Forest Reserve",
+        "address": "Comilla",
+        "city_id": 5,
+        "latitude": 23.4811,
+        "longitude": 91.1917,
+        "description": "Lalmai Hills Forest Reserve offers nature trails and lush greenery.",
+        "image_url": "lalmai_hills_forest_reserve.jpg"
+    },
+    {
+        "destination_id": 86,
+        "name": "Birishiri",
+        "address": "Netrokona, Mymensingh",
+        "city_id": 6,
+        "latitude": 24.8766,
+        "longitude": 90.7499,
+        "description": "Birishiri offers scenic beauty, hills, and the tranquil Someshwari River.",
+        "image_url": "birishiri.jpg"
+    },
+    {
+        "destination_id": 87,
+        "name": "Bijoypur Rajbari",
+        "address": "Kishoreganj, Mymensingh",
+        "city_id": 6,
+        "latitude": 24.4336,
+        "longitude": 90.7972,
+        "description": "Bijoypur Rajbari is a historic palace showcasing architectural elegance.",
+        "image_url": "bijoypur_rajbari.jpg"
+    },
+    {
+        "destination_id": 88,
+        "name": "Shoshi Lodge",
+        "address": "Mymensingh",
+        "city_id": 6,
+        "latitude": 24.7561,
+        "longitude": 90.4080,
+        "description": "Shoshi Lodge is an architectural marvel with colonial influences.",
+        "image_url": "shoshi_lodge.jpg"
+    },
+    {
+        "destination_id": 89,
+        "name": "Sombarpur Rajbari",
+        "address": "Sherpur, Mymensingh",
+        "city_id": 6,
+        "latitude": 25.0322,
+        "longitude": 90.0157,
+        "description": "Sombarpur Rajbari is a historic palace with remarkable terracotta ornamentation.",
+        "image_url": "sombarpur_rajbari.jpg"
+    },
+    {
+        "destination_id": 90,
+        "name": "Gauripur Zamindar Bari",
+        "address": "Mymensingh",
+        "city_id": 6,
+        "latitude": 24.7465,
+        "longitude": 90.4132,
+        "description": "Gauripur Zamindar Bari is a grand mansion reflecting opulent zamindari lifestyle.",
+        "image_url": "gauripur_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 91,
+        "name": "Akua Waterfall",
+        "address": "Mymensingh",
+        "city_id": 6,
+        "latitude": 24.9771,
+        "longitude": 90.4290,
+        "description": "Akua Waterfall offers a refreshing natural retreat surrounded by lush greenery.",
+        "image_url": "akua_waterfall.jpg"
+    },
+    {
+        "destination_id": 92,
+        "name": "Natore Rajbari",
+        "address": "Natore, Mymensingh",
+        "city_id": 6,
+        "latitude": 24.4171,
+        "longitude": 88.9823,
+        "description": "Natore Rajbari is a historic palace known for its architectural beauty and history.",
+        "image_url": "natore_rajbari.jpg"
+    },
+    {
+        "destination_id": 93,
+        "name": "Baliati Zamindar Bari",
+        "address": "Manikganj, Mymensingh",
+        "city_id": 6,
+        "latitude": 23.9824,
+        "longitude": 90.0223,
+        "description": "Baliati Zamindar Bari is a well-preserved mansion showcasing traditional design.",
+        "image_url": "baliati_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 94,
+        "name": "Gobindaganj Zamindar Bari",
+        "address": "Gaibandha, Mymensingh",
+        "city_id": 6,
+        "latitude": 25.8155,
+        "longitude": 89.2180,
+        "description": "Gobindaganj Zamindar Bari is a historic mansion with intricate craftsmanship.",
+        "image_url": "gobindaganj_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 95,
+        "name": "Muktagacha Rajbari",
+        "address": "Mymensingh",
+        "city_id": 6,
+        "latitude": 24.8831,
+        "longitude": 90.1202,
+        "description": "Muktagacha Rajbari is a palace showcasing cultural heritage and architectural brilliance.",
+        "image_url": "muktagacha_rajbari.jpg"
+    },
+    {
+        "destination_id": 96,
+        "name": "Tajhat Palace",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7461,
+        "longitude": 89.2329,
+        "description": "Tajhat Palace is a historic mansion with artistic architecture and lush gardens.",
+        "image_url": "tajhat_palace.jpg"
+    },
+    {
+        "destination_id": 97,
+        "name": "Rangpur Zoo",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7430,
+        "longitude": 89.2254,
+        "description": "Rangpur Zoo offers diverse wildlife and is a popular family destination.",
+        "image_url": "rangpur_zoo.jpg"
+    },
+    {
+        "destination_id": 98,
+        "name": "Carmichael College",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7586,
+        "longitude": 89.2433,
+        "description": "Carmichael College is a prestigious educational institution with historical significance.",
+        "image_url": "carmichael_college.jpg"
+    },
+    {
+        "destination_id": 99,
+        "name": "Taraganj Rajbari",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.5974,
+        "longitude": 89.5479,
+        "description": "Taraganj Rajbari is a royal palace with ornate architecture and cultural heritage.",
+        "image_url": "taraganj_rajbari.jpg"
+    },
+    {
+        "destination_id": 100,
+        "name": "Kellaband Mosque",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7651,
+        "longitude": 89.2310,
+        "description": "Kellaband Mosque is a historical mosque with intricate terracotta decorations.",
+        "image_url": "kellaband_mosque.jpg"
+    },
+    {
+        "destination_id": 101,
+        "name": "Lalmonirhat Rail Station",
+        "address": "Lalmonirhat, Rangpur",
+        "city_id": 7,
+        "latitude": 25.9927,
+        "longitude": 89.2811,
+        "description": "Lalmonirhat Rail Station is a historic railway station with architectural significance.",
+        "image_url": "lalmonirhat_rail_station.jpg"
+    },
+    {
+        "destination_id": 102,
+        "name": "Kantaji Temple",
+        "address": "Dinajpur, Rangpur",
+        "city_id": 7,
+        "latitude": 25.6356,
+        "longitude": 88.6386,
+        "description": "Kantaji Temple is a terracotta Hindu temple with stunning architecture.",
+        "image_url": "kantaji_temple.jpg"
+    },
+    {
+        "destination_id": 103,
+        "name": "Begum Rokeya University",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7603,
+        "longitude": 89.2291,
+        "description": "Begum Rokeya University is a prominent public university known for its academic excellence.",
+        "image_url": "begum_rokeya_university.jpg"
+    },
+    {
+        "destination_id": 104,
+        "name": "Shah Jalal University of Science and Technology",
+        "address": "Sylhet, Rangpur",
+        "city_id": 7,
+        "latitude": 24.8897,
+        "longitude": 91.8687,
+        "description": "Shah Jalal University of Science and Technology is a leading educational institution.",
+        "image_url": "shah_jalal_university.jpg"
+    },
+    {
+        "destination_id": 105,
+        "name": "Badarganj Jamindar Bari",
+        "address": "Rangpur",
+        "city_id": 7,
+        "latitude": 25.7823,
+        "longitude": 89.2226,
+        "description": "Badarganj Jamindar Bari is a historic mansion reflecting zamindari culture.",
+        "image_url": "badarganj_jamindar_bari.jpg"
+    },
+    {
+        "destination_id": 106,
+        "name": "Ratargul Swamp Forest",
+        "address": "Gowainghat, Sylhet",
+        "city_id": 8,
+        "latitude": 25.0289,
+        "longitude": 92.1449,
+        "description": "Ratargul Swamp Forest is a unique freshwater swamp forest and a natural wonder.",
+        "image_url": "ratargul_swamp_forest.jpg"
+    },
+    {
+        "destination_id": 107,
+        "name": "Jaflong",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 25.1506,
+        "longitude": 92.0475,
+        "description": "Jaflong offers breathtaking landscapes, tea gardens, and the Dawki River.",
+        "image_url": "jaflong.jpg"
+    },
+    {
+        "destination_id": 108,
+        "name": "Srimangal",
+        "address": "Srimangal, Sylhet",
+        "city_id": 8,
+        "latitude": 24.3065,
+        "longitude": 91.7220,
+        "description": "Srimangal is known for its tea gardens, lush landscapes, and biodiversity.",
+        "image_url": "srimangal.jpg"
+    },
+    {
+        "destination_id": 109,
+        "name": "Sylhet Shahi Eidgah",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8950,
+        "longitude": 91.8739,
+        "description": "Sylhet Shahi Eidgah is a historic mosque ground with religious and cultural significance.",
+        "image_url": "sylhet_shahi_eidgah.jpg"
+    },
+    {
+        "destination_id": 110,
+        "name": "Shahjalal University of Science and Technology",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8897,
+        "longitude": 91.8687,
+        "description": "Shahjalal University of Science and Technology is a prestigious educational institution.",
+        "image_url": "shahjalal_university.jpg"
+    },
+    {
+        "destination_id": 111,
+        "name": "Sylhet MAG Osmani Medical College",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8793,
+        "longitude": 91.8635,
+        "description": "Sylhet MAG Osmani Medical College is a renowned medical institution in Bangladesh.",
+        "image_url": "sylhet_mag_osmani_medical_college.jpg"
+    },
+    {
+        "destination_id": 112,
+        "name": "Hazrat Shah Jalal Mazar Sharif",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8936,
+        "longitude": 91.8803,
+        "description": "Hazrat Shah Jalal Mazar Sharif is a revered Sufi shrine and a major pilgrimage site.",
+        "image_url": "shah_jalal_mazar_sharif.jpg"
+    },
+    {
+        "destination_id": 113,
+        "name": "Ratna Gobinda Public Library",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8880,
+        "longitude": 91.8672,
+        "description": "Ratna Gobinda Public Library is one of the oldest and largest libraries in Sylhet.",
+        "image_url": "ratna_gobinda_public_library.jpg"
+    },
+    {
+        "destination_id": 114,
+        "name": "Osmani Museum",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8960,
+        "longitude": 91.8746,
+        "description": "Osmani Museum showcases the life and achievements of General MAG Osmani.",
+        "image_url": "osmani_museum.jpg"
+    },
+    {
+        "destination_id": 115,
+        "name": "Sylhet Tea Garden",
+        "address": "Sylhet",
+        "city_id": 8,
+        "latitude": 24.8822,
+        "longitude": 91.8287,
+        "description": "Sylhet Tea Garden offers a scenic view of tea plantations and lush greenery.",
+        "image_url": "sylhet_tea_garden.jpg"
+    },
+    {
+        "destination_id": 116,
+        "name": "Lebur Char",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.6877,
+        "longitude": 90.1703,
+        "description": "Lebur Char is an emerging tourist destination with pristine beaches and mangroves.",
+        "image_url": "lebur_char.jpg"
+    },
+    {
+        "destination_id": 117,
+        "name": "Guthia Mosque",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7050,
+        "longitude": 90.3750,
+        "description": "Guthia Mosque is a historic mosque with intricate terracotta decorations.",
+        "image_url": "guthia_mosque.jpg"
+    },
+    {
+        "destination_id": 118,
+        "name": "Durga Sagar",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7006,
+        "longitude": 90.3415,
+        "description": "Durga Sagar is a large pond surrounded by lush greenery and serene atmosphere.",
+        "image_url": "durga_sagar.jpg"
+    },
+    {
+        "destination_id": 119,
+        "name": "Kuakata Beach",
+        "address": "Kuakata, Barisal",
+        "city_id": 9,
+        "latitude": 21.8265,
+        "longitude": 90.1175,
+        "description": "Kuakata Beach is known for its stunning sunrise and sunset views over the Bay of Bengal.",
+        "image_url": "kuakata_beach.jpg"
+    },
+    {
+        "destination_id": 120,
+        "name": "Durgasagar Dighi",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.6823,
+        "longitude": 90.3369,
+        "description": "Durgasagar Dighi is a historic pond surrounded by trees, offering a serene environment.",
+        "image_url": "durgasagar_dighi.jpg"
+    },
+    {
+        "destination_id": 121,
+        "name": "Kirtipasha Palace",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7050,
+        "longitude": 90.2252,
+        "description": "Kirtipasha Palace is a historical mansion with architectural significance.",
+        "image_url": "kirtipasha_palace.jpg"
+    },
+    {
+        "destination_id": 122,
+        "name": "Shapla Chattar",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7010,
+        "longitude": 90.3533,
+        "description": "Shapla Chattar is a prominent square featuring a water lily sculpture and greenery.",
+        "image_url": "shapla_chattar.jpg"
+    },
+    {
+        "destination_id": 123,
+        "name": "Baitul Aman Jame Masjid",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.6949,
+        "longitude": 90.3516,
+        "description": "Baitul Aman Jame Masjid is a prominent mosque with an impressive structure.",
+        "image_url": "baitul_aman_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 124,
+        "name": "Kirtankhola River",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7016,
+        "longitude": 90.3615,
+        "description": "Kirtankhola River is a picturesque river offering boat rides and scenic views.",
+        "image_url": "kirtankhola_river.jpg"
+    },
+    {
+        "destination_id": 125,
+        "name": "BM College",
+        "address": "Barisal",
+        "city_id": 9,
+        "latitude": 22.7011,
+        "longitude": 90.3496,
+        "description": "BM College is a prestigious educational institution with historical roots.",
+        "image_url": "bm_college.jpg"
+    },
+    {
+        "destination_id": 126,
+        "name": "Sonargaon Folk Art and Craft Museum",
+        "address": "Sonargaon, Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6222,
+        "longitude": 90.5244,
+        "description": "Sonargaon Folk Art and Craft Museum displays traditional art and cultural artifacts.",
+        "image_url": "sonargaon_folk_art_craft_museum.jpg"
+    },
+    {
+        "destination_id": 127,
+        "name": "Goaldi Mosque",
+        "address": "Sonargaon, Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6307,
+        "longitude": 90.5189,
+        "description": "Goaldi Mosque is a historic mosque known for its intricate terracotta decorations.",
+        "image_url": "goaldi_mosque.jpg"
+    },
+    {
+        "destination_id": 128,
+        "name": "Panam Nagar",
+        "address": "Sonargaon, Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6233,
+        "longitude": 90.6121,
+        "description": "Panam Nagar is a historical city with well-preserved colonial architecture.",
+        "image_url": "panam_nagar.jpg"
+    },
+    {
+        "destination_id": 129,
+        "name": "Abdul Hamid Mias Bari",
+        "address": "Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6143,
+        "longitude": 90.5032,
+        "description": "Abdul Hamid Mias Bari is a heritage mansion with intricate woodwork and design.",
+        "image_url": "abdul_hamid_mias_bari.jpg"
+    },
+    {
+        "destination_id": 130,
+        "name": "Narayanganj Club",
+        "address": "Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6251,
+        "longitude": 90.5027,
+        "description": "Narayanganj Club is a historic recreational club known for its colonial architecture.",
+        "image_url": "narayanganj_club.jpg"
+    },
+    {
+        "destination_id": 131,
+        "name": "Demra Bil",
+        "address": "Demra, Narayanganj",
+        "city_id": 10,
+        "latitude": 23.5887,
+        "longitude": 90.5354,
+        "description": "Demra Bil is a serene water body with picturesque surroundings, attracting migratory birds.",
+        "image_url": "demra_bil.jpg"
+    },
+    {
+        "destination_id": 132,
+        "name": "Shitalakshya River",
+        "address": "Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6109,
+        "longitude": 90.5033,
+        "description": "Shitalakshya River offers scenic beauty and is an important waterway in the region.",
+        "image_url": "shitalakshya_river.jpg"
+    },
+    {
+        "destination_id": 133,
+        "name": "Dhaka-Narayanganj-Demra Bridge",
+        "address": "Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6127,
+        "longitude": 90.5141,
+        "description": "Dhaka-Narayanganj-Demra Bridge is a vital transportation link connecting the cities.",
+        "image_url": "dhaka_narayanganj_demra_bridge.jpg"
+    },
+    {
+        "destination_id": 134,
+        "name": "Fatehpur Zamindar Bari",
+        "address": "Fatehpur, Narayanganj",
+        "city_id": 10,
+        "latitude": 23.6426,
+        "longitude": 90.7335,
+        "description": "Fatehpur Zamindar Bari is a historic mansion showcasing traditional architecture.",
+        "image_url": "fatehpur_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 135,
+        "name": "Bhawal Rajbari",
+        "address": "Gazipur, Narayanganj",
+        "city_id": 10,
+        "latitude": 24.0215,
+        "longitude": 90.4113,
+        "description": "Bhawal Rajbari is a former royal palace surrounded by lush gardens and tranquility.",
+        "image_url": "bhawal_rajbari.jpg"
+    },
+    {
+        "destination_id": 136,
+        "name": "Bangabandhu Sheikh Mujib Safari Park",
+        "address": "Gazipur",
+        "city_id": 11,
+        "latitude": 24.0232,
+        "longitude": 90.4304,
+        "description": "Bangabandhu Sheikh Mujib Safari Park offers wildlife experiences and conservation efforts.",
+        "image_url": "bangabandhu_sheikh_mujib_safari_park.jpg"
+    },
+    {
+        "destination_id": 137,
+        "name": "Nandan Park",
+        "address": "Gazipur",
+        "city_id": 11,
+        "latitude": 23.9766,
+        "longitude": 90.4092,
+        "description": "Nandan Park is a popular amusement park with thrilling rides and family fun.",
+        "image_url": "nandan_park.jpg"
+    },
+    {
+        "destination_id": 138,
+        "name": "National Botanical Garden",
+        "address": "Mirpur, Gazipur",
+        "city_id": 11,
+        "latitude": 23.8363,
+        "longitude": 90.3724,
+        "description": "National Botanical Garden showcases diverse plant species and green landscapes.",
+        "image_url": "national_botanical_garden.jpg"
+    },
+    {
+        "destination_id": 139,
+        "name": "Fantasy Kingdom",
+        "address": "Ashulia, Gazipur",
+        "city_id": 11,
+        "latitude": 23.8935,
+        "longitude": 90.2453,
+        "description": "Fantasy Kingdom is an amusement park with rides, water attractions, and entertainment.",
+        "image_url": "fantasy_kingdom.jpg"
+    },
+    {
+        "destination_id": 140,
+        "name": "Tongi Bridge",
+        "address": "Tongi, Gazipur",
+        "city_id": 11,
+        "latitude": 23.8920,
+        "longitude": 90.4186,
+        "description": "Tongi Bridge is a historic bridge over the Turag River, connecting Gazipur and Dhaka.",
+        "image_url": "tongi_bridge.jpg"
+    },
+    {
+        "destination_id": 141,
+        "name": "Bhawal Rajbari",
+        "address": "Bhawal, Gazipur",
+        "city_id": 11,
+        "latitude": 24.0241,
+        "longitude": 90.4172,
+        "description": "Bhawal Rajbari is a former royal palace with architectural significance.",
+        "image_url": "bhawal_rajbari.jpg"
+    },
+    {
+        "destination_id": 142,
+        "name": "Chuti Resort",
+        "address": "Gazipur",
+        "city_id": 11,
+        "latitude": 23.9433,
+        "longitude": 90.4220,
+        "description": "Chuti Resort offers a relaxing getaway with accommodations and natural surroundings.",
+        "image_url": "chuti_resort.jpg"
+    },
+    {
+        "destination_id": 143,
+        "name": "Bangladesh National Zoo",
+        "address": "Mirpur, Gazipur",
+        "city_id": 11,
+        "latitude": 23.8004,
+        "longitude": 90.4132,
+        "description": "Bangladesh National Zoo features a variety of animals and educates visitors about wildlife.",
+        "image_url": "bangladesh_national_zoo.jpg"
+    },
+    {
+        "destination_id": 144,
+        "name": "Bhawal National Park",
+        "address": "Bhawal, Gazipur",
+        "city_id": 11,
+        "latitude": 24.0211,
+        "longitude": 90.4022,
+        "description": "Bhawal National Park is a protected area known for its biodiversity and natural beauty.",
+        "image_url": "bhawal_national_park.jpg"
+    },
+    {
+        "destination_id": 145,
+        "name": "Bhawal Badre Alam Government College",
+        "address": "Gazipur",
+        "city_id": 11,
+        "latitude": 24.0115,
+        "longitude": 90.4085,
+        "description": "Bhawal Badre Alam Government College is an educational institution with historical roots.",
+        "image_url": "bhawal_badre_alam_government_college.jpg"
+    },
+    {
+        "destination_id": 146,
+        "name": "Kuakata Beach",
+        "address": "Kuakata, Feni",
+        "city_id": 12,
+        "latitude": 21.8265,
+        "longitude": 90.1175,
+        "description": "Kuakata Beach is known for its stunning sunrise and sunset views over the Bay of Bengal.",
+        "image_url": "kuakata_beach.jpg"
+    },
+    {
+        "destination_id": 147,
+        "name": "Chhagalnaiya Shahi Eidgah",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 23.0107,
+        "longitude": 91.3999,
+        "description": "Chhagalnaiya Shahi Eidgah is a historic mosque ground with religious and cultural significance.",
+        "image_url": "chhagalnaiya_shahi_eidgah.jpg"
+    },
+    {
+        "destination_id": 148,
+        "name": "Foys Lake",
+        "address": "Chittagong, Feni",
+        "city_id": 12,
+        "latitude": 22.4036,
+        "longitude": 91.8043,
+        "description": "Foys Lake offers boating, entertainment, and scenic beauty near Chittagong.",
+        "image_url": "foys_lake.jpg"
+    },
+    {
+        "destination_id": 149,
+        "name": "Feni Lighthouse",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 23.0212,
+        "longitude": 91.4001,
+        "description": "Feni Lighthouse is a historic landmark guiding ships and a symbol of maritime heritage.",
+        "image_url": "feni_lighthouse.jpg"
+    },
+    {
+        "destination_id": 150,
+        "name": "Dhalia Shahi Mosque",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 22.9273,
+        "longitude": 91.3332,
+        "description": "Dhalia Shahi Mosque is a historical mosque known for its architectural beauty.",
+        "image_url": "dhalia_shahi_mosque.jpg"
+    },
+    {
+        "destination_id": 151,
+        "name": "Birshreshtha Noor Mohammad Public College",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 23.0050,
+        "longitude": 91.3904,
+        "description": "Birshreshtha Noor Mohammad Public College is an educational institution with historical significance.",
+        "image_url": "birshreshtha_noor_mohammad_public_college.jpg"
+    },
+    {
+        "destination_id": 152,
+        "name": "Laldighi Park",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 22.9136,
+        "longitude": 91.3810,
+        "description": "Laldighi Park is a recreational park known for its serene environment and greenery.",
+        "image_url": "laldighi_park.jpg"
+    },
+    {
+        "destination_id": 153,
+        "name": "Feni Government College",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 23.0127,
+        "longitude": 91.4094,
+        "description": "Feni Government College is a renowned educational institution with historical roots.",
+        "image_url": "feni_government_college.jpg"
+    },
+    {
+        "destination_id": 154,
+        "name": "Dorgapara Jame Masjid",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 22.9813,
+        "longitude": 91.3263,
+        "description": "Dorgapara Jame Masjid is a historic mosque known for its architectural elegance.",
+        "image_url": "dorgapara_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 155,
+        "name": "Feni Central Jame Masjid",
+        "address": "Feni",
+        "city_id": 12,
+        "latitude": 23.0131,
+        "longitude": 91.4036,
+        "description": "Feni Central Jame Masjid is a prominent mosque with a grand architectural design.",
+        "image_url": "feni_central_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 156,
+        "name": "Mahasthangarh",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8007,
+        "longitude": 89.3589,
+        "description": "Mahasthangarh is an ancient archaeological site with historical ruins and relics.",
+        "image_url": "mahasthangarh.jpg"
+    },
+    {
+        "destination_id": 157,
+        "name": "Paharpur Bihar",
+        "address": "Naogaon, Bogra",
+        "city_id": 13,
+        "latitude": 25.0205,
+        "longitude": 88.9516,
+        "description": "Paharpur Bihar is a UNESCO World Heritage Site with a prominent ancient Buddhist monastery.",
+        "image_url": "paharpur_bihar.jpg"
+    },
+    {
+        "destination_id": 158,
+        "name": "Bogra Museum",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8507,
+        "longitude": 89.3734,
+        "description": "Bogra Museum displays ancient artifacts and archaeological finds from the region.",
+        "image_url": "bogra_museum.jpg"
+    },
+    {
+        "destination_id": 159,
+        "name": "Shatmatha Bazar",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8493,
+        "longitude": 89.3640,
+        "description": "Shatmatha Bazar is a bustling market with a variety of goods and local products.",
+        "image_url": "shatmatha_bazar.jpg"
+    },
+    {
+        "destination_id": 160,
+        "name": "Nandigram",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8676,
+        "longitude": 89.3463,
+        "description": "Nandigram is a historic place with ancient relics and cultural significance.",
+        "image_url": "nandigram.jpg"
+    },
+    {
+        "destination_id": 161,
+        "name": "Bogra Cantonment Public School and College",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8605,
+        "longitude": 89.3697,
+        "description": "Bogra Cantonment Public School and College is an educational institution with a rich history.",
+        "image_url": "bogra_cantonment_public_school_college.jpg"
+    },
+    {
+        "destination_id": 162,
+        "name": "Bir Sreshtho Captain Mohiuddin Jahangir Library and Museum",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8572,
+        "longitude": 89.3721,
+        "description": "Bir Sreshtho Captain Mohiuddin Jahangir Library and Museum honors a war heros legacy.",
+        "image_url": "bir_sreshtho_captain_mohiuddin_jahangir_library_museum.jpg"
+    },
+    {
+        "destination_id": 163,
+        "name": "Nawab Bari",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8496,
+        "longitude": 89.3580,
+        "description": "Nawab Bari is a historic mansion with architectural elegance and historical significance.",
+        "image_url": "nawab_bari.jpg"
+    },
+    {
+        "destination_id": 164,
+        "name": "Sariakandi Zamindar Bari",
+        "address": "Sariakandi, Bogra",
+        "city_id": 13,
+        "latitude": 24.6972,
+        "longitude": 89.3369,
+        "description": "Sariakandi Zamindar Bari showcases the grandeur of zamindari culture in the region.",
+        "image_url": "sariakandi_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 165,
+        "name": "Shaheed Minar",
+        "address": "Bogra",
+        "city_id": 13,
+        "latitude": 24.8519,
+        "longitude": 89.3631,
+        "description": "Shaheed Minar is a monument commemorating language movement martyrs with artistic design.",
+        "image_url": "shaheed_minar.jpg"
+    },
+    {
+        "destination_id": 166,
+        "name": "Pabna Royal Palace",
+        "address": "Pabna",
+        "city_id": 14,
+        "latitude": 24.0076,
+        "longitude": 89.2449,
+        "description": "Pabna Royal Palace is a historic palace reflecting the royal heritage of the region.",
+        "image_url": "pabna_royal_palace.jpg"
+    },
+    {
+        "destination_id": 167,
+        "name": "Ishwardi Rajbari",
+        "address": "Ishwardi, Pabna",
+        "city_id": 14,
+        "latitude": 24.1264,
+        "longitude": 89.1650,
+        "description": "Ishwardi Rajbari is a majestic palace showcasing the zamindari architecture of the past.",
+        "image_url": "ishwardi_rajbari.jpg"
+    },
+    {
+        "destination_id": 168,
+        "name": "Chatmohar Zamindar Bari",
+        "address": "Chatmohar, Pabna",
+        "city_id": 14,
+        "latitude": 24.9737,
+        "longitude": 89.0411,
+        "description": "Chatmohar Zamindar Bari is a heritage mansion portraying the grandeur of zamindari life.",
+        "image_url": "chatmohar_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 169,
+        "name": "Naduria Zamindar Bari",
+        "address": "Naduria, Pabna",
+        "city_id": 14,
+        "latitude": 24.0635,
+        "longitude": 89.2047,
+        "description": "Naduria Zamindar Bari is an architectural gem representing the zamindari era.",
+        "image_url": "naduria_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 170,
+        "name": "Natore Rajbari",
+        "address": "Natore, Pabna",
+        "city_id": 14,
+        "latitude": 24.4072,
+        "longitude": 89.0060,
+        "description": "Natore Rajbari is an exquisite palace reflecting the rich cultural heritage of the region.",
+        "image_url": "natore_rajbari.jpg"
+    },
+    {
+        "destination_id": 171,
+        "name": "Siddheshwari Kali Temple",
+        "address": "Pabna",
+        "city_id": 14,
+        "latitude": 24.0072,
+        "longitude": 89.2487,
+        "description": "Siddheshwari Kali Temple is a significant religious site with vibrant festivals.",
+        "image_url": "siddheshwari_kali_temple.jpg"
+    },
+    {
+        "destination_id": 172,
+        "name": "Shahrail Baitul Aman Jame Masjid",
+        "address": "Shahrail, Pabna",
+        "city_id": 14,
+        "latitude": 24.0366,
+        "longitude": 89.2130,
+        "description": "Shahrail Baitul Aman Jame Masjid is a stunning mosque showcasing intricate design.",
+        "image_url": "shahrail_baitul_aman_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 173,
+        "name": "Rabindra Kuthibari",
+        "address": "Shahjadpur, Pabna",
+        "city_id": 14,
+        "latitude": 24.4315,
+        "longitude": 89.2381,
+        "description": "Rabindra Kuthibari is the ancestral home of Rabindranath Tagore and a cultural hub.",
+        "image_url": "rabindra_kuthibari.jpg"
+    },
+    {
+        "destination_id": 174,
+        "name": "Barendra Research Museum",
+        "address": "Rajshahi University, Pabna",
+        "city_id": 14,
+        "latitude": 24.3730,
+        "longitude": 88.6181,
+        "description": "Barendra Research Museum features archaeological artifacts and cultural exhibits.",
+        "image_url": "barendra_research_museum.jpg"
+    },
+    {
+        "destination_id": 175,
+        "name": "Niamatpur Zamindar Bari",
+        "address": "Niamatpur, Pabna",
+        "city_id": 14,
+        "latitude": 24.2031,
+        "longitude": 89.2597,
+        "description": "Niamatpur Zamindar Bari is a historical mansion with distinctive architectural elements.",
+        "image_url": "niamatpur_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 176,
+        "name": "Nilgiri Hills",
+        "address": "Thanchi, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8289,
+        "longitude": 92.3979,
+        "description": "Nilgiri Hills is a popular hill station offering panoramic views and a cloud-covered experience.",
+        "image_url": "nilgiri_hills.jpg"
+    },
+    {
+        "destination_id": 177,
+        "name": "Boga Lake",
+        "address": "Ruma, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8454,
+        "longitude": 92.3430,
+        "description": "Boga Lake is a pristine high-altitude lake with breathtaking scenery and tranquility.",
+        "image_url": "boga_lake.jpg"
+    },
+    {
+        "destination_id": 178,
+        "name": "Sangu River",
+        "address": "Bandarban",
+        "city_id": 15,
+        "latitude": 21.7545,
+        "longitude": 92.2207,
+        "description": "Sangu River is a picturesque river with crystal-clear waters and lush landscapes.",
+        "image_url": "sangu_river.jpg"
+    },
+    {
+        "destination_id": 179,
+        "name": "Nilgiri Hills",
+        "address": "Thanchi, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8289,
+        "longitude": 92.3979,
+        "description": "Nilgiri Hills is a popular hill station offering panoramic views and a cloud-covered experience.",
+        "image_url": "nilgiri_hills.jpg"
+    },
+    {
+        "destination_id": 180,
+        "name": "Boga Lake",
+        "address": "Ruma, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8454,
+        "longitude": 92.3430,
+        "description": "Boga Lake is a pristine high-altitude lake with breathtaking scenery and tranquility.",
+        "image_url": "boga_lake.jpg"
+    },
+    {
+        "destination_id": 181,
+        "name": "Sangu River",
+        "address": "Bandarban",
+        "city_id": 15,
+        "latitude": 21.7545,
+        "longitude": 92.2207,
+        "description": "Sangu River is a picturesque river with crystal-clear waters and lush landscapes.",
+        "image_url": "sangu_river.jpg"
+    },
+    {
+        "destination_id": 182,
+        "name": "Nilgiri Hills",
+        "address": "Thanchi, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8289,
+        "longitude": 92.3979,
+        "description": "Nilgiri Hills is a popular hill station offering panoramic views and a cloud-covered experience.",
+        "image_url": "nilgiri_hills.jpg"
+    },
+    {
+        "destination_id": 183,
+        "name": "Boga Lake",
+        "address": "Ruma, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8454,
+        "longitude": 92.3430,
+        "description": "Boga Lake is a pristine high-altitude lake with breathtaking scenery and tranquility.",
+        "image_url": "boga_lake.jpg"
+    },
+    {
+        "destination_id": 184,
+        "name": "Sangu River",
+        "address": "Bandarban",
+        "city_id": 15,
+        "latitude": 21.7545,
+        "longitude": 92.2207,
+        "description": "Sangu River is a picturesque river with crystal-clear waters and lush landscapes.",
+        "image_url": "sangu_river.jpg"
+    },
+    {
+        "destination_id": 185,
+        "name": "Nilgiri Hills",
+        "address": "Thanchi, Bandarban",
+        "city_id": 15,
+        "latitude": 21.8289,
+        "longitude": 92.3979,
+        "description": "Nilgiri Hills is a popular hill station offering panoramic views and a cloud-covered experience.",
+        "image_url": "nilgiri_hills.jpg"
+    },
+    {
+        "destination_id": 186,
+        "name": "Jessore Rajbari",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1643,
+        "longitude": 89.2215,
+        "description": "Jessore Rajbari is a historical palace showcasing the architectural grandeur of the past.",
+        "image_url": "jessore_rajbari.jpg"
+    },
+    {
+        "destination_id": 187,
+        "name": "Benapol Land Port",
+        "address": "Benapol, Jessore",
+        "city_id": 16,
+        "latitude": 23.1407,
+        "longitude": 89.1899,
+        "description": "Benapol Land Port is an important trade gateway connecting Bangladesh and India.",
+        "image_url": "benapol_land_port.jpg"
+    },
+    {
+        "destination_id": 188,
+        "name": "Michael Madhusudan Dutts Residence",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1676,
+        "longitude": 89.2091,
+        "description": "Michael Madhusudan Dutts Residence is the former home of the renowned poet.",
+        "image_url": "michael_madhusudan_dutt_residence.jpg"
+    },
+    {
+        "destination_id": 189,
+        "name": "Chanchra Shiva Temple",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1688,
+        "longitude": 89.2064,
+        "description": "Chanchra Shiva Temple is a historic temple dedicated to Lord Shiva.",
+        "image_url": "chanchra_shiva_temple.jpg"
+    },
+    {
+        "destination_id": 190,
+        "name": "Bagha Mosque",
+        "address": "Bagha, Jessore",
+        "city_id": 16,
+        "latitude": 23.0161,
+        "longitude": 89.0490,
+        "description": "Bagha Mosque is a UNESCO-listed ancient mosque with intricate terracotta decorations.",
+        "image_url": "bagha_mosque.jpg"
+    },
+    {
+        "destination_id": 191,
+        "name": "Abhaynagar Rajbari",
+        "address": "Abhaynagar, Jessore",
+        "city_id": 16,
+        "latitude": 23.0403,
+        "longitude": 89.1077,
+        "description": "Abhaynagar Rajbari is a historical palace showcasing the royal heritage of the region.",
+        "image_url": "abhaynagar_rajbari.jpg"
+    },
+    {
+        "destination_id": 192,
+        "name": "Kistopur Zamindar Bari",
+        "address": "Kistopur, Jessore",
+        "city_id": 16,
+        "latitude": 23.1170,
+        "longitude": 89.1270,
+        "description": "Kistopur Zamindar Bari is a mansion reflecting the architectural opulence of the past.",
+        "image_url": "kistopur_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 193,
+        "name": "Chanchra Rajbari",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1688,
+        "longitude": 89.2064,
+        "description": "Chanchra Rajbari is a historic palace representing the cultural heritage of the region.",
+        "image_url": "chanchra_rajbari.jpg"
+    },
+    {
+        "destination_id": 194,
+        "name": "Manasa Mangal Math",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1696,
+        "longitude": 89.2096,
+        "description": "Manasa Mangal Math is a holy site associated with the worship of the goddess Manasa.",
+        "image_url": "manasa_mangal_math.jpg"
+    },
+    {
+        "destination_id": 195,
+        "name": "Shaheed Minar, Jessore",
+        "address": "Jessore",
+        "city_id": 16,
+        "latitude": 23.1745,
+        "longitude": 89.2077,
+        "description": "Shaheed Minar in Jessore is a monument commemorating the language movement martyrs.",
+        "image_url": "shaheed_minar_jessore.jpg"
+    },
+    {
+        "destination_id": 196,
+        "name": "Kantajew Temple",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6271,
+        "longitude": 88.6375,
+        "description": "Kantajew Temple is an ornate terracotta temple showcasing intricate craftsmanship.",
+        "image_url": "kantajew_temple.jpg"
+    },
+    {
+        "destination_id": 197,
+        "name": "Ramsagar National Park",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6385,
+        "longitude": 88.7156,
+        "description": "Ramsagar National Park features a man-made lake and diverse wildlife.",
+        "image_url": "ramsagar_national_park.jpg"
+    },
+    {
+        "destination_id": 198,
+        "name": "Dinajpur Rajbari",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6340,
+        "longitude": 88.6447,
+        "description": "Dinajpur Rajbari is a historic palace representing the cultural heritage of the region.",
+        "image_url": "dinajpur_rajbari.jpg"
+    },
+    {
+        "destination_id": 199,
+        "name": "Nayabad Mosque",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6342,
+        "longitude": 88.6354,
+        "description": "Nayabad Mosque is a historic mosque known for its unique architectural style.",
+        "image_url": "nayabad_mosque.jpg"
+    },
+    {
+        "destination_id": 200,
+        "name": "Nabaratna Temple",
+        "address": "Kaharol, Dinajpur",
+        "city_id": 17,
+        "latitude": 25.7771,
+        "longitude": 88.8847,
+        "description": "Nabaratna Temple is a Hindu temple complex with exquisite terracotta decorations.",
+        "image_url": "nabaratna_temple.jpg"
+    },
+    {
+        "destination_id": 201,
+        "name": "Biratnagar",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6363,
+        "longitude": 88.6449,
+        "description": "Biratnagar is an archaeological site with ancient remains and historical significance.",
+        "image_url": "biratnagar.jpg"
+    },
+    {
+        "destination_id": 202,
+        "name": "Shingha Darwaza",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6309,
+        "longitude": 88.6367,
+        "description": "Shingha Darwaza is a historical gate that once marked the entrance to Dinajpur city.",
+        "image_url": "shingha_darwaza.jpg"
+    },
+    {
+        "destination_id": 203,
+        "name": "Sukhsagar",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6363,
+        "longitude": 88.6438,
+        "description": "Sukhsagar is a large pond with an interesting history and serene surroundings.",
+        "image_url": "sukhsagar.jpg"
+    },
+    {
+        "destination_id": 204,
+        "name": "Dinajpur Church",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6396,
+        "longitude": 88.6333,
+        "description": "Dinajpur Church is a historic Christian church with architectural charm.",
+        "image_url": "dinajpur_church.jpg"
+    },
+    {
+        "destination_id": 205,
+        "name": "Ramshagor Dighi",
+        "address": "Dinajpur",
+        "city_id": 17,
+        "latitude": 25.6362,
+        "longitude": 88.6447,
+        "description": "Ramshagor Dighi is a large ancient pond with cultural and historical significance.",
+        "image_url": "ramshagor_dighi.jpg"
+    },
+    {
+        "destination_id": 206,
+        "name": "Kusumba Mosque",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.8842,
+        "longitude": 88.6952,
+        "description": "Kusumba Mosque is an ancient mosque featuring unique terracotta artwork.",
+        "image_url": "kusumba_mosque.jpg"
+    },
+    {
+        "destination_id": 207,
+        "name": "Paharpur Buddhist Vihara",
+        "address": "Paharpur, Naogaon",
+        "city_id": 18,
+        "latitude": 25.0132,
+        "longitude": 88.9471,
+        "description": "Paharpur Buddhist Vihara is a UNESCO World Heritage Site showcasing ancient Buddhist architecture.",
+        "image_url": "paharpur_buddhist_vihara.jpg"
+    },
+    {
+        "destination_id": 208,
+        "name": "Khetlal Rajbari",
+        "address": "Khetlal, Naogaon",
+        "city_id": 18,
+        "latitude": 25.3500,
+        "longitude": 88.6561,
+        "description": "Khetlal Rajbari is a historic palace reflecting the royal heritage of the region.",
+        "image_url": "khetlal_rajbari.jpg"
+    },
+    {
+        "destination_id": 209,
+        "name": "Choto Sona Mosque",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.8677,
+        "longitude": 88.7147,
+        "description": "Choto Sona Mosque is a medieval mosque known for its intricate design.",
+        "image_url": "choto_sona_mosque.jpg"
+    },
+    {
+        "destination_id": 210,
+        "name": "Jagaddala Mahavihara",
+        "address": "Jagaddala, Naogaon",
+        "city_id": 18,
+        "latitude": 25.2202,
+        "longitude": 88.5856,
+        "description": "Jagaddala Mahavihara is an ancient Buddhist monastery site of historical significance.",
+        "image_url": "jagaddala_mahavihara.jpg"
+    },
+    {
+        "destination_id": 211,
+        "name": "Kanaiyalal Temple",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.8842,
+        "longitude": 88.6952,
+        "description": "Kanaiyalal Temple is a Hindu temple known for its architectural beauty.",
+        "image_url": "kanaiyalal_temple.jpg"
+    },
+    {
+        "destination_id": 212,
+        "name": "Bahadur Shah Park",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.7995,
+        "longitude": 88.9487,
+        "description": "Bahadur Shah Park is a historical park commemorating the 1857 Sepoy Mutiny.",
+        "image_url": "bahadur_shah_park.jpg"
+    },
+    {
+        "destination_id": 213,
+        "name": "Biswambhara Temple",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.8842,
+        "longitude": 88.6952,
+        "description": "Biswambhara Temple is a revered Hindu temple dedicated to Lord Shiva.",
+        "image_url": "biswambhara_temple.jpg"
+    },
+    {
+        "destination_id": 214,
+        "name": "Shapla Chattar",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.8063,
+        "longitude": 88.9500,
+        "description": "Shapla Chattar is a central square and landmark in Naogaon.",
+        "image_url": "shapla_chattar.jpg"
+    },
+    {
+        "destination_id": 215,
+        "name": "Bairagir Char",
+        "address": "Naogaon",
+        "city_id": 18,
+        "latitude": 24.7852,
+        "longitude": 88.9134,
+        "description": "Bairagir Char is an island located in the Padma River with natural beauty.",
+        "image_url": "bairagir_char.jpg"
+    },
+    {
+        "destination_id": 216,
+        "name": "Atia Mosque",
+        "address": "Tangail",
+        "city_id": 19,
+        "latitude": 24.2507,
+        "longitude": 89.8992,
+        "description": "Atia Mosque is a historic mosque known for its intricate terracotta ornamentation.",
+        "image_url": "atia_mosque.jpg"
+    },
+    {
+        "destination_id": 217,
+        "name": "Arai Hazrat Shah Makhdum",
+        "address": "Tangail",
+        "city_id": 19,
+        "latitude": 24.2496,
+        "longitude": 89.9185,
+        "description": "Arai Hazrat Shah Makhdum is a revered shrine of a Sufi saint.",
+        "image_url": "arai_hazrat_shah_makhdum.jpg"
+    },
+    {
+        "destination_id": 218,
+        "name": "Mahasthangarh",
+        "address": "Mahasthangarh, Bogra",
+        "city_id": 19,
+        "latitude": 24.7877,
+        "longitude": 89.9240,
+        "description": "Mahasthangarh is an ancient archaeological site showcasing the ruins of the Pundra Kingdom.",
+        "image_url": "mahasthangarh.jpg"
+    },
+    {
+        "destination_id": 219,
+        "name": "Aulabari Zamindar Bari",
+        "address": "Tangail",
+        "city_id": 19,
+        "latitude": 24.2029,
+        "longitude": 89.9189,
+        "description": "Aulabari Zamindar Bari is a historical mansion reflecting the zamindari lifestyle.",
+        "image_url": "aulabari_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 220,
+        "name": "Ghatail Nawab Bari",
+        "address": "Ghatail, Tangail",
+        "city_id": 19,
+        "latitude": 24.3629,
+        "longitude": 89.9903,
+        "description": "Ghatail Nawab Bari is a grand palace showcasing the nawabi culture of the past.",
+        "image_url": "ghatail_nawab_bari.jpg"
+    },
+    {
+        "destination_id": 221,
+        "name": "Santosh Dodhara",
+        "address": "Tangail",
+        "city_id": 19,
+        "latitude": 24.2430,
+        "longitude": 89.9315,
+        "description": "Santosh Dodhara is a natural lake offering boating and serene surroundings.",
+        "image_url": "santosh_dodhara.jpg"
+    },
+    {
+        "destination_id": 222,
+        "name": "Lakkatura Tea Garden",
+        "address": "Ghatail, Tangail",
+        "city_id": 19,
+        "latitude": 24.3375,
+        "longitude": 89.9460,
+        "description": "Lakkatura Tea Garden offers scenic beauty and a chance to experience tea cultivation.",
+        "image_url": "lakkatura_tea_garden.jpg"
+    },
+    {
+        "destination_id": 223,
+        "name": "Tangail Amanat Shah Kuti",
+        "address": "Tangail",
+        "city_id": 19,
+        "latitude": 24.2353,
+        "longitude": 89.9160,
+        "description": "Tangail Amanat Shah Kuti is a historic kuti associated with Amanat Shah, a spiritual figure.",
+        "image_url": "tangail_amanat_shah_kuti.jpg"
+    },
+    {
+        "destination_id": 224,
+        "name": "Pakutia Zamindar Bari",
+        "address": "Pakutia, Tangail",
+        "city_id": 19,
+        "latitude": 24.3685,
+        "longitude": 89.9726,
+        "description": "Pakutia Zamindar Bari is a heritage mansion depicting the lifestyle of zamindars.",
+        "image_url": "pakutia_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 225,
+        "name": "Nagarpur Rajbari",
+        "address": "Nagarpur, Tangail",
+        "city_id": 19,
+        "latitude": 24.4739,
+        "longitude": 89.9451,
+        "description": "Nagarpur Rajbari is a historic palace reflecting the cultural heritage of the region.",
+        "image_url": "nagarpur_rajbari.jpg"
+    },
+    {
+        "destination_id": 226,
+        "name": "Birishiri",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.7319,
+        "longitude": 90.5041,
+        "description": "Birishiri is a scenic area with hills, rivers, and the stunning Someshwari River.",
+        "image_url": "birishiri.jpg"
+    },
+    {
+        "destination_id": 227,
+        "name": "Madhutila Eco Park",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8802,
+        "longitude": 90.7085,
+        "description": "Madhutila Eco Park offers natural beauty, hills, and a serene environment.",
+        "image_url": "madhutila_eco_park.jpg"
+    },
+    {
+        "destination_id": 228,
+        "name": "Someshwari River",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8543,
+        "longitude": 90.5907,
+        "description": "Someshwari River is a picturesque river winding through the regions landscape.",
+        "image_url": "someshwari_river.jpg"
+    },
+    {
+        "destination_id": 229,
+        "name": "Bir Muktijoddha Smriti Park",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8805,
+        "longitude": 90.7114,
+        "description": "Bir Muktijoddha Smriti Park commemorates the sacrifices of the Liberation War heroes.",
+        "image_url": "bir_muktijoddha_smriti_park.jpg"
+    },
+    {
+        "destination_id": 230,
+        "name": "Bijoypur Rajbari",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8912,
+        "longitude": 90.7096,
+        "description": "Bijoypur Rajbari is a historic palace reflecting the cultural heritage of the region.",
+        "image_url": "bijoypur_rajbari.jpg"
+    },
+    {
+        "destination_id": 231,
+        "name": "Ghagot River",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.9002,
+        "longitude": 90.7167,
+        "description": "Ghagot River is a significant river flowing through Netrokonas picturesque landscape.",
+        "image_url": "ghagot_river.jpg"
+    },
+    {
+        "destination_id": 232,
+        "name": "Netrokona Government College",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8919,
+        "longitude": 90.7149,
+        "description": "Netrokona Government College is a prominent educational institution with historical significance.",
+        "image_url": "netrokona_government_college.jpg"
+    },
+    {
+        "destination_id": 233,
+        "name": "Gomoti River",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8911,
+        "longitude": 90.7167,
+        "description": "Gomoti River is a scenic river adding beauty to Netrokonas landscape.",
+        "image_url": "gomoti_river.jpg"
+    },
+    {
+        "destination_id": 234,
+        "name": "Madan Mohan Temple",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8482,
+        "longitude": 90.6425,
+        "description": "Madan Mohan Temple is a historic temple with cultural and religious significance.",
+        "image_url": "madan_mohan_temple.jpg"
+    },
+    {
+        "destination_id": 235,
+        "name": "Someshwari Temple",
+        "address": "Netrokona",
+        "city_id": 20,
+        "latitude": 24.8543,
+        "longitude": 90.5907,
+        "description": "Someshwari Temple is a revered Hindu temple situated near the Someshwari River.",
+        "image_url": "someshwari_temple.jpg"
+    },
+    {
+        "destination_id": 236,
+        "name": "National Martyrs Memorial",
+        "address": "Savar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8475,
+        "longitude": 90.2598,
+        "description": "National Martyrs Memorial is a solemn monument commemorating the martyrs of the Liberation War.",
+        "image_url": "national_martyrs_memorial.jpg"
+    },
+    {
+        "destination_id": 237,
+        "name": "Safari Park",
+        "address": "Gazipur-Savar Road, Savar",
+        "city_id": 21,
+        "latitude": 23.8667,
+        "longitude": 90.2705,
+        "description": "Safari Park offers a unique experience of observing wildlife in a natural habitat.",
+        "image_url": "safari_park.jpg"
+    },
+    {
+        "destination_id": 238,
+        "name": "Jatiya Sangsad Bhaban",
+        "address": "Sher-e-Bangla Nagar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8103,
+        "longitude": 90.4115,
+        "description": "Jatiya Sangsad Bhaban is the National Parliament House of Bangladesh, designed by Louis Kahn.",
+        "image_url": "jatiya_sangsad_bhaban.jpg"
+    },
+    {
+        "destination_id": 239,
+        "name": "Savar Golf Club",
+        "address": "Savar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8685,
+        "longitude": 90.2646,
+        "description": "Savar Golf Club is a recreational space for golf enthusiasts with a lush green course.",
+        "image_url": "savar_golf_club.jpg"
+    },
+    {
+        "destination_id": 240,
+        "name": "Savar Cantonment",
+        "address": "Savar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8589,
+        "longitude": 90.2569,
+        "description": "Savar Cantonment is a military base known for its disciplined environment.",
+        "image_url": "savar_cantonment.jpg"
+    },
+    {
+        "destination_id": 241,
+        "name": "BDR 19 Battalion Memorial Museum",
+        "address": "Savar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8491,
+        "longitude": 90.2570,
+        "description": "BDR 19 Battalion Memorial Museum showcases artifacts related to the Bangladesh Liberation War.",
+        "image_url": "bdr_19_battalion_memorial_museum.jpg"
+    },
+    {
+        "destination_id": 242,
+        "name": "Ashulia Rabindra Complex",
+        "address": "Ashulia, Savar",
+        "city_id": 21,
+        "latitude": 23.9410,
+        "longitude": 90.2423,
+        "description": "Ashulia Rabindra Complex is a cultural hub with activities promoting arts and literature.",
+        "image_url": "ashulia_rabindra_complex.jpg"
+    },
+    {
+        "destination_id": 243,
+        "name": "Bhawal National Park",
+        "address": "Gazipur-Savar Road, Savar",
+        "city_id": 21,
+        "latitude": 24.0165,
+        "longitude": 90.3944,
+        "description": "Bhawal National Park is a protected forest area with diverse flora and fauna.",
+        "image_url": "bhawal_national_park.jpg"
+    },
+    {
+        "destination_id": 244,
+        "name": "Rajendrapur Cantonment",
+        "address": "Gazipur-Savar Road, Savar",
+        "city_id": 21,
+        "latitude": 23.9565,
+        "longitude": 90.3697,
+        "description": "Rajendrapur Cantonment is a military establishment contributing to national security.",
+        "image_url": "rajendrapur_cantonment.jpg"
+    },
+    {
+        "destination_id": 245,
+        "name": "National Shooting Complex",
+        "address": "Savar, Dhaka",
+        "city_id": 21,
+        "latitude": 23.8534,
+        "longitude": 90.2626,
+        "description": "National Shooting Complex is a facility for shooting sports and training.",
+        "image_url": "national_shooting_complex.jpg"
+    },
+    {
+        "destination_id": 246,
+        "name": "Kali Bari Temple",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0376,
+        "longitude": 90.9819,
+        "description": "Kali Bari Temple is a Hindu temple dedicated to the goddess Kali.",
+        "image_url": "kali_bari_temple.jpg"
+    },
+    {
+        "destination_id": 247,
+        "name": "Ghorashal Pagoda",
+        "address": "Ghorashal, Narsingdi",
+        "city_id": 22,
+        "latitude": 23.9241,
+        "longitude": 90.9392,
+        "description": "Ghorashal Pagoda is a Buddhist temple with a serene environment.",
+        "image_url": "ghorashal_pagoda.jpg"
+    },
+    {
+        "destination_id": 248,
+        "name": "Bhairab Railway Bridge",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0422,
+        "longitude": 90.9825,
+        "description": "Bhairab Railway Bridge is an important railway connection over the Meghna River.",
+        "image_url": "bhairab_railway_bridge.jpg"
+    },
+    {
+        "destination_id": 249,
+        "name": "Bhairab-Khairab Waterfall",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0635,
+        "longitude": 90.9905,
+        "description": "Bhairab-Khairab Waterfall is a natural waterfall and popular picnic spot.",
+        "image_url": "bhairab_khairab_waterfall.jpg"
+    },
+    {
+        "destination_id": 250,
+        "name": "Bhairab Shahi Mosque",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0455,
+        "longitude": 90.9829,
+        "description": "Bhairab Shahi Mosque is a historic mosque featuring traditional architecture.",
+        "image_url": "bhairab_shahi_mosque.jpg"
+    },
+    {
+        "destination_id": 251,
+        "name": "Meghna Bridge",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0361,
+        "longitude": 90.9865,
+        "description": "Meghna Bridge is a key road and rail bridge connecting Bhairab and Ashuganj.",
+        "image_url": "meghna_bridge.jpg"
+    },
+    {
+        "destination_id": 252,
+        "name": "Charikata Bridge",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0504,
+        "longitude": 90.9796,
+        "description": "Charikata Bridge is a bridge over the Arial Khan River with scenic surroundings.",
+        "image_url": "charikata_bridge.jpg"
+    },
+    {
+        "destination_id": 253,
+        "name": "Bhairab Central Jame Masjid",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0468,
+        "longitude": 90.9840,
+        "description": "Bhairab Central Jame Masjid is a prominent mosque in Bhairab.",
+        "image_url": "bhairab_central_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 254,
+        "name": "Sarail Jame Masjid",
+        "address": "Sarail, Brahmanbaria",
+        "city_id": 22,
+        "latitude": 24.0153,
+        "longitude": 90.9817,
+        "description": "Sarail Jame Masjid is a historical mosque known for its architectural elegance.",
+        "image_url": "sarail_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 255,
+        "name": "Bhairab Railway Station",
+        "address": "Bhairab, Kishoreganj",
+        "city_id": 22,
+        "latitude": 24.0495,
+        "longitude": 90.9826,
+        "description": "Bhairab Railway Station is an important railway hub connecting various routes.",
+        "image_url": "bhairab_railway_station.jpg"
+    },
+    {
+        "destination_id": 256,
+        "name": "Shat Gombuj Mosque (Sixty Dome Mosque)",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6643,
+        "longitude": 89.7855,
+        "description": "Shat Gombuj Mosque is a UNESCO World Heritage Site and an architectural masterpiece.",
+        "image_url": "shat_gombuj_mosque.jpg"
+    },
+    {
+        "destination_id": 257,
+        "name": "Khan Jahan Ali Mazar",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6544,
+        "longitude": 89.7913,
+        "description": "Khan Jahan Ali Mazar is the shrine of a renowned Sufi saint and founder of Bagerhat.",
+        "image_url": "khan_jahan_ali_mazar.jpg"
+    },
+    {
+        "destination_id": 258,
+        "name": "Gambuj Mosque (Nine Dome Mosque)",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6607,
+        "longitude": 89.7797,
+        "description": "Gambuj Mosque, also known as Nine Dome Mosque, is an ancient mosque with nine domes.",
+        "image_url": "gambuj_mosque.jpg"
+    },
+    {
+        "destination_id": 259,
+        "name": "Durgasagar",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6810,
+        "longitude": 89.8056,
+        "description": "Durgasagar is a historic pond surrounded by lush greenery and tranquility.",
+        "image_url": "durgasagar.jpg"
+    },
+    {
+        "destination_id": 260,
+        "name": "Bagerhat Museum",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6557,
+        "longitude": 89.7867,
+        "description": "Bagerhat Museum showcases artifacts related to the regions history and heritage.",
+        "image_url": "bagerhat_museum.jpg"
+    },
+    {
+        "destination_id": 261,
+        "name": "Ghior Dargah Sharif",
+        "address": "Ghior, Manikganj",
+        "city_id": 23,
+        "latitude": 23.9985,
+        "longitude": 89.9920,
+        "description": "Ghior Dargah Sharif is the shrine of a Sufi saint, attracting devotees.",
+        "image_url": "ghior_dargah_sharif.jpg"
+    },
+    {
+        "destination_id": 262,
+        "name": "Panam City",
+        "address": "Panam Nagar, Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6807,
+        "longitude": 89.8081,
+        "description": "Panam City is an ancient city with well-preserved colonial architecture.",
+        "image_url": "panam_city.jpg"
+    },
+    {
+        "destination_id": 263,
+        "name": "Rabindranath Kuthibari",
+        "address": "Shilaidaha, Kushtia",
+        "city_id": 23,
+        "latitude": 23.9434,
+        "longitude": 89.1319,
+        "description": "Rabindranath Kuthibari is a historic house where Rabindranath Tagore resided.",
+        "image_url": "rabindranath_kuthibari.jpg"
+    },
+    {
+        "destination_id": 264,
+        "name": "Chandranath Temple",
+        "address": "Chandranath Hill, Sitakunda",
+        "city_id": 23,
+        "latitude": 22.4223,
+        "longitude": 91.7766,
+        "description": "Chandranath Temple is a revered Hindu temple atop Chandranath Hill.",
+        "image_url": "chandranath_temple.jpg"
+    },
+    {
+        "destination_id": 265,
+        "name": "Kazir Dewri Mandir",
+        "address": "Bagerhat",
+        "city_id": 23,
+        "latitude": 22.6505,
+        "longitude": 89.7861,
+        "description": "Kazir Dewri Mandir is a Hindu temple known for its historical and cultural significance.",
+        "image_url": "kazir_dewri_mandir.jpg"
+    },
+    {
+        "destination_id": 266,
+        "name": "Shrine of Hazrat Shah Paran",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5400,
+        "longitude": 89.1724,
+        "description": "Shrine of Hazrat Shah Paran is the resting place of a Sufi saint.",
+        "image_url": "shrine_of_hazrat_shah_paran.jpg"
+    },
+    {
+        "destination_id": 267,
+        "name": "Jhenaidah Shilpacharya Zainul Abedin Sangrahashala",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5427,
+        "longitude": 89.1735,
+        "description": "Jhenaidah Shilpacharya Zainul Abedin Sangrahashala is an art gallery dedicated to Zainul Abedin.",
+        "image_url": "jhenaidah_shilpacharya_zainul_abedin_sangrahashala.jpg"
+    },
+    {
+        "destination_id": 268,
+        "name": "Bhuban Mohan Park",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5501,
+        "longitude": 89.1612,
+        "description": "Bhuban Mohan Park is a recreational park offering greenery and relaxation.",
+        "image_url": "bhuban_mohan_park.jpg"
+    },
+    {
+        "destination_id": 269,
+        "name": "Baitul Aman Jame Masjid",
+        "address": "Gopalganj, Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5477,
+        "longitude": 89.1566,
+        "description": "Baitul Aman Jame Masjid is a grand mosque with striking architecture.",
+        "image_url": "baitul_aman_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 270,
+        "name": "Jhenaidah Collectorate Building",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5444,
+        "longitude": 89.1722,
+        "description": "Jhenaidah Collectorate Building is a historical government office with architectural significance.",
+        "image_url": "jhenaidah_collectorate_building.jpg"
+    },
+    {
+        "destination_id": 271,
+        "name": "Gandhi Ashram",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5474,
+        "longitude": 89.1590,
+        "description": "Gandhi Ashram is a peaceful place associated with Mahatma Gandhis principles.",
+        "image_url": "gandhi_ashram.jpg"
+    },
+    {
+        "destination_id": 272,
+        "name": "Satbaria Zamindar Bari",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5424,
+        "longitude": 89.1716,
+        "description": "Satbaria Zamindar Bari is a historic mansion reflecting the zamindari culture.",
+        "image_url": "satbaria_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 273,
+        "name": "Boro Bazar Jame Masjid",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5455,
+        "longitude": 89.1602,
+        "description": "Boro Bazar Jame Masjid is a notable mosque located in the market area.",
+        "image_url": "boro_bazar_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 274,
+        "name": "Ichhamati River",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5550,
+        "longitude": 89.1518,
+        "description": "Ichhamati River flows through the region, adding natural beauty to the landscape.",
+        "image_url": "ichhamati_river.jpg"
+    },
+    {
+        "destination_id": 275,
+        "name": "Bijoypur Rajbari",
+        "address": "Jhenaidah",
+        "city_id": 24,
+        "latitude": 23.5428,
+        "longitude": 89.1689,
+        "description": "Bijoypur Rajbari is a historical palace reflecting the cultural heritage of the region.",
+        "image_url": "bijoypur_rajbari.jpg"
+    },
+    {
+        "destination_id": 276,
+        "name": "Kutubdia Lighthouse",
+        "address": "Kutubdia, Bhola",
+        "city_id": 25,
+        "latitude": 21.8140,
+        "longitude": 91.9140,
+        "description": "Kutubdia Lighthouse is a guiding beacon for maritime navigation.",
+        "image_url": "kutubdia_lighthouse.jpg"
+    },
+    {
+        "destination_id": 277,
+        "name": "Dhal Char",
+        "address": "Dhal Char, Bhola",
+        "city_id": 25,
+        "latitude": 22.0350,
+        "longitude": 90.6350,
+        "description": "Dhal Char is a river island with natural beauty and seasonal agricultural activities.",
+        "image_url": "dhal_char.jpg"
+    },
+    {
+        "destination_id": 278,
+        "name": "Jahanabad Cantonment",
+        "address": "Jahanabad, Bhola",
+        "city_id": 25,
+        "latitude": 22.1869,
+        "longitude": 91.7878,
+        "description": "Jahanabad Cantonment is a military establishment contributing to national security.",
+        "image_url": "jahanabad_cantonment.jpg"
+    },
+    {
+        "destination_id": 279,
+        "name": "Bhola Collectorate Building",
+        "address": "Bhola",
+        "city_id": 25,
+        "latitude": 22.6843,
+        "longitude": 90.6482,
+        "description": "Bhola Collectorate Building is a historic government office with architectural significance.",
+        "image_url": "bhola_collectorate_building.jpg"
+    },
+    {
+        "destination_id": 280,
+        "name": "Char Kukri-Mukri Wildlife Sanctuary",
+        "address": "Char Kukri-Mukri, Bhola",
+        "city_id": 25,
+        "latitude": 22.2667,
+        "longitude": 90.9167,
+        "description": "Char Kukri-Mukri Wildlife Sanctuary is a habitat for various bird species and wildlife.",
+        "image_url": "char_kukri_mukri_wildlife_sanctuary.jpg"
+    },
+    {
+        "destination_id": 281,
+        "name": "Burhanuddin Central Jame Masjid",
+        "address": "Burhanuddin, Bhola",
+        "city_id": 25,
+        "latitude": 22.1513,
+        "longitude": 90.7459,
+        "description": "Burhanuddin Central Jame Masjid is a prominent mosque in Burhanuddin.",
+        "image_url": "burhanuddin_central_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 282,
+        "name": "Tajumuddin Baitul Aman Jame Masjid",
+        "address": "Tajumuddin, Bhola",
+        "city_id": 25,
+        "latitude": 22.0355,
+        "longitude": 90.6425,
+        "description": "Tajumuddin Baitul Aman Jame Masjid is a grand mosque with unique architecture.",
+        "image_url": "tajumuddin_baitul_aman_jame_masjid.jpg"
+    },
+    {
+        "destination_id": 283,
+        "name": "Bhola DC Lake",
+        "address": "Bhola",
+        "city_id": 25,
+        "latitude": 22.6782,
+        "longitude": 90.6459,
+        "description": "Bhola DC Lake is a scenic water body offering tranquility and natural beauty.",
+        "image_url": "bhola_dc_lake.jpg"
+    },
+    {
+        "destination_id": 284,
+        "name": "Lalchand Ghat",
+        "address": "Bhola",
+        "city_id": 25,
+        "latitude": 22.7000,
+        "longitude": 90.6500,
+        "description": "Lalchand Ghat is a riverside area for relaxation and enjoying the river view.",
+        "image_url": "lalchand_ghat.jpg"
+    },
+    {
+        "destination_id": 285,
+        "name": "Mujibnagar Memorial Monument",
+        "address": "Bhola",
+        "city_id": 25,
+        "latitude": 22.6730,
+        "longitude": 90.6652,
+        "description": "Mujibnagar Memorial Monument commemorates the historic Mujibnagar Declaration.",
+        "image_url": "mujibnagar_memorial_monument.jpg"
+    },
+    {
+        "destination_id": 286,
+        "name": "Charpara Zamindar Bari",
+        "address": "Harirampur, Manikganj",
+        "city_id": 26,
+        "latitude": 23.8244,
+        "longitude": 90.0386,
+        "description": "Charpara Zamindar Bari is a historic mansion reflecting the zamindari culture.",
+        "image_url": "charpara_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 287,
+        "name": "Singair Rajbari",
+        "address": "Singair, Manikganj",
+        "city_id": 26,
+        "latitude": 23.8494,
+        "longitude": 89.9940,
+        "description": "Singair Rajbari is a historic palace showcasing architectural elegance.",
+        "image_url": "singair_rajbari.jpg"
+    },
+    {
+        "destination_id": 288,
+        "name": "Manikganj Museum",
+        "address": "Manikganj",
+        "city_id": 26,
+        "latitude": 23.8667,
+        "longitude": 90.0155,
+        "description": "Manikganj Museum displays artifacts related to the history and heritage of the region.",
+        "image_url": "manikganj_museum.jpg"
+    },
+    {
+        "destination_id": 289,
+        "name": "Baliati Zamindar Bari",
+        "address": "Saturia, Manikganj",
+        "city_id": 26,
+        "latitude": 23.8323,
+        "longitude": 89.9267,
+        "description": "Baliati Zamindar Bari is a historical mansion offering insights into the zamindari lifestyle.",
+        "image_url": "baliati_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 290,
+        "name": "Manikganj DC Lake",
+        "address": "Manikganj",
+        "city_id": 26,
+        "latitude": 23.8693,
+        "longitude": 90.0060,
+        "description": "Manikganj DC Lake is a serene water body providing relaxation and natural beauty.",
+        "image_url": "manikganj_dc_lake.jpg"
+    },
+    {
+        "destination_id": 291,
+        "name": "Ramsagar Dighi",
+        "address": "Ramsagar, Manikganj",
+        "city_id": 26,
+        "latitude": 23.7295,
+        "longitude": 89.9716,
+        "description": "Ramsagar Dighi is a large historic pond with cultural and ecological significance.",
+        "image_url": "ramsagar_dighi.jpg"
+    },
+    {
+        "destination_id": 292,
+        "name": "Ghior Upazila Complex",
+        "address": "Ghior, Manikganj",
+        "city_id": 26,
+        "latitude": 23.7236,
+        "longitude": 89.9449,
+        "description": "Ghior Upazila Complex is an architectural landmark in Ghior.",
+        "image_url": "ghior_upazila_complex.jpg"
+    },
+    {
+        "destination_id": 293,
+        "name": "Rugij Bari",
+        "address": "Ghior, Manikganj",
+        "city_id": 26,
+        "latitude": 23.7822,
+        "longitude": 89.9516,
+        "description": "Rugij Bari is a historic mansion showcasing traditional architecture.",
+        "image_url": "rugij_bari.jpg"
+    },
+    {
+        "destination_id": 294,
+        "name": "Bhawal Rajbari",
+        "address": "Dhamrai, Manikganj",
+        "city_id": 26,
+        "latitude": 23.8287,
+        "longitude": 89.9675,
+        "description": "Bhawal Rajbari is a historical palace offering insights into the past.",
+        "image_url": "bhawal_rajbari.jpg"
+    },
+    {
+        "destination_id": 295,
+        "name": "Baro Bari Zamindar Bari",
+        "address": "Baro Bari, Manikganj",
+        "city_id": 26,
+        "latitude": 23.8121,
+        "longitude": 89.9515,
+        "description": "Baro Bari Zamindar Bari is a historic mansion with intricate architectural details.",
+        "image_url": "baro_bari_zamindar_bari.jpg"
+    },
+    {
+        "destination_id": 296,
+        "name": "Kaptai Lake",
+        "address": "Kaptai, Rangamati",
+        "city_id": 28,
+        "latitude": 22.6657,
+        "longitude": 92.1860,
+        "description": "Kaptai Lake is a stunning reservoir offering boating and scenic views.",
+        "image_url": "kaptai_lake.jpg"
+    },
+    {
+        "destination_id": 297,
+        "name": "Rajban Bihar Pagoda",
+        "address": "Rajban Bihar, Rangamati",
+        "city_id": 28,
+        "latitude": 22.4598,
+        "longitude": 92.1917,
+        "description": "Rajban Bihar Pagoda is a Buddhist temple complex with a serene ambiance.",
+        "image_url": "rajban_bihar_pagoda.jpg"
+    },
+    {
+        "destination_id": 298,
+        "name": "Sajek Valley",
+        "address": "Sajek, Rangamati",
+        "city_id": 28,
+        "latitude": 23.3845,
+        "longitude": 92.2852,
+        "description": "Sajek Valley is a picturesque hill station known for its breathtaking landscapes.",
+        "image_url": "sajek_valley.jpg"
+    },
+    {
+        "destination_id": 299,
+        "name": "Buddha Dhatu Jadi",
+        "address": "Rangamati",
+        "city_id": 28,
+        "latitude": 22.5413,
+        "longitude": 92.2403,
+        "description": "Buddha Dhatu Jadi is a large Buddhist temple complex offering spiritual vibes.",
+        "image_url": "buddha_dhatu_jadi.jpg"
+    },
+    {
+        "destination_id": 300,
+        "name": "Parjatan Hanging Bridge",
+        "address": "Rangamati",
+        "city_id": 28,
+        "latitude": 22.6662,
+        "longitude": 92.2933,
+        "description": "Parjatan Hanging Bridge is an iconic suspension bridge over the Kaptai Lake.",
+        "image_url": "parjatan_hanging_bridge.jpg"
+    },
+    {
+        "destination_id": 301,
+        "name": "Rangamati Tribal Cultural Museum",
+        "address": "Rangamati",
+        "city_id": 28,
+        "latitude": 22.5557,
+        "longitude": 92.2623,
+        "description": "Rangamati Tribal Cultural Museum showcases the heritage and traditions of indigenous communities.",
+        "image_url": "rangamati_tribal_cultural_museum.jpg"
+    },
+    {
+        "destination_id": 302,
+        "name": "Kaptai National Park",
+        "address": "Kaptai, Rangamati",
+        "city_id": 28,
+        "latitude": 22.6435,
+        "longitude": 92.1875,
+        "description": "Kaptai National Park is a protected area with diverse flora and fauna.",
+        "image_url": "kaptai_national_park.jpg"
+    },
+    {
+        "destination_id": 303,
+        "name": "Shubhalang Waterfall",
+        "address": "Rangamati",
+        "city_id": 28,
+        "latitude": 22.6303,
+        "longitude": 92.3001,
+        "description": "Shubhalang Waterfall is a scenic waterfall surrounded by lush greenery.",
+        "image_url": "shubhalang_waterfall.jpg"
+    },
+    {
+        "destination_id": 304,
+        "name": "Alutila Cave",
+        "address": "Rangamati",
+        "city_id": 28,
+        "latitude": 22.4257,
+        "longitude": 92.1205,
+        "description": "Alutila Cave is a natural limestone cave with intriguing formations.",
+        "image_url": "alutila_cave.jpg"
+    },
+    {
+        "destination_id": 305,
+        "name": "Kaptai Lake Viewpoint",
+        "address": "Kaptai, Rangamati",
+        "city_id": 28,
+        "latitude": 22.6556,
+        "longitude": 92.1897,
+        "description": "Kaptai Lake Viewpoint offers panoramic views of the lake and surrounding hills.",
+        "image_url": "kaptai_lake_viewpoint.jpg"
+    },
+    {
+        "destination_id": 306,
+        "name": "Atia Mosque",
+        "address": "Gopalpur, Tangail",
+        "city_id": 29,
+        "latitude": 24.2846,
+        "longitude": 89.8604,
+        "description": "Atia Mosque is a historic mosque with intricate terracotta decorations.",
+        "image_url": "atia_mosque.jpg"
+    },
+    {
+        "destination_id": 307,
+        "name": "Jamuna Resort",
+        "address": "Jamuna Bridge, Tangail",
+        "city_id": 29,
+        "latitude": 24.4175,
+        "longitude": 89.8094,
+        "description": "Jamuna Resort offers accommodation and recreational activities near the Jamuna Bridge.",
+        "image_url": "jamuna_resort.jpg"
+    },
+    {
+        "destination_id": 308,
+        "name": "Lalbagh Fort",
+        "address": "Lalbagh, Tangail",
+        "city_id": 29,
+        "latitude": 24.1256,
+        "longitude": 89.5597,
+        "description": "Lalbagh Fort is a historical fort with a mosque and mausoleum.",
+        "image_url": "lalbagh_fort.jpg"
+    },
+    {
+        "destination_id": 309,
+        "name": "Aroni Polli",
+        "address": "Gorai, Tangail",
+        "city_id": 29,
+        "latitude": 24.2880,
+        "longitude": 89.7687,
+        "description": "Aroni Polli is an eco-friendly village resort offering a rural experience.",
+        "image_url": "aroni_polli.jpg"
+    },
+    {
+        "destination_id": 310,
+        "name": "Rajbari Bawali",
+        "address": "Mirzapur, Tangail",
+        "city_id": 29,
+        "latitude": 24.2622,
+        "longitude": 89.9420,
+        "description": "Rajbari Bawali is a historic palace showcasing architectural grandeur.",
+        "image_url": "rajbari_bawali.jpg"
+    },
+    {
+        "destination_id": 311,
+        "name": "Bangabandhu Jamuna Eco Park",
+        "address": "Sorishabari, Tangail",
+        "city_id": 29,
+        "latitude": 24.2424,
+        "longitude": 89.8351,
+        "description": "Bangabandhu Jamuna Eco Park is a recreational park with diverse attractions.",
+        "image_url": "bangabandhu_jamuna_eco_park.jpg"
+    },
+    {
+        "destination_id": 312,
+        "name": "Shahzadpur Kuthibari",
+        "address": "Shahzadpur, Tangail",
+        "city_id": 29,
+        "latitude": 24.0154,
+        "longitude": 89.9617,
+        "description": "Shahzadpur Kuthibari is a historic residence associated with Sher-e-Bangla A.K. Fazlul Huq.",
+        "image_url": "shahzadpur_kuthibari.jpg"
+    },
+    {
+        "destination_id": 313,
+        "name": "Madhupur National Park",
+        "address": "Madhupur, Tangail",
+        "city_id": 29,
+        "latitude": 24.0471,
+        "longitude": 90.1145,
+        "description": "Madhupur National Park is a protected area with diverse flora and fauna.",
+        "image_url": "madhupur_national_park.jpg"
+    },
+    {
+        "destination_id": 314,
+        "name": "Kazi Nazrul Islam Smriti Complex",
+        "address": "Talibpur, Tangail",
+        "city_id": 29,
+        "latitude": 24.1874,
+        "longitude": 89.8255,
+        "description": "Kazi Nazrul Islam Smriti Complex is a museum and memorial dedicated to the national poet Kazi Nazrul Islam.",
+        "image_url": "kazi_nazrul_islam_smriti_complex.jpg"
+    },
+    {
+        "destination_id": 315,
+        "name": "Tangail Airmail Monument",
+        "address": "Tangail",
+        "city_id": 29,
+        "latitude": 24.2456,
+        "longitude": 89.9216,
+        "description": "Tangail Airmail Monument commemorates the historic airmail flight from Tangail to Kolkata.",
+        "image_url": "tangail_airmail_monument.jpg"
+    },
+    {
+        "destination_id": 316,
+        "name": "Hajiganj Fort",
+        "address": "Hajiganj, Chandpur",
+        "city_id": 30,
+        "latitude": 23.1949,
+        "longitude": 90.8313,
+        "description": "Hajiganj Fort is a historic fort with a blend of Mughal and British architectural styles.",
+        "image_url": "hajiganj_fort.jpg"
+    },
+    {
+        "destination_id": 317,
+        "name": "Meghna Dighi",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2414,
+        "longitude": 90.6607,
+        "description": "Meghna Dighi is a large historic pond with cultural significance.",
+        "image_url": "meghna_dighi.jpg"
+    },
+    {
+        "destination_id": 318,
+        "name": "Chandpur Kachari Bari",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2331,
+        "longitude": 90.6506,
+        "description": "Chandpur Kachari Bari is a historic administrative building with architectural value.",
+        "image_url": "chandpur_kachari_bari.jpg"
+    },
+    {
+        "destination_id": 319,
+        "name": "Bhar Char",
+        "address": "Bhar Char, Chandpur",
+        "city_id": 30,
+        "latitude": 23.1228,
+        "longitude": 90.6711,
+        "description": "Bhar Char is a river island with natural beauty and seasonal agricultural activities.",
+        "image_url": "bhar_char.jpg"
+    },
+    {
+        "destination_id": 320,
+        "name": "Chandpur Collectorate Building",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2285,
+        "longitude": 90.6542,
+        "description": "Chandpur Collectorate Building is a historic government office with architectural significance.",
+        "image_url": "chandpur_collectorate_building.jpg"
+    },
+    {
+        "destination_id": 321,
+        "name": "Shahrasti Rajbari",
+        "address": "Shahrasti, Chandpur",
+        "city_id": 30,
+        "latitude": 23.1724,
+        "longitude": 90.9654,
+        "description": "Shahrasti Rajbari is a historic palace showcasing the lifestyle of zamindars.",
+        "image_url": "shahrasti_rajbari.jpg"
+    },
+    {
+        "destination_id": 322,
+        "name": "Chandpur Baptist Church",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2290,
+        "longitude": 90.6582,
+        "description": "Chandpur Baptist Church is a religious site with historical significance.",
+        "image_url": "chandpur_baptist_church.jpg"
+    },
+    {
+        "destination_id": 323,
+        "name": "Fathehpur Sikri Mosque",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2287,
+        "longitude": 90.6521,
+        "description": "Fathehpur Sikri Mosque is a historical mosque with unique architectural features.",
+        "image_url": "fathehpur_sikri_mosque.jpg"
+    },
+    {
+        "destination_id": 324,
+        "name": "Shahrasti Shahi Eidgah",
+        "address": "Shahrasti, Chandpur",
+        "city_id": 30,
+        "latitude": 23.1653,
+        "longitude": 90.9624,
+        "description": "Shahrasti Shahi Eidgah is a grand open-air prayer ground with historical importance.",
+        "image_url": "shahrasti_shahi_eidgah.jpg"
+    },
+    {
+        "destination_id": 325,
+        "name": "Chandpur DC Park",
+        "address": "Chandpur",
+        "city_id": 30,
+        "latitude": 23.2285,
+        "longitude": 90.6545,
+        "description": "Chandpur DC Park is a recreational area offering green spaces and relaxation.",
+        "image_url": "chandpur_dc_park.jpg"
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

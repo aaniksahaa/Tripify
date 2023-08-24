@@ -2,6 +2,8 @@ import random
 import json
 from config import review_count, trip_count, hotel_count, restaurant_count, user_count
 
+base_path = './backend/data_generators'
+
 def generate_trip_review():
     activities = [
         "exploring", "discovering", "immersing", "indulging", "adventuring",
@@ -58,6 +60,28 @@ def generate_hotel_review():
         "Fast WiFi contributed to a connected stay.",
         "Timely wake-up calls assisted our daily schedule.",
         "Exceptional breakfast options set a positive tone.",
+        "Stunning views from the room made our stay memorable.",
+        "Luxurious amenities provided a pampering experience.",
+        "Central location made it easy to explore the city.",
+        "Spa services helped us relax and rejuvenate.",
+        "In-room dining service was prompt and delicious.",
+        "Efficient room service maintained the tidiness of our room.",
+        "Beautifully designed interiors created a pleasant ambiance.",
+        "Friendly concierge was always ready to offer helpful recommendations.",
+        "Quiet and peaceful environment ensured a restful sleep.",
+        "Variety of on-site restaurants catered to all our culinary preferences.",
+        "Complimentary shuttle service made transportation hassle-free.",
+        "Thoughtful turndown service added a personalized touch.",
+        "Kids play area and activities kept our children entertained.",
+        "Eco-friendly initiatives made us feel good about our choice of stay.",
+        "Conference and meeting facilities were well-equipped for business travelers.",
+        "Artfully landscaped gardens provided a refreshing outdoor space.",
+        "Efficient check-in and check-out process saved us valuable time.",
+        "Attention to allergen-free requests showed a high level of care.",
+        "Cultural and local decor elements gave the hotel a unique charm.",
+        "Availability of pet-friendly services made traveling with our furry friend convenient.",
+        "Regular housekeeping maintained a clean and organized environment.",
+        "Prompt and helpful responses from the front desk improved our overall experience.",
     ]
     
     hotel_review = " ".join(random.sample(components, random.randint(3, 5)))
@@ -67,18 +91,30 @@ def generate_hotel_review():
 def generate_restaurant_review():
 
     components = [
-        "Delicious dishes delighted our taste buds.",
-        "Attentive service created a memorable dining experience.",
-        "Charming ambiance added to the overall enjoyment.",
-        "Varied menu options satisfied different palates.",
-        "Convenient location enhanced our dining convenience.",
-        "Fast service contributed to a seamless meal.",
-        "Presentation of dishes was visually appealing.",
-        "Unique flavors and culinary creativity impressed us.",
+        "Exquisite flavors danced on our tongues.",
+        "Aromatic spices elevated every dish.",
+        "Friendly staff went above and beyond to serve us.",
+        "Rich textures and layers delighted our senses.",
+        "Inventive plating made each dish a work of art.",
+        "The menu catered to a wide range of preferences.",
+        "Fresh ingredients shined in every bite.",
+        "A harmonious blend of flavors left us in awe.",
+        "The culinary journey took us on a global adventure.",
+        "An abundance of options made choosing a joy.",
+        "Skillful cooking techniques were evident in every bite.",
+        "Elegant decor created a sophisticated atmosphere.",
+        "Mouthwatering aromas greeted us at the entrance.",
+        "The meal was a symphony of tastes and textures.",
+        "A balance of classic and innovative dishes impressed us.",
+        "Thoughtful attention to dietary needs was appreciated.",
+        "Indulgent desserts provided a perfect ending.",
+        "Passionate chefs showcased their dedication on every plate.",
+        "A fusion of cuisines offered a delightful surprise.",
+        "Every dish told a unique and delicious story."
     ]
     
     restaurant_review = " ".join(random.sample(components, random.randint(3, 5)))
-    
+    restaurant_review = restaurant_review.replace('\'','')
     return restaurant_review
 
 def generate_review():
@@ -86,7 +122,7 @@ def generate_review():
     types = ['trip','hotel','restaurant']
     type = random.choice(types)
     description = ""
-    rating = random.randint(3,5)
+    rating = random.randint(2,5)
     image_url = "dummy.jpg"
     if(type == 'trip'):
         description = generate_trip_review()
@@ -109,17 +145,20 @@ def generate_review():
     
     return review
 
-reviews = []
+def generate_random_reviews():
 
-for i in range(review_count):
-    review = generate_review()
-    reviews.append(review)
+    reviews = []
 
-formatted = json.dumps(reviews, indent=2)
+    for i in range(review_count):
+        review = generate_review()
+        reviews.append(review)
 
-file_path = './data_generators/data/reviews.py' 
-with open(file_path, 'w') as file:
-    file.write('reviews = ')
-    file.write(formatted)
+    formatted = json.dumps(reviews, indent=2)
 
-print(review_count)
+    file_path = base_path + '/data/reviews.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted)
+
+    print(review_count,'reviews successfully generated and written to ',file_path)
+
+#generate_random_reviews()

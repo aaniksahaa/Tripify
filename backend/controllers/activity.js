@@ -1,5 +1,6 @@
 const oracledb = require('oracledb');
 const db = require('../db/db');
+const { getImagesFromObject } = require('./global_helpers');
 
 function isNumber(str) {
     return /^\d+(\.\d+)?$/.test(str);
@@ -22,7 +23,12 @@ const getSingleActivity = async (payload) => {
             console.log('Invalid activity_id');
             return null;
         }
-        return result[0];
+        activity = result[0]
+
+        object = {'object_type':'activity','object_id':activity_id}
+        activity.images = await getImagesFromObject(object)
+
+        return activity;
     } catch (err) {
         console.log(err);
     }
@@ -117,7 +123,12 @@ const getActivities = async (payload) => {
     try {
         console.log(sql);
         const result = (await db.execute(sql, binds, db.options)).rows;
-        return result;
+        result_activities = []
+        for(let a of result)
+        {
+            result_activities.push(await getSingleActivity({'activity_id':a.activity_id}))
+        }
+        return result_activities;
     } catch (err) {
         console.log(err);
     }

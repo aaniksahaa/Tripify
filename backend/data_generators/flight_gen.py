@@ -4,6 +4,8 @@ import json
 from data.cities import cities
 from config import flight_count
 
+base_path = './backend/data_generators'
+
 adjectives = ['Royal', 'National', 'Global', 'International', 'Elite', 'Premium', 'Luxury']
 nouns = ['Airlines', 'Airways', 'Flights', 'Aviation']
 flights = []
@@ -35,16 +37,20 @@ def generate_random_flight():
         "booking_url": booking_url
     }
 
-# Generate random flights with unique from_city_id and to_city_id
 
-for _ in range(flight_count):
-    flights.append(generate_random_flight())
+def generate_random_flights():
 
-formatted = json.dumps(flights, indent=2)
+    flights = []
 
-file_path = './data_generators/data/flights.py' 
-with open(file_path, 'w') as file:
-    file.write('flights = ')
-    file.write(formatted)
+    for i in range(flight_count):
+        flights.append(generate_random_flight())
 
-print(flight_count)
+    formatted = json.dumps(flights, indent=2)
+
+    file_path = base_path + '/data/flights.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted)
+
+    print(flight_count,'flights successfully generated and written to ',file_path)
+
+#generate_random_flights()

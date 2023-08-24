@@ -3,6 +3,8 @@ import json
 from data.cities import cities
 from config import hotel_count
 
+base_path = './backend/data_generators'
+
 adjectives = [
     "Luxurious", "Charming", "Elegant", "Cozy", "Modern", "Boutique",
     "Seaside", "Rustic", "Quaint", "Spectacular", "Elevated", "Glorious"
@@ -46,16 +48,22 @@ def generate_random_hotel():
         "has_wifi": random.choice([0, 1]),
         "has_parking": random.choice([0, 1]),
         "has_gym": random.choice([0, 1]),
+        "images":["dummy.jpg"]
     }
 
-for i in range(hotel_count):
-    hotels.append(generate_random_hotel())
+def generate_random_hotels():
 
-formatted = json.dumps(hotels, indent=2)
+    hotels = []
 
-file_path = './data_generators/data/hotels.py' 
-with open(file_path, 'w') as file:
-    file.write('hotels = ')
-    file.write(formatted)
+    for i in range(hotel_count):
+        hotels.append(generate_random_hotel())
 
-print(hotel_count)
+    formatted = json.dumps(hotels, indent=2)
+
+    file_path = base_path + '/data/hotels.json' 
+    with open(file_path, 'w') as file:
+        file.write(formatted)
+
+    print(hotel_count,'hotels successfully generated and written to ',file_path)
+
+#generate_random_hotels()

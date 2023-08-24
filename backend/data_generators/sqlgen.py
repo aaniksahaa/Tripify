@@ -1,14 +1,37 @@
-from data.activities import activities
-from data.destinations import destinations
-from data.cities import cities
-from data.hotels import hotels
-from data.flights import flights
-from data.restaurants import restaurants
-from data.provides import provides
-from data.users import users
-from data.trips import trips
-from data.reviews import reviews
+# from data.activities import activities
+# from data.destinations import destinations
+# from data.cities import cities
+# from data.hotels import hotels
+# from data.flights import flights
+# from data.restaurants import restaurants
+# from data.provides import provides
+# from data.users import users
+# from data.trips import trips
+# from data.reviews import reviews
 
+def purify(given_string):
+    return given_string.replace('\'','')
+
+import json
+
+base_path = './backend/data_generators'
+
+def read_json_file(filename):
+    json_file_path = base_path + '/data/' + filename
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+cities = read_json_file('cities.json')
+hotels = read_json_file('hotels.json')
+restaurants = read_json_file('restaurants.json')
+reviews = read_json_file('reviews.json')
+destinations = read_json_file('destinations.json')
+activities = read_json_file('activities.json')
+flights = read_json_file('flights.json')
+trips = read_json_file('trips.json')
+users = read_json_file('users.json')
+provides = read_json_file('provides.json')
 
 sql = ""
 
@@ -68,24 +91,38 @@ sql += "INSERT INTO Guides (user_id) VALUES (2);\n"
 
 sql += "\n---Destinations\n\n"
 
+destination_id = 1
 for d in destinations:
-    s = f"INSERT INTO Destinations (name, address, city_id, latitude, longitude, description, image_url) VALUES ('{d['name']}', '{d['address']}', {d['city_id']}, {d['latitude']}, {d['longitude']}, '{d['description']}', '{d['image_url']}');"
-    sql += s 
-    sql += "\n"
+    s = f"INSERT INTO Destinations (name, address, city_id, latitude, longitude, description, image_url) VALUES ('{d['name']}', '{d['address']}', {d['city_id']}, {d['latitude']}, {d['longitude']}, '{d['description']}', '{d['image_url']}');\n"
+    for url in d['images']:
+      s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','destination',{destination_id});\n"
+    s += '\n'
+    sql += s
+    destination_id += 1
 
 sql += "\n---Activities\n\n"
 
+activity_id = 1
 for a in activities:
-    s = f"INSERT INTO Activities (name, category, description, image_url, min_age, max_age) VALUES ('{a['name']}', '{a['category']}', '{a['description']}', '{a['image_url']}', {a['min_age']}, {a['max_age']});"
-    sql += s 
-    sql += "\n"
+    s = f"INSERT INTO Activities (name, category, description, image_url, min_age, max_age) VALUES ('{a['name']}', '{a['category']}', '{a['description']}', '{a['image_url']}', {a['min_age']}, {a['max_age']});\n"
+    for url in a['images']:
+      s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','activity',{activity_id});\n"
+    s += '\n'
+    sql += s
+    activity_id += 1
 
 sql += "\n---Hotels\n\n"
 
+hotel_id = 1
 for h in hotels:
-    s = f"INSERT INTO Hotels (name, address, city_id, description, image_url, price_per_day, phone, email, has_wifi, has_parking, has_gym) VALUES ('{h['name']}', '{h['address']}', {h['city_id']}, '{h['description']}', '{h['image_url']}', {h['price_per_day']}, '{h['phone']}', '{h['email']}', {h['has_wifi']}, {h['has_parking']}, {h['has_gym']});"
+    s = f"INSERT INTO Hotels (name, address, city_id, description, image_url, price_per_day, phone, email, has_wifi, has_parking, has_gym) VALUES ('{h['name']}', '{h['address']}', {h['city_id']}, '{h['description']}', '{h['image_url']}', {h['price_per_day']}, '{h['phone']}', '{h['email']}', {h['has_wifi']}, {h['has_parking']}, {h['has_gym']});\n"
+    for url in h['images']:
+      s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','hotel',{hotel_id});\n"
+    s += '\n'
     sql += s
-    sql += "\n"
+    hotel_id += 1
+        
+        
 
 sql += "\n---Flights\n\n"
 
@@ -96,10 +133,14 @@ for f in flights:
 
 sql += "\n---Restaurants\n\n"
 
+restaurant_id = 1
 for r in restaurants:
-    s = f"INSERT INTO Restaurants (name, reservation_price, address, city_id, description, image_url, cuisine_type, contact, email) VALUES ('{r['name']}', {r['reservation_price']}, '{r['address']}', {r['city_id']}, '{r['description']}', '{r['image_url']}', '{r['cuisine_type']}', '{r['contact']}', '{r['email']}');"
+    s = f"INSERT INTO Restaurants (name, reservation_price, address, city_id, description, image_url, cuisine_type, contact, email) VALUES ('{r['name']}', {r['reservation_price']}, '{r['address']}', {r['city_id']}, '{r['description']}', '{r['image_url']}', '{r['cuisine_type']}', '{r['contact']}', '{r['email']}');\n"
+    for url in r['images']:
+      s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','restaurant',{restaurant_id});\n"
+    s += '\n'
     sql += s
-    sql += "\n"
+    restaurant_id += 1
 
 sql += "\n---Provides\n\n"
 
@@ -233,28 +274,17 @@ for trip in trips:
     sql += get_sql_from_trip(trip)
     sql += '\n'
 
-
+review_id = 1
 for r in reviews:
-
-    sql += f"""
-
-DECLARE
-    l_id NUMBER;
-BEGIN
-    INSERT INTO Reviews (user_id, description, rating, image_url)
-    VALUES ({r['user_id']}, '{r['description']}', {r['rating']}, '{r['image_url']}')
-    RETURNING review_id INTO l_id;
-    INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES(l_id, {r['object_id']});
-END;
-/
-
-    """
-
+    s = f"INSERT INTO Reviews (user_id, description, rating, image_url) VALUES ({r['user_id']}, '{r['description']}', {r['rating']}, '{r['image_url']}');\n"
+    s += f"INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES({review_id}, {r['object_id']});\n\n"
+    sql += s 
+    review_id += 1
 
 sql += "\n\nSELECT * FROM USERS;\n\n"
 
-file_path = './data_generators/sql/large_insert.sql' 
-with open(file_path, 'w') as file:
+file_path = base_path + '/sql/large_insert.sql' 
+with open(file_path, 'w', encoding='utf-8', errors='ignore') as file:
     file.write(sql)
 
 print(sql)

@@ -1,6 +1,7 @@
 const oracledb = require('oracledb');
 const db = require('../db/db');
 const { getSingleCity } = require('./city');
+const { getRatingInfoFromObject, getImagesFromObject } = require('./global_helpers');
 
 const getSingleRestaurant = async (payload) => {
 
@@ -27,6 +28,11 @@ const getSingleRestaurant = async (payload) => {
         }
         restaurant = result[0]
         restaurant.city = await getSingleCity({ city_id : restaurant.city_id })
+        
+        object = {'object_type':'restaurant','object_id':restaurant_id}
+        restaurant.rating_info = await getRatingInfoFromObject(object)
+        restaurant.images = await getImagesFromObject(object)
+        
         return restaurant;
     } catch (err) {
         console.log(err);
@@ -45,7 +51,7 @@ const getRestaurants = async (payload) => {
     orderby = 'restaurant_id';
     ordertype = 'asc';
 
-    const attributes = ["restaurant_id", "name", "reservation_price", "address", "city_id", "description", "image_url", "cuisine_type", "contact", "email"];
+    const attributes = ["restaurant_id", "name", "reservation_price", "address", "city_id", "description", "image_url", "cuisine_type", "contact", "email", "rating"];
     const ordertypes = ["asc", "desc"];
 
     binds = {};
@@ -151,6 +157,10 @@ const getRestaurants = async (payload) => {
     }
 
     offset = (page - 1) * per_page;
+    if(orderby == 'rating')
+    {
+        orderby = "GET_AVG_RATING('restaurant',RESTAURANT_ID)"
+    }
 
     sql += `
     ORDER BY ${orderby} ${ordertype}
@@ -163,10 +173,11 @@ const getRestaurants = async (payload) => {
     try {
         console.log(sql);
         result = (await db.execute(sql, binds, db.options)).rows;
+        result_restaurants = []
         for (let restaurant of result) {
-            restaurant.city = await getSingleCity({ city_id: restaurant.city_id });
+            result_restaurants.push(await getSingleRestaurant({'restaurant_id':restaurant.restaurant_id}))
         }
-        return result;
+        return result_restaurants;
     } catch (err) {
         console.log(err);
     }

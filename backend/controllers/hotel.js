@@ -2,12 +2,13 @@ const oracledb = require('oracledb')
 
 const db = require('../db/db');
 const { getSingleCity } = require('./city');
+const { getRatingInfoFromObject, getImagesFromObject, deleteImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
 const getSingleHotel = async (payload) => {
     
     const hotel_id = payload.hotel_id;
 
-    console.log(hotel_id)
+    console.log('at getSingleHotel', hotel_id)
     
     const sql = `
     SELECT hotel_id AS "hotel_id", name AS "name", address AS "address", city_id AS "city_id", description AS "description", image_url AS "image_url", price_per_day AS "price_per_day", phone AS "phone", email AS "email", has_wifi AS "has_wifi", has_parking AS "has_parking", has_gym AS "has_gym"
@@ -28,6 +29,11 @@ const getSingleHotel = async (payload) => {
       }
       hotel = result[0]
       hotel.city = await getSingleCity({ city_id : hotel.city_id })
+
+      object = {'object_type':'hotel','object_id':hotel_id}
+      hotel.rating_info = await getRatingInfoFromObject(object)
+      hotel.images = await getImagesFromObject(object)
+      
       return hotel;
     }
     catch(err){
@@ -51,7 +57,7 @@ const getHotels = async (payload) => {
     orderby = 'hotel_id'
     ordertype = 'asc'
 
-    const attributes = ["hotel_id", "name", "address", "city_id", "description", "image_url", "price_per_day", "phone", "email", "has_wifi", "has_parking", "has_gym"];
+    const attributes = ["hotel_id", "name", "address", "city_id", "description", "image_url", "price_per_day", "phone", "email", "has_wifi", "has_parking", "has_gym", "rating"];
     const ordertypes = ["asc","desc"]
 
     binds = {}
@@ -134,7 +140,7 @@ const getHotels = async (payload) => {
             sql += `AND HAS_GYM = :has_gym `;
             binds.has_gym = payload.has_gym
         }
-    }
+    } 
     if (payload.creator_user_id !== undefined && payload.creator_user_id !== '') {
         const creator_user_id = parseInt(payload.creator_user_id);
         if (!isNaN(creator_user_id)) {
@@ -158,7 +164,8 @@ const getHotels = async (payload) => {
         const in_orderby = payload.orderby.trim().toLowerCase();
         console.log(in_orderby)
         if(attributes.includes(in_orderby)){
-            orderby = in_orderby
+            console.log('\n\n\nGot order by\n\n\n' + payload.orderby)
+            orderby = in_orderby 
         }
     }
     if(payload.ordertype !== undefined && payload.ordertype !== ''){
@@ -169,6 +176,10 @@ const getHotels = async (payload) => {
     }
 
     offset = (page-1)*per_page
+    if(orderby == 'rating')
+    {
+        orderby = "GET_AVG_RATING('hotel',HOTEL_ID)"
+    }
 
     sql += `
     ORDER BY ${orderby} ${ordertype}
@@ -181,11 +192,12 @@ const getHotels = async (payload) => {
     try{
         console.log(sql)
         result = (await db.execute(sql, binds, db.options)).rows;
+        result_hotels = []
         for(let hotel of result)
         {
-            hotel.city = await getSingleCity({ city_id : hotel.city_id })
+            result_hotels.push(await getSingleHotel({'hotel_id':hotel.hotel_id}))
         }
-        return result;
+        return result_hotels;
     }
     catch(err){
         console.log(err)
@@ -220,10 +232,21 @@ const createHotel = async (payload) => {
         creator_user_id: payload.creator_user_id,
         hotel_id: { type: oracledb.NUMBER, dir: oracledb.BIND_OUT }
     };
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
     try{ 
         const result1 = await db.execute(sql, binds, db.options);
         const hotel_id = result1.outBinds.hotel_id;
         console.log("Id of inserted hotel = ", hotel_id);
+
+        if(images.length > 0){
+            object = {'object_type':'hotel','object_id':hotel_id, 'images':images}
+            //await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
+
         const payload = { hotel_id : hotel_id }
         const result = await getSingleHotel(payload)
         console.log(result)
@@ -273,11 +296,22 @@ const updateHotel = async (payload) => {
     };
 
     hotel_id = payload.hotel_id
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
 
     try{ 
         console.log(sql)
         const result1 = await db.execute(sql, binds, db.options);
         console.log(hotel_id)
+
+        if(images.length > 0){
+            object = {'object_type':'hotel','object_id':hotel_id, 'images':images}
+            await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
+
         const payload = { hotel_id : hotel_id }
         const result = await getSingleHotel(payload)
         console.log(result)
