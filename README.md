@@ -1,5 +1,15 @@
 # Tripify
 
+# Introduction
+
+Discover, plan, and explore effortlessly with Tripify: the ultimate travel platform. Curate your ideal journey, connect with fellow adventurers, and unlock AI-powered trip guides. Elevate your travel experience with seamless bookings and personalized recommendations. Your gateway to limitless exploration.
+
+# Contents
+
+## [How to Run](#how-to-run-1)
+## [Tripify Frontend](#tripify-frontend-1)
+## [Tripify Backend](#tripify-backend-1)
+
 # How to Run
 
 ## Setting Up The Schema
