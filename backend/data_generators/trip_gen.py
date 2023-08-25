@@ -1,10 +1,6 @@
 import random
 import json
 from datetime import datetime, timedelta
-from data.destinations import destinations
-from data.activities import activities
-from data.cities import cities
-from data.provides import provides
 from config import hotel_count, restaurant_count, guide_count, trip_count
 
 import json
@@ -19,6 +15,8 @@ def read_json_file(filename):
 
 destinations = read_json_file('destinations.json')
 activities = read_json_file('activities.json')
+cities = read_json_file('cities.json')
+provides = read_json_file('provides.json')
 
 city_count = len(cities)
 activity_count = len(activities)

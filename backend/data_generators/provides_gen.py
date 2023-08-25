@@ -1,10 +1,16 @@
 import random 
 import json 
 
-from data.destinations import destinations
-from data.activities import activities
-
 base_path = './backend/data_generators'
+
+def read_json_file(filename):
+    json_file_path = base_path + '/data/' + filename
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+destinations = read_json_file('destinations.json')
+activities = read_json_file('activities.json')
 
 activities_by_destination = [
     {'destination_id': 1, 'activity_ids': [1, 4, 6]},  # Ahsan Manzil

@@ -1,13 +1,20 @@
 import random
 import json
 from datetime import datetime, timedelta
-from data.names import first_names, last_names
-from data.cities import cities
+from data.helper_globals import first_names, last_names
 from config import user_count
 import string
 
 
 base_path = './backend/data_generators'
+
+def read_json_file(filename):
+    json_file_path = base_path + '/data/' + filename
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+cities = read_json_file('cities.json')
 
 city_count = len(cities)
 

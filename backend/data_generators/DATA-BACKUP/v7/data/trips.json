@@ -1,0 +1,497 @@
+[
+  {
+    "from_city_id": 10,
+    "to_city_id": 24,
+    "name": "Urban Exploration",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-20",
+    "end_date": "2023-09-01",
+    "contains": [
+      {
+        "destination_id": 16,
+        "activity_id": 31,
+        "tentative_date": "2023-08-23"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 3,
+        "checkin_date": "2023-08-22",
+        "checkout_date": "2023-08-27"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 26,
+    "to_city_id": 28,
+    "name": "Historical Journey",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-18",
+    "end_date": "2023-08-31",
+    "contains": [
+      {
+        "destination_id": 43,
+        "activity_id": 7,
+        "tentative_date": "2023-08-21"
+      },
+      {
+        "destination_id": 61,
+        "activity_id": 31,
+        "tentative_date": "2023-08-21"
+      },
+      {
+        "destination_id": 10,
+        "activity_id": 3,
+        "tentative_date": "2023-08-19"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 2,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-25"
+      },
+      {
+        "hotel_id": 9,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-25"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 12,
+    "to_city_id": 24,
+    "name": "Adventure Expedition",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-17",
+    "end_date": "2023-09-03",
+    "contains": [
+      {
+        "destination_id": 22,
+        "activity_id": 2,
+        "tentative_date": "2023-08-18"
+      },
+      {
+        "destination_id": 17,
+        "activity_id": 28,
+        "tentative_date": "2023-08-20"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-22"
+      },
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-24"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 30,
+    "to_city_id": 11,
+    "name": "Relaxation Retreat",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-19",
+    "end_date": "2023-08-30",
+    "contains": [
+      {
+        "destination_id": 34,
+        "activity_id": 6,
+        "tentative_date": "2023-08-20"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 2,
+        "checkin_date": "2023-08-21",
+        "checkout_date": "2023-08-24"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 2
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 5,
+    "to_city_id": 5,
+    "name": "Coastal Odyssey",
+    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-16",
+    "end_date": "2023-09-04",
+    "contains": [
+      {
+        "destination_id": 31,
+        "activity_id": 31,
+        "tentative_date": "2023-08-17"
+      },
+      {
+        "destination_id": 43,
+        "activity_id": 6,
+        "tentative_date": "2023-08-18"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-08-19",
+        "checkout_date": "2023-08-21"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-08-18",
+        "checkout_date": "2023-08-22"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 21,
+    "to_city_id": 5,
+    "name": "Adventure Expedition",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-18",
+    "end_date": "2023-09-03",
+    "contains": [
+      {
+        "destination_id": 43,
+        "activity_id": 6,
+        "tentative_date": "2023-08-19"
+      },
+      {
+        "destination_id": 28,
+        "activity_id": 28,
+        "tentative_date": "2023-08-19"
+      },
+      {
+        "destination_id": 45,
+        "activity_id": 29,
+        "tentative_date": "2023-08-20"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 5,
+        "checkin_date": "2023-08-21",
+        "checkout_date": "2023-08-24"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-24"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 10,
+    "to_city_id": 9,
+    "name": "Cultural Discovery",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-19",
+    "end_date": "2023-08-30",
+    "contains": [
+      {
+        "destination_id": 29,
+        "activity_id": 11,
+        "tentative_date": "2023-08-20"
+      },
+      {
+        "destination_id": 78,
+        "activity_id": 10,
+        "tentative_date": "2023-08-22"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-08-21",
+        "checkout_date": "2023-08-25"
+      },
+      {
+        "hotel_id": 9,
+        "checkin_date": "2023-08-20",
+        "checkout_date": "2023-08-25"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 8
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 23,
+    "to_city_id": 1,
+    "name": "Eco-Friendly Escape",
+    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-16",
+    "end_date": "2023-08-30",
+    "contains": [
+      {
+        "destination_id": 27,
+        "activity_id": 8,
+        "tentative_date": "2023-08-18"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-08-17",
+        "checkout_date": "2023-08-22"
+      },
+      {
+        "hotel_id": 3,
+        "checkin_date": "2023-08-19",
+        "checkout_date": "2023-08-23"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 25,
+    "to_city_id": 11,
+    "name": "Coastal Odyssey",
+    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-20",
+    "end_date": "2023-08-30",
+    "contains": [
+      {
+        "destination_id": 4,
+        "activity_id": 12,
+        "tentative_date": "2023-08-22"
+      },
+      {
+        "destination_id": 77,
+        "activity_id": 30,
+        "tentative_date": "2023-08-22"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 2,
+        "checkin_date": "2023-08-21",
+        "checkout_date": "2023-08-25"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-08-23",
+        "checkout_date": "2023-08-27"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 4
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 16,
+    "to_city_id": 1,
+    "name": "Tropical Getaway",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "dummy.jpg",
+    "start_date": "2023-08-17",
+    "end_date": "2023-09-03",
+    "contains": [
+      {
+        "destination_id": 54,
+        "activity_id": 18,
+        "tentative_date": "2023-08-20"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 2,
+        "checkin_date": "2023-08-18",
+        "checkout_date": "2023-08-24"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 6
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  }
+]

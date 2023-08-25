@@ -1,0 +1,82 @@
+[
+  {
+    "username": "rina.khanom",
+    "email": "rina.khanom@gmail.com",
+    "password": "kXqBPQNwk",
+    "name": "Rina Khanom",
+    "city_id": 27,
+    "dob": "1975-07-08"
+  },
+  {
+    "username": "mahbub_siddique",
+    "email": "mahbub_siddique@gmail.com",
+    "password": "kB90uYlWINW",
+    "name": "Mahbub Siddique",
+    "city_id": 2,
+    "dob": "1962-04-28"
+  },
+  {
+    "username": "sharmin.kabir",
+    "email": "sharmin.kabir@gmail.com",
+    "password": "PNz0SxRzH",
+    "name": "Sharmin Kabir",
+    "city_id": 6,
+    "dob": "1991-02-17"
+  },
+  {
+    "username": "sajjad.sultana",
+    "email": "sajjad.sultana@gmail.com",
+    "password": "eMB79Bc7ya8",
+    "name": "Sajjad Sultana",
+    "city_id": 17,
+    "dob": "1994-02-17"
+  },
+  {
+    "username": "nazifa.chowdhury",
+    "email": "nazifa.chowdhury@gmail.com",
+    "password": "kZao1IoWSO9D",
+    "name": "Nazifa Chowdhury",
+    "city_id": 21,
+    "dob": "1971-01-18"
+  },
+  {
+    "username": "nasreen_miah",
+    "email": "nasreen_miah@gmail.com",
+    "password": "YNapCUI9gc",
+    "name": "Nasreen Miah",
+    "city_id": 14,
+    "dob": "1983-12-27"
+  },
+  {
+    "username": "nazia.miah",
+    "email": "nazia.miah@gmail.com",
+    "password": "TgLaWPojr",
+    "name": "Nazia Miah",
+    "city_id": 8,
+    "dob": "1955-04-07"
+  },
+  {
+    "username": "kamrul.rahman",
+    "email": "kamrul.rahman@gmail.com",
+    "password": "ADUVcCBBLMq",
+    "name": "Kamrul Rahman",
+    "city_id": 24,
+    "dob": "1974-05-28"
+  },
+  {
+    "username": "anis_begum",
+    "email": "anis_begum@yahoo.com",
+    "password": "mdagG1p9G1",
+    "name": "Anis Begum",
+    "city_id": 23,
+    "dob": "1997-02-01"
+  },
+  {
+    "username": "jahangir.akter",
+    "email": "jahangir.akter@yahoo.com",
+    "password": "Mgt7iveAam3",
+    "name": "Jahangir Akter",
+    "city_id": 17,
+    "dob": "1977-10-30"
+  }
+]

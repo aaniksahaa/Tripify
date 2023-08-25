@@ -1,9 +1,16 @@
 import random
 import json 
-from data.cities import cities
 from config import hotel_count
 
 base_path = './backend/data_generators'
+
+def read_json_file(filename):
+    json_file_path = base_path + '/data/' + filename
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
+
+cities = read_json_file('cities.json')
 
 adjectives = [
     "Luxurious", "Charming", "Elegant", "Cozy", "Modern", "Boutique",

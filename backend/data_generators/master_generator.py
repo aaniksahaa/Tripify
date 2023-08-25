@@ -19,4 +19,6 @@ generate_scraped_activities(max_images=4,max_size_in_kb=250)
 generate_scraped_hotels(max_hotels_from_each_city=10,image_width=1500,image_height=1000)
 generate_scraped_restaurants(max_restaurants_from_each_city=10,image_width=1500,image_height=1000)
 
+## Carefully make sure so that no generated data string contains single apostrophe
+
 print('\n\nAll data successfully generated. Now run sqlgen.py\n\n\n')
