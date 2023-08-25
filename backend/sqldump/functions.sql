@@ -180,21 +180,6 @@ BEGIN
 END;
 /
 
-/*
-
-DECLARE 
-	
-	COUNTER NUMBER;
-	
-BEGIN 
-	
-	COUNTER := GET_AVG_RATING('trip',10);
-	DBMS_OUTPUT.PUT_LINE(COUNTER);
-	
-END;
-/
-
-*/
 
 
 

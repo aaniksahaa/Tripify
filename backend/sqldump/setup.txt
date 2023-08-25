@@ -1,9 +1,13 @@
-Run the sql files in following order:
+Note that - 
+
+'Running the sql files in master_dump folder is an easier alternative to this'
+
+Running ORDER:
 
 1. overview
-2. destroy 
+2. destroy_structure 
 3. ddl 
-4. custom_types
+4. custom_types (Only for first time)
 5. procedures
 6. functions
 7. triggers
