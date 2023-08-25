@@ -55,14 +55,15 @@ the place of 'hr' and 'hr' that we previously wrote for setting up HR schema.
 16. Now You have two options.
 ```
 Option 1:
-Go to the setup.txt file in the directory  --> backend/sqldump and run the specified query files in Navicat in the specified order.
+Go to the setup.txt file in the directory  --> backend/sqldump.
+Then run the specified query files in Navicat in the specified order.
 ```
 ```
 Option 2:
 Go to the directory --> backend/sqldump/generated_auto_dump and run the sql file named dump_without_drops.sql
 
-**Note that, when you once run this, the table will all be created and after that you have to drop the table again if you need to configure again.
-In that case, run the 'dump_with_cascade.sql' file**
+Note that, when you once run this, the table will all be created and after that you have to drop the table again if you need to configure again.
+In that case, run the 'dump_with_cascade.sql' file
 ```
 17. For runny the queries, just create query files of same names in Navicat and copy the content.
 
