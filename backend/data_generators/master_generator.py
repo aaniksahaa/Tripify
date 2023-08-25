@@ -9,6 +9,8 @@ from scrapers.scraped_restaurant_gen import generate_scraped_restaurants
 
 print('\n\n\nWelcome\n\nMaster Generator Starting...\n\n')
 
+# image_width and image_height must be less than 2400 and a multiple of 100
+
 generate_random_flights()
 generate_random_users()
 generate_random_reviews()

@@ -1,6 +1,7 @@
 const oracledb = require('oracledb')
 const db = require('../db/db');
 const { getComments } = require('./comment');
+const { getImagesFromObject, insertImagesForObject, deleteImagesFromObject } = require('./global_helpers');
 
 const getSinglePost = async (payload) => {
 
@@ -24,6 +25,12 @@ const getSinglePost = async (payload) => {
         if(result.length == 0){
             return null
         } 
+
+        post = result[0]
+
+        object = {'object_type':'post','object_id':post_id}
+        post.images = await getImagesFromObject(object)
+
         return result[0];
     } catch (err) {
         console.log(err);
@@ -136,13 +143,13 @@ const getPosts = async (payload) => {
     try {
         const result = await db.execute(sql, binds, db.options);
         posts = result.rows;
-
+        result_posts = []
         for(let post of posts)
         {
 
             post_id = post.post_id
-
-            post.comments = await getComments({post_id: post_id})
+            result_post = await getSinglePost({'post_id':post_id})
+            result_post.comments = await getComments({post_id: post_id})
 
             sql = `
             SELECT user_id AS "user_id", react_type AS "react_type", reacting_date AS "reacting_date"
@@ -153,10 +160,12 @@ const getPosts = async (payload) => {
                 post_id: post_id
             }
 
-            post.reacts = (await db.execute(sql,binds,db.options)).rows
+            result_post.reacts = (await db.execute(sql,binds,db.options)).rows
+
+            result_posts.push(result_post)
         }
 
-        return posts
+        return result_posts
 
     } catch (err) {
         console.log(err);
@@ -186,10 +195,21 @@ const createPost = async (payload) => {
         post_id: { type: oracledb.NUMBER, dir: oracledb.BIND_OUT }
     };
 
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
+
     try {
         const result1 = await db.execute(sql, binds, db.options);
         const post_id = result1.outBinds.post_id;
         console.log("Id of inserted post = ", post_id);
+
+        if(images.length > 0){
+            object = {'object_type':'post','object_id':post_id, 'images':images}
+            //await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
 
         const payload = { post_id: post_id };
         const result = await getSinglePost(payload);
@@ -217,10 +237,21 @@ const updatePost = async (payload) => {
     };
 
     post_id = payload.post_id
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
 
     try {
         const result1 = await db.execute(sql, binds, db.options);
         console.log(post_id);
+
+        if(images.length > 0){
+            object = {'object_type':'post','object_id':post_id, 'images':images}
+            await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
+
         const payload = { post_id: post_id };
         const result = await getSinglePost(payload);
         console.log(result);
