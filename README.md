@@ -52,9 +52,22 @@ DROP TABLE HOTELS;
 14. Go to Navicat, New Oracle connection, type above username and password in 
 the place of 'hr' and 'hr' that we previously wrote for setting up HR schema.
 
-16. Now look at the setup.txt file in the directory ``backend/sqldump``
-17. Create query files of same names and copy the content.
-18. Run in the specified order.
+16. Now You have two options.
+```
+Option 1:
+
+Go to the setup.txt file in the directory  --> backend/sqldump.
+Then run the specified query files in Navicat in the specified order.
+```
+```
+Option 2:
+
+Go to the directory --> backend/sqldump/generated_auto_dump and run the sql file named dump_without_drops.sql
+
+Note that, when you once run this, the table will all be created and after that you have to drop the table again if you need to configure again.
+In that case, run the 'dump_with_cascade.sql' file
+```
+17. For runny the queries, just create query files of same names in Navicat and copy the content.
 
 ## Setting Up The Project Directory
 
@@ -84,6 +97,14 @@ npm run dev
 #### 6. You may also test the API separately on Postman or anything similar.   
 
 ![Screenshot (115)](https://github.com/aaniksahaa/Tripify/assets/63545621/6328d778-7d29-4fb5-b8fa-83f15ade4d2e)
+
+## Data Generation (Optional)
+
+1. Go to the directory ``backend/data_generators``
+2. First Run ``master_generator.py``
+3. Then run ``sql_generator.py``
+4. The generator large_insert.sql file will be in the directory ``backend/data_generators/sql``
+5. You may control data generation parameters in ``config.py``
 
 # Tripify - Frontend
 
