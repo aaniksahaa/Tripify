@@ -2,6 +2,49 @@
 
 # How to Run
 
+## Setting Up The Schema
+
+1. Go to sqlplus and login with system username and password
+
+2. Run the following four commands sequentially in sqlplus
+
+CREATE USER c##tripify IDENTIFIED BY tripify;
+GRANT CONNECT, RESOURCE, DBA TO c##tripify;
+GRANT CREATE SESSION TO c##tripify;
+GRANT UNLIMITED TABLESPACE TO c##tripify;
+
+3. type disconnect
+4. Now close sqlplus
+5. Again go to sqlplus and login with system username and password
+6. type conn
+7. Enter username: c##tripify
+8. Enter password: tripify
+9. Just for testing, create this table,
+
+CREATE TABLE Hotels (
+ id INTEGER PRIMARY KEY,
+ name VARCHAR(20)
+);
+
+10. Insert this data
+
+INSERT INTO Hotels VALUES(1,'Mountain View');
+
+11. SELECT * FROM HOTELS;
+12. Now drop that test table
+
+DROP TABLE HOTELS;
+
+13. Close sqlplus
+14. Go to Navicat, New Oracle connection, type above username and password in 
+the place of 'hr' and 'hr' that we previously wrote for setting up HR schema.
+
+15. Now look at the setup.txt file inside the DB folder.
+16. Create query files of same names and copy the content.
+17. Run in the specified order.
+
+## Setting Up The Project Directory
+
 #### 1. First clone the repository.
 #### 2. Open the Directory on VS Code and Open a new terminal. Click split terminal so that you may run frontend and backend both with convenience.
 #### 3. On one terminal, head over to the backend, install the dependencies and run the server.
