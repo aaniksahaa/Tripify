@@ -1,6 +1,62 @@
 # Tripify
 
+# Introduction
+
+Discover, plan, and explore effortlessly with Tripify: the ultimate travel platform. Curate your ideal journey, connect with fellow adventurers, and unlock AI-powered trip guides. Elevate your travel experience with seamless bookings and personalized recommendations. Your gateway to limitless exploration.
+
+# Contents
+
+## 1. [How to Run](#how-to-run-1)
+## 2. [Frontend - Demonstration](#tripify---frontend)
+## 3. [Backend - API Documentation](#tripify---backend)
+
 # How to Run
+
+## Setting Up The Schema
+
+1. Go to sqlplus and login with system username and password
+
+2. Run the following four commands sequentially in sqlplus
+```sql
+CREATE USER c##tripify IDENTIFIED BY tripify;    
+GRANT CONNECT, RESOURCE, DBA TO c##tripify;    
+GRANT CREATE SESSION TO c##tripify;    
+GRANT UNLIMITED TABLESPACE TO c##tripify;    
+```
+3. type disconnect
+4. Now close sqlplus
+5. Again go to sqlplus and login with system username and password
+6. type conn
+7. Enter username: c##tripify
+8. Enter password: tripify
+9. Just for testing, create this table,
+```sql
+CREATE TABLE Hotels (
+ id INTEGER PRIMARY KEY,
+ name VARCHAR(20)
+);
+```
+10. Insert this data
+```sql
+INSERT INTO Hotels VALUES(1,'Mountain View');
+```
+11. Test whether the data have been inserted properly.
+```sql
+SELECT * FROM HOTELS;
+```
+12. Now drop that test table
+```sql
+DROP TABLE HOTELS;
+```
+13. Close sqlplus
+14. Go to Navicat, New Oracle connection, type above username and password in 
+the place of 'hr' and 'hr' that we previously wrote for setting up HR schema.
+
+16. Now look at the setup.txt file in the directory ``backend/sqldump``
+17. Create query files of same names and copy the content.
+18. Run in the specified order.
+
+## Setting Up The Project Directory
 
 #### 1. First clone the repository.
 #### 2. Open the Directory on VS Code and Open a new terminal. Click split terminal so that you may run frontend and backend both with convenience.
@@ -500,7 +556,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/user/1/profile
+/api/v1/user/1/profile?page=1&per_page=3
 ```  
 Request Body: 
 ```
@@ -510,6 +566,7 @@ Example Response:
 ```json
 {
     "user_id": 1,
+    "username": "aaniksahaa",
     "email": "abc@gmail.com",
     "role": "client",
     "name": "Anik Saha",
@@ -520,10 +577,10 @@ Example Response:
     "instagram_url": "instagram.com/abc",
     "profile_picture": "dummy.jpg",
     "dob": "2002-09-16T18:00:00.000Z",
-    "registration_date": "2023-08-02T14:11:02.000Z",
+    "registration_date": "2023-08-24T23:04:05.000Z",
     "status": "active",
-    "created_on": "2023-08-02T14:11:02.000Z",
-    "last_updated_on": "2023-08-02T14:11:02.000Z",
+    "created_on": "2023-08-24T23:04:05.000Z",
+    "last_updated_on": "2023-08-24T23:04:05.000Z",
     "city": {
         "city_id": 1,
         "name": "Dhaka",
@@ -531,68 +588,10 @@ Example Response:
         "population": 168957745,
         "weather_type": "rainy"
     },
-    "follows": [
-        {
-            "followee_id": 2,
-            "since_date": "2023-08-02T16:07:03.000Z"
-        }
-    ],
-    "followed_by": [
-        {
-            "follower_id": 2,
-            "since_date": "2023-08-02T17:29:14.000Z"
-        }
-    ],
-    "hotels_created": [
-        {
-            "hotel_id": 101,
-            "name": "Barbie Oppenheimer Hotel",
-            "address": "57 Park Avenue Manikganj , Bangladesh",
-            "city_id": 26,
-            "description": "A Exquisitely Elevated hotel in Manikganj.",
-            "image_url": "dummy.jpg",
-            "price_per_day": 2500,
-            "phone": "011338126183",
-            "email": "barbiehotel@yahoo.com",
-            "has_wifi": 1,
-            "has_parking": 1,
-            "has_gym": 1,
-            "creator_user_id": 1,
-            "created_on": "2023-08-02T18:07:43.000Z",
-            "last_updated_on": "2023-08-02T18:07:43.000Z",
-            "city": {
-                "city_id": 26,
-                "name": "Manikganj",
-                "country_name": "Bangladesh",
-                "population": 160093,
-                "weather_type": "rainy"
-            }
-        }
-    ],
-    "restaurants_created": [
-        {
-            "restaurant_id": 101,
-            "name": "Delicious Delights",
-            "reservation_price": 75,
-            "address": "123 Main Street",
-            "city_id": 1,
-            "description": "A cozy restaurant serving delicious delights.",
-            "image_url": "https://example.com/restaurant.jpg",
-            "cuisine_type": "Italian",
-            "contact": "123-456-7890",
-            "email": "info@deliciousdelights.com",
-            "creator_user_id": 1,
-            "created_on": "2023-08-02T18:08:14.000Z",
-            "last_updated_on": "2023-08-02T18:08:14.000Z",
-            "city": {
-                "city_id": 1,
-                "name": "Dhaka",
-                "country_name": "Bangladesh",
-                "population": 168957745,
-                "weather_type": "rainy"
-            }
-        }
-    ],
+    "followee_count": 5,
+    "follower_count": 2,
+    "hotels_created": [],
+    "restaurants_created": [],
     "trips_created": [
         {
             "trip_id": 1,
@@ -600,84 +599,95 @@ Example Response:
             "to_city_id": 2,
             "from_city_name": "Dhaka",
             "to_city_name": "Chittagong",
-            "name": "Mini Tour",
-            "description": "A wonderful Trip, it will be.",
-            "image_url": "dummy.jpg",
-            "total_price": 29728,
+            "name": "Summer Vacation in Paris",
+            "description": "Enjoy the charm of Paris in summer",
+            "image_url": "paris_summer.jpg",
+            "total_price": 212557,
             "start_date": "2023-06-30T18:00:00.000Z",
             "end_date": "2023-07-24T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-02T14:13:58.000Z",
-            "last_updated_on": "2023-08-02T14:13:58.000Z",
-            "deleted_on": null
+            "created_on": "2023-08-24T23:04:16.000Z",
+            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "deleted_on": null,
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 13,
+                "rating_3": 5,
+                "rating_4": 9,
+                "rating_5": 11,
+                "rating_avg": 3.47
+            },
+            "images": null
         },
         {
-            "trip_id": 2,
-            "from_city_id": 1,
-            "to_city_id": 2,
-            "from_city_name": "Dhaka",
-            "to_city_name": "Chittagong",
-            "name": "New Mini Tour",
-            "description": "A wonderful Trip, it will be.",
+            "trip_id": 4,
+            "from_city_id": 11,
+            "to_city_id": 12,
+            "from_city_name": "Gazipur",
+            "to_city_name": "Feni",
+            "name": "Coastal Odyssey",
+            "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
             "image_url": "dummy.jpg",
-            "total_price": 29728,
-            "start_date": "2023-06-30T18:00:00.000Z",
-            "end_date": "2023-07-24T18:00:00.000Z",
+            "total_price": 69005,
+            "start_date": "2023-08-15T18:00:00.000Z",
+            "end_date": "2023-09-01T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-02T14:14:10.000Z",
-            "last_updated_on": "2023-08-02T14:14:10.000Z",
-            "deleted_on": null
+            "created_on": "2023-08-24T23:04:16.000Z",
+            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "deleted_on": null,
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 6,
+                "rating_3": 12,
+                "rating_4": 8,
+                "rating_5": 3,
+                "rating_avg": 3.28
+            },
+            "images": null
         },
         {
-            "trip_id": 3,
-            "from_city_id": 1,
-            "to_city_id": 2,
-            "from_city_name": "Dhaka",
-            "to_city_name": "Chittagong",
-            "name": "New   New Mini Tour",
-            "description": "A wonderful Trip, it will be.",
+            "trip_id": 5,
+            "from_city_id": 15,
+            "to_city_id": 4,
+            "from_city_name": "Bandarban",
+            "to_city_name": "Rajshahi",
+            "name": "Historical Journey",
+            "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
             "image_url": "dummy.jpg",
-            "total_price": 29728,
-            "start_date": "2023-06-30T18:00:00.000Z",
-            "end_date": "2023-07-24T18:00:00.000Z",
+            "total_price": 118210,
+            "start_date": "2023-08-17T18:00:00.000Z",
+            "end_date": "2023-08-29T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-02T14:14:17.000Z",
-            "last_updated_on": "2023-08-02T14:14:17.000Z",
-            "deleted_on": null
+            "created_on": "2023-08-24T23:04:16.000Z",
+            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "deleted_on": null,
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 16,
+                "rating_3": 9,
+                "rating_4": 5,
+                "rating_5": 10,
+                "rating_avg": 3.23
+            },
+            "images": null
         }
     ],
     "reviews_created": [
         {
-            "review_id": 2,
+            "review_id": 820,
             "user_id": 1,
-            "posting_date": "2023-08-02T18:17:43.000Z",
-            "description": "Wholesome Trip !!!",
-            "rating": 5,
+            "posting_date": "2023-08-24T23:04:21.000Z",
+            "description": "From relaxing breathtaking sights to savoring exquisite cuisines at gourmet restaurants, my breathtaking trip was enriched by a enthusiastic storytellers who shared fascinating insights.",
+            "rating": 4,
             "image_url": "dummy.jpg",
             "upvote_count": 0,
             "object": {
-                "object_id": 1,
                 "object_type": "trip",
-                "object": {
-                    "trip_id": 1,
-                    "from_city_id": 1,
-                    "to_city_id": 2,
-                    "from_city_name": "Dhaka",
-                    "to_city_name": "Chittagong",
-                    "name": "Mini Tour",
-                    "description": "A wonderful Trip, it will be.",
-                    "image_url": "dummy.jpg",
-                    "total_price": 29728,
-                    "start_date": "2023-06-30T18:00:00.000Z",
-                    "end_date": "2023-07-24T18:00:00.000Z",
-                    "creator_user_id": 1,
-                    "created_on": "2023-08-02T14:13:58.000Z",
-                    "last_updated_on": "2023-08-02T14:13:58.000Z",
-                    "deleted_on": null
-                }
+                "object_id": 3
             },
             "user": {
                 "user_id": 1,
+                "username": "aaniksahaa",
                 "email": "abc@gmail.com",
                 "role": "client",
                 "name": "Anik Saha",
@@ -688,10 +698,10 @@ Example Response:
                 "instagram_url": "instagram.com/abc",
                 "profile_picture": "dummy.jpg",
                 "dob": "2002-09-16T18:00:00.000Z",
-                "registration_date": "2023-08-02T14:11:02.000Z",
+                "registration_date": "2023-08-24T23:04:05.000Z",
                 "status": "active",
-                "created_on": "2023-08-02T14:11:02.000Z",
-                "last_updated_on": "2023-08-02T14:11:02.000Z",
+                "created_on": "2023-08-24T23:04:05.000Z",
+                "last_updated_on": "2023-08-24T23:04:05.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -700,73 +710,22 @@ Example Response:
                     "weather_type": "rainy"
                 }
             }
-        }
-    ],
-    "flights_created": [
+        },
         {
-            "flight_id": 101,
-            "from_city_id": 29,
-            "to_city_id": 30,
-            "airline_name": "Cool Airlines",
-            "departure_date": "2023-08-09T18:00:00.000Z",
-            "return_date": "2023-08-11T18:00:00.000Z",
-            "price": 12204,
-            "seat_class": "Business",
-            "flight_duration": 55,
-            "booking_url": "booking.com",
-            "creator_user_id": 1,
-            "created_on": "2023-08-02T18:10:11.000Z",
-            "last_updated_on": "2023-08-02T18:10:11.000Z",
-            "from_city": {
-                "city_id": 29,
-                "name": "Tangail",
-                "country_name": "Bangladesh",
-                "population": 160937,
-                "weather_type": "rainy"
-            },
-            "to_city": {
-                "city_id": 30,
-                "name": "Chandpur",
-                "country_name": "Bangladesh",
-                "population": 115000,
-                "weather_type": "rainy"
-            }
-        }
-    ],
-    "trip_bookings_created": [
-        {
+            "review_id": 822,
             "user_id": 1,
-            "trip_id": 2,
-            "booking_date": "2023-08-02T18:05:48.000Z",
-            "is_paid": 0,
-            "is_processed": 0,
-            "is_completed": 0,
-            "payment_method": null,
-            "transaction_id": null,
-            "payment_date": null,
-            "completion_date": null,
-            "is_private": 0,
-            "created_on": "2023-08-02T18:05:48.000Z",
-            "last_updated_on": "2023-08-02T18:05:48.000Z",
-            "trip": {
-                "trip_id": 2,
-                "from_city_id": 1,
-                "to_city_id": 2,
-                "from_city_name": "Dhaka",
-                "to_city_name": "Chittagong",
-                "name": "New Mini Tour",
-                "description": "A wonderful Trip, it will be.",
-                "image_url": "dummy.jpg",
-                "total_price": 29728,
-                "start_date": "2023-06-30T18:00:00.000Z",
-                "end_date": "2023-07-24T18:00:00.000Z",
-                "creator_user_id": 1,
-                "created_on": "2023-08-02T14:14:10.000Z",
-                "last_updated_on": "2023-08-02T14:14:10.000Z",
-                "deleted_on": null
+            "posting_date": "2023-08-24T23:04:21.000Z",
+            "description": "Prompt and helpful responses from the front desk improved our overall experience. Central location made it easy to explore the city. Timely wake-up calls assisted our daily schedule. Regular housekeeping maintained a clean and organized environment. Luxurious amenities provided a pampering experience.",
+            "rating": 3,
+            "image_url": "dummy.jpg",
+            "upvote_count": 0,
+            "object": {
+                "object_type": "hotel",
+                "object_id": 6
             },
             "user": {
                 "user_id": 1,
+                "username": "aaniksahaa",
                 "email": "abc@gmail.com",
                 "role": "client",
                 "name": "Anik Saha",
@@ -777,10 +736,48 @@ Example Response:
                 "instagram_url": "instagram.com/abc",
                 "profile_picture": "dummy.jpg",
                 "dob": "2002-09-16T18:00:00.000Z",
-                "registration_date": "2023-08-02T14:11:02.000Z",
+                "registration_date": "2023-08-24T23:04:05.000Z",
                 "status": "active",
-                "created_on": "2023-08-02T14:11:02.000Z",
-                "last_updated_on": "2023-08-02T14:11:02.000Z",
+                "created_on": "2023-08-24T23:04:05.000Z",
+                "last_updated_on": "2023-08-24T23:04:05.000Z",
+                "city": {
+                    "city_id": 1,
+                    "name": "Dhaka",
+                    "country_name": "Bangladesh",
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                }
+            }
+        },
+        {
+            "review_id": 821,
+            "user_id": 1,
+            "posting_date": "2023-08-24T23:04:21.000Z",
+            "description": "Inventive plating made each dish a work of art. Indulgent desserts provided a perfect ending. Aromatic spices elevated every dish. Thoughtful attention to dietary needs was appreciated.",
+            "rating": 2,
+            "image_url": "dummy.jpg",
+            "upvote_count": 0,
+            "object": {
+                "object_type": "restaurant",
+                "object_id": 2
+            },
+            "user": {
+                "user_id": 1,
+                "username": "aaniksahaa",
+                "email": "abc@gmail.com",
+                "role": "client",
+                "name": "Anik Saha",
+                "bio": "Little Coder",
+                "city_id": 1,
+                "facebook_url": "facebook.com/abc",
+                "twitter_url": "twitter.com/abc",
+                "instagram_url": "instagram.com/abc",
+                "profile_picture": "dummy.jpg",
+                "dob": "2002-09-16T18:00:00.000Z",
+                "registration_date": "2023-08-24T23:04:05.000Z",
+                "status": "active",
+                "created_on": "2023-08-24T23:04:05.000Z",
+                "last_updated_on": "2023-08-24T23:04:05.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -791,74 +788,28 @@ Example Response:
             }
         }
     ],
-    "activities_created": [
+    "flights_created": [],
+    "trip_bookings_created": [],
+    "activities_created": [],
+    "destinations_created": [],
+    "posts_created": [
         {
-            "activity_id": 51,
-            "name": "Photography Session",
-            "category": "Adventure",
-            "description": "Experience the breathtaking beauty of a boat tour in a mangrove forest.",
-            "image_url": "photo.jpg",
-            "min_age": 5,
-            "max_age": 90,
-            "creator_user_id": 1,
-            "created_on": "2023-08-02T18:09:40.000Z",
-            "last_updated_on": "2023-08-02T18:09:40.000Z"
-        }
-    ],
-    "destinations_created": [
+            "post_id": 2,
+            "user_id": 1,
+            "posting_date": "2023-08-25T06:13:46.000Z",
+            "description": "New Amazing Post",
+            "image_url": "new-amazing.jpg",
+            "comments": [],
+            "reacts": []
+        },
         {
-            "destination_id": 81,
-            "name": "Shishu Park",
-            "address": "Ramna, Dhaka",
-            "city_id": 1,
-            "latitude": 23.7104,
-            "longitude": 90.4074,
-            "description": "Shishu Park is a fantastic place for children in Dhaka.",
-            "image_url": "dummy.jpg",
-            "created_on": "2023-08-02T18:09:08.000Z",
-            "last_updated_on": "2023-08-02T18:09:08.000Z",
-            "creator_user_id": 1,
-            "activities": [
-                {
-                    "activity_id": 1,
-                    "price": 50,
-                    "activity": {
-                        "activity_id": 1,
-                        "name": "Boat Tour",
-                        "category": "Adventure",
-                        "description": "Experience the breathtaking beauty of a boat tour in a mangrove forest.",
-                        "image_url": "boat_tour.jpg",
-                        "min_age": 8,
-                        "max_age": 60,
-                        "creator_user_id": 0,
-                        "created_on": "2023-08-02T14:11:03.000Z",
-                        "last_updated_on": "2023-08-02T14:11:03.000Z"
-                    }
-                },
-                {
-                    "activity_id": 33,
-                    "price": 100,
-                    "activity": {
-                        "activity_id": 33,
-                        "name": "Gardens and Parks",
-                        "category": "Adventure",
-                        "description": "Relax and take a leisurely stroll in beautiful gardens and parks.",
-                        "image_url": "gardens_parks.jpg",
-                        "min_age": 5,
-                        "max_age": 80,
-                        "creator_user_id": 0,
-                        "created_on": "2023-08-02T14:11:03.000Z",
-                        "last_updated_on": "2023-08-02T14:11:03.000Z"
-                    }
-                }
-            ],
-            "city": {
-                "city_id": 1,
-                "name": "Dhaka",
-                "country_name": "Bangladesh",
-                "population": 168957745,
-                "weather_type": "rainy"
-            }
+            "post_id": 1,
+            "user_id": 1,
+            "posting_date": "2023-08-25T06:13:23.000Z",
+            "description": "Amazing Post",
+            "image_url": "amazing.jpg",
+            "comments": [],
+            "reacts": []
         }
     ]
 }
