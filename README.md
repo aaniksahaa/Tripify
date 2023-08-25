@@ -4412,7 +4412,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/post/2
+/api/v1/post/6
 ```  
 Request Body: 
 ```
@@ -4421,11 +4421,15 @@ None
 Example Response:    
 ```json
 {
-    "post_id": 2,
+    "post_id": 6,
     "user_id": 1,
-    "posting_date": "2023-08-03T09:34:12.000Z",
-    "description": "First Post",
-    "image_url": "dummy.jpg"
+    "posting_date": "2023-08-25T08:54:31.000Z",
+    "description": "Amazing Post",
+    "image_url": "amazing.jpg",
+    "images": [
+        "a.jpg",
+        "b.jpg"
+    ]
 }
 ```
 
@@ -4658,17 +4662,22 @@ Request Body:
 ```json
 {
     "description": "Amazing Post",
-    "image_url": "amazing.jpg"
+    "image_url": "amazing.jpg",
+    "images": ["a.jpg","b.jpg"]
 }
 ```
 Example Response:  
 ```json
 {
-    "post_id": 10,
+    "post_id": 6,
     "user_id": 1,
-    "posting_date": "2023-08-03T09:38:43.000Z",
+    "posting_date": "2023-08-25T08:54:31.000Z",
     "description": "Amazing Post",
-    "image_url": "amazing.jpg"
+    "image_url": "amazing.jpg",
+    "images": [
+        "a.jpg",
+        "b.jpg"
+    ]
 }
 ```
 ## e. Update a Post
@@ -4683,19 +4692,25 @@ PUT
 Request Body:    
 ```json
 {
-    "post_id": 10,
-    "description": "Updated Amazing Post",
-    "image_url": "amazing.jpg"
+    "post_id": 6,
+    "description": "Amazing Post",
+    "image_url": "amazing.jpg",
+    "images": ["x.jpg","y.jpg","z.jpg"]
 }
 ```
 Example Response:  
 ```json
 {
-    "post_id": 10,
-    "user_id": 2,
-    "posting_date": "2023-08-03T09:38:43.000Z",
-    "description": "Updated Amazing Post",
-    "image_url": "amazing.jpg"
+    "post_id": 6,
+    "user_id": 1,
+    "posting_date": "2023-08-25T08:54:31.000Z",
+    "description": "Amazing Post",
+    "image_url": "amazing.jpg",
+    "images": [
+        "z.jpg",
+        "x.jpg",
+        "y.jpg"
+    ]
 }
 ```
 
