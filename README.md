@@ -94,7 +94,7 @@ npm run dev
 1. Go to the directory ``backend/data_generators``
 2. First Run ``master_generator.py``
 3. Then run ``sql_generator.py``
-4. The generator large_insert.sql file will be in the directory ``backend/data_generators/sql``
+4. The generated ``large_insert.sql`` file will be in the directory ``backend/data_generators/sql``
 5. You may control data generation parameters in ``config.py``
 
 # Tripify - Frontend
