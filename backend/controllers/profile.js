@@ -11,6 +11,7 @@ const { getDestinations } = require('./destination');
 const { getTrips } = require('./trip');
 const { getTripBookings } = require('./tripbooking');
 const { getSingleUser } = require('./user');
+const { getPosts } = require('./post');
 
 const getSingleUserProfile = async (payload) => {
 
@@ -58,7 +59,10 @@ const getSingleUserProfile = async (payload) => {
             user_id: user_id
         }
         const follows_result = (await db.execute(sql, binds, db.options)).rows;
-        user.follows = follows_result
+        //user.follows = follows_result
+
+        user.followee_count = follows_result.length
+
         sql = `
         SELECT follower_id AS "follower_id", since_date AS "since_date"
         FROM FOLLOWS
@@ -68,7 +72,8 @@ const getSingleUserProfile = async (payload) => {
             user_id: user_id
         }
         const followed_by_result = (await db.execute(sql, binds, db.options)).rows;
-        user.followed_by = followed_by_result
+        //user.followed_by = followed_by_result
+        user.follower_count = followed_by_result.length
         console.log(user)
 
         user.hotels_created = await getHotels({ creator_user_id: user_id, page: page, per_page: per_page });
@@ -79,7 +84,8 @@ const getSingleUserProfile = async (payload) => {
         user.trip_bookings_created = await getTripBookings({ user_id: user_id, is_private: 0, page: page, per_page: per_page });
         user.activities_created = await getActivities({ creator_user_id: user_id, page: page, per_page: per_page });
         user.destinations_created = await getDestinations({ creator_user_id: user_id, page: page, per_page: per_page });
-
+        user.posts_created = await getPosts({ user_id: user_id, page: page, per_page: per_page });
+        
         return user;
     }
     catch(err) {
