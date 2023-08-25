@@ -98,6 +98,14 @@ npm run dev
 
 ![Screenshot (115)](https://github.com/aaniksahaa/Tripify/assets/63545621/6328d778-7d29-4fb5-b8fa-83f15ade4d2e)
 
+## Data Generation (Optional)
+
+1. Go to the directory ``backend/data_generators``
+2. First Run ``master_generator.py``
+3. Then run ``sql_generator.py``
+4. The generator large_insert.sql file will be in the directory ``backend/data_generators/sql``
+5. You may control data generation parameters in ``config.py``
+
 # Tripify - Frontend
 
 ## Demonstration:
