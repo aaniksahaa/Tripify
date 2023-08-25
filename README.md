@@ -54,9 +54,9 @@ the place of 'hr' and 'hr' that we previously wrote for setting up HR schema.
 
 16. Now Set up the database as per the following specification.
 ```
-Go to the directory ``backend/sqldump/master_dump``.
-If your are setting the database for the first time, run ``dump_first_time.sql``
-Otherwise, run ``dump_any_time_later.sql``
+Go to the directory  -->  backend/sqldump/master_dump
+If your are setting the database for the first time, run  -->  dump_first_time.sql
+Otherwise, run -->  dump_any_time_later.sql
 ```
 17. For running the queries, just create query files of same names in Navicat and copy the content.
 
