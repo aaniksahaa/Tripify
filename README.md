@@ -7,8 +7,8 @@ Discover, plan, and explore effortlessly with Tripify: the ultimate travel platf
 # Contents
 
 ## 1. [How to Run](#how-to-run-1)
-## 2. [Frontend](#tripify---frontend-1)
-## 3. [Backend](#tripify---backend-1)
+## 2. [Frontend](#tripify---frontend)
+## 3. [Backend](#tripify---backend)
 
 # How to Run
 
