@@ -18,7 +18,7 @@ function PostCard({ id, card }) {
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                             <Link to='/profile/1'>
-                                <Avatar name='Segun Adebayo' src='https://bit.ly/dan-abramov' />
+                                <Avatar name='Segun Adebayo' src='/profile.jpg' />
                             </Link>
                             <Box>
                                 <Link to='/profile/1'>
@@ -111,7 +111,7 @@ function PostCard({ id, card }) {
                                 <Flex spacing='4'>
                                     <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                                         <Link to='/profile/1'>
-                                            <Avatar name='Segun Adebayo' src='https://bit.ly/dan-abramov' />
+                                            <Avatar name='Segun Adebayo' src='/profile.jpg' />
                                         </Link>
                                         <Box>
                                             <Link to='/profile/1'>
