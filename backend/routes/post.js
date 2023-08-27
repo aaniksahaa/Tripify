@@ -1,6 +1,6 @@
 const express = require('express');
 const { validationResult, body } = require('express-validator');
-const { getSinglePost, getPosts, createPost, updatePost, deletePost, handleReact, handleRemoveReact, getSinglePostDetails } = require('../controllers/post');
+const { getSinglePost, getPosts, createPost, updatePost, deletePost, handleReact, handleRemoveReact, getSinglePostDetails, checkReact } = require('../controllers/post');
 const router = express.Router();
 
 router.get('/:post_id', async (req, res, next) => {
@@ -103,6 +103,27 @@ router.delete('/:post_id', async (req, res, next) => {
         next(error);
     }
 });
+
+router.get('/:post_id/react', async (req, res, next) => {
+
+    const result = validationResult(req)
+
+    console.log(req.params)
+    if(result.isEmpty() === false) {
+        return res.send({errors: result.array()})
+    }
+
+    req.params.user_id = req.user ? req.user.user_id : 1
+
+    try { 
+        const result = await checkReact(req.params)
+        res.json(result)
+    }
+    catch(err) {
+        console.log(err)
+        next(err)
+    }
+})
 
 router.post('/:post_id/react/:react_type_id', async (req, res, next) => {
 

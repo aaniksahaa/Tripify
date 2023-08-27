@@ -23,4 +23,4 @@ generate_scraped_restaurants(max_restaurants_from_each_city=10,image_width=1500,
 
 ## Carefully make sure so that no generated data string contains single apostrophe
 
-print('\n\nAll data successfully generated. Now run sqlgen.py\n\n\n')
+print('\n\nAll data successfully generated. Now run sql_generator.py\n\n\n')

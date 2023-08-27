@@ -1,6 +1,6 @@
 const express = require('express');
 const { body, validationResult } = require('express-validator');
-const { createUser, getSingleUser, updateUser, deleteUser, deleteUserPermanent, getUsers, handleFollow, handleUnFollow, getSingleUserByUsername, handleFavorite, handleRemoveFavorite } = require('../controllers/user');
+const { createUser, getSingleUser, updateUser, deleteUser, deleteUserPermanent, getUsers, handleFollow, handleUnFollow, getSingleUserByUsername, handleFavorite, handleRemoveFavorite, checkFollow } = require('../controllers/user');
 const { getSingleUserProfile } = require('../controllers/profile');
 const router = express.Router();
 
@@ -56,6 +56,30 @@ router.get('/', async (req,res,next) => {
     catch(err){
         console.log(err)
         next(err)
+    }
+})
+
+router.get('/:follower_id/follow/:followee_id', async (req, res, next) => {
+    const result = validationResult(req)
+    console.log(req.params)
+    if(result.isEmpty() === false) {
+        return res.send({errors: result.array()})
+    }
+
+    if(req.user !== undefined && req.user.user_id != req.params.follower_id )
+    {
+        next({message : 'oops, hecker moment, nice try !'})
+        return;
+    }
+
+    req.params.follower_id = req.user ? req.user.user_id : 1
+
+    try { 
+        const result = await checkFollow(req.params)
+        res.json(result)
+    }
+    catch(error) {
+        next(error)
     }
 })
 
@@ -187,7 +211,7 @@ router.post('/:follower_id/follow/:followee_id', async (req, res, next) => {
         return res.send({errors: result.array()})
     }
 
-    if(req.user !== undefined && req.user.user_id != req.params.user_id )
+    if(req.user !== undefined && req.user.user_id != req.params.follower_id )
     {
         next({message : 'oops, hecker moment, nice try !'})
         return;
@@ -211,7 +235,7 @@ router.delete('/:follower_id/follow/:followee_id', async (req, res, next) => {
         return res.send({errors: result.array()})
     }
 
-    if(req.user !== undefined && req.user.user_id != req.params.user_id )
+    if(req.user !== undefined && req.user.user_id != req.params.follower_id )
     {
         next({message : 'oops, hecker moment, nice try !'})
         return;

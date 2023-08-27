@@ -1,7 +1,6 @@
 import random
 from config import user_count
 
-
 def get_follow_sql():
     sql = "\n\n"
 

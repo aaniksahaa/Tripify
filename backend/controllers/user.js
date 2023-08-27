@@ -26,7 +26,7 @@ const getHashedPassword = async (password) => {
 }
 
 const getSingleUser = async (payload) => {
-    //console.log(payload)
+    console.log(payload)
     const user_id = payload.user_id;
     console.log("User_id to be fetched = ", user_id);
     const sql = `
@@ -397,6 +397,40 @@ const deleteUserPermanent = async (payload) => {
     return user;
 };
 
+const checkFollow = async (payload) => {
+
+    console.log("checkFollow for ", payload)
+
+    follower_id = payload.follower_id
+    followee_id = payload.followee_id
+
+    sql = `
+    SELECT COUNT(*) AS "is_following"
+    FROM FOLLOWS
+    WHERE FOLLOWER_ID = :follower_id AND FOLLOWEE_ID = :followee_id 
+    `
+
+    binds = {
+        follower_id: follower_id,
+        followee_id: followee_id
+    }
+
+    result = await db.execute(sql, binds, db.options);
+
+    if(result)
+    {
+        result = result.rows[0]
+        result.follower_id = parseInt(payload.follower_id)
+        result.followee_id = parseInt(payload.followee_id)
+        
+        return result
+    }
+    else
+    {
+        return null
+    }
+
+}
 
 const handleFollow = async (payload) => {
 
@@ -554,4 +588,4 @@ const handleRemoveFavorite = async (payload) => {
 }
 
 
-module.exports = { getSingleUser, getSingleUserByUsername, getUsers, createUser, updateUser, deleteUser, deleteUserPermanent, handleFollow, handleUnFollow, handleFavorite, handleRemoveFavorite };
+module.exports = { getSingleUser, getSingleUserByUsername, getUsers, createUser, updateUser, deleteUser, deleteUserPermanent, checkFollow, handleFollow, handleUnFollow, handleFavorite, handleRemoveFavorite };

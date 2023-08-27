@@ -282,6 +282,44 @@ const deletePost = async (payload) => {
     return post;
 };
 
+const checkReact = async (payload) => {
+
+    console.log("checkReact" , payload)
+
+    try{
+
+        sql = `
+        SELECT COUNT(*) AS "has_reacted "
+        FROM REACTS
+        WHERE USER_ID = :user_id AND POST_ID = :post_id
+        `
+        binds = {
+            post_id: payload.post_id,
+            user_id: payload.user_id
+        }
+
+        result = await db.execute(sql, binds, db.options);
+
+        if(result)
+        {
+            result = result.rows[0]
+            result.user_id = parseInt(payload.user_id)
+            result.post_id = parseInt(payload.post_id)
+            return result
+        }
+        else
+        {
+            return null
+        }
+
+    }
+    catch(err){
+        console.log(err)
+        throw(err)
+    }
+
+}
+
 const handleReact = async (payload) => {
 
     console.log("handleReact" , payload)
@@ -387,5 +425,5 @@ const handleRemoveReact = async (payload) => {
 }
 
 
-module.exports = { getSinglePost, getSinglePostDetails, getPosts, createPost, updatePost, deletePost, handleReact, handleRemoveReact };
+module.exports = { getSinglePost, getSinglePostDetails, getPosts, createPost, updatePost, deletePost, checkReact, handleReact, handleRemoveReact };
 
