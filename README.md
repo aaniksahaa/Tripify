@@ -94,7 +94,7 @@ npm run dev
 1. Go to the directory ``backend/data_generators``
 2. First Run ``master_generator.py``
 3. Then run ``sql_generator.py``
-4. The generator large_insert.sql file will be in the directory ``backend/data_generators/sql``
+4. The generated ``large_insert.sql`` file will be in the directory ``backend/data_generators/sql``
 5. You may control data generation parameters in ``config.py``
 
 # Tripify - Frontend
@@ -589,10 +589,10 @@ Example Response:
     "instagram_url": "instagram.com/abc",
     "profile_picture": "dummy.jpg",
     "dob": "2002-09-16T18:00:00.000Z",
-    "registration_date": "2023-08-24T23:04:05.000Z",
+    "registration_date": "2023-08-25T08:29:22.000Z",
     "status": "active",
-    "created_on": "2023-08-24T23:04:05.000Z",
-    "last_updated_on": "2023-08-24T23:04:05.000Z",
+    "created_on": "2023-08-25T08:29:22.000Z",
+    "last_updated_on": "2023-08-25T08:29:22.000Z",
     "city": {
         "city_id": 1,
         "name": "Dhaka",
@@ -600,8 +600,10 @@ Example Response:
         "population": 168957745,
         "weather_type": "rainy"
     },
-    "followee_count": 5,
-    "follower_count": 2,
+    "follower_count": 9,
+    "followee_count": 9,
+    "post_count": 6,
+    "review_count": 81,
     "hotels_created": [],
     "restaurants_created": [],
     "trips_created": [
@@ -618,8 +620,8 @@ Example Response:
             "start_date": "2023-06-30T18:00:00.000Z",
             "end_date": "2023-07-24T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-24T23:04:16.000Z",
-            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "created_on": "2023-08-25T08:29:32.000Z",
+            "last_updated_on": "2023-08-25T08:29:32.000Z",
             "deleted_on": null,
             "rating_info": {
                 "rating_1": 0,
@@ -644,8 +646,8 @@ Example Response:
             "start_date": "2023-08-15T18:00:00.000Z",
             "end_date": "2023-09-01T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-24T23:04:16.000Z",
-            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "created_on": "2023-08-25T08:29:32.000Z",
+            "last_updated_on": "2023-08-25T08:29:32.000Z",
             "deleted_on": null,
             "rating_info": {
                 "rating_1": 0,
@@ -670,8 +672,8 @@ Example Response:
             "start_date": "2023-08-17T18:00:00.000Z",
             "end_date": "2023-08-29T18:00:00.000Z",
             "creator_user_id": 1,
-            "created_on": "2023-08-24T23:04:16.000Z",
-            "last_updated_on": "2023-08-24T23:04:16.000Z",
+            "created_on": "2023-08-25T08:29:32.000Z",
+            "last_updated_on": "2023-08-25T08:29:32.000Z",
             "deleted_on": null,
             "rating_info": {
                 "rating_1": 0,
@@ -686,16 +688,16 @@ Example Response:
     ],
     "reviews_created": [
         {
-            "review_id": 820,
+            "review_id": 935,
             "user_id": 1,
-            "posting_date": "2023-08-24T23:04:21.000Z",
-            "description": "From relaxing breathtaking sights to savoring exquisite cuisines at gourmet restaurants, my breathtaking trip was enriched by a enthusiastic storytellers who shared fascinating insights.",
-            "rating": 4,
+            "posting_date": "2023-08-25T08:29:37.000Z",
+            "description": "Friendly staff went above and beyond to serve us. Exquisite flavors danced on our tongues. Elegant decor created a sophisticated atmosphere. Fresh ingredients shined in every bite.",
+            "rating": 2,
             "image_url": "dummy.jpg",
             "upvote_count": 0,
             "object": {
-                "object_type": "trip",
-                "object_id": 3
+                "object_type": "restaurant",
+                "object_id": 10
             },
             "user": {
                 "user_id": 1,
@@ -710,10 +712,10 @@ Example Response:
                 "instagram_url": "instagram.com/abc",
                 "profile_picture": "dummy.jpg",
                 "dob": "2002-09-16T18:00:00.000Z",
-                "registration_date": "2023-08-24T23:04:05.000Z",
+                "registration_date": "2023-08-25T08:29:22.000Z",
                 "status": "active",
-                "created_on": "2023-08-24T23:04:05.000Z",
-                "last_updated_on": "2023-08-24T23:04:05.000Z",
+                "created_on": "2023-08-25T08:29:22.000Z",
+                "last_updated_on": "2023-08-25T08:29:22.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -724,15 +726,15 @@ Example Response:
             }
         },
         {
-            "review_id": 822,
+            "review_id": 975,
             "user_id": 1,
-            "posting_date": "2023-08-24T23:04:21.000Z",
-            "description": "Prompt and helpful responses from the front desk improved our overall experience. Central location made it easy to explore the city. Timely wake-up calls assisted our daily schedule. Regular housekeeping maintained a clean and organized environment. Luxurious amenities provided a pampering experience.",
-            "rating": 3,
+            "posting_date": "2023-08-25T08:29:37.000Z",
+            "description": "From relaxing breathtaking sights to savoring exquisite cuisines at seaside cafes, my delightful trip was enriched by a passionate explorers who shared fascinating insights.",
+            "rating": 4,
             "image_url": "dummy.jpg",
             "upvote_count": 0,
             "object": {
-                "object_type": "hotel",
+                "object_type": "trip",
                 "object_id": 6
             },
             "user": {
@@ -748,10 +750,10 @@ Example Response:
                 "instagram_url": "instagram.com/abc",
                 "profile_picture": "dummy.jpg",
                 "dob": "2002-09-16T18:00:00.000Z",
-                "registration_date": "2023-08-24T23:04:05.000Z",
+                "registration_date": "2023-08-25T08:29:22.000Z",
                 "status": "active",
-                "created_on": "2023-08-24T23:04:05.000Z",
-                "last_updated_on": "2023-08-24T23:04:05.000Z",
+                "created_on": "2023-08-25T08:29:22.000Z",
+                "last_updated_on": "2023-08-25T08:29:22.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -762,16 +764,16 @@ Example Response:
             }
         },
         {
-            "review_id": 821,
+            "review_id": 971,
             "user_id": 1,
-            "posting_date": "2023-08-24T23:04:21.000Z",
-            "description": "Inventive plating made each dish a work of art. Indulgent desserts provided a perfect ending. Aromatic spices elevated every dish. Thoughtful attention to dietary needs was appreciated.",
-            "rating": 2,
+            "posting_date": "2023-08-25T08:29:37.000Z",
+            "description": "Indulgent desserts provided a perfect ending. Mouthwatering aromas greeted us at the entrance. Inventive plating made each dish a work of art. Thoughtful attention to dietary needs was appreciated.",
+            "rating": 4,
             "image_url": "dummy.jpg",
             "upvote_count": 0,
             "object": {
                 "object_type": "restaurant",
-                "object_id": 2
+                "object_id": 1
             },
             "user": {
                 "user_id": 1,
@@ -786,10 +788,10 @@ Example Response:
                 "instagram_url": "instagram.com/abc",
                 "profile_picture": "dummy.jpg",
                 "dob": "2002-09-16T18:00:00.000Z",
-                "registration_date": "2023-08-24T23:04:05.000Z",
+                "registration_date": "2023-08-25T08:29:22.000Z",
                 "status": "active",
-                "created_on": "2023-08-24T23:04:05.000Z",
-                "last_updated_on": "2023-08-24T23:04:05.000Z",
+                "created_on": "2023-08-25T08:29:22.000Z",
+                "last_updated_on": "2023-08-25T08:29:22.000Z",
                 "city": {
                     "city_id": 1,
                     "name": "Dhaka",
@@ -806,26 +808,87 @@ Example Response:
     "destinations_created": [],
     "posts_created": [
         {
-            "post_id": 2,
+            "post_id": 6,
             "user_id": 1,
-            "posting_date": "2023-08-25T06:13:46.000Z",
-            "description": "New Amazing Post",
-            "image_url": "new-amazing.jpg",
+            "posting_date": "2023-08-25T08:54:31.000Z",
+            "description": "Amazing Post",
+            "image_url": "amazing.jpg",
+            "images": [
+                "z.jpg",
+                "x.jpg",
+                "y.jpg"
+            ],
             "comments": [],
             "reacts": []
         },
         {
-            "post_id": 1,
+            "post_id": 5,
             "user_id": 1,
-            "posting_date": "2023-08-25T06:13:23.000Z",
+            "posting_date": "2023-08-25T08:54:00.000Z",
             "description": "Amazing Post",
             "image_url": "amazing.jpg",
+            "images": [
+                "a.jpg",
+                "b.jpg"
+            ],
+            "comments": [],
+            "reacts": []
+        },
+        {
+            "post_id": 4,
+            "user_id": 1,
+            "posting_date": "2023-08-25T08:53:50.000Z",
+            "description": "Amazing Post",
+            "image_url": "amazing.jpg",
+            "images": null,
             "comments": [],
             "reacts": []
         }
     ]
 }
 ```
+## l. Checking whether a User if following another User
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/user/1/follow/10
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "is_following": 0,
+    "follower_id": 1,
+    "followee_id": 10
+}
+```
+
+## l. Checking whether a User if following another User
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/user/1/follow/10
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "is_following": 0,
+    "follower_id": 1,
+    "followee_id": 10
+}
+```
+
 # City
 
 ## a. Get Single City by city_id
@@ -4784,7 +4847,27 @@ Example Response:
     "reacting_date": "2023-08-03T13:20:38.000Z"
 }
 ```
-
+## i. Checking whether a User has reacted to a post
+### The user_id will be auto grabbed from req.user
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/post/1/react
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "has_reacted ": 1,
+    "user_id": 1,
+    "post_id": 1
+}
+```
 # Comment
 
 ## a. Get Single Comment by comment_id

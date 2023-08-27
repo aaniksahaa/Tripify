@@ -48,7 +48,7 @@ function Navbar2({ openDrawer }) {
                                     minW={0}>
                                     <Avatar
                                         size={'sm'}
-                                        src={'https://bit.ly/dan-abramov'}
+                                        src={'/profile.jpg'}
                                     />
                                 </MenuButton>
                                 <MenuList alignItems={'center'}>
@@ -56,7 +56,7 @@ function Navbar2({ openDrawer }) {
                                     <Center>
                                         <Avatar
                                             size={'2xl'}
-                                            src={'https://bit.ly/dan-abramov'}
+                                            src={'/profile.jpg'}
                                         />
                                     </Center>
                                     <br />
@@ -93,7 +93,7 @@ function Navbar2({ openDrawer }) {
                                         minW={0}>
                                         <Avatar
                                             size={'lg'}
-                                            src={'https://bit.ly/dan-abramov'}
+                                            src={'/profile.jpg'}
                                         />
                                     </MenuButton>
                                     <MenuList alignItems={'center'}>
@@ -101,7 +101,7 @@ function Navbar2({ openDrawer }) {
                                         <Center>
                                             <Avatar
                                                 size={'2xl'}
-                                                src={'https://bit.ly/dan-abramov'}
+                                                src={'/profile.jpg'}
                                             />
                                         </Center>
                                         <br />

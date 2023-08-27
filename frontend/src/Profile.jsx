@@ -18,7 +18,7 @@ function Profile() {
                 <Center mt='20px'>
                     <Box display={{ base: 'block', sm: 'block', md: 'flex', lg: 'flex', xl: 'flex' }} alignItems={'center'}>
                         <Flex height={'300px'} alignItems={'center'} justifyContent={'center'}>
-                            <Avatar height={'200px'} width={'200px'} name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+                            <Avatar height={'200px'} width={'200px'} name='Dan Abrahmov' src='/profile.jpg' />
                         </Flex>
                         <Stack pl={'50px'} pr={'50px'} minWidth={'400px'} maxWidth={'500px'} spacing={'20px'}>
                             <Flex alignItems={'center'} justifyContent={'space-between'}>

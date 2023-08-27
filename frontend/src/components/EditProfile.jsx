@@ -30,7 +30,7 @@ function EditProfile() {
             <Container maxW='7xl'>
                 <VStack>
                     <VStack spacing={'20px'} height={'300px'} alignItems={'center'} justifyContent={'center'}>
-                        <Avatar height={'200px'} width={'200px'} name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+                        <Avatar height={'200px'} width={'200px'} name='Dan Abrahmov' src='/profile.jpg' />
                         <Button size={'sm'}>Change Profile Picture</Button>
                     </VStack>
                     <VStack spacing={'20px'}>
