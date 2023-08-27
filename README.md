@@ -867,6 +867,28 @@ Example Response:
     "followee_id": 10
 }
 ```
+
+## l. Checking whether a User if following another User
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/user/1/follow/10
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "is_following": 0,
+    "follower_id": 1,
+    "followee_id": 10
+}
+```
+
 # City
 
 ## a. Get Single City by city_id
@@ -4825,7 +4847,27 @@ Example Response:
     "reacting_date": "2023-08-03T13:20:38.000Z"
 }
 ```
-
+## i. Checking whether a User has reacted to a post
+### The user_id will be auto grabbed from req.user
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/post/1/react
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "has_reacted ": 1,
+    "user_id": 1,
+    "post_id": 1
+}
+```
 # Comment
 
 ## a. Get Single Comment by comment_id
