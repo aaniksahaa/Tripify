@@ -847,6 +847,26 @@ Example Response:
     ]
 }
 ```
+## l. Checking whether a User if following another User
+Endpoint URL: 
+```
+GET
+```
+```
+/api/v1/user/1/follow/10
+```  
+Request Body:    
+```
+None
+```
+Example Response:  
+```json
+{
+    "is_following": 0,
+    "follower_id": 1,
+    "followee_id": 10
+}
+```
 # City
 
 ## a. Get Single City by city_id
