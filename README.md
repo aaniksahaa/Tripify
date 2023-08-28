@@ -1160,7 +1160,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/destination?name=e&address=dhaka&city_id=1,2,3&page=2&per_page=2&orderby=name&ordertype=asc
+/api/v1/destination?name=e&address=dhaka&city_id=1,2,3&activity_id=2,3,4&page=1&per_page=2&orderby=name&ordertype=asc
 ```
 Request Body: 
 ```
@@ -1170,6 +1170,100 @@ Example Response:
 ```json
 [
     {
+        "destination_id": 20,
+        "name": "Armenian Church of the Holy Resurrection",
+        "address": "Armanitola, Old Dhaka",
+        "city_id": 1,
+        "latitude": 23.7165,
+        "longitude": 90.4083,
+        "description": "This historic church is one of the oldest Christian churches in Dhaka.",
+        "image_url": "armenian_church.jpg",
+        "created_on": "2023-08-25T08:29:22.000Z",
+        "last_updated_on": "2023-08-25T08:29:22.000Z",
+        "creator_user_id": 0,
+        "activities": [
+            {
+                "activity_id": 3,
+                "price": 100,
+                "activity": {
+                    "activity_id": 3,
+                    "name": "Snorkeling",
+                    "category": "Adventure",
+                    "description": "Discover the underwater world and vibrant marine life through snorkeling.",
+                    "image_url": "snorkeling.jpg",
+                    "min_age": 10,
+                    "max_age": 50,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
+                    "images": [
+                        "https://fthmb.tqn.com/XtDX5UROYmPakUeif3ahefihJoI=/1500x1050/filters:fill(auto,1)/SnorkelingWithKids_Getty-56effe365f9b5867a1c4bfb4.jpg",
+                        "https://www.crystalsandsonsiestakey.com/wp-content/uploads/2020/08/siesta-key-snorkeling.jpg",
+                        "https://diveukhurghada.co.uk/wp-content/uploads/2020/02/Snorkelling-1.jpg",
+                        "https://www.sandals.com/blog/content/images/2019/04/3_islandroutes_38-Adv-Eco.jpg"
+                    ]
+                }
+            },
+            {
+                "activity_id": 6,
+                "price": 350,
+                "activity": {
+                    "activity_id": 6,
+                    "name": "Wildlife Safari",
+                    "category": "Adventure",
+                    "description": "Embark on a thrilling wildlife safari and spot exotic animals.",
+                    "image_url": "wildlife_safari.jpg",
+                    "min_age": 18,
+                    "max_age": 60,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
+                    "images": [
+                        "https://www.serengetiparktanzania.com/wp-content/uploads/2020/11/7-Days-Tanzania-Wildlife-Safaris.jpg",
+                        "https://www.expertafrica.com/images/background-image/01a037ba6e6b403a8c6cfe4d64a249f0-1600.jpg",
+                        "https://www.ngorongorocratertanzania.org/wp-content/uploads/2020/10/5-Days-Best-of-Tanzania-Wildlife-Safari.jpg",
+                        "https://www.expertafrica.com/images/background-image/d8aaade7bbcd42d4a0a39588bbf4aa7d-1600.jpg"
+                    ]
+                }
+            },
+            {
+                "activity_id": 34,
+                "price": 150,
+                "activity": {
+                    "activity_id": 34,
+                    "name": "Cave Exploration",
+                    "category": "Adventure",
+                    "description": "Explore the mysterious caves and marvel at their natural beauty.",
+                    "image_url": "cave_exploration.jpg",
+                    "min_age": 14,
+                    "max_age": 70,
+                    "creator_user_id": 0,
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
+                    "images": [
+                        "https://bloximages.chicago2.vip.townnews.com/poststar.com/content/tncms/assets/v3/editorial/a/4f/a4f6ad2e-4129-11e5-9eed-2782d3ad6b80/55cba09a2e333.image.jpg?resize=1200%2C766",
+                        "https://img.jakpost.net/c/2018/07/10/2018_07_10_49018_1531210327._large.jpg",
+                        "http://bcbstwelltuned.com/wp-content/uploads/2017/06/Spelunking-e1497553737173.jpg",
+                        "https://assets3.thrillist.com/v1/image/2774746/size/gn-gift_guide_variable_c.jpg"
+                    ]
+                }
+            }
+        ],
+        "city": {
+            "city_id": 1,
+            "name": "Dhaka",
+            "country_name": "Bangladesh",
+            "population": 168957745,
+            "weather_type": "rainy"
+        },
+        "images": [
+            "https://i.pinimg.com/originals/e4/d8/94/e4d894905114d4d2c67ac65016de00b3.jpg",
+            "https://www.churchesaustralia.org/content/directory/full/Armenian_Apostolic_Church_of_Holy_Resurrection-18251-6462.jpg",
+            "https://www.alamy.com/aggregator-api/download?url=https://c8.alamy.com/comp/JMEC9T/the-armenian-church-of-the-holy-resurrection-dhaka-bangladesh-JMEC9T.jpg",
+            "https://thumbs.dreamstime.com/b/armenian-apostolic-church-holy-resurrection-dhaka-bangladesh-february-exterior-86177747.jpg"
+        ]
+    },
+    {
         "destination_id": 9,
         "name": "Bangabandhu Memorial Museum",
         "address": "Dhanmondi, Dhaka",
@@ -1178,8 +1272,8 @@ Example Response:
         "longitude": 90.3863,
         "description": "This museum is dedicated to Sheikh Mujibur Rahman, the founding father of Bangladesh.",
         "image_url": "bangabandhu_museum.jpg",
-        "created_on": "2023-08-24T20:53:17.000Z",
-        "last_updated_on": "2023-08-24T20:53:17.000Z",
+        "created_on": "2023-08-25T08:29:22.000Z",
+        "last_updated_on": "2023-08-25T08:29:22.000Z",
         "creator_user_id": 0,
         "activities": [
             {
@@ -1194,8 +1288,8 @@ Example Response:
                     "min_age": 12,
                     "max_age": 55,
                     "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
                     "images": [
                         "https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/10/best-hiking-trails-canada-1024x683.jpg",
                         "http://www.lilkickerschicago.com/wp-content/uploads/2019/06/dawn-view-1200.jpg",
@@ -1216,8 +1310,8 @@ Example Response:
                     "min_age": 12,
                     "max_age": 70,
                     "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
                     "images": [
                         "https://www.oyorooms.com/blog/wp-content/uploads/2017/10/Taj-Mahal.jpg",
                         "https://worldinsidepictures.com/wp-content/uploads/2013/10/7-1024x682.jpg",
@@ -1238,8 +1332,8 @@ Example Response:
                     "min_age": 20,
                     "max_age": 70,
                     "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
+                    "created_on": "2023-08-25T08:29:26.000Z",
+                    "last_updated_on": "2023-08-25T08:29:26.000Z",
                     "images": [
                         "https://bookretreats.com/blog/wp-content/uploads/2020/11/1000_1603815965.jpg",
                         "https://magazine.bluekarmasecrets.com/wp-content/uploads/2019/10/retreatbox4.jpg",
@@ -1261,100 +1355,6 @@ Example Response:
             "https://i.pinimg.com/originals/e9/a7/e9/e9a7e99e45360d1618333636957d15ff.jpg",
             "https://media-cdn.tripadvisor.com/media/photo-s/0a/8e/84/89/bangabandhu-memorial.jpg",
             "https://media-cdn.tripadvisor.com/media/photo-s/05/f3/69/86/bangabandhu-museum-entrance.jpg"
-        ]
-    },
-    {
-        "destination_id": 18,
-        "name": "Bangladesh Liberation War Museum",
-        "address": "Agargaon, Dhaka",
-        "city_id": 1,
-        "latitude": 23.7745,
-        "longitude": 90.3641,
-        "description": "This museum commemorates the Liberation War of Bangladesh with historical artifacts.",
-        "image_url": "liberation_war_museum.jpg",
-        "created_on": "2023-08-24T20:53:17.000Z",
-        "last_updated_on": "2023-08-24T20:53:17.000Z",
-        "creator_user_id": 0,
-        "activities": [
-            {
-                "activity_id": 2,
-                "price": 300,
-                "activity": {
-                    "activity_id": 2,
-                    "name": "Hiking",
-                    "category": "Adventure",
-                    "description": "Embark on a thrilling hiking adventure amidst picturesque hills.",
-                    "image_url": "hiking.jpg",
-                    "min_age": 12,
-                    "max_age": 55,
-                    "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
-                    "images": [
-                        "https://www.readersdigest.ca/wp-content/uploads/sites/14/2015/10/best-hiking-trails-canada-1024x683.jpg",
-                        "http://www.lilkickerschicago.com/wp-content/uploads/2019/06/dawn-view-1200.jpg",
-                        "https://all.accor.com/middleware/media/1385716182466/1618327327711/hiking.jpg",
-                        "https://www.explore-mag.com/media/image/57291.jpg"
-                    ]
-                }
-            },
-            {
-                "activity_id": 9,
-                "price": 50,
-                "activity": {
-                    "activity_id": 9,
-                    "name": "Water Sports",
-                    "category": "Adventure",
-                    "description": "Indulge in various water sports activities like jet skiing, parasailing, and more.",
-                    "image_url": "water_sports.jpg",
-                    "min_age": 16,
-                    "max_age": 55,
-                    "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
-                    "images": [
-                        "https://nomadparadise.com/wp-content/uploads/2020/08/water-sports-flyboard-flying.jpg",
-                        "https://www.tripsavvy.com/thmb/3sYPZPdIbNedmJj501qXWO7mCeE=/1261x835/filters:no_upscale():max_bytes(150000):strip_icc()/KorisRamos-56a34e515f9b58b7d0d16646.jpg",
-                        "https://multimedia.andalucia.org/media/80B4B346BD45484497680DC1229FE4F7/img/C43F415C44C0474A85D70F0F5BEE8CAC/CA_Tarifa_Playa_Valdevaqueros_11.jpg?responsive",
-                        "https://hellscanyon.tours/wp-content/uploads/2021/06/RiverAdventuresInc-73025-Water-Sports-Summer-image1-scaled.jpg"
-                    ]
-                }
-            },
-            {
-                "activity_id": 12,
-                "price": 350,
-                "activity": {
-                    "activity_id": 12,
-                    "name": "Fishing Adventure",
-                    "category": "Adventure",
-                    "description": "Go on a fishing expedition and test your angling skills.",
-                    "image_url": "fishing_adventure.jpg",
-                    "min_age": 10,
-                    "max_age": 65,
-                    "creator_user_id": 0,
-                    "created_on": "2023-08-24T20:53:21.000Z",
-                    "last_updated_on": "2023-08-24T20:53:21.000Z",
-                    "images": [
-                        "https://gametrex.com/wp-content/uploads/2019/12/Fishing-Adventure-Free-Download-1200x675.jpg",
-                        "https://cdn.akamai.steamstatic.com/steam/apps/1101140/capsule_616x353.jpg?t=1602851078",
-                        "https://outdooradventurelife.com/wp-content/uploads/2020/10/fishing-2.jpg",
-                        "https://i.ytimg.com/vi/UmmmTfU1npY/maxresdefault.jpg"
-                    ]
-                }
-            }
-        ],
-        "city": {
-            "city_id": 1,
-            "name": "Dhaka",
-            "country_name": "Bangladesh",
-            "population": 168957745,
-            "weather_type": "rainy"
-        },
-        "images": [
-            "https://c8.alamy.com/comp/2DE5E1P/dhaka-bangladesh-november-27-2020-the-liberation-war-museum-is-a-museum-in-sher-e-bangla-nagar-in-dhaka-bangladesh-which-commemorates-the-bangl-2DE5E1P.jpg",
-            "https://i.ytimg.com/vi/1jbcIooYUBQ/maxresdefault.jpg",
-            "https://c8.alamy.com/comp/2DE5E2K/dhaka-bangladesh-november-27-2020-the-liberation-war-museum-is-a-museum-in-sher-e-bangla-nagar-in-dhaka-bangladesh-which-commemorates-the-bangl-2DE5E2K.jpg",
-            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/66/eb/81/newly-built-liberation.jpg?w=1200&h=-1&s=1"
         ]
     }
 ]
@@ -3529,7 +3529,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/review?user_id=2&rating_min=3&rating_max=5&page=1&per_page=2&orderby=rating&ordertype=desc
+/api/v1/review?user_id=2&object_type=hotel&object_id=2&rating_min=3&rating_max=5&page=1&per_page=2&orderby=rating&ordertype=desc
 ```
 Request Body: 
 ```
@@ -3539,40 +3539,58 @@ Example Response:
 ```json
 [
     {
-        "review_id": 4,
+        "review_id": 350,
         "user_id": 2,
-        "posting_date": "2023-08-01T21:08:54.000Z",
-        "description": "Absolutely amazing restaurant",
+        "posting_date": "2023-08-25T08:29:34.000Z",
+        "description": "Efficient check-in and check-out process saved us valuable time. Convenient parking arrangements added to our comfort. Regular housekeeping maintained a clean and organized environment. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.",
         "rating": 5,
         "image_url": "dummy.jpg",
         "upvote_count": 0,
         "object": {
-            "object_id": 15,
-            "object_type": "restaurant",
+            "object_type": "hotel",
+            "object_id": 2,
             "object": {
-                "restaurant_id": 15,
-                "name": "Authentic Pizzeria Burger Restaurant",
-                "reservation_price": 72,
-                "address": "60 Riverfront",
-                "city_id": 10,
-                "description": "A restaurant serving Passionately Elegant Greek Dim Sum.",
+                "hotel_id": 2,
+                "name": "Hotel Sarina Dhaka",
+                "address": "39 Ocean Drive Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Wonderfully Charming hotel in Dhaka.",
                 "image_url": "dummy.jpg",
-                "cuisine_type": "Italian",
-                "contact": "015135654557",
-                "email": "authenticpizzeriaburgerrestaurant@outlook.com",
-                "created_on": "2023-08-01T10:46:20.000Z",
-                "last_updated_on": "2023-08-01T10:46:20.000Z",
+                "price_per_day": 8754,
+                "phone": "015244332657",
+                "email": "hotel.sarina@outlook.com",
+                "has_wifi": 1,
+                "has_parking": 0,
+                "has_gym": 1,
+                "creator_user_id": 0,
+                "created_on": "2023-08-25T08:29:26.000Z",
+                "last_updated_on": "2023-08-25T08:29:26.000Z",
                 "city": {
-                    "city_id": 10,
-                    "name": "Narayanganj",
+                    "city_id": 1,
+                    "name": "Dhaka",
                     "country_name": "Bangladesh",
-                    "population": 2200000,
-                    "weather_type": "sunny"
-                }
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 9,
+                    "rating_3": 14,
+                    "rating_4": 4,
+                    "rating_5": 11,
+                    "rating_avg": 3.45
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b2/b0/0e/hotel-exterior.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/93/5a/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/8d/7c/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/2e/8d/c7/hotel-sarina.jpg?w=1500&h=1000&s=1"
+                ]
             }
         },
         "user": {
             "user_id": 2,
+            "username": "jab3r",
             "email": "xyz@gmail.com",
             "role": "client",
             "name": "Jaber Ahmed Deeder",
@@ -3583,10 +3601,10 @@ Example Response:
             "instagram_url": "instagram.com/xyz",
             "profile_picture": "dummy.jpg",
             "dob": "2002-09-16T18:00:00.000Z",
-            "registration_date": "2023-08-01T10:46:19.000Z",
+            "registration_date": "2023-08-25T08:29:22.000Z",
             "status": "active",
-            "created_on": "2023-08-01T10:46:19.000Z",
-            "last_updated_on": "2023-08-01T10:46:19.000Z",
+            "created_on": "2023-08-25T08:29:22.000Z",
+            "last_updated_on": "2023-08-25T08:29:22.000Z",
             "city": {
                 "city_id": 1,
                 "name": "Dhaka",
@@ -3597,19 +3615,58 @@ Example Response:
         }
     },
     {
-        "review_id": 2,
+        "review_id": 412,
         "user_id": 2,
-        "posting_date": "2023-08-01T20:34:37.000Z",
-        "description": "This restaurant was amazing! The staff was friendly, and the room was clean and comfortable.",
-        "rating": 3,
+        "posting_date": "2023-08-25T08:29:34.000Z",
+        "description": "Conference and meeting facilities were well-equipped for business travelers. Cultural and local decor elements gave the hotel a unique charm. Beautifully designed interiors created a pleasant ambiance. Friendly concierge was always ready to offer helpful recommendations. Fast WiFi contributed to a connected stay.",
+        "rating": 5,
         "image_url": "dummy.jpg",
         "upvote_count": 0,
         "object": {
-            "object_id": null,
-            "object_type": null
+            "object_type": "hotel",
+            "object_id": 2,
+            "object": {
+                "hotel_id": 2,
+                "name": "Hotel Sarina Dhaka",
+                "address": "39 Ocean Drive Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Wonderfully Charming hotel in Dhaka.",
+                "image_url": "dummy.jpg",
+                "price_per_day": 8754,
+                "phone": "015244332657",
+                "email": "hotel.sarina@outlook.com",
+                "has_wifi": 1,
+                "has_parking": 0,
+                "has_gym": 1,
+                "creator_user_id": 0,
+                "created_on": "2023-08-25T08:29:26.000Z",
+                "last_updated_on": "2023-08-25T08:29:26.000Z",
+                "city": {
+                    "city_id": 1,
+                    "name": "Dhaka",
+                    "country_name": "Bangladesh",
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 9,
+                    "rating_3": 14,
+                    "rating_4": 4,
+                    "rating_5": 11,
+                    "rating_avg": 3.45
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b2/b0/0e/hotel-exterior.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/93/5a/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/8d/7c/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/2e/8d/c7/hotel-sarina.jpg?w=1500&h=1000&s=1"
+                ]
+            }
         },
         "user": {
             "user_id": 2,
+            "username": "jab3r",
             "email": "xyz@gmail.com",
             "role": "client",
             "name": "Jaber Ahmed Deeder",
@@ -3620,10 +3677,10 @@ Example Response:
             "instagram_url": "instagram.com/xyz",
             "profile_picture": "dummy.jpg",
             "dob": "2002-09-16T18:00:00.000Z",
-            "registration_date": "2023-08-01T10:46:19.000Z",
+            "registration_date": "2023-08-25T08:29:22.000Z",
             "status": "active",
-            "created_on": "2023-08-01T10:46:19.000Z",
-            "last_updated_on": "2023-08-01T10:46:19.000Z",
+            "created_on": "2023-08-25T08:29:22.000Z",
+            "last_updated_on": "2023-08-25T08:29:22.000Z",
             "city": {
                 "city_id": 1,
                 "name": "Dhaka",
