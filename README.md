@@ -868,26 +868,6 @@ Example Response:
 }
 ```
 
-## l. Checking whether a User if following another User
-Endpoint URL: 
-```
-GET
-```
-```
-/api/v1/user/1/follow/10
-```  
-Request Body:    
-```
-None
-```
-Example Response:  
-```json
-{
-    "is_following": 0,
-    "follower_id": 1,
-    "followee_id": 10
-}
-```
 ## m. Get Notifications ( Paginated )  
 #### Once the GET is called, its status will automatically be set to read
 #### Note that, all attributes are optional, you can either mention, not mention or leave them blank    
