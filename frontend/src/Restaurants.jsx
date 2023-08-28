@@ -76,7 +76,7 @@ function Restaurants() {
                   setFilter(obj)
                 }} />
               </FormControl>
-                {/* <FormControl>
+              {/* <FormControl>
                   <FormLabel>Price per day</FormLabel>
                   <RangeSlider min={0} max={5000} step={30} value={[filter.min_price, filter.max_price]} onChange={(val) => {
                     var obj = { ...filter }

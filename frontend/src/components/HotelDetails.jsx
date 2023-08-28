@@ -38,6 +38,7 @@ import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
 import React, { useEffect } from 'react';
+import { postReview } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
@@ -47,9 +48,20 @@ export default function HotelDetails({ props }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
-
+    async function postReviewClick() {
+        const data = {
+            "description": "Wholesome Trip !!!",
+            "rating": 4.5,
+            "image_url": "dummy.jpg",
+            "object_type": "trip",
+            "object_id": 1
+        }
+        await postReview(data)
+        setRating(0)
+        setReview('')
+    }
     useEffect(() => {
-    },[])
+    }, [])
 
     function addClick() {
         const data = {
@@ -234,14 +246,14 @@ export default function HotelDetails({ props }) {
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox ratingInfo={props.rating_info}/>
+                        <RatingBox ratingInfo={props.rating_info} />
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>
                             Reviews
                         </Text>
                         <Box marginTop='20px'>
-                            <EmblaCarousel type={'hotel'} id={props.hotel_id}/>
+                            <EmblaCarousel type={'hotel'} id={props.hotel_id} />
                         </Box>
                         <Box marginTop={'20px'}>
                             <Text fontSize='3xl' textAlign={'center'}>
@@ -254,7 +266,7 @@ export default function HotelDetails({ props }) {
                                 <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
                                     setReview(e.target.value)
                                 }} />
-                                <Button colorScheme="blue" size={'md'}>Post</Button>
+                                <Button colorScheme="blue" size={'md'} onClick={postReviewClick}>Post</Button>
                             </Box>
                         </Box>
                     </Box>

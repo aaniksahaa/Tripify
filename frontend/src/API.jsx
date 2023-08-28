@@ -82,8 +82,12 @@ export async function getHotels(filter) {
   const j = await getX('hotel', filter)
   return j
 }
+export async function postReview(data) {
+  const j = await postX('review', data)
+  return j
+}
 export async function getReviews(filter) {
-  const j = await getX('review',filter)
+  const j = await getX('review', filter)
   return j
 }
 export async function getDestinations(filter) {
@@ -130,7 +134,7 @@ export async function removeLike(id) {
   return j
 }
 export async function follow(a, b) {
-  const j = await postX(`user/${a}/follow/${b}`,{},{})
+  const j = await postX(`user/${a}/follow/${b}`, {}, {})
   return j
 }
 export async function isFollowing(a, b) {

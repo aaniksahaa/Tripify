@@ -91,7 +91,7 @@ function Activities() {
                   <RangeSliderThumb boxSize={6} index={1} />
                 </RangeSlider>
               </FormControl>
-              <br/>
+              <br />
               <FormControl>
                 <FormLabel>Sort by</FormLabel>
                 <Select
@@ -99,49 +99,49 @@ function Activities() {
                     [
                       {
                         label: "Name (Ascending)",
-                        value:'1',
+                        value: '1',
                         orderby: 'name',
                         ordertype: 'asc'
                       },
                       {
                         label: "Price Per Day (Ascending)",
-                        value:'2',
+                        value: '2',
                         orderby: 'price_per_day',
                         ordertype: 'asc'
                       },
                       {
                         label: "Rating (Descending)",
-                        value:'3',
+                        value: '3',
                         orderby: 'rating',
                         ordertype: 'desc'
                       },
                       {
                         label: "Review Count (Descending)",
-                        value:'4',
+                        value: '4',
                         orderby: 'review_count',
                         ordertype: 'desc'
                       },
                       {
                         label: "Name (Descending)",
-                        value:'5',
+                        value: '5',
                         orderby: 'name',
                         ordertype: 'desc'
                       },
                       {
                         label: "Price Per Day (Descending)",
-                        value:'6',
+                        value: '6',
                         orderby: 'price_per_day',
                         ordertype: 'desc'
                       },
                       {
                         label: "Rating (Ascending)",
-                        value:'7',
+                        value: '7',
                         orderby: 'rating',
                         ordertype: 'asc'
                       },
                       {
                         label: "Review Count (Ascending)",
-                        value:'8',
+                        value: '8',
                         orderby: 'review_count',
                         ordertype: 'asc'
                       }
@@ -172,7 +172,7 @@ function Activities() {
               {
                 activities.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider images={item.images} href={`/activity/${item.activity_id}`} title={item.name} info={item.category}/>
+                    <CardSlider imgs={item.images} href={`/activity/${item.activity_id}`} title={item.name} info={item.category} />
                   </Card>
                 ))
               }
