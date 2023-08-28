@@ -163,7 +163,7 @@ function Destinations() {
               {
                 dests.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider href={`/destination/${item.destination_id}`} title={item.name} info={item.address} rating={Math.floor(Math.random() * 5)} />
+                    <CardSlider imgs={item.images} href={`/destination/${item.destination_id}`} title={item.name} info={item.address} rating={Math.floor(Math.random() * 5)} />
                   </Card>
                 ))
               }

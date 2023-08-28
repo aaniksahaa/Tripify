@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Box,
     IconButton,
@@ -22,11 +22,20 @@ import { Link } from 'react-router-dom'
 
 // Settings for the slider
 
-export default function CardSlider({ title, info, rating, price, href }) {
+export default function CardSlider({ title, info, rating, price, href, imgs }) {
     // As we have used custom buttons, we need a reference variable to
     // change the state
     const [slider, setSlider] = useState(null)
-
+    const [images, setImages] = useState([])
+    useEffect(() => {
+        const x = [
+            'https://a0.muscache.com/im/pictures/901267a5-3087-473b-8174-1e2f51336e0b.jpg?im_w=1200',
+            'https://a0.muscache.com/im/pictures/df6702b8-c930-4612-926d-4b5f3d284a91.jpg?im_w=1200',
+            'https://a0.muscache.com/im/pictures/cb06423e-5332-4f62-8ae9-5414d1cf1dc1.jpg?im_w=1200'
+        ]
+        if (imgs === null || imgs === undefined || imgs.length === 0) setImages(x)
+        else setImages(imgs)
+    }, [imgs])
     const settings = {
         dots: false,
         arrows: false,
@@ -51,24 +60,6 @@ export default function CardSlider({ title, info, rating, price, href }) {
 
     // This list contains all the data for carousels
     // This can be static or loaded from a server
-    const cards = [
-        {
-            title: '',
-            text: '',
-            image:
-                'https://a0.muscache.com/im/pictures/901267a5-3087-473b-8174-1e2f51336e0b.jpg?im_w=1200',
-        },
-        {
-            title: '',
-            text: '',
-            image: 'https://a0.muscache.com/im/pictures/df6702b8-c930-4612-926d-4b5f3d284a91.jpg?im_w=1200',
-        },
-        {
-            title: '',
-            text: '',
-            image: 'https://a0.muscache.com/im/pictures/df6702b8-c930-4612-926d-4b5f3d284a91.jpg?im_w=1200',
-        },
-    ]
 
     return (
         <Box height={'100%'} width={'100%'} position={'absolute'}>
@@ -106,9 +97,9 @@ export default function CardSlider({ title, info, rating, price, href }) {
         <BiRightArrowAlt size="40px" />
       </IconButton> */}
             <Slider {...settings} ref={(slider) => setSlider(slider)} className='slider'>
-                {cards.map((card, index) => (
+                {images && images.map((src, index) => (
                     <Link to={href} key={index}>
-                        <Box position={'relative'} backgroundImage={card.image} backgroundPosition={'center'} backgroundSize={'cover'}
+                        <Box position={'relative'} backgroundImage={src} backgroundPosition={'center'} backgroundSize={'cover'}
                             backgroundClip={'red'} paddingTop={'100%'}>
                             {
                                 price && <Box color='white' position={'absolute'} top={'0'} right={'0'} backgroundColor={'black'} p={'10px'}>

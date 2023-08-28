@@ -1,10 +1,10 @@
 import { Avatar, Box, Button, Center, CloseButton, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, VStack, VisuallyHidden, useColorMode, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 import { chakra } from "@chakra-ui/react";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
-import { getItem } from "../LocalStorage";
+import { getItem, useLocalStorage } from "../LocalStorage";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 function Navbar2({ openDrawer }) {
@@ -12,6 +12,7 @@ function Navbar2({ openDrawer }) {
     const mobileNav = useDisclosure();
     const [open, setOpen] = useState(false)
     const { colorMode, toggleColorMode } = useColorMode()
+    const [user, setUser] = useLocalStorage('tripify_user', {})
     return (
         <Box style={{ zIndex: '20' }} position={'sticky'} top='0'>
             <Cart open={open} setOpen={setOpen} />
@@ -62,7 +63,7 @@ function Navbar2({ openDrawer }) {
                                     <br />
                                     <Center>
                                         <Link to='/profile'>
-                                            <Button colorScheme={'blue'}>Segun Adebayo</Button>
+                                            <Button colorScheme={'blue'}>{user.name}</Button>
                                         </Link>
                                     </Center>
                                     <br />

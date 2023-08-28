@@ -50,7 +50,7 @@ import RatingBox from './RatingBox'
 import Review from './Review'
 import EmblaCarousel from './EmblaCarousel'
 // import { EmblaCarousel } from './EmblaCarousel'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Carousel from "./Carousel";
 import { addToDict, addToList, setDict } from "../LocalStorage";
 
@@ -60,6 +60,9 @@ export default function HotelDetails({ props }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
+
+    useEffect(() => {
+    },[])
 
     function addClick() {
         const data = {
@@ -82,7 +85,7 @@ export default function HotelDetails({ props }) {
             >
                 <Box>
                     <Box>
-                        <Carousel />
+                        <Carousel images={props.images} />
                     </Box>
                 </Box>
                 <Stack>
@@ -244,7 +247,7 @@ export default function HotelDetails({ props }) {
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox />
+                        <RatingBox ratingInfo={props.rating_info}/>
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>

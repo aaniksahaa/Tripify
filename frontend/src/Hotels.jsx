@@ -37,6 +37,7 @@ function Hotels() {
   async function load(t) {
     const _hotels = await getHotels(t)
     setHotels(_hotels)
+    console.log(_hotels);
   }
   async function initialize() {
     const _cities = await getCities({})
@@ -223,7 +224,7 @@ function Hotels() {
                     obj['ordertype'] = v.ordertype
                     setFilter(obj)
                   }}
-                  useBasicStyles 
+                  useBasicStyles
                 />
               </FormControl>
               <Button onClick={searchClick}>Search</Button>
@@ -234,7 +235,7 @@ function Hotels() {
               {
                 hotels.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider price={item.price_per_day} href={`/hotel/${item.hotel_id}`} title={item.name} info={item.address} rating={3} />
+                    <CardSlider rating={parseInt(Math.round(parseFloat(item.rating_info.rating_avg)))} imgs={item.images} price={item.price_per_day} href={`/hotel/${item.hotel_id}`} title={item.name} info={item.address} />
                   </Card>
                 ))
               }

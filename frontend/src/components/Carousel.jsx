@@ -21,7 +21,7 @@ import StarRating from './StarRating'
 
 // Settings for the slider
 
-export default function Carousel() {
+export default function Carousel({images}) {
   const [slider, setSlider] = useState(null)
   const settings = {
     dots: true,
@@ -36,11 +36,11 @@ export default function Carousel() {
   }
   const top = useBreakpointValue({ base: '50%' })
   const side = useBreakpointValue({ base: '40px' })
-  const images = [
-    'https://a0.muscache.com/im/pictures/901267a5-3087-473b-8174-1e2f51336e0b.jpg?im_w=1200',
-    'https://a0.muscache.com/im/pictures/df6702b8-c930-4612-926d-4b5f3d284a91.jpg?im_w=1200',
-    'https://a0.muscache.com/im/pictures/cb06423e-5332-4f62-8ae9-5414d1cf1dc1.jpg?im_w=1200'
-  ]
+  // const images = [
+  //   'https://a0.muscache.com/im/pictures/901267a5-3087-473b-8174-1e2f51336e0b.jpg?im_w=1200',
+  //   'https://a0.muscache.com/im/pictures/df6702b8-c930-4612-926d-4b5f3d284a91.jpg?im_w=1200',
+  //   'https://a0.muscache.com/im/pictures/cb06423e-5332-4f62-8ae9-5414d1cf1dc1.jpg?im_w=1200'
+  // ]
   return (
     <Box position={'relative'}>
       <link
@@ -76,7 +76,7 @@ export default function Carousel() {
         <BiRightArrowAlt size="40px" />
       </IconButton>
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {images.map((img, index) => (
+        {images && images.map((img, index) => (
           <Box key={index}>
             <img src={img} />
           </Box>

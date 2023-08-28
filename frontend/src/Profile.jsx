@@ -1,16 +1,68 @@
-import { Avatar, Box, Button, Center, Container, Flex, GridItem, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, VStack, useDisclosure } from '@chakra-ui/react'
-import React from 'react'
+import { Avatar, Box, Button, Center, Container, Flex, GridItem, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, VStack, useDisclosure } from '@chakra-ui/react'
+import React, { useEffect, useRef } from 'react'
 import Navbar2 from './components/Navbar2'
 import { useParams } from 'react-router-dom'
 import Posts from './components/Posts'
 import PostCard from './components/PostCard'
 import { useState } from 'react'
+import { useLocalStorage } from './LocalStorage'
+import { getUserProfile, writePost } from './API'
 
 function Profile() {
-    const { id } = useParams()
     const [followed, setFollowed] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [profile, setProfile] = useState({
+        posts_created:[]
+    })
+    const [user, setUser] = useLocalStorage('tripify_user', {})
+    const { id } = useParams()
+    const postRef = useRef()
 
+    const [filter, setFilter] = useState({
+        page: 1,
+        per_page: 5
+    })
+
+    // async function searchClick() {
+    //     var f = filter
+    //     f['page'] = 1
+    //     await load(f)
+    //     setFilter(f)
+    // }
+    async function load(t) {
+        const _profile = await getUserProfile(id ? id : user.user_id, t)
+        setProfile(_profile)
+    }
+    async function initialize() {
+        load(filter)
+    }
+    useEffect(() => {
+        initialize()
+    }, [])
+
+    function nextPage() {
+        var f = filter
+        f['page'] = Math.min(1000, f['page'] + 1)
+        setFilter(f)
+        load(f)
+    }
+    function prevPage() {
+        var f = filter
+        f['page'] = Math.max(1, f['page'] - 1)
+        setFilter(f)
+        load(f)
+    }
+
+    async function postClick() {
+        const postData =
+        {
+            "description": postRef.current.value,
+            "image_url": "amazing.jpg",
+            "images": ["a.jpg", "b.jpg"]
+        }
+        const response = await writePost(postData)
+        alert(JSON.stringify(response))
+    }
     return (
         <Box >
             <Navbar2 />
@@ -22,20 +74,29 @@ function Profile() {
                         </Flex>
                         <Stack pl={'50px'} pr={'50px'} minWidth={'400px'} maxWidth={'500px'} spacing={'20px'}>
                             <Flex alignItems={'center'} justifyContent={'space-between'}>
-                                <Text fontSize={'3xl'}>user_name</Text>
-                                <Button colorScheme={followed ? 'red' : 'blue'} onClick={() => setFollowed(x => !x)}>{followed ? 'Unfollow' : 'Follow'}</Button>
+                                <Text fontSize={'3xl'}>{profile ? profile.username : ''}</Text>
+                                {
+                                    id !== user.user_id && id !== undefined &&
+                                    <Button colorScheme={followed ? 'red' : 'blue'} onClick={() => setFollowed(x => !x)}>{followed ? 'Unfollow' : 'Follow'}</Button>
+                                }
                             </Flex>
                             <Flex fontWeight='600' fontSize='md' alignItems={'center'} justifyContent={'space-between'} maxWidth={'350px'}>
-                                <Text>109 posts</Text>
-                                <Text>1,325 followers</Text>
-                                <Text>917 following</Text>
+                                <Text>{profile.posts_created.length} posts</Text>
+                                <Text>{profile.follower_count} followers</Text>
+                                <Text>{profile.followee_count} following</Text>
                             </Flex>
                             <Flex fontSize={'md'}>
-                                There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
+                                {
+                                    profile.bio
+                                }
                             </Flex>
-                            <Box>
-                                <Button onClick={onOpen} size={'sm'}>Write a Post</Button>
-                            </Box>
+                            {
+                                (id === undefined || id === user.user_id)
+                                &&
+                                <Box>
+                                    <Button onClick={onOpen} size={'sm'}>Write a Post</Button>
+                                </Box>
+                            }
                         </Stack>
                     </Box>
                 </Center>
@@ -48,10 +109,7 @@ function Profile() {
                     </TabList>
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
-                            <Posts />
-                        </TabPanel>
-                        <TabPanel >
-                            <PostCard />
+                            <Posts profile={profile}/>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -62,11 +120,14 @@ function Profile() {
                     <ModalHeader>Write a Post</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Textarea rows={'10'} />
+                        <Textarea rows={'10'} ref={postRef} />
+                        <Box mt='10px'>
+                            <input type='file' />
+                        </Box>
                     </ModalBody>
                     <ModalFooter justifyContent={'space-between'}>
                         <Button onClick={onClose}>Cancel</Button>
-                        <Button colorScheme={'blue'} onClick={onClose}>Post</Button>
+                        <Button colorScheme={'blue'} onClick={postClick}>Post</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

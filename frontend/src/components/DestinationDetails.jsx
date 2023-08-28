@@ -56,6 +56,7 @@ import React, { useState } from 'react'
 import { addToList } from '../LocalStorage';
 import CardSlider from './CardSlider';
 import ActivityDetails from './ActivityDetails';
+import { useEffect } from 'react'
 
 export default function DestDetails({ props }) {
     const [startDate, setStartDate] = useState(new Date());
@@ -71,6 +72,12 @@ export default function DestDetails({ props }) {
         setActivity(props.activities[id])
         onOpen2()
     }
+    useEffect(() => {
+        if (props) {
+            console.log(props)
+        }
+    }, [props])
+
     function addClick() {
         const data = {
             id: props.destination_id,
@@ -92,7 +99,7 @@ export default function DestDetails({ props }) {
             >
                 <Box>
                     <Box>
-                        <Carousel />
+                        <Carousel images={props.images} />
                     </Box>
                 </Box>
                 <Stack>
@@ -209,7 +216,7 @@ export default function DestDetails({ props }) {
                             }}>
                             Add to Trip
                         </Button>
-                        <Box>
+                        {/* <Box>
                             <Stack spacing={{ base: 6, md: 10 }}>
                                 <Text fontSize={'3xl'}>
                                     Activities
@@ -218,19 +225,35 @@ export default function DestDetails({ props }) {
                                     {props.activities && props.activities.map((item, index) =>
                                         <Box onClick={() => activityClick(index)} key={index}>
                                             <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                                                <CardSlider price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
+                                                <CardSlider images={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
                                             </Card>
                                         </Box>
                                     )}
                                 </SimpleGrid>
                             </Stack>
-                        </Box>
+                        </Box> */}
                     </Stack>
 
                 </Stack>
-                <Stack>
+                <Box>
+                    <Stack spacing={{ base: 6, md: 10 }}>
+                        <Text fontSize={'3xl'}>
+                            Activities
+                        </Text>
+                        <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                            {props.activities && props.activities.map((item, index) =>
+                                <Box onClick={() => activityClick(index)} key={index}>
+                                    <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                                        <CardSlider images={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
+                                    </Card>
+                                </Box>
+                            )}
+                        </SimpleGrid>
+                    </Stack>
+                </Box>
+                {/* <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox />
+                        <RatingBox ratingInfo={props.rating_info} />
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>
@@ -241,7 +264,7 @@ export default function DestDetails({ props }) {
                         </Box>
 
                     </Box>
-                </Stack>
+                </Stack> */}
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
@@ -253,7 +276,7 @@ export default function DestDetails({ props }) {
                     </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody display={'flex'} justifyContent={'space-between'}>
-                        <ActivityDetails props={activity.activity} price={activity.price} destination={props.name} destinationId={props.destination_id}/>
+                        <ActivityDetails props={activity.activity} price={activity.price} destination={props.name} destinationId={props.destination_id} />
                     </ModalBody>
                     <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
                         <Box>

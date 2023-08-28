@@ -2,8 +2,19 @@ import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Head
 import React from 'react'
 import { BiChat, BiLike, BiShare } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import { getUserProfile } from '../API'
 
-function Comment() {
+function Comment({ text, user_id }) {
+    const [name, setName] = useState('noob')
+    const [image, setImage] = useState('')
+
+    async function initialize() {
+        const user = await getUserProfile(user_id, {})
+        setName(user.name)
+    }
+    useEffect(() => {
+        initialize()
+    }, [])
     return (
         <Box>
             <Card>
@@ -12,7 +23,7 @@ function Comment() {
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                             <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
                             <Box>
-                                <Heading size='sm'>Segun Adebayo</Heading>
+                                <Heading size='sm'>{ }</Heading>
                                 <Text>Creator, Chakra UI</Text>
                             </Box>
                         </Flex>
@@ -26,9 +37,7 @@ function Comment() {
                 </CardHeader>
                 <CardBody>
                     <Text>
-                        With Chakra UI, I wanted to sync the speed of development with the speed
-                        of design. I wanted the developer to be just as excited as the designer to
-                        create a screen.
+                        {text}
                     </Text>
                 </CardBody>
             </Card>

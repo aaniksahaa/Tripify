@@ -18,6 +18,8 @@ import Profile from './Profile'
 import Post from './components/Post'
 import EditProfile from './components/EditProfile'
 import Feed from './components/Feed'
+import Trip from './Trip'
+import Login from './Login'
 
 function App() {
   return (
@@ -26,21 +28,29 @@ function App() {
         <Routes>
           <Route path="" Component={Home} />
           <Route path="/" Component={Home} />
+          <Route path="/login" Component={Login} />
+          
           <Route path="/hotels" Component={Hotels} />
+          <Route path="/hotel/:id" Component={Hotel} />
+
           <Route path="/activities" Component={Activities} />
+          <Route path="/activity/:id" Component={Activity} />
+
           <Route path="/destinations" Component={Destinations} />
+          <Route path="/destination/:id" Component={Destination} />
+          
           <Route path="/trips" Component={Trips} />
+          <Route path="/trip/:id" Component={Trip} />
+
           <Route path="/restaurants" Component={Restaurants} />
           <Route path="/create-trip" Component={CreateTrip} />
 
           <Route path="/feed" Component={Feed} />
           <Route path="/edit-profile" Component={EditProfile} />
           <Route path="/post/:id" Component={Post} />
-          <Route path="/profile/:id" Component={Profile} />
           <Route path="/profile" Component={Profile} />
-          <Route path="/hotel/:id" Component={Hotel} />
-          <Route path="/destination/:id" Component={Destination} />
-          <Route path="/activity/:id" Component={Activity} />
+          <Route path="/profile/:id" Component={Profile} />
+
         </Routes>
       </BrowserRouter>
     </>

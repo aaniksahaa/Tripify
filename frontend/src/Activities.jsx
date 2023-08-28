@@ -179,7 +179,7 @@ function Activities() {
               {
                 activities.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider href={`/activity/${item.activity_id}`} title={item.name} info={item.category} rating={3} />
+                    <CardSlider images={item.images} href={`/activity/${item.activity_id}`} title={item.name} info={item.category} rating={3} />
                   </Card>
                 ))
               }
