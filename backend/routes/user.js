@@ -2,6 +2,7 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const { createUser, getSingleUser, updateUser, deleteUser, deleteUserPermanent, getUsers, handleFollow, handleUnFollow, getSingleUserByUsername, handleFavorite, handleRemoveFavorite, checkFollow } = require('../controllers/user');
 const { getSingleUserProfile } = require('../controllers/profile');
+const { getNotifications } = require('../controllers/notification');
 const router = express.Router();
 
 const check_unique_username = async (username) => {
@@ -41,6 +42,23 @@ router.get('/:user_id/profile', async (req, res, next) => {
         const user = await getSingleUserProfile(req.query);
         console.log(user);
         res.json(user);
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+});
+
+router.get('/:user_id/notifications', async (req, res, next) => {
+    try {
+        if(req.user !== undefined && req.user.user_id != req.params.user_id )
+        {
+            next({message : 'oops, hecker moment, nice try !'})
+            return;
+        }
+        req.query.user_id = req.params.user_id
+        const notifications = await getNotifications(req.query);
+        console.log(notifications);
+        res.json(notifications);
     } catch (err) {
         console.log(err);
         next(err);

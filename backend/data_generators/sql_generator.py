@@ -1,5 +1,7 @@
 import json
 
+from other_gen_functions import get_follow_sql
+
 base_path = './backend/data_generators'
 
 def read_json_file(filename):
@@ -74,6 +76,12 @@ sql += "\n---Guides\n\n"
 
 sql += "INSERT INTO Guides (user_id) VALUES (1);\n"
 sql += "INSERT INTO Guides (user_id) VALUES (2);\n"
+
+sql += "\n---Follows\n\n"
+
+sql += get_follow_sql()
+
+sql += "\n\n"
 
 sql += "\n---Destinations\n\n"
 

@@ -12,4 +12,4 @@ def get_follow_sql():
     sql += "\n\n"
     return sql 
 
-print(get_follow_sql())
+#print(get_follow_sql())

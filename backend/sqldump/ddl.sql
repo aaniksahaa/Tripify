@@ -938,6 +938,7 @@ CREATE TABLE Notifications(
     user_id NUMBER NOT NULL,
     notifying_date DATE DEFAULT CURRENT_DATE,
     text VARCHAR2(1000),
+		is_read NUMBER(1) DEFAULT 0 CHECK (is_read IN (0, 1)),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 )
 LOGGING

@@ -6,6 +6,47 @@ function isNumber(str) {
     return /^\d+(\.\d+)?$/.test(str);
 }
 
+const getSqlPaginationAndOrdering = async (payload, page, per_page, orderby, ordertype) => {
+
+    if (payload.page !== undefined && payload.page !== '') {
+        const in_page = parseInt(payload.page);
+        if (!isNaN(in_page)) {
+        page = in_page;
+        }
+    }
+
+    if (payload.per_page !== undefined && payload.per_page !== '') {
+        const in_per_page = parseInt(payload.per_page);
+        if (!isNaN(in_per_page)) {
+        per_page = in_per_page;
+        }
+    }
+
+    if (payload.orderby !== undefined && payload.orderby !== '') {
+        const in_orderby = payload.orderby.trim().toLowerCase();
+        if (attributes.includes(in_orderby)) {
+        orderby = in_orderby;
+        }
+    }
+
+    if (payload.ordertype !== undefined && payload.ordertype !== '') {
+        const in_ordertype = payload.ordertype.trim().toLowerCase();
+        if (ordertypes.includes(in_ordertype)) {
+        ordertype = in_ordertype;
+        }
+    }
+
+    const offset = (page - 1) * per_page;
+
+    sql = `
+        ORDER BY ${orderby} ${ordertype}
+        OFFSET ${offset} ROWS
+        FETCH NEXT ${per_page} ROWS ONLY
+    `;
+
+    return sql
+}
+
 const getRatingInfoFromObject = async (payload) => {
     
     const object_type = payload.object_type
@@ -150,4 +191,4 @@ const insertImagesForObject = async (payload) => {
     }
 }
 
-module.exports = {getRatingInfoFromObject, getImagesFromObject, deleteImagesFromObject, insertImagesForObject}
+module.exports = { getSqlPaginationAndOrdering, getRatingInfoFromObject, getImagesFromObject, deleteImagesFromObject, insertImagesForObject}
