@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Navbar2 from './components/Navbar2'
 import { useParams } from 'react-router-dom'
 import { api_base } from './Constants'
-import CaptionCarousel from './components/Carousel'
+import Navbar2 from './components/Navbar2'
 import RestaurantDetails from './components/RestaurantDetails'
 
 function Restaurant() {
@@ -13,6 +12,7 @@ function Restaurant() {
         const t = await fetch(url)
         const j = await t.json()
         setData(j)
+        console.log(j)
     }
     useEffect(() => {
         initialize()

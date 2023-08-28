@@ -225,7 +225,7 @@ function Restaurants() {
               {
                 restaurants.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider rating={parseInt(Math.round(parseFloat(item.rating_info.rating_avg)))} imgs={item.images} price={item.reservation_price} href={`/restaurant/${item.hotel_id}`} title={item.name} info={item.address} />
+                    <CardSlider rating={parseInt(Math.round(parseFloat(item.rating_info.rating_avg)))} imgs={item.images} price={item.reservation_price} href={`/restaurant/${item.restaurant_id}`} title={item.name} info={item.address} />
                   </Card>
                 ))
               }
