@@ -3529,7 +3529,7 @@ Endpoint URL:
 GET
 ```
 ```
-/api/v1/review?user_id=2&rating_min=3&rating_max=5&page=1&per_page=2&orderby=rating&ordertype=desc
+/api/v1/review?user_id=2&object_type=hotel&object_id=2&rating_min=3&rating_max=5&page=1&per_page=2&orderby=rating&ordertype=desc
 ```
 Request Body: 
 ```
@@ -3539,40 +3539,58 @@ Example Response:
 ```json
 [
     {
-        "review_id": 4,
+        "review_id": 350,
         "user_id": 2,
-        "posting_date": "2023-08-01T21:08:54.000Z",
-        "description": "Absolutely amazing restaurant",
+        "posting_date": "2023-08-25T08:29:34.000Z",
+        "description": "Efficient check-in and check-out process saved us valuable time. Convenient parking arrangements added to our comfort. Regular housekeeping maintained a clean and organized environment. Efficient management ensured a smooth stay. Timely wake-up calls assisted our daily schedule.",
         "rating": 5,
         "image_url": "dummy.jpg",
         "upvote_count": 0,
         "object": {
-            "object_id": 15,
-            "object_type": "restaurant",
+            "object_type": "hotel",
+            "object_id": 2,
             "object": {
-                "restaurant_id": 15,
-                "name": "Authentic Pizzeria Burger Restaurant",
-                "reservation_price": 72,
-                "address": "60 Riverfront",
-                "city_id": 10,
-                "description": "A restaurant serving Passionately Elegant Greek Dim Sum.",
+                "hotel_id": 2,
+                "name": "Hotel Sarina Dhaka",
+                "address": "39 Ocean Drive Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Wonderfully Charming hotel in Dhaka.",
                 "image_url": "dummy.jpg",
-                "cuisine_type": "Italian",
-                "contact": "015135654557",
-                "email": "authenticpizzeriaburgerrestaurant@outlook.com",
-                "created_on": "2023-08-01T10:46:20.000Z",
-                "last_updated_on": "2023-08-01T10:46:20.000Z",
+                "price_per_day": 8754,
+                "phone": "015244332657",
+                "email": "hotel.sarina@outlook.com",
+                "has_wifi": 1,
+                "has_parking": 0,
+                "has_gym": 1,
+                "creator_user_id": 0,
+                "created_on": "2023-08-25T08:29:26.000Z",
+                "last_updated_on": "2023-08-25T08:29:26.000Z",
                 "city": {
-                    "city_id": 10,
-                    "name": "Narayanganj",
+                    "city_id": 1,
+                    "name": "Dhaka",
                     "country_name": "Bangladesh",
-                    "population": 2200000,
-                    "weather_type": "sunny"
-                }
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 9,
+                    "rating_3": 14,
+                    "rating_4": 4,
+                    "rating_5": 11,
+                    "rating_avg": 3.45
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b2/b0/0e/hotel-exterior.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/93/5a/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/8d/7c/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/2e/8d/c7/hotel-sarina.jpg?w=1500&h=1000&s=1"
+                ]
             }
         },
         "user": {
             "user_id": 2,
+            "username": "jab3r",
             "email": "xyz@gmail.com",
             "role": "client",
             "name": "Jaber Ahmed Deeder",
@@ -3583,10 +3601,10 @@ Example Response:
             "instagram_url": "instagram.com/xyz",
             "profile_picture": "dummy.jpg",
             "dob": "2002-09-16T18:00:00.000Z",
-            "registration_date": "2023-08-01T10:46:19.000Z",
+            "registration_date": "2023-08-25T08:29:22.000Z",
             "status": "active",
-            "created_on": "2023-08-01T10:46:19.000Z",
-            "last_updated_on": "2023-08-01T10:46:19.000Z",
+            "created_on": "2023-08-25T08:29:22.000Z",
+            "last_updated_on": "2023-08-25T08:29:22.000Z",
             "city": {
                 "city_id": 1,
                 "name": "Dhaka",
@@ -3597,19 +3615,58 @@ Example Response:
         }
     },
     {
-        "review_id": 2,
+        "review_id": 412,
         "user_id": 2,
-        "posting_date": "2023-08-01T20:34:37.000Z",
-        "description": "This restaurant was amazing! The staff was friendly, and the room was clean and comfortable.",
-        "rating": 3,
+        "posting_date": "2023-08-25T08:29:34.000Z",
+        "description": "Conference and meeting facilities were well-equipped for business travelers. Cultural and local decor elements gave the hotel a unique charm. Beautifully designed interiors created a pleasant ambiance. Friendly concierge was always ready to offer helpful recommendations. Fast WiFi contributed to a connected stay.",
+        "rating": 5,
         "image_url": "dummy.jpg",
         "upvote_count": 0,
         "object": {
-            "object_id": null,
-            "object_type": null
+            "object_type": "hotel",
+            "object_id": 2,
+            "object": {
+                "hotel_id": 2,
+                "name": "Hotel Sarina Dhaka",
+                "address": "39 Ocean Drive Dhaka , Bangladesh",
+                "city_id": 1,
+                "description": "A Wonderfully Charming hotel in Dhaka.",
+                "image_url": "dummy.jpg",
+                "price_per_day": 8754,
+                "phone": "015244332657",
+                "email": "hotel.sarina@outlook.com",
+                "has_wifi": 1,
+                "has_parking": 0,
+                "has_gym": 1,
+                "creator_user_id": 0,
+                "created_on": "2023-08-25T08:29:26.000Z",
+                "last_updated_on": "2023-08-25T08:29:26.000Z",
+                "city": {
+                    "city_id": 1,
+                    "name": "Dhaka",
+                    "country_name": "Bangladesh",
+                    "population": 168957745,
+                    "weather_type": "rainy"
+                },
+                "rating_info": {
+                    "rating_1": 0,
+                    "rating_2": 9,
+                    "rating_3": 14,
+                    "rating_4": 4,
+                    "rating_5": 11,
+                    "rating_avg": 3.45
+                },
+                "images": [
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/b2/b0/0e/hotel-exterior.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/93/5a/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b6/8d/7c/hotel-sarina-dhaka.jpg?w=1500&h=1000&s=1",
+                    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/2e/8d/c7/hotel-sarina.jpg?w=1500&h=1000&s=1"
+                ]
+            }
         },
         "user": {
             "user_id": 2,
+            "username": "jab3r",
             "email": "xyz@gmail.com",
             "role": "client",
             "name": "Jaber Ahmed Deeder",
@@ -3620,10 +3677,10 @@ Example Response:
             "instagram_url": "instagram.com/xyz",
             "profile_picture": "dummy.jpg",
             "dob": "2002-09-16T18:00:00.000Z",
-            "registration_date": "2023-08-01T10:46:19.000Z",
+            "registration_date": "2023-08-25T08:29:22.000Z",
             "status": "active",
-            "created_on": "2023-08-01T10:46:19.000Z",
-            "last_updated_on": "2023-08-01T10:46:19.000Z",
+            "created_on": "2023-08-25T08:29:22.000Z",
+            "last_updated_on": "2023-08-25T08:29:22.000Z",
             "city": {
                 "city_id": 1,
                 "name": "Dhaka",
