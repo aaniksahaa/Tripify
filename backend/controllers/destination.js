@@ -120,7 +120,7 @@ const getDestinations = async (payload) => {
            created_on AS "created_on",
            last_updated_on AS "last_updated_on",
            creator_user_id AS "creator_user_id"
-    FROM Destinations
+    FROM Destinations D
     WHERE destination_id > 0 `;
 
     if (payload.name !== undefined && payload.name !== '') {
@@ -136,26 +136,14 @@ const getDestinations = async (payload) => {
     if (payload.city_id !== undefined && payload.city_id !== '') {
         // to prevent SQL injection
         const ids = payload.city_id.trim().replace(' ', '').split(',');
-        console.log(ids);
         const actual_ids = [];
-        let str = "(";
-        let cnt = 0;
         for (const id of ids) {
             if (isNumber(id)) {
-                console.log(id);
                 actual_ids.push(id);
-                cnt++;
             }
         }
-        for (let i = 0; i < cnt; i++) {
-            str += actual_ids[i];
-            if (i < cnt - 1) {
-                str += ',';
-            }
-        }
-        str += ')';
-        if (cnt > 0) {
-            console.log(str);
+        str = "(" + actual_ids.join(',') + ")"
+        if (actual_ids.length > 0) {
             sql += `AND CITY_ID IN ${str} `;
         }
     }
@@ -189,6 +177,26 @@ const getDestinations = async (payload) => {
         const in_ordertype = payload.ordertype.trim().toLowerCase();
         if (ordertypes.includes(in_ordertype)) {
             ordertype = in_ordertype;
+        }
+    }
+
+    if (payload.activity_id !== undefined && payload.activity_id !== '') {
+        // to prevent SQL injection
+        const ids = payload.activity_id.trim().replace(' ', '').split(',');
+        const actual_ids = [];
+        for (const id of ids) {
+            if (isNumber(id)) {
+                actual_ids.push(id);
+            }
+        }
+        str = "(" + actual_ids.join(',') + ")"
+        if (actual_ids.length > 0) {
+            sql += 
+            `AND EXISTS (
+                SELECT *
+                FROM PROVIDES P
+                WHERE P.DESTINATION_ID = D.DESTINATION_ID AND P.ACTIVITY_ID IN ${str}
+            ) `;
         }
     }
 

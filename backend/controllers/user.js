@@ -584,8 +584,103 @@ const handleRemoveFavorite = async (payload) => {
         console.log(err)
         throw err;
     }   
-
 }
 
+const getNotifications = async (payload) => {
 
-module.exports = { getSingleUser, getSingleUserByUsername, getUsers, createUser, updateUser, deleteUser, deleteUserPermanent, checkFollow, handleFollow, handleUnFollow, handleFavorite, handleRemoveFavorite };
+    console.log('getNotifications', payload)
+
+    // Default attributes
+    let page = 1;
+    let per_page = 10;
+    let orderby = 'notifying_date';
+    let ordertype = 'desc';
+
+    const attributes = ["user_id", "notifying_date"];
+    const ordertypes = ["asc", "desc"];
+
+    binds = {};
+
+    let sql = `
+    SELECT NOTIFICATION_ID AS "notification_id", USER_ID AS "user_id", NOTIFYING_DATE AS "notifying_date", TEXT AS "text", IS_READ AS "is_read"
+    FROM NOTIFICATIONS
+    WHERE NOTIFICATION_ID > 0 `;
+
+    let sql2 = `
+    UPDATE NOTIFICATIONS
+    SET IS_READ = 1
+    WHERE NOTIFICATION_ID > 0 `
+
+    if (payload.user_id !== undefined && payload.user_id !== '') {
+        const user_id = parseInt(payload.user_id);
+        if (!isNaN(user_id)) {
+        sql += `AND user_id = :user_id `;
+        sql2 += `AND user_id = :user_id `;
+        binds.user_id = user_id;
+        }
+    }
+
+    if (payload.notifying_date !== undefined && payload.notifying_date !== '') {
+        const notifying_date = new Date(payload.notifying_date);
+        if (!isNaN(notifying_date)) {
+        sql += `AND notifying_date >= :notifying_date `;
+        sql2 += `AND notifying_date >= :notifying_date `;
+        binds.notifying_date = new Date(notifying_date);
+        }
+    }
+
+    if (payload.page !== undefined && payload.page !== '') {
+        const in_page = parseInt(payload.page);
+        if (!isNaN(in_page)) {
+        page = in_page;
+        }
+    }
+
+    if (payload.per_page !== undefined && payload.per_page !== '') {
+        const in_per_page = parseInt(payload.per_page);
+        if (!isNaN(in_per_page)) {
+        per_page = in_per_page;
+        }
+    }
+
+    if (payload.orderby !== undefined && payload.orderby !== '') {
+        const in_orderby = payload.orderby.trim().toLowerCase();
+        if (attributes.includes(in_orderby)) {
+        orderby = in_orderby;
+        }
+    }
+
+    if (payload.ordertype !== undefined && payload.ordertype !== '') {
+        const in_ordertype = payload.ordertype.trim().toLowerCase();
+        if (ordertypes.includes(in_ordertype)) {
+        ordertype = in_ordertype;
+        }
+    }
+
+    const offset = (page - 1) * per_page;
+
+    sql += `
+        ORDER BY ${orderby} ${ordertype}
+        OFFSET :offset ROWS
+        FETCH NEXT :per_page ROWS ONLY
+    `;
+
+    binds.offset = offset;
+    binds.per_page = per_page;
+
+    try {
+        const result = await db.execute(sql, binds, db.options);
+        notifications = result.rows;
+
+        await db.execute(sql2, binds, db.options);
+
+        return notifications;
+
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+};
+
+
+module.exports = { getSingleUser, getSingleUserByUsername, getUsers, createUser, updateUser, deleteUser, deleteUserPermanent, checkFollow, handleFollow, handleUnFollow, handleFavorite, handleRemoveFavorite, getNotifications };

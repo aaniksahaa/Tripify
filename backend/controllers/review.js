@@ -35,13 +35,16 @@ const getObjectFromReviewId = async (payload) => {
     object.object_id = object_id
     object.object_type = object_type
     if(object_type == 'hotel'){
-        object.object = await getSingleHotel({ hotel_id: object_id })
+        hotel = await getSingleHotel({ hotel_id: object_id })
+        object.object = hotel
     }
     else if(object_type == 'trip'){
-        object.object = await getSingleTrip({ trip_id: object_id })
+        trip = await getSingleTrip({ trip_id: object_id })
+        object.object = trip
     }
-    if(object_type == 'restaurant'){
-        object.object = await getSingleRestaurant({ restaurant_id: object_id })
+    else if(object_type == 'restaurant'){
+        restaurant = await getSingleRestaurant({ restaurant_id: object_id })
+        object.object = restaurant
     }
     return object
 }
@@ -93,7 +96,7 @@ const getReviews = async (payload) => {
 
     sql = `
     SELECT review_id AS "review_id", user_id AS "user_id", posting_date AS "posting_date", description AS "description", rating AS "rating", image_url AS "image_url", upvote_count AS "upvote_count"
-    FROM Reviews
+    FROM Reviews R
     WHERE review_id > 0 `;
 
     if (payload.user_id !== undefined && payload.user_id !== '') {
@@ -146,6 +149,40 @@ const getReviews = async (payload) => {
         const in_ordertype = payload.ordertype.trim().toLowerCase();
         if (ordertypes.includes(in_ordertype)) {
             ordertype = in_ordertype;
+        }
+    }
+
+    object_types = ['hotel','restaurant','trip']
+    if(payload.object_type !== undefined && payload.object_type != '')
+    {
+        const in_object_type = payload.object_type.trim().toLowerCase();
+
+        if(payload.object_id !== undefined && payload.object_id != '')
+        {
+            const in_object_id = parseInt(payload.object_id);
+            if (!isNaN(in_object_id)) {
+                if(object_types.includes(in_object_type))
+                {
+                    sql += 
+                    `AND EXISTS (
+                        SELECT *
+                        FROM ${in_object_type}REVIEWS X
+                        WHERE X.REVIEW_ID = R.REVIEW_ID AND X.${in_object_type}_ID = ${in_object_id}
+                    ) `
+                }
+            }
+        }
+        else
+        {
+            if(object_types.includes(in_object_type))
+            {
+                sql += 
+                `AND EXISTS (
+                    SELECT *
+                    FROM ${in_object_type}REVIEWS X
+                    WHERE X.REVIEW_ID = R.REVIEW_ID
+                ) `
+            }
         }
     }
 
