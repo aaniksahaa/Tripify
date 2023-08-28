@@ -52,6 +52,7 @@ function PostCard({ id, card, name, p, userId, postId }) {
         }
         await writeComment(data)
         setCommentsCount(x => x + 1)
+        onClose()
     }
     return (
         <Box>

@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import { Box, Button, Card, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, FormControl, FormLabel, GridItem, Heading, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import { api_base } from './Constants'
-import HotelCard from './components/HotelCard'
-import { MultiSelect } from 'chakra-multiselect'
+import { Box, Button, Card, Container, FormControl, FormLabel, GridItem, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import { Select } from 'chakra-react-select'
-import { Link } from 'react-router-dom'
-import { BiFilterAlt } from 'react-icons/bi'
-import ActivityCard from './components/ActivityCard'
-import Navbar2 from './components/Navbar2'
-import CardSlider from './components/CardSlider'
+import React, { useEffect, useState } from 'react'
 import { getActivities } from './API'
+import CardSlider from './components/CardSlider'
+import Navbar2 from './components/Navbar2'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -179,7 +172,7 @@ function Activities() {
               {
                 activities.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider images={item.images} href={`/activity/${item.activity_id}`} title={item.name} info={item.category} rating={3} />
+                    <CardSlider images={item.images} href={`/activity/${item.activity_id}`} title={item.name} info={item.category}/>
                   </Card>
                 ))
               }

@@ -1,9 +1,10 @@
-import React, { useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import Review from './Review'
 import { Button } from '@chakra-ui/react'
+import useEmblaCarousel from 'embla-carousel-react'
+import React, { useCallback, useEffect, useState } from 'react'
+import { getReviews } from '../API'
+import Review from './Review'
 
-const EmblaCarousel = (props) => {
+const EmblaCarousel = ({type, id}) => {
     const options = {
         align: 'center',
         containScroll: false,
@@ -11,7 +12,19 @@ const EmblaCarousel = (props) => {
         dragFree: true,
         // containScroll: 'trimSnaps'
     }
-    const slides = [1, 2, 3]
+    const [reviews, setReviews] = useState([])
+    async function initialize() {
+        const filter = {
+            type:type,
+            id: id
+        }
+        const r = await getReviews(filter)
+        setReviews(r)
+        console.log(r)
+    }
+    useEffect(() => {
+        initialize()
+    },[])
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
     const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev() }, [emblaApi])
     const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext() }, [emblaApi])
@@ -21,9 +34,9 @@ const EmblaCarousel = (props) => {
             <div className="embla">
                 <div className="embla__viewport" ref={emblaRef}>
                     <div className="embla__container">
-                        {slides.map((index) => (
-                            <div className="embla__slide" key={index}>
-                                <Review />
+                        {reviews.map((review, id) => (
+                            <div className="embla__slide" key={id}>
+                                <Review {...review}/>
                             </div>
                         ))}
                     </div>

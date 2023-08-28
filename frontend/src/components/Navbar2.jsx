@@ -20,7 +20,7 @@ function Navbar2({ openDrawer }) {
                 <Flex alignItems="center" justifyContent="space-between" mx="auto">
                     <Flex>
                         <chakra.a href="/" title="Choc Home Page" display="flex" alignItems="center" style={{ padding: '2px' }}>
-                            <img src={colorMode==='light'?'/logo.png':'/logo_dark.png'}
+                            <img src={colorMode === 'light' ? '/logo.png' : '/logo_dark.png'}
                                 width='200px' />
                         </chakra.a>
                     </Flex>
@@ -62,7 +62,7 @@ function Navbar2({ openDrawer }) {
                                     </Center>
                                     <br />
                                     <Center>
-                                        <Link to='/profile'>
+                                        <Link to={'/profile/' + user.user_id}>
                                             <Button colorScheme={'blue'}>{user.name}</Button>
                                         </Link>
                                     </Center>

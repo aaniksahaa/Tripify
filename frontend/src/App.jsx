@@ -1,25 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Hotel from './Hotel'
 
-import Hotels from './Hotels'
 import Activities from './Activities'
-import Destinations from './Destinations'
-import Trips from './Trips'
-import Restaurants from './Restaurants'
-import Destination from './Destination'
 import Activity from './Activity'
 import CreateTrip from './CreateTrip'
+import Destination from './Destination'
+import Destinations from './Destinations'
+import Hotels from './Hotels'
+import Login from './Login'
 import Profile from './Profile'
-import Post from './components/Post'
+import Restaurant from './Restaurant'
+import Restaurants from './Restaurants'
+import Trip from './Trip'
+import Trips from './Trips'
 import EditProfile from './components/EditProfile'
 import Feed from './components/Feed'
-import Trip from './Trip'
-import Login from './Login'
+import Post from './components/Post'
 
 function App() {
   return (
@@ -43,6 +41,8 @@ function App() {
           <Route path="/trip/:id" Component={Trip} />
 
           <Route path="/restaurants" Component={Restaurants} />
+          <Route path="/restaurant/:id" Component={Restaurant} />
+
           <Route path="/create-trip" Component={CreateTrip} />
 
           <Route path="/feed" Component={Feed} />

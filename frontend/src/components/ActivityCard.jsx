@@ -1,28 +1,8 @@
 'use client'
 
 import {
-  Box,
-  Center,
-  Heading,
-  Text,
-  Stack,
-  Avatar,
-  useColorModeValue,
-  Image,
-  CardFooter,
-  CardBody,
-  CardHeader,
-  Card,
-  Divider,
-  ButtonGroup,
-  Button,
-  Badge,
-  Flex,
+  Card
 } from '@chakra-ui/react'
-import { AiOutlineWifi } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
-import CaptionCarousel from './Carousel'
-import Carousel from './Carousel'
 import CardSlider from './CardSlider'
 
 

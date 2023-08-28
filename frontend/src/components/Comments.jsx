@@ -8,8 +8,8 @@ function Comments({ postId }) {
 
   async function initialize() {
     const post = await getPostDetails(postId)
-    console.log(post)
     setComments(post.comments)
+    console.log(post.comments)
   }
   useEffect(() => {
     initialize()
@@ -17,7 +17,7 @@ function Comments({ postId }) {
   return (
     <Stack spacing={'10px'}>
       {comments.map((comment, id) =>
-        <Comment text={comment.text} user={comment.user_id} key={id} />
+        <Comment date={comment.commenting_date} text={comment.text} name={comment.user.name} key={id} />
       )}
     </Stack>
   )

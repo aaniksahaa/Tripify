@@ -74,8 +74,16 @@ export async function postX(path, filter, body) {
   const j = await r.json()
   return j
 }
+export async function getRestaurants(filter) {
+  const j = await getX('restaurant', filter)
+  return j
+}
 export async function getHotels(filter) {
   const j = await getX('hotel', filter)
+  return j
+}
+export async function getReviews(filter) {
+  const j = await getX('review',filter)
   return j
 }
 export async function getDestinations(filter) {
@@ -91,7 +99,7 @@ export async function getTrips(filter) {
   return j
 }
 export async function getPostDetails(id) {
-  const j = await getX(`post/details/${id}`,{})
+  const j = await getX(`post/details/${id}`, {})
   return j
 }
 export async function getSingleUser(id) {
@@ -119,6 +127,14 @@ export async function getUserProfile(id, filter) {
 }
 export async function removeLike(id) {
   const j = await fetchX('DELETE', `post/${id}/react`, {}, {})
+  return j
+}
+export async function follow(a, b) {
+  const j = await postX(`user/${a}/follow/${b}`,{},{})
+  return j
+}
+export async function isFollowing(a, b) {
+  const j = await getX(`user/${a}/follow/${b}`, {})
   return j
 }
 export async function likePost(id) {

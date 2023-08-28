@@ -1,20 +1,10 @@
 import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiChat, BiLike, BiShare } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { getUserProfile } from '../API'
 
-function Comment({ text, user_id }) {
-    const [name, setName] = useState('noob')
-    const [image, setImage] = useState('')
-
-    async function initialize() {
-        const user = await getUserProfile(user_id, {})
-        setName(user.name)
-    }
-    useEffect(() => {
-        initialize()
-    }, [])
+function Comment({ text, name, date }) {
     return (
         <Box>
             <Card>
@@ -23,8 +13,8 @@ function Comment({ text, user_id }) {
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                             <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
                             <Box>
-                                <Heading size='sm'>{ }</Heading>
-                                <Text>Creator, Chakra UI</Text>
+                                <Heading size='sm'>{name}</Heading>
+                                <Text>{new Date(date).toLocaleString()}</Text>
                             </Box>
                         </Flex>
                         <IconButton

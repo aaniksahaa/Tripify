@@ -6,13 +6,13 @@ import Posts from './components/Posts'
 import PostCard from './components/PostCard'
 import { useState } from 'react'
 import { useLocalStorage } from './LocalStorage'
-import { getUserProfile, writePost } from './API'
+import { follow, getUserProfile, isFollowing, writePost } from './API'
 
 function Profile() {
     const [followed, setFollowed] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [profile, setProfile] = useState({
-        posts_created:[]
+        posts_created: []
     })
     const [user, setUser] = useLocalStorage('tripify_user', {})
     const { id } = useParams()
@@ -29,16 +29,29 @@ function Profile() {
     //     await load(f)
     //     setFilter(f)
     // }
+    async function followClick() {
+        await follow(user.user_id, id)
+        setFollowed(x => !x)
+    }
     async function load(t) {
         const _profile = await getUserProfile(id ? id : user.user_id, t)
         setProfile(_profile)
     }
     async function initialize() {
         load(filter)
+        if (id !== undefined) {
+            const f = await isFollowing(user.user_id, id)
+            if (f.is_following) {
+                setFollowed(true)
+            }
+            else {
+                setFollowed(false)
+            }
+        }
     }
     useEffect(() => {
         initialize()
-    }, [])
+    }, [id])
 
     function nextPage() {
         var f = filter
@@ -76,8 +89,10 @@ function Profile() {
                             <Flex alignItems={'center'} justifyContent={'space-between'}>
                                 <Text fontSize={'3xl'}>{profile ? profile.username : ''}</Text>
                                 {
-                                    id !== user.user_id && id !== undefined &&
-                                    <Button colorScheme={followed ? 'red' : 'blue'} onClick={() => setFollowed(x => !x)}>{followed ? 'Unfollow' : 'Follow'}</Button>
+                                    id != user.user_id ? 
+                                    <Button colorScheme={followed ? 'red' : 'blue'} onClick={followClick}>{
+                                        followed ? 'Unfollow' : 'Follow'
+                                    }</Button> : <></>
                                 }
                             </Flex>
                             <Flex fontWeight='600' fontSize='md' alignItems={'center'} justifyContent={'space-between'} maxWidth={'350px'}>
@@ -91,7 +106,7 @@ function Profile() {
                                 }
                             </Flex>
                             {
-                                (id === undefined || id === user.user_id)
+                                id == user.user_id
                                 &&
                                 <Box>
                                     <Button onClick={onOpen} size={'sm'}>Write a Post</Button>
@@ -109,7 +124,7 @@ function Profile() {
                     </TabList>
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
-                            <Posts profile={profile}/>
+                            <Posts profile={profile} />
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -131,7 +146,7 @@ function Profile() {
                     </ModalFooter>
                 </ModalContent>
             </Modal>
-        </Box>
+        </Box >
     )
 }
 

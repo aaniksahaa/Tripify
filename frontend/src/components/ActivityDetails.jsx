@@ -1,64 +1,43 @@
 'use client'
-import ActivityCard from './ActivityCard'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import {
     Box,
-    chakra,
-    Container,
-    Stack,
-    Text,
-    Image,
-    Flex,
-    VStack,
     Button,
-    Heading,
-    SimpleGrid,
-    StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
-    List,
-    ListItem,
-    Badge,
+    Container,
     Divider,
-    TableContainer,
-    Table,
-    Tbody,
-    Tr,
-    Td,
-    Tfoot,
+    Flex,
+    Heading,
     Modal,
-    ModalOverlay,
+    ModalBody,
+    ModalCloseButton,
     ModalContent,
     ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    Textarea,
-    useDisclosure,
+    ModalOverlay,
+    NumberDecrementStepper,
+    NumberIncrementStepper,
     NumberInput,
     NumberInputField,
     NumberInputStepper,
-    NumberIncrementStepper,
-    NumberDecrementStepper,
-} from '@chakra-ui/react'
-import { MdCategory, MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
-import Carousel from './Carousel'
-import Carousel2 from './Carousel2'
-import { ImPriceTag } from 'react-icons/im'
-import { CgGym } from 'react-icons/cg'
+    SimpleGrid,
+    Stack,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Text,
+    Tr,
+    useColorModeValue,
+    useDisclosure
+} from '@chakra-ui/react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ImPriceTag } from 'react-icons/im';
+import { MdCategory } from 'react-icons/md';
+import Carousel from './Carousel';
 
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import { AiFillAccountBook, AiFillCar, AiOutlineWifi, AiOutlineMail } from 'react-icons/ai'
-import ColoredCircle from './ColoredCircle'
-import Feature from './Feature'
-import StarRating from './StarRating'
-import RatingBox from './RatingBox'
-import Review from './Review'
-import EmblaCarousel from './EmblaCarousel'
-// import { EmblaCarousel } from './EmblaCarousel'
-import React, { useEffect, useState } from 'react'
-import { addToDict, addToList } from '../LocalStorage';
+import React, { useEffect, useState } from 'react';
 import { BiSolidHourglassBottom, BiSolidHourglassTop } from 'react-icons/bi';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { addToList } from '../LocalStorage';
 
 export default function ActivityDetails({ props, price, destination, destinationId }) {
     const [date, setDate] = useState(new Date());
@@ -84,13 +63,12 @@ export default function ActivityDetails({ props, price, destination, destination
             persons: persons,
             cost: persons * price,
         }
-        // alert(JSON.stringify(t))
         addToList('_activities', t)
         onClose()
     }
     useEffect(() => {
-
-    }, [])
+        console.log(props)
+    }, [props])
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -138,6 +116,17 @@ export default function ActivityDetails({ props, price, destination, destination
                             </Text> */}
                         </Box>
                     </Stack>
+                    <Box>
+                            <Text fontSize={'3xl'}>
+                                Destinations
+                            </Text>
+                            <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                                {destinations && destinations.map((obj, idx) => {
+                                    return <DestinationCard key={idx} props={obj} />
+                                }
+                                )}
+                            </SimpleGrid>
+                        </Box>
                 </Stack>
                 <Stack spacing={{ base: 6, md: 10 }}>
                     {/* <Text
@@ -244,46 +233,10 @@ export default function ActivityDetails({ props, price, destination, destination
                                 Add to Trip
                             </Button>
                         }
-                        <Box>
-                            <Text fontSize={'3xl'}>
-                                Destinations
-                            </Text>
-                            <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
-                                {destinations && destinations.map((obj, idx) => {
-                                    return <DestinationCard key={idx} props={obj} />
-                                }
-                                )}
-                            </SimpleGrid>
-                        </Box>
+                        
                     </Stack>
                 </Stack>
-                <Stack>
-                    <Flex justifyContent={'center'}>
-                        <RatingBox />
-                    </Flex>
-                    <Box>
-                        <Text fontSize='3xl' textAlign={'center'}>
-                            Reviews
-                        </Text>
-                        <Box marginTop='20px'>
-                            <EmblaCarousel />
-                        </Box>
-                        <Box marginTop={'20px'}>
-                            <Text fontSize='3xl' textAlign={'center'}>
-                                Write a Review
-                            </Text>
-                            <Box margin='10px'>
-                                <Box marginBottom={'10px'}>
-                                    <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
-                                </Box>
-                                <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
-                                    setReview(e.target.value)
-                                }} />
-                                <Button colorScheme="blue" size={'md'}>Post</Button>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Stack>
+                
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>

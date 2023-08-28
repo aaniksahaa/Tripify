@@ -1,19 +1,19 @@
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Image, Text } from '@chakra-ui/react'
+import { Avatar, Box, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Text } from '@chakra-ui/react'
 import React from 'react'
-import { BiChat, BiLike, BiShare } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import StarRating from './StarRating'
 
-function Review() {
+function Review({ user, description, posting_date, rating }) {
     return (
         <div>
             <Card className='card'>
                 <CardHeader>
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                            <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
+                            <Avatar name={user.name} src={'/profile.jpg'} />
                             <Box>
-                                <Heading size='sm'>Segun Adebayo</Heading>
-                                <Text>Creator, Chakra UI</Text>
+                                <Heading size='sm'>{user.name}</Heading>
+                                <Text>{new Date(posting_date).toLocaleString()}</Text>
                             </Box>
                         </Flex>
                         <IconButton
@@ -25,10 +25,9 @@ function Review() {
                     </Flex>
                 </CardHeader>
                 <CardBody>
+                    <StarRating rating={rating} />
                     <Text>
-                        With Chakra UI, I wanted to sync the speed of development with the speed
-                        of design. I wanted the developer to be just as excited as the designer to
-                        create a screen.
+                        {description}
                     </Text>
                 </CardBody>
                 <CardFooter

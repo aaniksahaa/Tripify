@@ -27,13 +27,11 @@ import {
 } from '@chakra-ui/react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { CgGym } from 'react-icons/cg';
 import { ImPriceTag } from 'react-icons/im';
 
-import { AiFillCar, AiOutlineMail, AiOutlineWifi } from 'react-icons/ai';
+import { AiOutlineMail } from 'react-icons/ai';
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import EmblaCarousel from './EmblaCarousel';
-import Feature from './Feature';
 import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
@@ -41,7 +39,7 @@ import React, { useEffect } from 'react';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
-export default function HotelDetails({ props }) {
+export default function RestaurantDetails({ props }) {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -49,7 +47,7 @@ export default function HotelDetails({ props }) {
     const [review, setReview] = React.useState('')
 
     useEffect(() => {
-    },[])
+    }, [])
 
     function addClick() {
         const data = {
@@ -98,25 +96,7 @@ export default function HotelDetails({ props }) {
                             at delectus doloribus dolorum expedita hic, ipsum maxime modi nam officiis
                             porro, quae, quisquam quos reprehenderit velit? Natus, totam.
                         </Text>
-                        <Box>
-                            {/* <Text
-                                fontSize={{ base: '20px', lg: '25px' }}
-                                // color={useColorModeValue('yellow.500', 'yellow.300')}
-                                // fontWeight={'500'}
-                                textTransform={'uppercase'}
-                                mb={'4'}>
-                                Features
-                            </Text> */}
-                            <Text fontSize='3xl'>
-                                Features
-                            </Text>
-                            <br />
-                            <Flex flexWrap={'wrap'}>
-                                <Feature name='WiFi' icon={<AiOutlineWifi size={30} />} available={props.has_wifi} />
-                                <Feature name='Parking' icon={<AiFillCar size={30} />} available={props.has_parking} />
-                                <Feature name='Gym' icon={<CgGym size={30} />} available={props.has_gym} />
-                            </Flex>
-                        </Box>
+                        
                     </Stack>
                 </Stack>
                 <Stack spacing={{ base: 6, md: 10 }}>
@@ -234,14 +214,14 @@ export default function HotelDetails({ props }) {
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox ratingInfo={props.rating_info}/>
+                        <RatingBox ratingInfo={props.rating_info} />
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>
                             Reviews
                         </Text>
                         <Box marginTop='20px'>
-                            <EmblaCarousel type={'hotel'} id={props.hotel_id}/>
+                            <EmblaCarousel />
                         </Box>
                         <Box marginTop={'20px'}>
                             <Text fontSize='3xl' textAlign={'center'}>
