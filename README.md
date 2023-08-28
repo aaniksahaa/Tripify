@@ -888,6 +888,40 @@ Example Response:
     "followee_id": 10
 }
 ```
+## m. Get Notifications ( Paginated )  
+#### Once the GET is called, its status will automatically be set to read
+#### Note that, all attributes are optional, you can either mention, not mention or leave them blank    
+
+Endpoint URL:  
+```
+GET
+```
+```
+/api/v1/user/1/notifications?is_read=0&page=1&per_page=2&order_by=notifying_date&order_type=desc
+```
+Request Body: 
+```
+None
+```
+Example Response:    
+```json
+[
+    {
+        "notification_id": 14,
+        "user_id": 1,
+        "notifying_date": "2023-08-28T16:46:41.000Z",
+        "text": "Your Favorite Hotel Deleted",
+        "is_read": 0
+    },
+    {
+        "notification_id": 15,
+        "user_id": 1,
+        "notifying_date": "2023-08-28T16:46:41.000Z",
+        "text": "Your Trip is Approved",
+        "is_read": 0
+    }
+]
+```
 
 # City
 
