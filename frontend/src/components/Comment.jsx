@@ -1,17 +1,15 @@
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Image, Text } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import { BiChat, BiLike, BiShare } from 'react-icons/bi'
+import { Avatar, Box, Card, CardBody, CardHeader, Flex, Heading, IconButton, Text } from '@chakra-ui/react'
+import React from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-import { getUserProfile } from '../API'
 
-function Comment({ text, name, date }) {
+function Comment({ text, name, date, pp }) {
     return (
         <Box>
             <Card>
                 <CardHeader>
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                            <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
+                            <Avatar name={name} src={pp} />
                             <Box>
                                 <Heading size='sm'>{name}</Heading>
                                 <Text>{new Date(date).toLocaleString()}</Text>

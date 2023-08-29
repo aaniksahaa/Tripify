@@ -1,11 +1,10 @@
-import { Avatar, Box, Button, Center, CloseButton, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, VStack, VisuallyHidden, useColorMode, useColorModeValue, useDisclosure } from "@chakra-ui/react";
-import { chakra } from "@chakra-ui/react";
-import React, { useEffect, useState } from 'react'
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Avatar, Box, Button, Center, CloseButton, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, VStack, chakra, useColorMode, useColorModeValue, useDisclosure } from "@chakra-ui/react";
+import React, { useState } from 'react';
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useLocalStorage } from "../LocalStorage";
 import Cart from "./Cart";
-import { getItem, useLocalStorage } from "../LocalStorage";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 function Navbar2({ openDrawer }) {
     const bg = useColorModeValue("white", "gray.800");
@@ -49,7 +48,7 @@ function Navbar2({ openDrawer }) {
                                     minW={0}>
                                     <Avatar
                                         size={'sm'}
-                                        src={'/profile.jpg'}
+                                        src={user.profile_picture}
                                     />
                                 </MenuButton>
                                 <MenuList alignItems={'center'}>
@@ -57,7 +56,7 @@ function Navbar2({ openDrawer }) {
                                     <Center>
                                         <Avatar
                                             size={'2xl'}
-                                            src={'/profile.jpg'}
+                                            src={user.profile_picture}
                                         />
                                     </Center>
                                     <br />
@@ -94,7 +93,7 @@ function Navbar2({ openDrawer }) {
                                         minW={0}>
                                         <Avatar
                                             size={'lg'}
-                                            src={'/profile.jpg'}
+                                            src={user.profile_picture}
                                         />
                                     </MenuButton>
                                     <MenuList alignItems={'center'}>
@@ -102,7 +101,7 @@ function Navbar2({ openDrawer }) {
                                         <Center>
                                             <Avatar
                                                 size={'2xl'}
-                                                src={'/profile.jpg'}
+                                                src={user.profile_picture}
                                             />
                                         </Center>
                                         <br />

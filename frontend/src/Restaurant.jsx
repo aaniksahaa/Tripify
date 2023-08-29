@@ -13,6 +13,7 @@ function Restaurant() {
         const j = await t.json()
         setData(j)
         console.log(j)
+        console.log(j.rating_info)
     }
     useEffect(() => {
         initialize()
@@ -20,7 +21,7 @@ function Restaurant() {
     return (
         <div>
             <Navbar2 />
-            <RestaurantDetails props={data} />
+            <RestaurantDetails ratingInfo={data.rating_info} props={data} />
         </div>
     )
 }

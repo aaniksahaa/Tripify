@@ -1,12 +1,10 @@
-import { Avatar, Box, Button, Center, Container, Flex, GridItem, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, VStack, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect, useRef } from 'react'
-import Navbar2 from './components/Navbar2'
+import { Avatar, Box, Button, Center, Container, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, useDisclosure } from '@chakra-ui/react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Posts from './components/Posts'
-import PostCard from './components/PostCard'
-import { useState } from 'react'
-import { useLocalStorage } from './LocalStorage'
 import { follow, getUserProfile, isFollowing, writePost } from './API'
+import { useLocalStorage } from './LocalStorage'
+import Navbar2 from './components/Navbar2'
+import Posts from './components/Posts'
 
 function Profile() {
     const [followed, setFollowed] = useState(false)
@@ -20,7 +18,7 @@ function Profile() {
 
     const [filter, setFilter] = useState({
         page: 1,
-        per_page: 5
+        per_page: 10
     })
 
     // async function searchClick() {
@@ -38,6 +36,7 @@ function Profile() {
         setProfile(_profile)
     }
     async function initialize() {
+        alert(1)
         load(filter)
         if (id !== undefined) {
             const f = await isFollowing(user.user_id, id)
@@ -74,7 +73,8 @@ function Profile() {
             "images": ["a.jpg", "b.jpg"]
         }
         const response = await writePost(postData)
-        alert(JSON.stringify(response))
+        await initialize()
+        onClose()
     }
     return (
         <Box >
@@ -83,16 +83,16 @@ function Profile() {
                 <Center mt='20px'>
                     <Box display={{ base: 'block', sm: 'block', md: 'flex', lg: 'flex', xl: 'flex' }} alignItems={'center'}>
                         <Flex height={'300px'} alignItems={'center'} justifyContent={'center'}>
-                            <Avatar height={'200px'} width={'200px'} name='Dan Abrahmov' src='/profile.jpg' />
+                            <Avatar height={'200px'} width={'200px'} name={user.name} src={profile.profile_picture} />
                         </Flex>
                         <Stack pl={'50px'} pr={'50px'} minWidth={'400px'} maxWidth={'500px'} spacing={'20px'}>
                             <Flex alignItems={'center'} justifyContent={'space-between'}>
                                 <Text fontSize={'3xl'}>{profile ? profile.username : ''}</Text>
                                 {
-                                    id != user.user_id ? 
-                                    <Button colorScheme={followed ? 'red' : 'blue'} onClick={followClick}>{
-                                        followed ? 'Unfollow' : 'Follow'
-                                    }</Button> : <></>
+                                    id != user.user_id ?
+                                        <Button colorScheme={followed ? 'red' : 'blue'} onClick={followClick}>{
+                                            followed ? 'Unfollow' : 'Follow'
+                                        }</Button> : <></>
                                 }
                             </Flex>
                             <Flex fontWeight='600' fontSize='md' alignItems={'center'} justifyContent={'space-between'} maxWidth={'350px'}>
@@ -110,6 +110,7 @@ function Profile() {
                                 &&
                                 <Box>
                                     <Button onClick={onOpen} size={'sm'}>Write a Post</Button>
+                                    <Button onClick={initialize} size={'sm'}>Refresh</Button>
                                 </Box>
                             }
                         </Stack>
@@ -124,7 +125,7 @@ function Profile() {
                     </TabList>
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
-                            <Posts profile={profile} />
+                            <Posts profile={profile} refesh={initialize} />
                         </TabPanel>
                     </TabPanels>
                 </Tabs>

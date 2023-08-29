@@ -1,14 +1,13 @@
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, Textarea, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect, useRef } from 'react'
+import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Image, Menu, MenuButton, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, Textarea, useDisclosure } from '@chakra-ui/react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BiChat, BiLike, BiShare, BiSolidLike } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import Comments from './Comments'
-import { likePost, removeLike, writeComment } from '../API'
+import { deletePost, likePost, removeLike, writeComment } from '../API'
 import { useLocalStorage } from '../LocalStorage'
+import Comments from './Comments'
 
-function PostCard({ id, card, name, p, userId, postId }) {
+function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture, posting_date }) {
     const [liked, setLiked] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
@@ -26,13 +25,20 @@ function PostCard({ id, card, name, p, userId, postId }) {
 
     useEffect(() => {
         if (p) {
+            setPost(p)
             p.reacts.forEach(x => { if (x.user_id === user.user_id) setLiked(true) })
             setLikesCount(p.reacts.length)
             setCommentsCount(p.comments.length)
         }
         console.log(p);
-        setPost(p)
     }, [])
+    async function editPostClick() {
+
+    }
+    async function deletePostClick() {
+        await deletePost(postId)
+        refresh()
+    }
     async function likeClick() {
         if (liked) {
             await removeLike(post.post_id)
@@ -61,29 +67,31 @@ function PostCard({ id, card, name, p, userId, postId }) {
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                             <Link to={`/profile/${userId}`}>
-                                <Avatar name={name} src='/profile.jpg' />
+                                <Avatar name={name} src={profile_picture} />
                             </Link>
                             <Box>
                                 <Link to='/profile/1'>
                                     <Heading size='sm'>{name}</Heading>
                                 </Link>
-                                <Text>{new Date().toLocaleString()}</Text>
+                                <Text>{new Date(posting_date).toLocaleString()}</Text>
                             </Box>
                         </Flex>
-                        <Menu>
-                            <MenuButton>
-                                <IconButton
-                                    variant='ghost'
-                                    colorScheme='gray'
-                                    aria-label='See menu'
-                                    icon={<BsThreeDotsVertical />}
-                                />
-                            </MenuButton>
-                            <MenuList>
-                                <MenuItem>Edit</MenuItem>
-                                <MenuItem>Delete</MenuItem>
-                            </MenuList>
-                        </Menu>
+                        {
+                            userId == user.user_id && <Menu>
+                                <MenuButton>
+                                    <IconButton
+                                        variant='ghost'
+                                        colorScheme='gray'
+                                        aria-label='See menu'
+                                        icon={<BsThreeDotsVertical />}
+                                    />
+                                </MenuButton>
+                                <MenuList>
+                                    <MenuItem onClick={editPostClick}>Edit</MenuItem>
+                                    <MenuItem onClick={deletePostClick}>Delete</MenuItem>
+                                </MenuList>
+                            </Menu>
+                        }
                     </Flex>
                 </CardHeader>
                 {/* <Link to='/post/1'> */}
@@ -149,7 +157,7 @@ function PostCard({ id, card, name, p, userId, postId }) {
                                 <Flex spacing='4'>
                                     <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                                         <Link to={'/profile/' + userId}>
-                                            <Avatar name={name} src='/profile.jpg' />
+                                            <Avatar name={name} src={profile_picture} />
                                         </Link>
                                         <Box>
                                             <Link to='/profile/1'>

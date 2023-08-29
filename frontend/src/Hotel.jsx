@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Navbar2 from './components/Navbar2'
 import { useParams } from 'react-router-dom'
 import { api_base } from './Constants'
-import CaptionCarousel from './components/Carousel'
 import HotelDetails from './components/HotelDetails'
+import Navbar2 from './components/Navbar2'
 
 function Hotel() {
     const { id } = useParams()
@@ -13,6 +12,7 @@ function Hotel() {
         const t = await fetch(url)
         const j = await t.json()
         setData(j)
+        console.log(j)
     }
     useEffect(() => {
         initialize()
@@ -20,8 +20,8 @@ function Hotel() {
     return (
         <div>
             <Navbar2 />
-            <HotelDetails props={data}/>
-        </div>  
+            <HotelDetails props={data} hotel_id={data.hotel_id} />
+        </div>
     )
 }
 

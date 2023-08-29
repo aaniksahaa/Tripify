@@ -1,61 +1,43 @@
 'use client'
-import ActivityCard from './ActivityCard'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import {
     Box,
-    chakra,
-    Container,
-    Stack,
-    Text,
-    Image,
-    Flex,
-    VStack,
     Button,
-    Heading,
-    SimpleGrid,
-    StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
-    List,
-    ListItem,
-    Badge,
+    Card,
+    Container,
     Divider,
-    TableContainer,
-    Table,
-    Tbody,
-    Tr,
-    Td,
-    Tfoot,
+    Flex,
+    Heading,
     Modal,
-    ModalOverlay,
+    ModalBody,
+    ModalCloseButton,
     ModalContent,
     ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    Textarea,
-    useDisclosure,
-    Card,
-} from '@chakra-ui/react'
-import { MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
-import Carousel from './Carousel'
-import Carousel2 from './Carousel2'
-import { ImPriceTag } from 'react-icons/im'
-import { CgGym } from 'react-icons/cg'
+    ModalOverlay,
+    SimpleGrid,
+    Stack,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Text,
+    Tr,
+    useColorModeValue,
+    useDisclosure
+} from '@chakra-ui/react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ImPriceTag } from 'react-icons/im';
+import Carousel from './Carousel';
 
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import { AiFillAccountBook, AiFillCar, AiOutlineWifi, AiOutlineMail } from 'react-icons/ai'
-import ColoredCircle from './ColoredCircle'
-import Feature from './Feature'
-import StarRating from './StarRating'
-import RatingBox from './RatingBox'
-import Review from './Review'
-import EmblaCarousel from './EmblaCarousel'
+import { AiOutlineMail } from 'react-icons/ai';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 // import { EmblaCarousel } from './EmblaCarousel'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { addToList } from '../LocalStorage';
-import CardSlider from './CardSlider';
 import ActivityDetails from './ActivityDetails';
+import CardSlider from './CardSlider';
+import EmblaCarousel from './EmblaCarousel';
+import RatingBox from './RatingBox';
 
 export default function TripDetails({ props }) {
     const [startDate, setStartDate] = useState(new Date());
@@ -195,20 +177,6 @@ export default function TripDetails({ props }) {
                                 </Table>
                             </TableContainer>
                         </Box>
-                        <Button
-                            onClick={onOpen}
-                            rounded={'none'}
-                            w={'full'}
-                            size={'lg'}
-                            bg={useColorModeValue('gray.900', 'gray.50')}
-                            color={useColorModeValue('white', 'gray.900')}
-                            textTransform={'uppercase'}
-                            _hover={{
-                                transform: 'translateY(2px)',
-                                boxShadow: 'lg',
-                            }}>
-                            Add to Trip
-                        </Button>
                         <Box>
                             <Stack spacing={{ base: 6, md: 10 }}>
                                 <Text fontSize={'3xl'}>
@@ -228,20 +196,40 @@ export default function TripDetails({ props }) {
                     </Stack>
 
                 </Stack>
-                <Stack>
-                    <Flex justifyContent={'center'}>
-                        <RatingBox />
-                    </Flex>
-                    <Box>
-                        <Text fontSize='3xl' textAlign={'center'}>
-                            Reviews
-                        </Text>
-                        <Box marginTop='20px'>
-                            <EmblaCarousel />
-                        </Box>
 
+                <Box>
+                    <Box>
+                        <Stack spacing={{ base: 6, md: 10 }}>
+                            <Text fontSize={'3xl'}>
+                                Activities
+                            </Text>
+                            <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                                {props.activities && props.activities.map((item, index) =>
+                                    <Box onClick={() => activityClick(index)} key={index}>
+                                        <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                                            <CardSlider images={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
+                                        </Card>
+                                    </Box>
+                                )}
+                            </SimpleGrid>
+                        </Stack>
                     </Box>
-                </Stack>
+                    <Stack>
+                        <Flex justifyContent={'center'}>
+                            <RatingBox />
+                        </Flex>
+                        <Box>
+                            <Text fontSize='3xl' textAlign={'center'}>
+                                Reviews
+                            </Text>
+                            <Box marginTop='20px'>
+                                <EmblaCarousel />
+                            </Box>
+
+                        </Box>
+                    </Stack>
+                </Box>
+
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>

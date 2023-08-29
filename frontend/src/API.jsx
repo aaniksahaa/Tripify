@@ -82,9 +82,12 @@ export async function getHotels(filter) {
   const j = await getX('hotel', filter)
   return j
 }
-export async function postReview(data) {
-  const j = await postX('review', data)
+export async function createReview(data) {
+  const j = await postX('review', {}, data)
   return j
+}
+export async function updateUser(data) {
+  const j = await fetchX('PUT', 'user', {}, data)
 }
 export async function getReviews(filter) {
   const j = await getX('review', filter)
@@ -98,12 +101,20 @@ export async function getActivities(filter) {
   const j = await getX('activity', filter)
   return j
 }
+export async function getLogin(data) {
+  const j = await postX('login', {}, data)
+  return j
+}
 export async function getTrips(filter) {
   const j = await getX('trip', filter)
   return j
 }
 export async function getPostDetails(id) {
   const j = await getX(`post/details/${id}`, {})
+  return j
+}
+export async function deletePost(id) {
+  const j = await fetchX('delete', `post/${id}`, {}, {})
   return j
 }
 export async function getSingleUser(id) {
@@ -117,9 +128,7 @@ export async function writeComment(data) {
 export async function deleteComment() {
 
 }
-export async function deletePost() {
 
-}
 export async function writePost(data) {
   const j = await postX(`post`, {}, data)
   return j

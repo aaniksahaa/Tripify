@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import { Box, Button, Card, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, FormControl, FormLabel, GridItem, Heading, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import { api_base } from './Constants'
-import HotelCard from './components/HotelCard'
-import { MultiSelect } from 'chakra-multiselect'
+import { Box, Button, Card, Container, FormControl, FormLabel, GridItem, Input, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import { Select } from 'chakra-react-select'
-import { Link } from 'react-router-dom'
-import { BiFilterAlt } from 'react-icons/bi'
-import Navbar2 from './components/Navbar2'
+import React, { useEffect, useState } from 'react'
+import { getCities, getTrips } from './API'
 import CardSlider from './components/CardSlider'
-import { getCities, getDestinations, getTrips } from './API'
+import Navbar2 from './components/Navbar2'
 
 function Trips() {
   const [trips, setTrips] = useState([])
@@ -32,6 +26,7 @@ function Trips() {
   async function load(t) {
     const _trips = await getTrips(t)
     setTrips(_trips)
+    console.log(_trips);
   }
   async function initialize() {
     const _cities = await getCities({})
@@ -163,7 +158,7 @@ function Trips() {
               {
                 trips.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider images={item.images} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={Math.floor(Math.random() * 5)} />
+                    <CardSlider imgs={item.images} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={Math.floor(Math.random() * 5)} />
                   </Card>
                 ))
               }

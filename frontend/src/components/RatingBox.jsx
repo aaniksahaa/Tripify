@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import StarRating from './StarRating'
 import { Box, Container, Flex, Heading, Progress, Stack, Text, VStack } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
+import StarRating from './StarRating'
 
 function RatingBox({ ratingInfo }) {
     const [total, setTotal] = useState(1)
@@ -29,7 +29,7 @@ function RatingBox({ ratingInfo }) {
                 </Text>
                 <Flex alignItems={'baseline'}>
                     <Heading size='2xl' textAlign={'center'}>
-                        {ratingInfo && ratingInfo.rating_avg}
+                        {rating.rating_avg}
                     </Heading>
                     <Text fontSize='3xl'>/5</Text>
                 </Flex>
@@ -43,27 +43,27 @@ function RatingBox({ ratingInfo }) {
                     <Flex alignItems={'center'} justifyContent={'space-evenly'}>
                         <Box>5</Box>
                         <Box color='#ffc107'><FaStar /></Box>
-                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_5*100/total))} /></Box>
+                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_5 * 100 / total))} /></Box>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-evenly'}>
                         <Box>4</Box>
                         <Box color='#ffc107'><FaStar /></Box>
-                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_4*100/total))} /></Box>
+                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_4 * 100 / total))} /></Box>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-evenly'}>
                         <Box>3</Box>
                         <Box color='#ffc107'><FaStar /></Box>
-                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_3*100/total))} /></Box>
+                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_3 * 100 / total))} /></Box>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-evenly'}>
                         <Box>2</Box>
                         <Box color='#ffc107'><FaStar /></Box>
-                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_2*100/total))} /></Box>
+                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_2 * 100 / total))} /></Box>
                     </Flex>
                     <Flex alignItems={'center'} justifyContent={'space-evenly'}>
                         <Box>1</Box>
                         <Box color='#ffc107'><FaStar /></Box>
-                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_1*100/total))} /></Box>
+                        <Box width={'90%'}><Progress borderRadius={'50px'} size='md' value={parseInt(Math.floor(rating.rating_1 * 100 / total))} /></Box>
                     </Flex>
                 </Stack>
             </Box>

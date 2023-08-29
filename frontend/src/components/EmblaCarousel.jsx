@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { getReviews } from '../API'
 import Review from './Review'
 
-const EmblaCarousel = ({type, id}) => {
+const EmblaCarousel = ({ type, id }) => {
     const options = {
         align: 'center',
         containScroll: false,
@@ -15,8 +15,8 @@ const EmblaCarousel = ({type, id}) => {
     const [reviews, setReviews] = useState([])
     async function initialize() {
         const filter = {
-            type:type,
-            id: id
+            object_type: type,
+            object_id: id
         }
         const r = await getReviews(filter)
         setReviews(r)
@@ -24,7 +24,7 @@ const EmblaCarousel = ({type, id}) => {
     }
     useEffect(() => {
         initialize()
-    },[])
+    }, [id])
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
     const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev() }, [emblaApi])
     const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext() }, [emblaApi])
@@ -36,13 +36,13 @@ const EmblaCarousel = ({type, id}) => {
                     <div className="embla__container">
                         {reviews.map((review, id) => (
                             <div className="embla__slide" key={id}>
-                                <Review {...review}/>
+                                <Review {...review} />
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}>
+            <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
                 <Button className="embla__prev" onClick={scrollPrev}>Prev</Button>
                 <Button className="embla__next" onClick={scrollNext}>Next</Button>
             </div>

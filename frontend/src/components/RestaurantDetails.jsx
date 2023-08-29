@@ -39,7 +39,7 @@ import React, { useEffect } from 'react';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
-export default function RestaurantDetails({ props }) {
+export default function RestaurantDetails({ props, rating_info }) {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -96,7 +96,7 @@ export default function RestaurantDetails({ props }) {
                             at delectus doloribus dolorum expedita hic, ipsum maxime modi nam officiis
                             porro, quae, quisquam quos reprehenderit velit? Natus, totam.
                         </Text>
-                        
+
                     </Stack>
                 </Stack>
                 <Stack spacing={{ base: 6, md: 10 }}>
@@ -125,11 +125,11 @@ export default function RestaurantDetails({ props }) {
                                         <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
-                                                    <Box><ImPriceTag size={30} /></Box><Box>&emsp;Price Per Day</Box>
+                                                    <Box><ImPriceTag size={30} /></Box><Box>&emsp;Reservation Price</Box>
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                ৳{props.price_per_day}
+                                                ৳{props.reservation_price}
                                             </Td>
                                         </Tr>
                                         <Tr>
@@ -158,7 +158,7 @@ export default function RestaurantDetails({ props }) {
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                {props.phone}
+                                                {props.contact}
                                             </Td>
                                         </Tr>
                                         <Tr>
@@ -214,7 +214,7 @@ export default function RestaurantDetails({ props }) {
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox ratingInfo={props.rating_info} />
+                        <RatingBox ratingInfo={rating_info} />
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>
@@ -269,7 +269,7 @@ export default function RestaurantDetails({ props }) {
                             </Flex>
                             <Box>
                                 <Text fontSize={'xl'}>Cost</Text>
-                                ৳{Math.round(Math.abs((endDate - startDate) / 86400000)) * props.price_per_day}
+                                ৳{Math.round(Math.abs((endDate - startDate) / 86400000)) * props.reservation_price}
                             </Box>
                         </Stack>
                     </ModalBody>

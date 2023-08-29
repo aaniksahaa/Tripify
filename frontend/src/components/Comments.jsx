@@ -1,7 +1,7 @@
+import { Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import Comment from './Comment'
-import { Box, Stack } from '@chakra-ui/react'
 import { getPostDetails } from '../API'
+import Comment from './Comment'
 
 function Comments({ postId }) {
   const [comments, setComments] = useState([])
@@ -17,7 +17,7 @@ function Comments({ postId }) {
   return (
     <Stack spacing={'10px'}>
       {comments.map((comment, id) =>
-        <Comment date={comment.commenting_date} text={comment.text} name={comment.user.name} key={id} />
+        <Comment date={comment.commenting_date} text={comment.text} name={comment.user.name} pp={comment.user.profile_picture} key={id} />
       )}
     </Stack>
   )

@@ -37,8 +37,8 @@ import Feature from './Feature';
 import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
-import React, { useEffect } from 'react';
-import { postReview } from '../API';
+import React, { useEffect, useState } from 'react';
+import { createReview } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
@@ -48,24 +48,28 @@ export default function HotelDetails({ props }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
+    const [hotel_id, setHotelId] = useState(1)
+
     async function postReviewClick() {
         const data = {
-            "description": "Wholesome Trip !!!",
-            "rating": 4.5,
+            "description": review,
+            "rating": rating,
             "image_url": "dummy.jpg",
-            "object_type": "trip",
-            "object_id": 1
+            "object_type": "hotel",
+            "object_id": hotel_id
         }
-        await postReview(data)
+        await createReview(data)
         setRating(0)
         setReview('')
     }
     useEffect(() => {
-    }, [])
+        if (props)
+            setHotelId(props.hotel_id)
+    }, [props])
 
     function addClick() {
         const data = {
-            id: props.hotel_id,
+            id: hotel_id,
             name: props.name,
             start: startDate,
             end: endDate,
@@ -253,7 +257,7 @@ export default function HotelDetails({ props }) {
                             Reviews
                         </Text>
                         <Box marginTop='20px'>
-                            <EmblaCarousel type={'hotel'} id={props.hotel_id} />
+                            <EmblaCarousel type={'hotel'} id={hotel_id} />
                         </Box>
                         <Box marginTop={'20px'}>
                             <Text fontSize='3xl' textAlign={'center'}>
