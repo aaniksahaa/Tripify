@@ -2770,13 +2770,14 @@ Request Body:
     "email": "barbiehotel@yahoo.com",
     "has_wifi": 1,
     "has_parking": 1,
-    "has_gym": 1
+    "has_gym": 1,
+    "images": ["a.jpg","b.jpg","c.jpg"]
 }
 ```
 Example Response:  
 ```json
 {
-    "hotel_id": 103,
+    "hotel_id": 302,
     "name": "Barbie Oppenheimer Hotel",
     "address": "57 Park Avenue Manikganj , Bangladesh",
     "city_id": 26,
@@ -2788,8 +2789,29 @@ Example Response:
     "has_wifi": 1,
     "has_parking": 1,
     "has_gym": 1,
-    "created_on": "2023-07-31T19:17:46.000Z",
-    "last_updated_on": "2023-07-31T19:17:46.000Z"
+    "creator_user_id": 1,
+    "created_on": "2023-09-07T19:29:25.000Z",
+    "last_updated_on": "2023-09-07T19:29:25.000Z",
+    "city": {
+        "city_id": 26,
+        "name": "Manikganj",
+        "country_name": "Bangladesh",
+        "population": 160093,
+        "weather_type": "rainy"
+    },
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 0,
+        "rating_3": 0,
+        "rating_4": 0,
+        "rating_5": 0,
+        "rating_avg": 2.5
+    },
+    "images": [
+        "a.jpg",
+        "b.jpg",
+        "c.jpg"
+    ]
 }
 ```
 ## d. Update a Hotel
