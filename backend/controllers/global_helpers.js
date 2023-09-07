@@ -6,7 +6,9 @@ function isNumber(str) {
     return /^\d+(\.\d+)?$/.test(str);
 }
 
-const getSqlPaginationAndOrdering = async (payload, page, per_page, orderby, ordertype) => {
+const getSqlPaginationAndOrdering = async (payload, ordering_attributes, page, per_page, orderby, ordertype) => {
+
+  const ordertypes = ['asc','desc']
 
     if (payload.page !== undefined && payload.page !== '') {
         const in_page = parseInt(payload.page);
@@ -24,7 +26,7 @@ const getSqlPaginationAndOrdering = async (payload, page, per_page, orderby, ord
 
     if (payload.orderby !== undefined && payload.orderby !== '') {
         const in_orderby = payload.orderby.trim().toLowerCase();
-        if (attributes.includes(in_orderby)) {
+        if (ordering_attributes.includes(in_orderby)) {
         orderby = in_orderby;
         }
     }

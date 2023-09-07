@@ -325,9 +325,22 @@ const updateHotel = async (payload) => {
 
 const deleteHotel = async (payload) => {
     console.log(payload)
+
+    // const sql = `
+    // DELETE FROM HOTELS
+    // WHERE hotel_id = :hotel_id
+    // `
+
     const sql = `
-    DELETE FROM HOTELS
-    WHERE hotel_id = :hotel_id
+    DECLARE 
+        
+        
+        
+    BEGIN 
+        
+        DELETE_HOTEL(:hotel_id);
+        
+    END;
     `
     const binds = {
         hotel_id : payload.hotel_id

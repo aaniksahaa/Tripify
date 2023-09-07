@@ -282,6 +282,7 @@ const processTripBooking = async (payload) => {
     const sql = `
     UPDATE TripBookings
     SET is_processed = 1,
+        processing_date = CURRENT_DATE,
         last_updated_on = CURRENT_DATE
     WHERE user_id = :user_id AND trip_id = :trip_id
     `

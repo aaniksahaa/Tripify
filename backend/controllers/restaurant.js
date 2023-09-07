@@ -274,8 +274,15 @@ const updateRestaurant = async (payload) => {
 const deleteRestaurant = async (payload) => {
     console.log(payload);
     const sql = `
-    DELETE FROM RESTAURANTS
-    WHERE restaurant_id = :restaurant_id
+    DECLARE 
+        
+        
+        
+    BEGIN 
+        
+        DELETE_RESTAURANT(:restaurant_id);
+        
+    END;
     `;
     const binds = {
         restaurant_id: payload.restaurant_id,

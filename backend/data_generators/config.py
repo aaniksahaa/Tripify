@@ -1,7 +1,9 @@
 flight_count = 100
-hotel_count = 10
-restaurant_count = 10
-review_count = 1000
+hotel_count = 300
+restaurant_count = 200
+review_count = 2000
 user_count = 10
-trip_count = 10
+trip_count = 50
 guide_count = 2
+post_count = 50
+comment_count = 300
