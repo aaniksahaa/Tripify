@@ -2825,7 +2825,7 @@ PUT
 Request Body:    
 ```json
 {
-    "hotel_id": 103,
+    "hotel_id": 302,
     "name": "New Barbie Oppenheimer Hotel",
     "address": "57 Park Avenue Manikganj , Bangladesh",
     "city_id": 26,
@@ -2836,26 +2836,48 @@ Request Body:
     "email": "barbiehotel@yahoo.com",
     "has_wifi": 1,
     "has_parking": 1,
-    "has_gym": 1
+    "has_gym": 1,
+    "images":["x.jpg","y.jpg","z.jpg"]
 }
 ```
 Example Response:  
 ```json
 {
-    "hotel_id": 103,
-    "name": "Barbie Oppenheimer Hotel",
+    "hotel_id": 302,
+    "name": "New Barbie Oppenheimer Hotel",
     "address": "57 Park Avenue Manikganj , Bangladesh",
     "city_id": 26,
     "description": "A Exquisitely Elevated hotel in Manikganj.",
     "image_url": "dummy.jpg",
-    "price_per_day": 2500,
+    "price_per_day": 4500,
     "phone": "011338126183",
     "email": "barbiehotel@yahoo.com",
     "has_wifi": 1,
     "has_parking": 1,
     "has_gym": 1,
-    "created_on": "2023-07-31T19:17:46.000Z",
-    "last_updated_on": "2023-07-31T19:17:46.000Z"
+    "creator_user_id": 1,
+    "created_on": "2023-09-07T19:29:25.000Z",
+    "last_updated_on": "2023-09-07T19:32:39.000Z",
+    "city": {
+        "city_id": 26,
+        "name": "Manikganj",
+        "country_name": "Bangladesh",
+        "population": 160093,
+        "weather_type": "rainy"
+    },
+    "rating_info": {
+        "rating_1": 0,
+        "rating_2": 0,
+        "rating_3": 0,
+        "rating_4": 0,
+        "rating_5": 0,
+        "rating_avg": 2.5
+    },
+    "images": [
+        "z.jpg",
+        "x.jpg",
+        "y.jpg"
+    ]
 }
 ```
 
