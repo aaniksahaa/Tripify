@@ -48,7 +48,7 @@ const getCities = async (payload) => {
     `;
 
     if (payload.name !== undefined && payload.name !== '') {
-        const name = payload.name.trim().toLowerCase();
+        const name = payload.name.trim().toLowerCase().replace('\'','');
         sql += `AND LOWER(name) LIKE '%' || :name || '%' `;
         binds.name = name;
     }
