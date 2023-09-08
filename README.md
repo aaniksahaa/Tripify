@@ -136,6 +136,7 @@ The API Endpoints belong to  major routes. The routes are as follows:
 ## [Comment](#comment-1)
 ## [Feed](#feed-1)
 ## [Stat](#stat-1)
+## [Chat](#chat-1)
 
 The respective API endpoints are as follows:    
 
@@ -5765,4 +5766,1289 @@ Example Response:
         }
     }
 ]
+```
+
+# Chat
+
+## a. Get Chat Response
+
+Endpoint URL:    
+```
+GET
+```
+```
+/api/v1/chat?user_text=Hi, how are you doing? I need a help, i wanna have a vacation trip to Coxs Bazar, choose me hotels which have wifi and parking facilities, also get me some restaurants with reservation prices no less than 500. Also make sure that the reservation prices dont exceed 2000, While choosing hotels, also make sure that the hotel's price per day is within 5000. Now please suggest me how to build my trip.
+```  
+Request Body: 
+```
+None
+```
+Example Response:    
+```json
+{
+    "queries": {
+        "city_names": [
+            "Coxs Bazar"
+        ],
+        "hotel": {
+            "min_price": "",
+            "max_price": "5000",
+            "has_parking": "1",
+            "has_wifi": "1",
+            "has_gym": ""
+        },
+        "restaurant": {
+            "min_price": "500",
+            "max_price": "2000"
+        }
+    },
+    "hotels": [
+        {
+            "hotel_id": 267,
+            "name": "Hotel Sea Crown",
+            "address": "33 Mountain Street Coxs Bazar , Bangladesh",
+            "city_id": 27,
+            "description": "A Serenely Boutique hotel in Coxs Bazar.",
+            "image_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/36/a3/58/international-suite.jpg?w=1500&h=1000&s=1",
+            "price_per_day": 3878,
+            "phone": "016037659712",
+            "email": "hotel_sea@gmail.com",
+            "has_wifi": 1,
+            "has_parking": 1,
+            "has_gym": 1,
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:48.000Z",
+            "last_updated_on": "2023-09-07T18:46:48.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 2,
+                "rating_3": 2,
+                "rating_4": 0,
+                "rating_5": 1,
+                "rating_avg": 3
+            },
+            "images": [
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/8a/ca/29/hotel-sea-crown.jpg?w=1500&h=1000&s=1",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/3d/ac/sea-front-deluxe-supreme.jpg?w=1500&h=1000&s=1",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/3d/98/sea-front-deluxe-supreme.jpg?w=1500&h=1000&s=1",
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/3d/92/sea-front-deluxe-supreme.jpg?w=1500&h=1000&s=1"
+            ]
+        }
+    ],
+    "restaurants": [
+        {
+            "restaurant_id": 189,
+            "name": "Coral Station",
+            "reservation_price": 790,
+            "address": "37 Riverfront",
+            "city_id": 27,
+            "description": "A restaurant serving Uniquely Cozy Mexican Seafood.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Seafood,Barbecue",
+            "contact": "015663602673",
+            "email": "coral_station@outlook.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 0,
+                "rating_3": 0,
+                "rating_4": 1,
+                "rating_5": 1,
+                "rating_avg": 4.5
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/24/79/79/00/coral-station-is-a-restaurant.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 198,
+            "name": "Sun Dancer Cafe & Restaurant",
+            "reservation_price": 1340,
+            "address": "19 Gourmet Street",
+            "city_id": 27,
+            "description": "A restaurant serving Delightfully Gourmet Mediterranean Pizza.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Cafe",
+            "contact": "017343724432",
+            "email": "sun.dancer@gmail.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 0,
+                "rating_3": 0,
+                "rating_4": 2,
+                "rating_5": 0,
+                "rating_avg": 4
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/12/07/a0/43/20171129-153836-largejpg.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 191,
+            "name": "Poushee Restaurant",
+            "reservation_price": 1820,
+            "address": "84 Culinary Avenue",
+            "city_id": 27,
+            "description": "A restaurant serving Savoringly Quaint Thai Sushi.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Asian,Bangladeshi",
+            "contact": "012979962112",
+            "email": "poushee.restaurant@yahoo.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 1,
+                "rating_3": 0,
+                "rating_4": 1,
+                "rating_5": 1,
+                "rating_avg": 3.67
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/15/1a/77/84/front-view.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 193,
+            "name": "Jhaubon Restaurant",
+            "reservation_price": 660,
+            "address": "44 Food Court",
+            "city_id": 27,
+            "description": "A restaurant serving Tastefully Fusion Greek Curry.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Seafood,Asian",
+            "contact": "011459544378",
+            "email": "jhaubon_restaurant@gmail.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 0,
+                "rating_3": 1,
+                "rating_4": 1,
+                "rating_5": 0,
+                "rating_avg": 3.5
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-p/0d/7b/ac/69/img-20161029-122925-largejpg.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 197,
+            "name": "Salt Bistro And Cafe",
+            "reservation_price": 1170,
+            "address": "44 Food Court",
+            "city_id": 27,
+            "description": "A restaurant serving Tastefully Cozy Spanish Biryani.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Cafe,Seafood",
+            "contact": "016777374192",
+            "email": "salt.bistro@gmail.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 0,
+                "rating_3": 1,
+                "rating_4": 1,
+                "rating_5": 0,
+                "rating_avg": 3.5
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/b2/9d/00/let-our-coffee-fuel-your.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 190,
+            "name": "Palongki Inani",
+            "reservation_price": 1820,
+            "address": "56 Culinary Avenue",
+            "city_id": 27,
+            "description": "A restaurant serving Uniquely Delicious Thai Burger.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Bangladeshi,Seafood",
+            "contact": "014132327365",
+            "email": "palongki.inani@yahoo.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 2,
+                "rating_3": 0,
+                "rating_4": 1,
+                "rating_5": 1,
+                "rating_avg": 3.25
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/27/a9/51/54/palongki-inani-sea-front.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 192,
+            "name": "Mermaid Cafe",
+            "reservation_price": 1000,
+            "address": "14 Riverfront",
+            "city_id": 27,
+            "description": "A restaurant serving Passionately Savory Japanese Tacos.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Seafood,Asian",
+            "contact": "012436956754",
+            "email": "mermaid.cafe@gmail.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 1,
+                "rating_3": 1,
+                "rating_4": 0,
+                "rating_5": 0,
+                "rating_avg": 2.5
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/0d/e3/a4/96/mermaid-cafe.jpg"
+            ]
+        },
+        {
+            "restaurant_id": 194,
+            "name": "Mermaid Beach Resort",
+            "reservation_price": 1490,
+            "address": "77 Food Court",
+            "city_id": 27,
+            "description": "A restaurant serving Tastefully Savory Spanish Pizza.",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/53/9d/elements-global-dining.jpg",
+            "cuisine_type": "Seafood,Barbecue",
+            "contact": "011743947692",
+            "email": "mermaid.beach@outlook.com",
+            "creator_user_id": 0,
+            "created_on": "2023-09-07T18:46:51.000Z",
+            "last_updated_on": "2023-09-07T18:46:51.000Z",
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "rating_info": {
+                "rating_1": 0,
+                "rating_2": 0,
+                "rating_3": 0,
+                "rating_4": 0,
+                "rating_5": 0,
+                "rating_avg": 2.5
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/18/16/75/e5/juice-bar.jpg"
+            ]
+        }
+    ],
+    "destinations": [
+        {
+            "destination_id": 26,
+            "name": "Coxs Bazar Beach",
+            "address": "Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.4272,
+            "longitude": 91.9758,
+            "description": "Coxs Bazar Beach is one of the longest natural sea beaches in the world.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 3,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 3,
+                        "name": "Snorkeling",
+                        "category": "Adventure",
+                        "description": "Discover the underwater world and vibrant marine life through snorkeling.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 10,
+                        "max_age": 50,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://fthmb.tqn.com/XtDX5UROYmPakUeif3ahefihJoI=/1500x1050/filters:fill(auto,1)/SnorkelingWithKids_Getty-56effe365f9b5867a1c4bfb4.jpg",
+                            "https://www.crystalsandsonsiestakey.com/wp-content/uploads/2020/08/siesta-key-snorkeling.jpg",
+                            "https://diveukhurghada.co.uk/wp-content/uploads/2020/02/Snorkelling-1.jpg",
+                            "https://www.sandals.com/blog/content/images/2019/04/3_islandroutes_38-Adv-Eco.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 6,
+                    "price": 400,
+                    "activity": {
+                        "activity_id": 6,
+                        "name": "Wildlife Safari",
+                        "category": "Adventure",
+                        "description": "Embark on a thrilling wildlife safari and spot exotic animals.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 18,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.ngorongorocratertanzania.org/wp-content/uploads/2020/10/5-Days-Best-of-Tanzania-Wildlife-Safari.jpg",
+                            "https://www.expertafrica.com/images/background-image/d8aaade7bbcd42d4a0a39588bbf4aa7d-1600.jpg",
+                            "https://www.serengetiparktanzania.com/wp-content/uploads/2020/11/7-Days-Tanzania-Wildlife-Safaris.jpg",
+                            "https://www.expertafrica.com/images/background-image/01a037ba6e6b403a8c6cfe4d64a249f0-1600.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 7,
+                    "price": 50,
+                    "activity": {
+                        "activity_id": 7,
+                        "name": "Nature Walks",
+                        "category": "Adventure",
+                        "description": "Take peaceful walks in nature and enjoy the tranquility it offers.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 65,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.naturalhealth365.com/wp-content/uploads/2020/04/nature-scaled.jpeg",
+                            "https://www.atlmentalhealth.com/wp-content/uploads/2021/01/nature-walk.jpg",
+                            "http://images.unsplash.com/photo-1559544948-da38a2615cb7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9",
+                            "https://yogafeststatecollege.com/wp-content/uploads/2017/09/Nature-Walk-900px.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://beachbaby.net/wp-content/uploads/2018/04/Coxs-Bazar-Bangladesh-worlds-longest-beach.jpg",
+                "https://3.bp.blogspot.com/-vgl7OZUili0/VfVWye1UrtI/AAAAAAAAAPg/YiS7cffX_20/s1600/cox.jpg",
+                "https://2.bp.blogspot.com/-gfsfxUcDZWI/Tk10NT_htMI/AAAAAAAAA5k/nATzESSx_4s/s1600/Cox%2527s_Bazar_boats03.jpg",
+                "https://i2.wp.com/besttoppers.com/wp-content/uploads/2011/07/Cox%E2%80%99s-Bazar-Bangladesh.jpg"
+            ]
+        },
+        {
+            "destination_id": 27,
+            "name": "Inani Beach",
+            "address": "Ukhia, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.4527,
+            "longitude": 92.0181,
+            "description": "Inani Beach is known for its golden sands, clear waters, and coral reefs.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 8,
+                    "price": 50,
+                    "activity": {
+                        "activity_id": 8,
+                        "name": "Beach Relaxation",
+                        "category": "Relaxation",
+                        "description": "Relax and unwind on the beautiful sandy beaches with crystal clear waters.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 5,
+                        "max_age": 75,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://i.pinimg.com/originals/63/d6/7a/63d67a8d785fb71f5227748bf1d8be8e.jpg",
+                            "https://i.ytimg.com/vi/JXdl15owpME/maxresdefault.jpg",
+                            "https://cdn.wallpapersafari.com/88/36/uHoe0w.jpg",
+                            "http://i.ytimg.com/vi/Sa_VJceQBuE/maxresdefault.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 9,
+                    "price": 200,
+                    "activity": {
+                        "activity_id": 9,
+                        "name": "Water Sports",
+                        "category": "Adventure",
+                        "description": "Indulge in various water sports activities like jet skiing, parasailing, and more.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 16,
+                        "max_age": 55,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://nomadparadise.com/wp-content/uploads/2020/08/water-sports-flyboard-flying.jpg",
+                            "https://www.tripsavvy.com/thmb/3sYPZPdIbNedmJj501qXWO7mCeE=/1261x835/filters:no_upscale():max_bytes(150000):strip_icc()/KorisRamos-56a34e515f9b58b7d0d16646.jpg",
+                            "https://multimedia.andalucia.org/media/80B4B346BD45484497680DC1229FE4F7/img/C43F415C44C0474A85D70F0F5BEE8CAC/CA_Tarifa_Playa_Valdevaqueros_11.jpg?responsive",
+                            "https://hellscanyon.tours/wp-content/uploads/2021/06/RiverAdventuresInc-73025-Water-Sports-Summer-image1-scaled.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 20,
+                    "price": 50,
+                    "activity": {
+                        "activity_id": 20,
+                        "name": "Scuba Diving",
+                        "category": "Adventure",
+                        "description": "Dive into the ocean depths and explore the wonders of marine life.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 16,
+                        "max_age": 55,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://blog.pickyourtrail.com/wp-content/uploads/2014/06/scuba-diving-phuket-with-aussie-divers.jpg",
+                            "https://www.haqqitours.com/wp-content/uploads/2020/07/Diving.jpg",
+                            "https://www.amorgos-diving.com/wp-content/uploads/2021/03/adc-3-scaled.jpeg",
+                            "http://3.bp.blogspot.com/-UuJ03gD--FI/UAd78REK3PI/AAAAAAAAAFQ/3GNRb_6E9iU/s1600/scuba-diving-certification.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "http://1.bp.blogspot.com/-wlnvtF35UEw/T-qr_bfihwI/AAAAAAAABAQ/vMaeQJEz-1U/s1600/Inani_Main.jpg",
+                "https://i.ytimg.com/vi/eFrr7jWJ9q8/maxresdefault.jpg",
+                "https://i.ytimg.com/vi/TYUHayqwjVo/maxresdefault.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/03/69/db/a7/sunset-at-inani-beach.jpg"
+            ]
+        },
+        {
+            "destination_id": 28,
+            "name": "Himchari National Park",
+            "address": "Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.4325,
+            "longitude": 91.9628,
+            "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 26,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 26,
+                        "name": "Cooking Classes",
+                        "category": "Cuisine",
+                        "description": "Learn to cook the local dishes from expert chefs in cooking classes.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 65,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg",
+                            "https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2018/01/cooking-class.jpg?fit=1200%2C750&ssl=1",
+                            "https://twincitieskidsclub.com/wp-content/uploads/2020/12/AdobeStock_262111171-1068x712.jpeg",
+                            "https://www.tripsavvy.com/thmb/X2QVmOEdtVKzrV004s0nSHpv520=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-143073620-57c4a8cb3df78cc16eca2488.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 28,
+                    "price": 50,
+                    "activity": {
+                        "activity_id": 28,
+                        "name": "Sailing Adventure",
+                        "category": "Adventure",
+                        "description": "Embark on a sailing adventure and explore the coastline from the sea.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 16,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://lirp-cdn.multiscreensite.com/87e050cf/dms3rep/multi/opt/C275+-+spin+LARGE-1920w.jpg",
+                            "https://www.atlasandboots.com/wp-content/uploads/2017/10/adventure-sailing-holidays-gadventures-cuba.jpg",
+                            "https://www.travelonline.com/fiji/tours/south-sea-cruises-t2/seaspray-sailing/seaspray-sailing-47155.jpg",
+                            "https://www.visitagnes1770.com.au/wp-content/uploads/2020/02/sail1770one-1.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 34,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 34,
+                        "name": "Cave Exploration",
+                        "category": "Adventure",
+                        "description": "Explore the mysterious caves and marvel at their natural beauty.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 14,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://bloximages.chicago2.vip.townnews.com/poststar.com/content/tncms/assets/v3/editorial/a/4f/a4f6ad2e-4129-11e5-9eed-2782d3ad6b80/55cba09a2e333.image.jpg?resize=1200%2C766",
+                            "https://img.jakpost.net/c/2018/07/10/2018_07_10_49018_1531210327._large.jpg",
+                            "http://bcbstwelltuned.com/wp-content/uploads/2017/06/Spelunking-e1497553737173.jpg",
+                            "https://assets3.thrillist.com/v1/image/2774746/size/gn-gift_guide_variable_c.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://dailyasianage.com/library/1565978597_4.jpg",
+                "https://i.pinimg.com/originals/8c/2d/47/8c2d4789c4342bfbe87a70f4ecf91b39.jpg",
+                "https://www.musafir.com.bd/images/places/Himchari-National-Park.jpg",
+                "https://dailyasianage.com/library/1634331855_2.jpg"
+            ]
+        },
+        {
+            "destination_id": 29,
+            "name": "Aggmeda Khyang",
+            "address": "Ramu, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.3872,
+            "longitude": 92.0905,
+            "description": "Aggmeda Khyang is a Buddhist monastery known for its intricate wood carvings.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 11,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 11,
+                        "name": "Local Food Tasting",
+                        "category": "Cuisine",
+                        "description": "Taste a variety of delicious local dishes and savor the flavors.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://media.gettyimages.com/photos/thailand-bangkok-khao-san-road-group-of-friends-tasting-local-food-on-picture-id962627038",
+                            "https://www.alderleyedge.com/img/w/720/h/480/s/749f78cdfdac582c4c6172a0fa1457c6.jpg",
+                            "http://www.stylemotivation.com/wp-content/uploads/2019/05/201811518262645.jpg",
+                            "https://res.cloudinary.com/northernthaiescape/image/upload/e_improve,w_1000/v1568344303/Food%20Tasting/20190806_194618_ddr7no.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 29,
+                    "price": 100,
+                    "activity": {
+                        "activity_id": 29,
+                        "name": "Educational Visit to Museum",
+                        "category": "Education",
+                        "description": "Discover the art, history, and culture of the region in museums.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 80,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.leisureopportunities.co.uk/images/HIGH14780_419927.jpg",
+                            "https://icom.museum/wp-content/uploads/2020/07/ICOM_Voices_W-Maderbacher_IMG2-1024x683.jpeg",
+                            "https://magazine.tcu.edu/wp-content/uploads/2017/08/SUM17-AM-Syllabus_Amon-Carter_2_C-1024x768.jpg",
+                            "https://educulture.info/wp-content/uploads/2018/09/museum-education-erasmus-course.jpeg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 32,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 32,
+                        "name": "Zip Lining",
+                        "category": "Adventure",
+                        "description": "Feel the adrenaline rush with an exciting zip-lining adventure.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.choicehotels.com/cms/images/choice-hotels/pace/hero-explore-zip-lining-locations-ziplining/hero-explore-zip-lining-locations-ziplining.jpg",
+                            "https://grandcanyonwest.com/wp-content/uploads/6434962_ImageLargeWidth.jpg",
+                            "https://content.tripster.com/travelguide/wp-content/uploads/2014/06/rsz_guy_on_zipline_w_view_4e7132c3-cc8a-4804-b654-d9acb2039105.jpg",
+                            "https://www.newyorkupstate.com/resizer/PhTXPDD6qIWHNhxupy8ZC_keHds=/1200x0/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.newyorkupstate.com/home/nyup-media/width2048/img/outdoors/photo/2015/06/13/zip-lining-at-hunter-mountain-in-the-catskills-7d227ecd15cd18be.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "http://offroadbangladesh.com/wp-content/uploads/2015/02/Aggmeda-Khyang-Monastery1.jpg",
+                "https://dailyasianage.com/library/1584119397maxresdefault.jpg",
+                "https://dailyasianage.com/library/1584119445_1.jpg",
+                "https://dailyasianage.com/library/1584119397101985961.jpg"
+            ]
+        },
+        {
+            "destination_id": 30,
+            "name": "Ramu Beach",
+            "address": "Ramu, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.3756,
+            "longitude": 92.1644,
+            "description": "Ramu Beach offers a serene and less crowded beach experience.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 11,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 11,
+                        "name": "Local Food Tasting",
+                        "category": "Cuisine",
+                        "description": "Taste a variety of delicious local dishes and savor the flavors.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://media.gettyimages.com/photos/thailand-bangkok-khao-san-road-group-of-friends-tasting-local-food-on-picture-id962627038",
+                            "https://www.alderleyedge.com/img/w/720/h/480/s/749f78cdfdac582c4c6172a0fa1457c6.jpg",
+                            "http://www.stylemotivation.com/wp-content/uploads/2019/05/201811518262645.jpg",
+                            "https://res.cloudinary.com/northernthaiescape/image/upload/e_improve,w_1000/v1568344303/Food%20Tasting/20190806_194618_ddr7no.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 29,
+                    "price": 200,
+                    "activity": {
+                        "activity_id": 29,
+                        "name": "Educational Visit to Museum",
+                        "category": "Education",
+                        "description": "Discover the art, history, and culture of the region in museums.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 80,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.leisureopportunities.co.uk/images/HIGH14780_419927.jpg",
+                            "https://icom.museum/wp-content/uploads/2020/07/ICOM_Voices_W-Maderbacher_IMG2-1024x683.jpeg",
+                            "https://magazine.tcu.edu/wp-content/uploads/2017/08/SUM17-AM-Syllabus_Amon-Carter_2_C-1024x768.jpg",
+                            "https://educulture.info/wp-content/uploads/2018/09/museum-education-erasmus-course.jpeg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 32,
+                    "price": 400,
+                    "activity": {
+                        "activity_id": 32,
+                        "name": "Zip Lining",
+                        "category": "Adventure",
+                        "description": "Feel the adrenaline rush with an exciting zip-lining adventure.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.choicehotels.com/cms/images/choice-hotels/pace/hero-explore-zip-lining-locations-ziplining/hero-explore-zip-lining-locations-ziplining.jpg",
+                            "https://grandcanyonwest.com/wp-content/uploads/6434962_ImageLargeWidth.jpg",
+                            "https://content.tripster.com/travelguide/wp-content/uploads/2014/06/rsz_guy_on_zipline_w_view_4e7132c3-cc8a-4804-b654-d9acb2039105.jpg",
+                            "https://www.newyorkupstate.com/resizer/PhTXPDD6qIWHNhxupy8ZC_keHds=/1200x0/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.newyorkupstate.com/home/nyup-media/width2048/img/outdoors/photo/2015/06/13/zip-lining-at-hunter-mountain-in-the-catskills-7d227ecd15cd18be.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "http://3.bp.blogspot.com/-ym4madDfH5o/TnR-M4JPjXI/AAAAAAAAA9M/LOYagQozv3k/s1600/Ramu1.jpg",
+                "https://i.ytimg.com/vi/yjLQ1lOTuBI/maxresdefault.jpg",
+                "https://i.ytimg.com/vi/keuUZYN_Wuk/maxresdefault.jpg",
+                "https://i.ytimg.com/vi/iEHQa3G0kyY/maxresdefault.jpg"
+            ]
+        },
+        {
+            "destination_id": 31,
+            "name": "Himchari National Park",
+            "address": "Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.4325,
+            "longitude": 91.9628,
+            "description": "Himchari National Park offers a blend of lush forests, waterfalls, and wildlife.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 30,
+                    "price": 500,
+                    "activity": {
+                        "activity_id": 30,
+                        "name": "Paragliding",
+                        "category": "Adventure",
+                        "description": "Experience the thrill of paragliding with an experienced pilot.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 16,
+                        "max_age": 55,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://img.redbull.com/images/c_crop,x_69,y_0,h_3546,w_5319/c_fill,w_1500,h_1000/q_auto,f_auto/redbullcom/2016/10/04/1331821774506_1/jack-pimblett-paragliding-in-catalonia",
+                            "https://baliparaglidingtours.com/wp-content/uploads/2019/02/15501112109924941-1.jpg",
+                            "https://www.visittnt.com/blog/wp-content/uploads/2018/05/shilong-paragliding.jpg",
+                            "https://i0.wp.com/www.webgranth.com/wp-content/uploads/2014/07/HD-Paragliding-Wallpaper.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 31,
+                    "price": 150,
+                    "activity": {
+                        "activity_id": 31,
+                        "name": "Fruit Picking",
+                        "category": "Cuisine",
+                        "description": "Enjoy the fun of picking fresh fruits and tasting them at orchards.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 5,
+                        "max_age": 75,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://cdn6.dissolve.com/p/D943_21_508/D943_21_508_1200.jpg",
+                            "https://www.raisingedmonton.com/wp-content/uploads/2017/07/Depositphotos_84554786_xl-2015.jpg",
+                            "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/03/14/13/apple-pickers-getty.jpg",
+                            "https://static.toiimg.com/photo/49933894/.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 34,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 34,
+                        "name": "Cave Exploration",
+                        "category": "Adventure",
+                        "description": "Explore the mysterious caves and marvel at their natural beauty.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 14,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://bloximages.chicago2.vip.townnews.com/poststar.com/content/tncms/assets/v3/editorial/a/4f/a4f6ad2e-4129-11e5-9eed-2782d3ad6b80/55cba09a2e333.image.jpg?resize=1200%2C766",
+                            "https://img.jakpost.net/c/2018/07/10/2018_07_10_49018_1531210327._large.jpg",
+                            "http://bcbstwelltuned.com/wp-content/uploads/2017/06/Spelunking-e1497553737173.jpg",
+                            "https://assets3.thrillist.com/v1/image/2774746/size/gn-gift_guide_variable_c.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://dailyasianage.com/library/1565978597_4.jpg",
+                "https://i.pinimg.com/originals/8c/2d/47/8c2d4789c4342bfbe87a70f4ecf91b39.jpg",
+                "https://www.musafir.com.bd/images/places/Himchari-National-Park.jpg",
+                "https://dailyasianage.com/library/1634331855_2.jpg"
+            ]
+        },
+        {
+            "destination_id": 32,
+            "name": "Dulahazra Safari Park",
+            "address": "Chakaria, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.7697,
+            "longitude": 91.8432,
+            "description": "Dulahazra Safari Park is home to various wildlife species in their natural habitats.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 13,
+                    "price": 100,
+                    "activity": {
+                        "activity_id": 13,
+                        "name": "Art and Craft Workshop",
+                        "category": "Culture",
+                        "description": "Participate in traditional art and craft workshops and create unique souvenirs.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 75,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.trendz4friend.com/wp-content/uploads/2021/06/artclasses1.jpg",
+                            "https://bk.asia-city.com/sites/default/files/u142691/mha_artcraft.jpg",
+                            "https://clubfleurieu.com/wp-content/uploads/2017/03/art-craft-classes-foto.jpg",
+                            "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/88463/images/W159ISlZR9uV6bX8LJvA_Creative_Crafting_Club_Class.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 15,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 15,
+                        "name": "Yoga Retreat",
+                        "category": "Relaxation",
+                        "description": "Rejuvenate your mind and body with a peaceful yoga retreat.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 20,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://bookretreats.com/blog/wp-content/uploads/2020/11/1000_1603815965.jpg",
+                            "https://magazine.bluekarmasecrets.com/wp-content/uploads/2019/10/retreatbox4.jpg",
+                            "https://retreatmehappy.com/wp-content/uploads/2019/10/Yoga-Retreat-e1574557062145.jpg",
+                            "https://breathingtravel.com/wp-content/uploads/2020/05/Yoga-retreat-Australia.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 16,
+                    "price": 150,
+                    "activity": {
+                        "activity_id": 16,
+                        "name": "Hot Air Balloon Ride",
+                        "category": "Adventure",
+                        "description": "Experience the thrill of a hot air balloon ride with stunning aerial views.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://media.breitbart.com/media/2023/08/Nick-Meleski-Hot-Air-Balloon-640x480.jpg",
+                            "https://utahballoonflights.com/wp-content/uploads/2022/02/IMG_8011-769x1024.jpg",
+                            "https://static.tripzilla.com/thumb/3/4/197940_800x.jpg",
+                            "https://thumbs.dreamstime.com/b/air-balloons-smack-air-around-rocks-turkey-cappadocia-hot-air-balloon-ride-208326100.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://media-cdn.tripadvisor.com/media/photo-s/16/42/01/e5/late-spring-view-of-dulahazra.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/12/e7/3b/4f/ziraf.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/12/e7/3b/52/dianosoure.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/0f/56/d2/69/dulahazra-safari-park.jpg"
+            ]
+        },
+        {
+            "destination_id": 33,
+            "name": "Ramu Buddhist Village",
+            "address": "Ramu, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.3641,
+            "longitude": 92.1709,
+            "description": "Ramu Buddhist Village is known for its numerous monasteries and Buddhist relics.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 10,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 10,
+                        "name": "Sunset Cruise",
+                        "category": "Adventure",
+                        "description": "Enjoy the mesmerizing view of the sunset while on a cruise.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 10,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://i0.wp.com/bloggeratlarge.com/wp-content/uploads/2020/02/Sunset-cruise-ship.jpg",
+                            "https://www.best.mu/wp-content/uploads/2017/10/Sunset-Cruise-1_800x800.jpg",
+                            "https://www.mauiboattrips.com/wp-content/uploads/2020/02/sunset-private-cruise-hero-header.jpg",
+                            "http://tampabaydatenightguide.com/wp-content/uploads/sites/2/2018/05/starlite-1024x576.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 29,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 29,
+                        "name": "Educational Visit to Museum",
+                        "category": "Education",
+                        "description": "Discover the art, history, and culture of the region in museums.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 80,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.leisureopportunities.co.uk/images/HIGH14780_419927.jpg",
+                            "https://icom.museum/wp-content/uploads/2020/07/ICOM_Voices_W-Maderbacher_IMG2-1024x683.jpeg",
+                            "https://magazine.tcu.edu/wp-content/uploads/2017/08/SUM17-AM-Syllabus_Amon-Carter_2_C-1024x768.jpg",
+                            "https://educulture.info/wp-content/uploads/2018/09/museum-education-erasmus-course.jpeg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 30,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 30,
+                        "name": "Paragliding",
+                        "category": "Adventure",
+                        "description": "Experience the thrill of paragliding with an experienced pilot.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 16,
+                        "max_age": 55,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://img.redbull.com/images/c_crop,x_69,y_0,h_3546,w_5319/c_fill,w_1500,h_1000/q_auto,f_auto/redbullcom/2016/10/04/1331821774506_1/jack-pimblett-paragliding-in-catalonia",
+                            "https://baliparaglidingtours.com/wp-content/uploads/2019/02/15501112109924941-1.jpg",
+                            "https://www.visittnt.com/blog/wp-content/uploads/2018/05/shilong-paragliding.jpg",
+                            "https://i0.wp.com/www.webgranth.com/wp-content/uploads/2014/07/HD-Paragliding-Wallpaper.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://i1.wp.com/whatson.guide/wp-content/uploads/2018/10/maxresdefault.jpg?fit=1280%2C720&ssl=1",
+                "https://thumbs.dreamstime.com/b/ramu-buddhist-temple-place-bandarban-district-chittagong-bangladesh-most-beautiful-place-bagladesh-coxbazar-ramu-262464142.jpg",
+                "http://1.bp.blogspot.com/-SaSGaPp18AI/VrGVshhbMvI/AAAAAAAABgY/8OfGMkGKENw/s1600/Bouddha%2BTemple%2B2.jpg",
+                "https://www.lrbtravelteam.com/wp-content/uploads/2020/10/Ramu-Buddhist-Bihar-..png"
+            ]
+        },
+        {
+            "destination_id": 34,
+            "name": "Adinath Temple",
+            "address": "Maheshkhali Island, Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.5726,
+            "longitude": 92.0205,
+            "description": "Adinath Temple is an ancient Hindu temple on Maheshkhali Island.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 3,
+                    "price": 200,
+                    "activity": {
+                        "activity_id": 3,
+                        "name": "Snorkeling",
+                        "category": "Adventure",
+                        "description": "Discover the underwater world and vibrant marine life through snorkeling.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 10,
+                        "max_age": 50,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://fthmb.tqn.com/XtDX5UROYmPakUeif3ahefihJoI=/1500x1050/filters:fill(auto,1)/SnorkelingWithKids_Getty-56effe365f9b5867a1c4bfb4.jpg",
+                            "https://www.crystalsandsonsiestakey.com/wp-content/uploads/2020/08/siesta-key-snorkeling.jpg",
+                            "https://diveukhurghada.co.uk/wp-content/uploads/2020/02/Snorkelling-1.jpg",
+                            "https://www.sandals.com/blog/content/images/2019/04/3_islandroutes_38-Adv-Eco.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 6,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 6,
+                        "name": "Wildlife Safari",
+                        "category": "Adventure",
+                        "description": "Embark on a thrilling wildlife safari and spot exotic animals.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 18,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.ngorongorocratertanzania.org/wp-content/uploads/2020/10/5-Days-Best-of-Tanzania-Wildlife-Safari.jpg",
+                            "https://www.expertafrica.com/images/background-image/d8aaade7bbcd42d4a0a39588bbf4aa7d-1600.jpg",
+                            "https://www.serengetiparktanzania.com/wp-content/uploads/2020/11/7-Days-Tanzania-Wildlife-Safaris.jpg",
+                            "https://www.expertafrica.com/images/background-image/01a037ba6e6b403a8c6cfe4d64a249f0-1600.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 26,
+                    "price": 350,
+                    "activity": {
+                        "activity_id": 26,
+                        "name": "Cooking Classes",
+                        "category": "Cuisine",
+                        "description": "Learn to cook the local dishes from expert chefs in cooking classes.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 12,
+                        "max_age": 65,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg",
+                            "https://i0.wp.com/www.onegreenplanet.org/wp-content/uploads/2018/01/cooking-class.jpg?fit=1200%2C750&ssl=1",
+                            "https://twincitieskidsclub.com/wp-content/uploads/2020/12/AdobeStock_262111171-1068x712.jpeg",
+                            "https://www.tripsavvy.com/thmb/X2QVmOEdtVKzrV004s0nSHpv520=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-143073620-57c4a8cb3df78cc16eca2488.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://thumbs.dreamstime.com/b/adinath-temple-ranakpur-india-16174784.jpg",
+                "https://i.pinimg.com/originals/f2/b9/a2/f2b9a258ca12636daf90c5f497947e16.jpg",
+                "http://cdn.findmessages.com/images/2016/06/2422-adinath-jain-temple-in-khajuraho.jpg",
+                "https://www.holidify.com/images/cmsuploads/compressed/shutterstock_754855867_20200219151348_20200219151409.jpg"
+            ]
+        },
+        {
+            "destination_id": 35,
+            "name": "Kolatoli Beach",
+            "address": "Coxs Bazar",
+            "city_id": 27,
+            "latitude": 21.4153,
+            "longitude": 91.9833,
+            "description": "Kolatoli Beach is a popular spot for water sports and beachside entertainment.",
+            "image_url": "https://www.citytravelerbd.com/wp-content/uploads/2020/01/Ahsan_Manzil-Front_View.jpg",
+            "created_on": "2023-09-07T18:46:38.000Z",
+            "last_updated_on": "2023-09-07T18:46:38.000Z",
+            "creator_user_id": 0,
+            "activities": [
+                {
+                    "activity_id": 17,
+                    "price": 100,
+                    "activity": {
+                        "activity_id": 17,
+                        "name": "Local Market Shopping",
+                        "category": "Cuisine",
+                        "description": "Explore the vibrant local markets and shop for unique handicrafts.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 80,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://trulocal.imgix.net/shared/media/blog/56/image.png?h=700&fit=max&auto=format,compress",
+                            "https://www.holidify.com/images/cmsuploads/compressed/27217455627_bde73bce85_b_20190716095410.jpg",
+                            "https://www.thespruceeats.com/thmb/cw-Ee_rFSGcWsoAF1sPzYgB0L0s=/1148x0/filters:no_upscale():max_bytes(150000):strip_icc()/Union-Square-Farmers-Market-579cacea3df78c32761d9711.jpg",
+                            "https://cleanfoodcrush.com/wp-content/uploads/2016/07/shop-at-local-markets-1024x683.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 19,
+                    "price": 300,
+                    "activity": {
+                        "activity_id": 19,
+                        "name": "Kayaking Adventure",
+                        "category": "Adventure",
+                        "description": "Paddle through the adventurous waters on a kayaking expedition.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 14,
+                        "max_age": 60,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://assets.thrillexperiences.com.au/content/product-img/kayaking-adventure-for-two-11.jpg",
+                            "https://www.telegraph.co.uk/content/dam/Wellbeing/Spark/Voltarol/female-kayaking-xlarge.jpg",
+                            "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/ycfhmscbsclejxwavtjn/RainforestKayakingAdventureinSarawak.jpg",
+                            "https://a.rgbimg.com/cache1v3dl0/users/l/lu/lusi/600/ocPR7QM.jpg"
+                        ]
+                    }
+                },
+                {
+                    "activity_id": 36,
+                    "price": 150,
+                    "activity": {
+                        "activity_id": 36,
+                        "name": "Local Music and Dance",
+                        "category": "Culture",
+                        "description": "Experience the local music and dance performances showcasing traditions.",
+                        "image_url": "https://cdn.getyourguide.com/img/tour/5cb3c36a97f0d.jpeg/148.jpg",
+                        "min_age": 8,
+                        "max_age": 70,
+                        "creator_user_id": 0,
+                        "created_on": "2023-09-07T18:46:44.000Z",
+                        "last_updated_on": "2023-09-07T18:46:44.000Z",
+                        "images": [
+                            "https://st3.depositphotos.com/1591375/12954/i/950/depositphotos_129543948-stock-photo-local-dancers-and-musicians-perform.jpg",
+                            "https://i.ytimg.com/vi/dzfrX40zHAc/maxresdefault.jpg",
+                            "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/03/Nepal-Folk-Dance.jpg?w=800&ssl=1",
+                            "http://ww4.hdnux.com/photos/57/14/10/12370475/3/920x920.jpg"
+                        ]
+                    }
+                }
+            ],
+            "city": {
+                "city_id": 27,
+                "name": "Coxs Bazar",
+                "country_name": "Bangladesh",
+                "population": 249000,
+                "weather_type": "sunny"
+            },
+            "images": [
+                "https://i.pinimg.com/originals/25/4d/7f/254d7f68523959996a18488168ebc62b.jpg",
+                "https://4.bp.blogspot.com/-f86CbsOMDQ8/WAHn3r3ldFI/AAAAAAAAAC4/4uQpAjgWzCI_qYiOSZTslpm7mOeej4RiACLcB/s640/Kolatoli-beach.jpg",
+                "https://i.pinimg.com/originals/30/90/23/3090233b35b24271fd5a2ff70e4b90c2.jpg",
+                "http://offroadbangladesh.com/wp-content/uploads/2015/02/Saint-Martin-6-1024x685.jpg"
+            ]
+        }
+    ]
+}
 ```
