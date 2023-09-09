@@ -282,6 +282,9 @@ const createHotel = async (payload) => {
 }
 
 const updateHotel = async (payload) => {
+
+    await notifyHotel({hotel_id: payload.hotel_id, action_msg: 'updated'});
+
     console.log(payload)
     if(payload.hotel_id === undefined){
         console.log('Hotel id not given in req.body')
@@ -335,8 +338,6 @@ const updateHotel = async (payload) => {
             await insertImagesForObject(object)
         }
 
-        await notifyHotel({hotel_id: hotel_id, action_msg: 'updated'});
-
         const payload = { hotel_id : hotel_id }
         const result = await getSingleHotel(payload)
         console.log(result)
@@ -349,24 +350,16 @@ const updateHotel = async (payload) => {
 }
 
 const deleteHotel = async (payload) => {
+
+    await notifyHotel({hotel_id: payload.hotel_id, action_msg: 'deleted'});
+
     console.log(payload)
 
-    // const sql = `
-    // DELETE FROM HOTELS
-    // WHERE hotel_id = :hotel_id
-    // `
-
     const sql = `
-    DECLARE 
-        
-        
-        
-    BEGIN 
-        
-        DELETE_HOTEL(:hotel_id);
-        
-    END;
+    DELETE FROM HOTELS
+    WHERE hotel_id = :hotel_id
     `
+
     const binds = {
         hotel_id : payload.hotel_id
     }

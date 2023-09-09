@@ -3,6 +3,29 @@ const db = require('../db/db');
 const { getSingleCity } = require('./city');
 const { getRatingInfoFromObject, getImagesFromObject } = require('./global_helpers');
 
+const notifyRestaurant = async (payload) => {
+
+    console.log('at notifyRestaurant ', payload)
+
+    const sql = `
+    DECLARE 
+        
+        
+        
+    BEGIN 
+        
+        NOTIFY_RESTAURANT_RELEVANT_USERS(:restaurant_id,:action_msg);
+        
+    END;
+    `
+    const binds = {
+        restaurant_id : payload.restaurant_id,
+        action_msg : payload.action_msg
+    }
+    await db.execute(sql, binds, db.options);
+    console.log('notified')
+}
+
 const getSingleRestaurant = async (payload) => {
 
     const restaurant_id = payload.restaurant_id;
@@ -223,6 +246,9 @@ const createRestaurant = async (payload) => {
 };
 
 const updateRestaurant = async (payload) => {
+
+    await notifyRestaurant({restaurant_id: payload.restaurant_id, action_msg: 'updated'});
+
     console.log(payload);
     if (payload.restaurant_id === undefined) {
         console.log('Restaurant id not given in req.body');
@@ -272,18 +298,15 @@ const updateRestaurant = async (payload) => {
 };
 
 const deleteRestaurant = async (payload) => {
+
+    await notifyRestaurant({restaurant_id: payload.restaurant_id, action_msg: 'deleted'});
+
     console.log(payload);
     const sql = `
-    DECLARE 
-        
-        
-        
-    BEGIN 
-        
-        DELETE_RESTAURANT(:restaurant_id);
-        
-    END;
+    DELETE FROM RESTAURANTS
+    WHERE restaurant_id = :restaurant_id
     `;
+    
     const binds = {
         restaurant_id: payload.restaurant_id,
     };
