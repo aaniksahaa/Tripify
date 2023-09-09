@@ -1,53 +1,161 @@
 [
   {
-    "from_city_id": 19,
-    "to_city_id": 8,
-    "name": "Coastal Odyssey",
-    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
-    "image_url": "https://eplatfront.villagroup.com/content/themes/base/images/puerto-vallarta/activities/p1/a59/16TIROLESA.jpg?width=920&height=520&mode=crop&autorotate=true",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-16",
+    "from_city_id": 26,
+    "to_city_id": 28,
+    "name": "Adventure Expedition",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "https://www.planetware.com/wpimages/2019/12/colorado-denver-best-hikes-rocky-mountain-national-park.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-20",
     "contains": [
       {
-        "destination_id": 21,
-        "activity_id": 9,
-        "tentative_date": "2023-08-31"
+        "destination_id": 32,
+        "activity_id": 13,
+        "tentative_date": "2023-09-02"
       },
       {
-        "destination_id": 77,
-        "activity_id": 30,
-        "tentative_date": "2023-08-30"
+        "destination_id": 26,
+        "activity_id": 6,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 47,
+        "activity_id": 36,
+        "tentative_date": "2023-09-04"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 132,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-03"
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
       },
       {
-        "hotel_id": 170,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-05"
+        "hotel_id": 7,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-06"
       },
       {
-        "hotel_id": 20,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-04"
+        "hotel_id": 10,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 193
-      },
-      {
         "restaurant_id": 8
       },
       {
-        "restaurant_id": 137
+        "restaurant_id": 5
       },
       {
-        "restaurant_id": 96
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 12,
+    "to_city_id": 26,
+    "name": "Eco-Friendly Escape",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "https://www.tanzaniatourismsafaris.com/wp-content/uploads/2020/01/6-Days-Tanzania-Wildlife-Safari.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 79,
+        "activity_id": 3,
+        "tentative_date": "2023-09-03"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-06"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 8
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 18,
+    "to_city_id": 30,
+    "name": "Urban Exploration",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "https://cdn.tourradar.com/s3/tour/645x430/169430_854ce2ae.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 15,
+        "activity_id": 25,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 7,
+        "activity_id": 5,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 9
       }
     ],
     "guides": [
@@ -58,45 +166,93 @@
   },
   {
     "from_city_id": 26,
-    "to_city_id": 25,
-    "name": "Historical Journey",
-    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
-    "image_url": "https://countryclubhills.org/wp-content/uploads/2018/07/2018-camping-with-the-stars-banner.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-18",
+    "to_city_id": 28,
+    "name": "Wilderness Retreat",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "https://i.pinimg.com/originals/76/47/d7/7647d71936877076d6e5ad94c2e847eb.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-16",
     "contains": [
       {
-        "destination_id": 42,
-        "activity_id": 16,
-        "tentative_date": "2023-09-03"
+        "destination_id": 19,
+        "activity_id": 8,
+        "tentative_date": "2023-09-04"
       },
       {
-        "destination_id": 23,
-        "activity_id": 28,
-        "tentative_date": "2023-09-05"
+        "destination_id": 37,
+        "activity_id": 6,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 29,
+        "activity_id": 32,
+        "tentative_date": "2023-09-04"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 206,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
       },
       {
-        "hotel_id": 169,
-        "checkin_date": "2023-09-05",
+        "hotel_id": 10,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 14,
+    "to_city_id": 26,
+    "name": "Tropical Getaway",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/0e/44/38/4a/rainforest-walk.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 21,
+        "activity_id": 8,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 26,
+        "activity_id": 7,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-03",
         "checkout_date": "2023-09-08"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 129
-      },
-      {
-        "restaurant_id": 56
-      },
-      {
-        "restaurant_id": 108
+        "restaurant_id": 7
       }
     ],
     "guides": [
@@ -106,49 +262,756 @@
     ]
   },
   {
-    "from_city_id": 6,
-    "to_city_id": 5,
-    "name": "Wilderness Retreat",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "https://i.pinimg.com/474x/b1/ba/82/b1ba82c9dd4b651e27512fc15b44dc60--starry-nights-the-nights.jpg",
-    "start_date": "2023-09-02",
+    "from_city_id": 28,
+    "to_city_id": 25,
+    "name": "Adventure Expedition",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "http://www.arenatours.com/wp-content/uploads/maldives/paradise-island/paradise-island-5.jpeg",
+    "start_date": "2023-08-31",
     "end_date": "2023-09-15",
     "contains": [
       {
-        "destination_id": 55,
-        "activity_id": 13,
-        "tentative_date": "2023-09-03"
+        "destination_id": 61,
+        "activity_id": 34,
+        "tentative_date": "2023-09-02"
       },
       {
-        "destination_id": 51,
-        "activity_id": 22,
+        "destination_id": 37,
+        "activity_id": 7,
         "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 15,
-        "activity_id": 9,
-        "tentative_date": "2023-09-05"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 251,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
+        "hotel_id": 7,
+        "checkin_date": "2023-09-01",
+        "checkout_date": "2023-09-07"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 148
+        "restaurant_id": 10
       },
       {
-        "restaurant_id": 50
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 20,
+    "to_city_id": 14,
+    "name": "Wilderness Retreat",
+    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
+    "image_url": "https://vault-london.com/wp-content/uploads/2019/04/Adventure-Activities.jpg",
+    "start_date": "2023-08-31",
+    "end_date": "2023-09-15",
+    "contains": [
+      {
+        "destination_id": 18,
+        "activity_id": 12,
+        "tentative_date": "2023-09-01"
+      },
+      {
+        "destination_id": 60,
+        "activity_id": 39,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 12,
+        "activity_id": 29,
+        "tentative_date": "2023-09-02"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-05"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 9
       },
       {
         "restaurant_id": 8
       },
       {
-        "restaurant_id": 17
+        "restaurant_id": 10
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 21,
+    "to_city_id": 6,
+    "name": "Cultural Discovery",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://res-1.cloudinary.com/enchanting/q_70,f_auto,c_fit,w_1600,h_600/hj-web/2020/10/003524-Brazil-Amazon-shutterstock-223517755-1.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 16,
+        "activity_id": 30,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 35,
+        "activity_id": 36,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 60,
+        "activity_id": 39,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-08"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 6
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 24,
+    "to_city_id": 21,
+    "name": "Tropical Getaway",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "https://i.pinimg.com/736x/1b/22/61/1b2261b1f316f93b08b186620f4916f7--rainforests-australia.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 57,
+        "activity_id": 30,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 10
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 13,
+    "to_city_id": 8,
+    "name": "Coastal Odyssey",
+    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
+    "image_url": "https://res.cloudinary.com/zicasso/image/fetch/c_fill,f_auto,g_center,q_auto,w_auto/https://images.zicasso.com/2954309f78392efce9c21b4661597dfc.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 69,
+        "activity_id": 49,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 39,
+        "activity_id": 16,
+        "tentative_date": "2023-09-08"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-08",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 17,
+    "to_city_id": 22,
+    "name": "Coastal Odyssey",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://memolition.com/wp-content/uploads/2013/06/12Winter-night-camp-near-Moab-Utah.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 55,
+        "activity_id": 13,
+        "tentative_date": "2023-09-07"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-08",
+        "checkout_date": "2023-09-11"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-12"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 7,
+    "to_city_id": 22,
+    "name": "Relaxation Retreat",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "https://i.pinimg.com/736x/c9/cc/5e/c9cc5eba6733617bcf041656231d2659.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 25,
+        "activity_id": 20,
+        "tentative_date": "2023-09-03"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 6
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 20,
+    "to_city_id": 3,
+    "name": "Wilderness Retreat",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://media.travel-wise.com/wp-content/uploads/2017/02/Adventure-travel-comp.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 76,
+        "activity_id": 16,
+        "tentative_date": "2023-09-06"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-11"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 29,
+    "to_city_id": 8,
+    "name": "Adventure Expedition",
+    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
+    "image_url": "https://cdn.tourradar.com/s3/tour/645x430/169430_854ce2ae.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 4,
+        "activity_id": 10,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 34,
+        "activity_id": 3,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 76,
+        "activity_id": 16,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-06"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-06"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 23,
+    "to_city_id": 6,
+    "name": "Eco-Friendly Escape",
+    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
+    "image_url": "http://34southtours.com/wp-content/uploads/2015/06/Garden-Route-Game-Lodge-safari-e1444137875544.jpg",
+    "start_date": "2023-08-31",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 5,
+        "activity_id": 20,
+        "tentative_date": "2023-09-02"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-06"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 15,
+    "to_city_id": 25,
+    "name": "Mountainous Adventure",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "https://nomadparadise.com/wp-content/uploads/2020/12/200_07-768x1152.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 23,
+        "activity_id": 25,
+        "tentative_date": "2023-09-06"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-11"
+      },
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 4,
+    "to_city_id": 7,
+    "name": "Eco-Friendly Escape",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "https://cdn.meditainment.com/www/images/dmImage/SourceImage/island-paradise.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 4,
+        "activity_id": 10,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-11"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 8
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 21,
+    "to_city_id": 17,
+    "name": "Eco-Friendly Escape",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "http://www.travelvivi.com/wp-content/uploads/2011/02/africa-safari1.jpg",
+    "start_date": "2023-08-31",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 12,
+        "activity_id": 29,
+        "tentative_date": "2023-09-01"
+      },
+      {
+        "destination_id": 14,
+        "activity_id": 14,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 36,
+        "activity_id": 36,
+        "tentative_date": "2023-09-02"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-05"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-05"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 10,
+    "to_city_id": 24,
+    "name": "Eco-Friendly Escape",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://media-cdn.tripadvisor.com/media/photo-s/0e/44/38/4a/rainforest-walk.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 60,
+        "activity_id": 38,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 34,
+        "activity_id": 6,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 62,
+        "activity_id": 16,
+        "tentative_date": "2023-09-07"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 20,
+    "to_city_id": 26,
+    "name": "Cultural Discovery",
+    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
+    "image_url": "https://disneycruise.org/wp-content/uploads/2020/03/adventure-holidays-768x768.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-16",
+    "contains": [
+      {
+        "destination_id": 31,
+        "activity_id": 30,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 47,
+        "activity_id": 17,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 52,
+        "activity_id": 34,
+        "tentative_date": "2023-09-06"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 6
       }
     ],
     "guides": [
@@ -162,39 +1025,108 @@
   },
   {
     "from_city_id": 27,
-    "to_city_id": 3,
-    "name": "Mountainous Adventure",
-    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
-    "image_url": "https://fh-sites.imgix.net/sites/392/2016/11/02205718/slide23.png?auto=compress%2Cformat&fit=crop&crop=faces&w=960&h=720",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-18",
+    "to_city_id": 18,
+    "name": "Wilderness Retreat",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "https://www.tripnstay.com/wp-content/uploads/2019/12/safari-compressed.jpg",
+    "start_date": "2023-08-31",
+    "end_date": "2023-09-20",
     "contains": [
       {
-        "destination_id": 55,
-        "activity_id": 16,
-        "tentative_date": "2023-09-01"
+        "destination_id": 59,
+        "activity_id": 43,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 16,
+        "activity_id": 30,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 6,
+        "activity_id": 2,
+        "tentative_date": "2023-09-02"
       }
     ],
     "hotels": [
       {
         "hotel_id": 6,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-04"
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
       },
       {
-        "hotel_id": 197,
+        "hotel_id": 1,
         "checkin_date": "2023-09-01",
         "checkout_date": "2023-09-05"
       },
       {
-        "hotel_id": 5,
-        "checkin_date": "2023-09-01",
+        "hotel_id": 4,
+        "checkin_date": "2023-09-02",
         "checkout_date": "2023-09-06"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 79
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 29,
+    "to_city_id": 30,
+    "name": "Relaxation Retreat",
+    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
+    "image_url": "https://th-thumbnailer.cdn-si-edu.com/wWEBs1AzxSzGirVVCtXcb80SiUc=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/08afb422-2639-41c9-aa98-7eaa94ec3a9c.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 33,
+        "activity_id": 10,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 57,
+        "activity_id": 34,
+        "tentative_date": "2023-09-07"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 6
       }
     ],
     "guides": [
@@ -207,51 +1139,409 @@
     ]
   },
   {
-    "from_city_id": 7,
-    "to_city_id": 29,
-    "name": "Adventure Expedition",
-    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
-    "image_url": "https://uploads.exoticca.travel/global/destination/poi/paradise-island.png",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-14",
+    "from_city_id": 9,
+    "to_city_id": 5,
+    "name": "Tropical Getaway",
+    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
+    "image_url": "https://i.pinimg.com/originals/92/1b/1d/921b1df2a36c54b662c445901450469b.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-17",
     "contains": [
       {
-        "destination_id": 56,
-        "activity_id": 29,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 60,
-        "activity_id": 38,
-        "tentative_date": "2023-09-01"
+        "destination_id": 30,
+        "activity_id": 11,
+        "tentative_date": "2023-09-06"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 170,
-        "checkin_date": "2023-09-01",
+        "hotel_id": 4,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 2,
+    "to_city_id": 24,
+    "name": "Urban Exploration",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "https://media.travel-wise.com/wp-content/uploads/2017/02/Adventure-travel-comp.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 18,
+        "activity_id": 2,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 78,
+        "activity_id": 49,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 59,
+        "activity_id": 43,
+        "tentative_date": "2023-09-06"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 18,
+    "to_city_id": 9,
+    "name": "Historical Journey",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://images.thrillophilia.com/image/upload/s--yiDmNBCn--/c_fill,f_auto,fl_strip_profile,h_600,q_auto,w_975/v1/images/photos/000/358/352/original/1602331087_1602064804_superflywinter2016-511.jpg.png.jpg?1602331086",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 36,
+        "activity_id": 19,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 78,
+        "activity_id": 49,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 45,
+        "activity_id": 32,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-04",
         "checkout_date": "2023-09-07"
       },
       {
-        "hotel_id": 157,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-06"
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-08"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 7
       },
       {
-        "hotel_id": 20,
-        "checkin_date": "2023-09-02",
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 4
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 5,
+    "to_city_id": 10,
+    "name": "Relaxation Retreat",
+    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
+    "image_url": "https://i.pinimg.com/originals/88/24/e0/8824e06c24d96f92b691efc22640c733.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 33,
+        "activity_id": 29,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 47,
+        "activity_id": 17,
+        "tentative_date": "2023-09-07"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 6,
+    "to_city_id": 8,
+    "name": "Adventure Expedition",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://www.abercrombiekent.com/-/media/ak/media-for-prod/product-lines-and-travel-interests/other-images/africa-kenya-cheetahs-guests-vehicle-2.jpg?sc=0.7&hash=FB84E97DA3BFD905E390166BF9579FB9",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-15",
+    "contains": [
+      {
+        "destination_id": 35,
+        "activity_id": 19,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 38,
+        "activity_id": 32,
+        "tentative_date": "2023-09-03"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
         "checkout_date": "2023-09-06"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 137
+        "restaurant_id": 4
       },
       {
-        "restaurant_id": 77
+        "restaurant_id": 8
       },
       {
-        "restaurant_id": 193
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 9,
+    "to_city_id": 24,
+    "name": "Mountainous Adventure",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "https://images.thrillophilia.com/image/upload/s--DoJZEkmt--/c_fill,f_auto,fl_strip_profile,g_auto,h_600,q_auto,w_975/v1/collections/images/014/513/035/original/1513166267_camp-under-the-stars.jpg.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 44,
+        "activity_id": 15,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 48,
+        "activity_id": 9,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 48,
+        "activity_id": 20,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 29,
+    "to_city_id": 7,
+    "name": "Coastal Odyssey",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://www.choicehotels.com/cms/images/choice-hotels/demand-articles/img_best-beach-vacations-01/img_best-beach-vacations-01.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-20",
+    "contains": [
+      {
+        "destination_id": 75,
+        "activity_id": 19,
+        "tentative_date": "2023-09-03"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 1,
+    "to_city_id": 19,
+    "name": "Tropical Getaway",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "https://blog.weekendthrill.com/wp-content/uploads/2016/05/ADVENTURE.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 15,
+        "activity_id": 25,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 37,
+        "activity_id": 3,
+        "tentative_date": "2023-09-07"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-11"
+      },
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 2
       }
     ],
     "guides": [
@@ -262,665 +1552,52 @@
   },
   {
     "from_city_id": 28,
-    "to_city_id": 14,
-    "name": "Cultural Discovery",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "http://3.bp.blogspot.com/-owqrbh-zODo/VDQgWG9pIaI/AAAAAAAABBM/hZHGXoVDX44/w1200-h630-p-k-no-nu/banner2.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 70,
-        "activity_id": 26,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 30,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-05"
-      },
-      {
-        "hotel_id": 217,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 16,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-04"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 15
-      },
-      {
-        "restaurant_id": 25
-      },
-      {
-        "restaurant_id": 56
-      },
-      {
-        "restaurant_id": 93
-      },
-      {
-        "restaurant_id": 68
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      },
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 25,
-    "to_city_id": 21,
-    "name": "Mountainous Adventure",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "http://yaffa-cdn.s3.amazonaws.com/yaffadsp/images/yafPhotoCompetitionEntry/imageHero/o_1avonfbj226i1c8q16ob18544sbi-CampingUnderTheStars.JPG",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-16",
-    "contains": [
-      {
-        "destination_id": 78,
-        "activity_id": 11,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 15,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 111,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 45,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 7
-      },
-      {
-        "restaurant_id": 154
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      },
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 24,
-    "to_city_id": 16,
-    "name": "Cultural Discovery",
-    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://i.pinimg.com/originals/d2/db/cc/d2dbcc18efc6729a265d8ebfe739dba3.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-16",
-    "contains": [
-      {
-        "destination_id": 30,
-        "activity_id": 32,
-        "tentative_date": "2023-09-01"
-      },
-      {
-        "destination_id": 38,
-        "activity_id": 32,
-        "tentative_date": "2023-08-30"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 67,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 27,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-03"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 140
-      },
-      {
-        "restaurant_id": 24
-      },
-      {
-        "restaurant_id": 69
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      },
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 7,
-    "to_city_id": 19,
-    "name": "Historical Journey",
-    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
-    "image_url": "https://tourscanner.com/blog/wp-content/uploads/2017/10/Paradise-islands-to-visit.jpg",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 71,
-        "activity_id": 30,
-        "tentative_date": "2023-09-06"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 166,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-10"
-      },
-      {
-        "hotel_id": 101,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-10"
-      },
-      {
-        "hotel_id": 291,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-10"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 104
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 15,
-    "to_city_id": 12,
-    "name": "Adventure Expedition",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "http://www.untamedpath.com/wp-content/uploads/deep-amazon-group-by-ceiba-tree.jpg",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 30,
-        "activity_id": 29,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 41,
-        "activity_id": 31,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 47,
-        "activity_id": 17,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 12,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 19
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 24,
-    "to_city_id": 17,
-    "name": "Coastal Odyssey",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "http://34southtours.com/wp-content/uploads/2015/06/Garden-Route-Game-Lodge-safari-e1444137875544.jpg",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 31,
-        "activity_id": 31,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 79,
-        "activity_id": 6,
-        "tentative_date": "2023-09-05"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 228,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-10"
-      },
-      {
-        "hotel_id": 283,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 155
-      },
-      {
-        "restaurant_id": 114
-      },
-      {
-        "restaurant_id": 67
-      },
-      {
-        "restaurant_id": 142
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 17,
-    "to_city_id": 1,
-    "name": "Historical Journey",
-    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://media.architecturaldigest.com/photos/565e1492e6e26e7256b11f25/16:9/w_1280,c_limit/one-and-only-ocean-club-008.jpg?mbid=social_retweet",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 8,
-        "activity_id": 21,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 27,
-        "activity_id": 8,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 27,
-        "activity_id": 9,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 147,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 35,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 175,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 106
-      },
-      {
-        "restaurant_id": 92
-      },
-      {
-        "restaurant_id": 29
-      },
-      {
-        "restaurant_id": 18
-      },
-      {
-        "restaurant_id": 21
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 23,
     "to_city_id": 25,
-    "name": "Wilderness Retreat",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "https://www.leisureaccess.co.uk/wp-content/uploads/2018/04/camping-out-under-the-stars.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 47,
-        "activity_id": 36,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 18,
-        "activity_id": 12,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 237,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 177,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 167,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 111
-      },
-      {
-        "restaurant_id": 162
-      },
-      {
-        "restaurant_id": 118
-      },
-      {
-        "restaurant_id": 36
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 22,
-    "to_city_id": 14,
     "name": "Mountainous Adventure",
     "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://i.pinimg.com/originals/2e/c0/90/2ec090c3dcb2a55310c143b409a27e32.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 71,
-        "activity_id": 30,
-        "tentative_date": "2023-09-05"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 280,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      },
-      {
-        "hotel_id": 73,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 132
-      },
-      {
-        "restaurant_id": 2
-      },
-      {
-        "restaurant_id": 194
-      },
-      {
-        "restaurant_id": 184
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 29,
-    "to_city_id": 28,
-    "name": "Adventure Expedition",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "http://www.balistarisland.com/wp-content/uploads/2016/04/ayungriverrafting-1024x555.jpg",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 37,
-        "activity_id": 6,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 33,
-        "activity_id": 30,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 40,
-        "activity_id": 9,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 36,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 98
-      },
-      {
-        "restaurant_id": 83
-      },
-      {
-        "restaurant_id": 46
-      },
-      {
-        "restaurant_id": 141
-      },
-      {
-        "restaurant_id": 198
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 12,
-    "to_city_id": 26,
-    "name": "Adventure Expedition",
-    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://youthincmag.com/wp-content/uploads/2016/04/Side2.jpg",
+    "image_url": "https://www.visitnsw.com/sites/visitnsw/files/styles/gallery_full_width/public/2021-01/171408.jpg?itok=fQ-oOowu",
     "start_date": "2023-08-31",
     "end_date": "2023-09-17",
     "contains": [
       {
-        "destination_id": 77,
-        "activity_id": 34,
+        "destination_id": 59,
+        "activity_id": 43,
         "tentative_date": "2023-09-01"
       },
       {
-        "destination_id": 17,
-        "activity_id": 30,
+        "destination_id": 64,
+        "activity_id": 28,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 65,
+        "activity_id": 42,
         "tentative_date": "2023-09-03"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 188,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-05"
-      },
-      {
-        "hotel_id": 94,
+        "hotel_id": 6,
         "checkin_date": "2023-09-02",
         "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 176
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 22,
-    "to_city_id": 24,
-    "name": "Adventure Expedition",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "https://cdn.tourradar.com/s3/tour/645x430/177634_446fd2d0.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 58,
-        "activity_id": 11,
-        "tentative_date": "2023-09-01"
       },
       {
-        "destination_id": 48,
-        "activity_id": 9,
-        "tentative_date": "2023-08-30"
-      },
-      {
-        "destination_id": 44,
-        "activity_id": 16,
-        "tentative_date": "2023-08-31"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 182,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 54,
+        "hotel_id": 7,
         "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-03"
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-07"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 178
+        "restaurant_id": 4
       },
       {
-        "restaurant_id": 31
-      },
-      {
-        "restaurant_id": 117
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 17,
-    "to_city_id": 15,
-    "name": "Coastal Odyssey",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "https://i.pinimg.com/736x/7f/0d/8a/7f0d8aef5044ea601d2dab45e9fc59ba--tourism-industry-adventure-tours.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 76,
-        "activity_id": 15,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 147,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 32
-      },
-      {
-        "restaurant_id": 16
-      },
-      {
-        "restaurant_id": 90
-      },
-      {
-        "restaurant_id": 64
+        "restaurant_id": 10
       }
     ],
     "guides": [
@@ -934,197 +1611,193 @@
   },
   {
     "from_city_id": 8,
-    "to_city_id": 10,
+    "to_city_id": 6,
     "name": "Wilderness Retreat",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "https://www.familyvacationcritic.com/wp-content/uploads/sites/19/2011/09/0fd4094d7950c1f4319d65107e50034d-1280x640.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 72,
-        "activity_id": 11,
-        "tentative_date": "2023-08-31"
-      },
-      {
-        "destination_id": 79,
-        "activity_id": 7,
-        "tentative_date": "2023-08-31"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 126,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-05"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 195
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 9,
-    "to_city_id": 12,
-    "name": "Eco-Friendly Escape",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "https://the-gratefulthread.com/wp-content/uploads/2020/08/Adventure-Travel6.jpg",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-16",
-    "contains": [
-      {
-        "destination_id": 53,
-        "activity_id": 10,
-        "tentative_date": "2023-09-05"
-      },
-      {
-        "destination_id": 76,
-        "activity_id": 16,
-        "tentative_date": "2023-09-06"
-      },
-      {
-        "destination_id": 17,
-        "activity_id": 34,
-        "tentative_date": "2023-09-05"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 134,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 4,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-10"
-      },
-      {
-        "hotel_id": 208,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 183
-      },
-      {
-        "restaurant_id": 32
-      },
-      {
-        "restaurant_id": 19
-      },
-      {
-        "restaurant_id": 128
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 13,
-    "to_city_id": 13,
-    "name": "Cultural Discovery",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "https://south.tours/wp-content/uploads/2021/02/Adventurous-activities-skydiving-2048x1152.jpg",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 64,
-        "activity_id": 34,
-        "tentative_date": "2023-09-06"
-      },
-      {
-        "destination_id": 42,
-        "activity_id": 13,
-        "tentative_date": "2023-09-05"
-      },
-      {
-        "destination_id": 6,
-        "activity_id": 5,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 74,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 17
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 15,
-    "to_city_id": 21,
-    "name": "Urban Exploration",
-    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
-    "image_url": "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/282027_Viator_Shutterstock_168130.jpg",
+    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
+    "image_url": "https://blog.assets.thediscoverer.com/2020/05/shutterstock_1678620178-copy.jpg",
     "start_date": "2023-09-01",
-    "end_date": "2023-09-15",
+    "end_date": "2023-09-18",
     "contains": [
       {
         "destination_id": 44,
         "activity_id": 15,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 35,
-        "activity_id": 36,
         "tentative_date": "2023-09-02"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 13,
+        "hotel_id": 7,
         "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 6
       },
       {
-        "hotel_id": 63,
-        "checkin_date": "2023-09-02",
+        "restaurant_id": 2
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 30,
+    "to_city_id": 26,
+    "name": "Tropical Getaway",
+    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
+    "image_url": "https://i.pinimg.com/originals/3c/a3/99/3ca39963e4a08c38f2d8a5426bfd7674.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 17,
+        "activity_id": 34,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 33,
+        "activity_id": 30,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 28,
+        "activity_id": 28,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-06"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 12,
+    "to_city_id": 20,
+    "name": "Eco-Friendly Escape",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "https://th-thumbnailer.cdn-si-edu.com/wWEBs1AzxSzGirVVCtXcb80SiUc=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/08afb422-2639-41c9-aa98-7eaa94ec3a9c.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-15",
+    "contains": [
+      {
+        "destination_id": 19,
+        "activity_id": 20,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 46,
+        "activity_id": 7,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 69,
+        "activity_id": 49,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 3
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 12,
+    "to_city_id": 29,
+    "name": "Cultural Discovery",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "http://www.onthegotours.com/repository/Travelling-by-boat-into-the-depth-of-Amazon-Jungles-in-Cuyabeno-National-Park-Ecuador-691421549621844_crop_800_600.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-16",
+    "contains": [
+      {
+        "destination_id": 37,
+        "activity_id": 7,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 24,
+        "activity_id": 5,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
         "checkout_date": "2023-09-08"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 174
-      },
-      {
-        "restaurant_id": 136
-      },
-      {
-        "restaurant_id": 73
-      },
-      {
-        "restaurant_id": 59
+        "restaurant_id": 3
       }
     ],
     "guides": [
+      {
+        "guide_id": 1
+      },
       {
         "guide_id": 2
       }
@@ -1132,844 +1805,48 @@
   },
   {
     "from_city_id": 21,
-    "to_city_id": 7,
-    "name": "Eco-Friendly Escape",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/172097_Viator_Shutterstock_121131.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 56,
-        "activity_id": 32,
-        "tentative_date": "2023-09-01"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 199,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-05"
-      },
-      {
-        "hotel_id": 229,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-05"
-      },
-      {
-        "hotel_id": 86,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-03"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 126
-      },
-      {
-        "restaurant_id": 40
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 24,
-    "to_city_id": 28,
-    "name": "Wilderness Retreat",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "https://memolition.com/wp-content/uploads/2013/06/12Winter-night-camp-near-Moab-Utah.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 47,
-        "activity_id": 17,
-        "tentative_date": "2023-08-30"
-      },
-      {
-        "destination_id": 6,
-        "activity_id": 5,
-        "tentative_date": "2023-08-30"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 280,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-03"
-      },
-      {
-        "hotel_id": 134,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 248,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-05"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 71
-      },
-      {
-        "restaurant_id": 156
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 19,
-    "to_city_id": 22,
+    "to_city_id": 17,
     "name": "Historical Journey",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "https://evanevanstours.com/blog/wp-content/uploads/2020/03/british-countryside-experiences.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 58,
-        "activity_id": 11,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 29,
-        "activity_id": 29,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 58,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-08"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 11
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 14,
-    "to_city_id": 16,
-    "name": "Eco-Friendly Escape",
-    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
-    "image_url": "https://www.leisureaccess.co.uk/wp-content/uploads/2018/04/camping-out-under-the-stars.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 58,
-        "activity_id": 49,
-        "tentative_date": "2023-08-31"
-      },
-      {
-        "destination_id": 46,
-        "activity_id": 3,
-        "tentative_date": "2023-08-30"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 154,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 224,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-04"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 173
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 25,
-    "to_city_id": 21,
-    "name": "Adventure Expedition",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "http://3.bp.blogspot.com/-owqrbh-zODo/VDQgWG9pIaI/AAAAAAAABBM/hZHGXoVDX44/w1200-h630-p-k-no-nu/banner2.jpg",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 20,
-        "activity_id": 6,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 26,
-        "activity_id": 3,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 190,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 23,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 209,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 151
-      },
-      {
-        "restaurant_id": 34
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 16,
-    "to_city_id": 10,
-    "name": "Mountainous Adventure",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "https://www.planetware.com/wpimages/2019/12/colorado-denver-best-hikes-rocky-mountain-national-park.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 15,
-        "activity_id": 25,
-        "tentative_date": "2023-08-31"
-      },
-      {
-        "destination_id": 11,
-        "activity_id": 36,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 65,
-        "activity_id": 41,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 15,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-05"
-      },
-      {
-        "hotel_id": 144,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 5,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 92
-      },
-      {
-        "restaurant_id": 86
-      },
-      {
-        "restaurant_id": 50
-      },
-      {
-        "restaurant_id": 157
-      },
-      {
-        "restaurant_id": 42
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 29,
-    "to_city_id": 18,
-    "name": "Eco-Friendly Escape",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "http://www.cotswoldsadventures.co.uk/wp-content/uploads/2015/03/Rural-Landscape-Cotswolds.jpg",
+    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
+    "image_url": "https://www.10a-tours.com/wp-content/uploads/2021/02/1200x900-03-Group-of-hikers-descending-from-the-mountain-in-the-Rocky-Mountain-National-Park-1024x768.jpg",
     "start_date": "2023-09-03",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 9,
-        "activity_id": 2,
-        "tentative_date": "2023-09-05"
-      },
-      {
-        "destination_id": 65,
-        "activity_id": 43,
-        "tentative_date": "2023-09-06"
-      },
-      {
-        "destination_id": 34,
-        "activity_id": 6,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 166,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 114,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 77,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 90
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 22,
-    "to_city_id": 25,
-    "name": "Coastal Odyssey",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "https://blog.weekendthrill.com/wp-content/uploads/2016/05/ADVENTURE.jpg",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 74,
-        "activity_id": 19,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 54,
-        "activity_id": 25,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 42,
-        "activity_id": 13,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 111,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      },
-      {
-        "hotel_id": 221,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 190
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 5,
-    "to_city_id": 7,
-    "name": "Cultural Discovery",
-    "description": "Get ready for an eco-friendly escapade, where youll connect with nature and support sustainable tourism.",
-    "image_url": "http://circuitplanete.com/wp-content/uploads/sites/56/2018/11/Paradise_Islands_to_Visit_in_Asia_2.jpg",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 40,
-        "activity_id": 20,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 54,
-        "activity_id": 25,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 159,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 199,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 284,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 14
-      },
-      {
-        "restaurant_id": 180
-      },
-      {
-        "restaurant_id": 101
-      },
-      {
-        "restaurant_id": 54
-      },
-      {
-        "restaurant_id": 179
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 10,
-    "to_city_id": 15,
-    "name": "Cultural Discovery",
-    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
-    "image_url": "https://www.creescapes.com/wp-content/uploads/corcovado-national-park-hiking-rainforest.jpg",
-    "start_date": "2023-08-29",
     "end_date": "2023-09-16",
     "contains": [
       {
-        "destination_id": 14,
-        "activity_id": 31,
-        "tentative_date": "2023-09-01"
+        "destination_id": 70,
+        "activity_id": 28,
+        "tentative_date": "2023-09-06"
       },
       {
-        "destination_id": 78,
-        "activity_id": 11,
-        "tentative_date": "2023-08-31"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 180,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-03"
-      },
-      {
-        "hotel_id": 148,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-03"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 180
-      },
-      {
-        "restaurant_id": 95
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 3,
-    "to_city_id": 30,
-    "name": "Cultural Discovery",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "https://www.croquelune-mariage.com/wp-content/uploads/2020/03/21-1.jpg",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 63,
-        "activity_id": 15,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 58,
-        "activity_id": 11,
-        "tentative_date": "2023-09-02"
-      },
-      {
-        "destination_id": 80,
-        "activity_id": 19,
-        "tentative_date": "2023-09-01"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 167,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-07"
-      },
-      {
-        "hotel_id": 203,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 288,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 135
-      },
-      {
-        "restaurant_id": 109
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 6,
-    "to_city_id": 21,
-    "name": "Eco-Friendly Escape",
-    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
-    "image_url": "https://www.travelandleisure.com/thmb/R2kb6GuJwF4wVJhRVevV-FqOVao=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/el-yunque-national-rainforest-tropical-puerto-rico-TROPICALPLANTS0617-d3ccb18a16064e42bdd626cdf7a8cb68.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 37,
-        "activity_id": 6,
-        "tentative_date": "2023-08-31"
-      },
-      {
-        "destination_id": 18,
-        "activity_id": 12,
-        "tentative_date": "2023-09-01"
-      },
-      {
-        "destination_id": 73,
-        "activity_id": 16,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 227,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-05"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 152
-      },
-      {
-        "restaurant_id": 164
-      },
-      {
-        "restaurant_id": 167
-      },
-      {
-        "restaurant_id": 96
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 20,
-    "to_city_id": 9,
-    "name": "Urban Exploration",
-    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://disneycruise.org/wp-content/uploads/2020/03/adventure-holidays-768x768.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 56,
-        "activity_id": 29,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 57,
-        "activity_id": 30,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 51,
-        "activity_id": 21,
-        "tentative_date": "2023-09-04"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 231,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 92,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 19
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 10,
-    "to_city_id": 23,
-    "name": "Tropical Getaway",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "https://i0.wp.com/www.idyllicpursuit.com/wp-content/uploads/2019/03/adventure-boardwalk-branch-238631.jpg?fit=819%2C1024&ssl=1",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 72,
+        "destination_id": 33,
         "activity_id": 10,
-        "tentative_date": "2023-09-01"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 299,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-06"
-      },
-      {
-        "hotel_id": 39,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-07"
-      },
-      {
-        "hotel_id": 17,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 191
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 13,
-    "to_city_id": 5,
-    "name": "Adventure Expedition",
-    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
-    "image_url": "https://uploads.exoticca.travel/global/destination/poi/paradise-island.png",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 2,
-        "activity_id": 8,
-        "tentative_date": "2023-09-01"
-      },
-      {
-        "destination_id": 76,
-        "activity_id": 15,
-        "tentative_date": "2023-08-30"
-      },
-      {
-        "destination_id": 14,
-        "activity_id": 7,
-        "tentative_date": "2023-08-31"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 51,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-05"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 161
-      },
-      {
-        "restaurant_id": 63
-      },
-      {
-        "restaurant_id": 174
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 6,
-    "to_city_id": 10,
-    "name": "Wilderness Retreat",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "https://res.cloudinary.com/zicasso/image/fetch/c_fill,f_auto,g_center,q_auto,w_auto/https://images.zicasso.com/2954309f78392efce9c21b4661597dfc.jpg",
-    "start_date": "2023-09-02",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 48,
-        "activity_id": 20,
         "tentative_date": "2023-09-04"
       },
       {
-        "destination_id": 7,
-        "activity_id": 5,
-        "tentative_date": "2023-09-05"
-      },
-      {
-        "destination_id": 60,
-        "activity_id": 48,
-        "tentative_date": "2023-09-05"
+        "destination_id": 38,
+        "activity_id": 29,
+        "tentative_date": "2023-09-06"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 16,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-09"
+        "hotel_id": 4,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-08"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 169
+        "restaurant_id": 8
       },
       {
-        "restaurant_id": 73
+        "restaurant_id": 2
       },
       {
-        "restaurant_id": 157
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 9,
-    "to_city_id": 25,
-    "name": "Cultural Discovery",
-    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
-    "image_url": "https://res.cloudinary.com/djcyhbk2e/image/upload/f_auto,q_35,w_1200/v1/gvv/prod/g40p1wto0b1wuimuqafw",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-18",
-    "contains": [
-      {
-        "destination_id": 18,
-        "activity_id": 9,
-        "tentative_date": "2023-09-04"
+        "restaurant_id": 10
       },
       {
-        "destination_id": 73,
-        "activity_id": 16,
-        "tentative_date": "2023-09-05"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 49,
-        "checkin_date": "2023-09-06",
-        "checkout_date": "2023-09-09"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 140
-      },
-      {
-        "restaurant_id": 76
+        "restaurant_id": 1
       }
     ],
     "guides": [
@@ -1980,374 +1857,57 @@
   },
   {
     "from_city_id": 1,
-    "to_city_id": 10,
-    "name": "Mountainous Adventure",
-    "description": "Discover hidden gems, savor local cuisines, and immerse yourself in the rich history of each destination.",
-    "image_url": "https://the-gratefulthread.com/wp-content/uploads/2020/08/Adventure-Travel6.jpg",
-    "start_date": "2023-09-03",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 10,
-        "activity_id": 7,
-        "tentative_date": "2023-09-04"
-      },
-      {
-        "destination_id": 49,
-        "activity_id": 3,
-        "tentative_date": "2023-09-06"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 154,
-        "checkin_date": "2023-09-05",
-        "checkout_date": "2023-09-09"
-      },
-      {
-        "hotel_id": 107,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-08"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 119
-      },
-      {
-        "restaurant_id": 45
-      },
-      {
-        "restaurant_id": 113
-      },
-      {
-        "restaurant_id": 114
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 11,
-    "to_city_id": 12,
-    "name": "Relaxation Retreat",
+    "to_city_id": 3,
+    "name": "Adventure Expedition",
     "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "http://3.bp.blogspot.com/-owqrbh-zODo/VDQgWG9pIaI/AAAAAAAABBM/hZHGXoVDX44/w1200-h630-p-k-no-nu/banner2.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-15",
+    "image_url": "https://www.choicehotels.com/cms/images/choice-hotels/demand-articles/img_best-beach-vacations-01/img_best-beach-vacations-01.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-18",
     "contains": [
-      {
-        "destination_id": 32,
-        "activity_id": 15,
-        "tentative_date": "2023-09-02"
-      },
       {
         "destination_id": 37,
         "activity_id": 6,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 133,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 110
+        "tentative_date": "2023-09-07"
       },
       {
-        "restaurant_id": 187
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 16,
-    "to_city_id": 11,
-    "name": "Tropical Getaway",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "https://www.zicasso.com/sites/default/files/styles/original_scaled_down/public/photos/tour/beautiful_tuscany_landscape_at_spring_italy.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 43,
-        "activity_id": 7,
-        "tentative_date": "2023-08-30"
-      },
-      {
-        "destination_id": 23,
+        "destination_id": 15,
         "activity_id": 25,
-        "tentative_date": "2023-08-31"
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 16,
+        "activity_id": 30,
+        "tentative_date": "2023-09-08"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 80,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-04"
+        "hotel_id": 7,
+        "checkin_date": "2023-09-08",
+        "checkout_date": "2023-09-11"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 133
+        "restaurant_id": 2
       },
       {
-        "restaurant_id": 57
+        "restaurant_id": 4
       },
       {
-        "restaurant_id": 87
+        "restaurant_id": 5
       },
       {
-        "restaurant_id": 102
+        "restaurant_id": 7
+      },
+      {
+        "restaurant_id": 1
       }
     ],
     "guides": [
       {
         "guide_id": 1
       },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 3,
-    "to_city_id": 24,
-    "name": "Tropical Getaway",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "https://www.fredmiranda.com/forum/ufiles/48/1087948.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 9,
-        "activity_id": 5,
-        "tentative_date": "2023-09-01"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 132,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-03"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 142
-      },
-      {
-        "restaurant_id": 121
-      },
-      {
-        "restaurant_id": 75
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      },
-      {
-        "guide_id": 1
-      }
-    ]
-  },
-  {
-    "from_city_id": 5,
-    "to_city_id": 27,
-    "name": "Eco-Friendly Escape",
-    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
-    "image_url": "https://www.planetware.com/wpimages/2019/12/colorado-denver-best-hikes-rocky-mountain-national-park.jpg",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-13",
-    "contains": [
-      {
-        "destination_id": 69,
-        "activity_id": 50,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 76,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      },
-      {
-        "hotel_id": 224,
-        "checkin_date": "2023-09-03",
-        "checkout_date": "2023-09-08"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 161
-      },
-      {
-        "restaurant_id": 128
-      },
-      {
-        "restaurant_id": 72
-      },
-      {
-        "restaurant_id": 9
-      },
-      {
-        "restaurant_id": 44
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 18,
-    "to_city_id": 7,
-    "name": "Eco-Friendly Escape",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "http://www.cotswoldsadventures.co.uk/wp-content/uploads/2015/03/Rural-Landscape-Cotswolds.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-17",
-    "contains": [
-      {
-        "destination_id": 28,
-        "activity_id": 34,
-        "tentative_date": "2023-09-02"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 192,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 130,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 164
-      },
-      {
-        "restaurant_id": 155
-      },
-      {
-        "restaurant_id": 27
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 17,
-    "to_city_id": 4,
-    "name": "Coastal Odyssey",
-    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
-    "image_url": "https://i.pinimg.com/originals/5c/75/cf/5c75cf7b5e26752afee13bed8916f0bf.jpg",
-    "start_date": "2023-08-29",
-    "end_date": "2023-09-15",
-    "contains": [
-      {
-        "destination_id": 8,
-        "activity_id": 45,
-        "tentative_date": "2023-08-31"
-      },
-      {
-        "destination_id": 61,
-        "activity_id": 31,
-        "tentative_date": "2023-08-30"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 3,
-        "checkin_date": "2023-08-31",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 267,
-        "checkin_date": "2023-08-30",
-        "checkout_date": "2023-09-03"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 112
-      }
-    ],
-    "guides": [
-      {
-        "guide_id": 1
-      },
-      {
-        "guide_id": 2
-      }
-    ]
-  },
-  {
-    "from_city_id": 6,
-    "to_city_id": 14,
-    "name": "Eco-Friendly Escape",
-    "description": "This is the ultimate getaway, where every day brings a new opportunity for exploration and wonder.",
-    "image_url": "https://i.pinimg.com/originals/d5/d9/6e/d5d96efa1b48bb3adcb5fdd03ffe71a4.jpg",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-14",
-    "contains": [
-      {
-        "destination_id": 12,
-        "activity_id": 45,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 54,
-        "activity_id": 19,
-        "tentative_date": "2023-09-03"
-      }
-    ],
-    "hotels": [
-      {
-        "hotel_id": 224,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-06"
-      }
-    ],
-    "restaurants": [
-      {
-        "restaurant_id": 102
-      },
-      {
-        "restaurant_id": 38
-      },
-      {
-        "restaurant_id": 63
-      },
-      {
-        "restaurant_id": 19
-      }
-    ],
-    "guides": [
       {
         "guide_id": 2
       }
@@ -2355,49 +1915,182 @@
   },
   {
     "from_city_id": 21,
-    "to_city_id": 25,
-    "name": "Wilderness Retreat",
-    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
-    "image_url": "http://www.balistarisland.com/wp-content/uploads/2016/04/ayungriverrafting-1024x555.jpg",
-    "start_date": "2023-09-01",
-    "end_date": "2023-09-17",
+    "to_city_id": 27,
+    "name": "Urban Exploration",
+    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
+    "image_url": "https://thesafariworld.com/wp-content/uploads/2019/11/45072030542_878bb329aa_o.jpg",
+    "start_date": "2023-09-03",
+    "end_date": "2023-09-15",
     "contains": [
       {
-        "destination_id": 35,
-        "activity_id": 19,
-        "tentative_date": "2023-09-03"
+        "destination_id": 57,
+        "activity_id": 30,
+        "tentative_date": "2023-09-05"
       },
       {
-        "destination_id": 3,
-        "activity_id": 6,
+        "destination_id": 60,
+        "activity_id": 48,
+        "tentative_date": "2023-09-06"
+      },
+      {
+        "destination_id": 8,
+        "activity_id": 8,
         "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
       },
       {
-        "destination_id": 41,
-        "activity_id": 31,
+        "hotel_id": 7,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 16,
+    "to_city_id": 28,
+    "name": "Eco-Friendly Escape",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "https://th-thumbnailer.cdn-si-edu.com/wWEBs1AzxSzGirVVCtXcb80SiUc=/fit-in/1072x0/https://tf-cmsv2-photocontest-smithsonianmag-prod-approved.s3.amazonaws.com/08afb422-2639-41c9-aa98-7eaa94ec3a9c.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 4,
+        "activity_id": 10,
         "tentative_date": "2023-09-02"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 29,
-        "checkin_date": "2023-09-03",
+        "hotel_id": 7,
+        "checkin_date": "2023-09-04",
         "checkout_date": "2023-09-08"
       },
       {
-        "hotel_id": 87,
+        "hotel_id": 6,
         "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-07"
+        "checkout_date": "2023-09-08"
       },
       {
-        "hotel_id": 135,
-        "checkin_date": "2023-09-04",
-        "checkout_date": "2023-09-06"
+        "hotel_id": 4,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-08"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 21
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 19,
+    "to_city_id": 11,
+    "name": "Wilderness Retreat",
+    "description": "Venture into the heart of untouched wilderness, where every step unveils new surprises and untold stories.",
+    "image_url": "https://vagrantsoftheworld.com/wp-content/uploads/2019/07/Walking-holiday-9-1200x797.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-16",
+    "contains": [
+      {
+        "destination_id": 44,
+        "activity_id": 13,
+        "tentative_date": "2023-09-08"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-08",
+        "checkout_date": "2023-09-11"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 26,
+    "to_city_id": 13,
+    "name": "Eco-Friendly Escape",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "http://kmttourseg.com/wp-content/uploads/2019/11/FB_IMG_1586878114570-1080x1000.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-19",
+    "contains": [
+      {
+        "destination_id": 8,
+        "activity_id": 8,
+        "tentative_date": "2023-09-08"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 8
       }
     ],
     "guides": [
@@ -2410,44 +2103,447 @@
     ]
   },
   {
-    "from_city_id": 5,
-    "to_city_id": 25,
-    "name": "Eco-Friendly Escape",
-    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
-    "image_url": "https://www.tripsavvy.com/thmb/e3Oy4EYlziH6DwTHAqNf6fiooAk=/1000x0/filters:no_upscale():max_bytes(150000):strip_icc()/giant-stairway-trail-1202599310-a38967b2f5124d79aad1a8fa25068f28.jpg",
-    "start_date": "2023-08-30",
-    "end_date": "2023-09-13",
+    "from_city_id": 20,
+    "to_city_id": 3,
+    "name": "Adventure Expedition",
+    "description": "Experience the magic of diverse cultures, breathtaking landscapes, and unforgettable moments on this unique trip.",
+    "image_url": "https://i.pinimg.com/originals/bf/6e/82/bf6e8242889e52d1d99a8940a4134956.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-20",
     "contains": [
       {
-        "destination_id": 30,
-        "activity_id": 32,
-        "tentative_date": "2023-08-31"
+        "destination_id": 22,
+        "activity_id": 3,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 72,
+        "activity_id": 10,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 46,
+        "activity_id": 3,
+        "tentative_date": "2023-09-03"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 33,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-04"
-      },
-      {
-        "hotel_id": 180,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-05"
+        "hotel_id": 6,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-08"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 65
+        "restaurant_id": 5
       },
       {
-        "restaurant_id": 188
+        "restaurant_id": 7
       },
       {
-        "restaurant_id": 144
+        "restaurant_id": 2
       },
       {
-        "restaurant_id": 81
+        "restaurant_id": 4
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 10,
+    "to_city_id": 9,
+    "name": "Tropical Getaway",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://img.grouponcdn.com/deal/hSmxJNeofViiXfLRiijZ/Kz-2048x1228/v1/t440x300.jpg",
+    "start_date": "2023-08-31",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 52,
+        "activity_id": 34,
+        "tentative_date": "2023-09-02"
+      },
+      {
+        "destination_id": 41,
+        "activity_id": 30,
+        "tentative_date": "2023-09-01"
+      },
+      {
+        "destination_id": 23,
+        "activity_id": 28,
+        "tentative_date": "2023-09-02"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-01",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-01",
+        "checkout_date": "2023-09-05"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-01",
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 9
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 7,
+    "to_city_id": 14,
+    "name": "Tropical Getaway",
+    "description": "Unwind in luxurious accommodations, surrounded by picturesque scenery that promises both serenity and excitement.",
+    "image_url": "https://www.walletcambodia.com/wp-content/uploads/countryside-tour-kampot-700x450.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 4,
+        "activity_id": 45,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 61,
+        "activity_id": 34,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 10,
+        "activity_id": 7,
+        "tentative_date": "2023-09-03"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-08"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      },
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 16,
+    "to_city_id": 14,
+    "name": "Cultural Discovery",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "https://tourscanner.com/blog/wp-content/uploads/2017/10/Paradise-islands-to-visit.jpg",
+    "start_date": "2023-09-01",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 24,
+        "activity_id": 5,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-02",
+        "checkout_date": "2023-09-08"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 3
+      },
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 4
+      },
+      {
+        "restaurant_id": 5
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 11,
+    "to_city_id": 24,
+    "name": "Adventure Expedition",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "http://www.balistarisland.com/wp-content/uploads/2016/04/ayungriverrafting-1024x555.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-15",
+    "contains": [
+      {
+        "destination_id": 65,
+        "activity_id": 41,
+        "tentative_date": "2023-09-07"
+      },
+      {
+        "destination_id": 19,
+        "activity_id": 8,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 10,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-10"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-06",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 8
+      },
+      {
+        "restaurant_id": 10
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      },
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 20,
+    "to_city_id": 26,
+    "name": "Wilderness Retreat",
+    "description": "Embark on a thrilling journey of discovery and relaxation, exploring both natures wonders and vibrant city life.",
+    "image_url": "https://i.pinimg.com/originals/de/7f/b7/de7fb7c5090f427e0213370bcc799041.jpg",
+    "start_date": "2023-09-04",
+    "end_date": "2023-09-17",
+    "contains": [
+      {
+        "destination_id": 5,
+        "activity_id": 8,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 3,
+        "activity_id": 3,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 6,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-09"
+      },
+      {
+        "hotel_id": 4,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 2
+      },
+      {
+        "restaurant_id": 1
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 1
+      }
+    ]
+  },
+  {
+    "from_city_id": 25,
+    "to_city_id": 27,
+    "name": "Tropical Getaway",
+    "description": "Embark on a journey of self-discovery and rejuvenation, leaving behind the worries of everyday life.",
+    "image_url": "https://www.ocalavacations.com/wp-content/uploads/2017/12/Africa-Tour-and-Travel.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-18",
+    "contains": [
+      {
+        "destination_id": 46,
+        "activity_id": 3,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 33,
+        "activity_id": 29,
+        "tentative_date": "2023-09-05"
+      },
+      {
+        "destination_id": 31,
+        "activity_id": 34,
+        "tentative_date": "2023-09-05"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-05",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 7,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-09"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 6
+      },
+      {
+        "restaurant_id": 7
+      }
+    ],
+    "guides": [
+      {
+        "guide_id": 2
+      }
+    ]
+  },
+  {
+    "from_city_id": 11,
+    "to_city_id": 7,
+    "name": "Mountainous Adventure",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://www.tripnstay.com/wp-content/uploads/2019/12/safari-compressed.jpg",
+    "start_date": "2023-09-02",
+    "end_date": "2023-09-15",
+    "contains": [
+      {
+        "destination_id": 42,
+        "activity_id": 16,
+        "tentative_date": "2023-09-03"
+      },
+      {
+        "destination_id": 72,
+        "activity_id": 49,
+        "tentative_date": "2023-09-04"
+      },
+      {
+        "destination_id": 7,
+        "activity_id": 5,
+        "tentative_date": "2023-09-04"
+      }
+    ],
+    "hotels": [
+      {
+        "hotel_id": 8,
+        "checkin_date": "2023-09-03",
+        "checkout_date": "2023-09-07"
+      },
+      {
+        "hotel_id": 1,
+        "checkin_date": "2023-09-04",
+        "checkout_date": "2023-09-07"
+      }
+    ],
+    "restaurants": [
+      {
+        "restaurant_id": 9
+      },
+      {
+        "restaurant_id": 1
+      },
+      {
+        "restaurant_id": 10
+      },
+      {
+        "restaurant_id": 5
+      },
+      {
+        "restaurant_id": 6
       }
     ],
     "guides": [
@@ -2458,44 +2554,39 @@
   },
   {
     "from_city_id": 23,
-    "to_city_id": 12,
-    "name": "Coastal Odyssey",
-    "description": "Explore majestic mountains, relax on pristine beaches, and create cherished memories with fellow travelers.",
-    "image_url": "https://blog.weekendthrill.com/wp-content/uploads/2016/05/ADVENTURE.jpg",
-    "start_date": "2023-08-31",
-    "end_date": "2023-09-18",
+    "to_city_id": 5,
+    "name": "Tropical Getaway",
+    "description": "Indulge in the perfect blend of adventure and tranquility, creating memories that will last a lifetime.",
+    "image_url": "https://www.tripsavvy.com/thmb/e3Oy4EYlziH6DwTHAqNf6fiooAk=/1000x0/filters:no_upscale():max_bytes(150000):strip_icc()/giant-stairway-trail-1202599310-a38967b2f5124d79aad1a8fa25068f28.jpg",
+    "start_date": "2023-09-05",
+    "end_date": "2023-09-20",
     "contains": [
       {
-        "destination_id": 24,
-        "activity_id": 5,
-        "tentative_date": "2023-09-03"
+        "destination_id": 71,
+        "activity_id": 34,
+        "tentative_date": "2023-09-06"
       },
       {
-        "destination_id": 46,
-        "activity_id": 6,
-        "tentative_date": "2023-09-03"
-      },
-      {
-        "destination_id": 33,
-        "activity_id": 10,
-        "tentative_date": "2023-09-02"
+        "destination_id": 42,
+        "activity_id": 16,
+        "tentative_date": "2023-09-08"
       }
     ],
     "hotels": [
       {
-        "hotel_id": 220,
-        "checkin_date": "2023-09-02",
-        "checkout_date": "2023-09-05"
+        "hotel_id": 4,
+        "checkin_date": "2023-09-07",
+        "checkout_date": "2023-09-10"
       },
       {
-        "hotel_id": 150,
-        "checkin_date": "2023-09-01",
-        "checkout_date": "2023-09-07"
+        "hotel_id": 7,
+        "checkin_date": "2023-09-08",
+        "checkout_date": "2023-09-10"
       }
     ],
     "restaurants": [
       {
-        "restaurant_id": 73
+        "restaurant_id": 8
       }
     ],
     "guides": [

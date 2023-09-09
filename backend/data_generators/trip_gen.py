@@ -3,6 +3,11 @@ import json
 from datetime import datetime, timedelta
 from config import hotel_count, restaurant_count, guide_count, trip_count
 
+### For demonstration purposes, limit trips to Hotels and Restaurants in Dhaka
+
+good_hotel_ids = [1,4,6,7,8,10]
+good_restaurant_ids = range(1,11)
+
 from scraper_helpers import *
 
 import json
@@ -96,7 +101,8 @@ def generate_trip_data(trip_image_urls):
     #     })
     
     hotels = []
-    hotel_ids = random.sample(range(1,hotel_count),random.randint(1,3))
+    #hotel_ids = random.sample(range(1,hotel_count),random.randint(1,3))
+    hotel_ids = random.sample(good_hotel_ids,random.randint(1,3))
     for id in hotel_ids:
         hotels.append({
             "hotel_id": id,
@@ -105,7 +111,8 @@ def generate_trip_data(trip_image_urls):
         })
     
     restaurants = []
-    res_ids = random.sample(range(1,restaurant_count),random.randint(1,5))
+    #res_ids = random.sample(range(1,restaurant_count),random.randint(1,5))
+    res_ids = random.sample(good_restaurant_ids,random.randint(1,5))
     for id in res_ids:
         restaurants.append({"restaurant_id": id})
 

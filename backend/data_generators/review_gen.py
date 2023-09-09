@@ -123,17 +123,22 @@ def generate_review():
     indicator = random.randint(0,4)
     type = types[indicator//2]
     description = ""
-    rating = random.randint(2,5)
+    rating = random.randint(1,4)
     image_url = "dummy.jpg"
     if(type == 'trip'):
         description = generate_trip_review()
         object_id = random.randint(1,trip_count)
+        rating = random.randint(1,5)
     if(type == 'hotel'):
         description = generate_hotel_review()
         object_id = random.randint(1,hotel_count)
+        if(object_id <= 10):
+            rating = random.randint(4,5)
     if(type == 'restaurant'):
         description = generate_restaurant_review()
         object_id = random.randint(1,restaurant_count)
+        if(object_id <= 10):
+            rating = random.randint(4,5)
 
     user_id = random.randint(1,user_count)
     

@@ -228,6 +228,13 @@ sql += get_react_sql()
 
 sql += "\n\nDELETE FROM NOTIFICATIONS;\n\n"
 
+sql += """
+
+DROP SEQUENCE notification_seq;
+CREATE SEQUENCE notification_seq START WITH 1 INCREMENT BY 1 NOCACHE;
+
+"""
+
 sql += "\n\nSELECT * FROM USERS;\n\n"
 
 file_path = base_path + '/sql/large_insert.sql' 

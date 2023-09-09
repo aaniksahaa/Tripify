@@ -4,6 +4,29 @@ const db = require('../db/db');
 const { getSingleCity } = require('./city');
 const { getRatingInfoFromObject, getImagesFromObject, deleteImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
+const notifyHotel = async (payload) => {
+
+    console.log('at notifyHotel ', payload)
+
+    const sql = `
+    DECLARE 
+        
+        
+        
+    BEGIN 
+        
+        NOTIFY_HOTEL_RELEVANT_USERS(:hotel_id,:action_msg);
+        
+    END;
+    `
+    const binds = {
+        hotel_id : payload.hotel_id,
+        action_msg : payload.action_msg
+    }
+    await db.execute(sql, binds, db.options);
+    console.log('notified')
+}
+
 const getSingleHotel = async (payload) => {
     
     const hotel_id = payload.hotel_id;
@@ -311,6 +334,8 @@ const updateHotel = async (payload) => {
             await deleteImagesFromObject(object)
             await insertImagesForObject(object)
         }
+
+        await notifyHotel({hotel_id: hotel_id, action_msg: 'updated'});
 
         const payload = { hotel_id : hotel_id }
         const result = await getSingleHotel(payload)
