@@ -45,7 +45,8 @@ const getStat = async (payload) => {
     FULL OUTER JOIN HOTELS H 
     ON (R.HOTEL_ID = H.HOTEL_ID)
     FULL OUTER JOIN FAVORITES F 
-    ON (H.HOTEL_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'hotel')   
+    ON (H.HOTEL_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'hotel')
+    WHERE H.HOTEL_ID IS NOT NULL   
     GROUP BY H.HOTEL_ID
     `
 
@@ -58,7 +59,8 @@ const getStat = async (payload) => {
     FULL OUTER JOIN RESTAURANTS R 
     ON (M.RESTAURANT_ID = R.RESTAURANT_ID)
     FULL OUTER JOIN FAVORITES F 
-    ON (R.RESTAURANT_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'restaurant')   
+    ON (R.RESTAURANT_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'restaurant') 
+    WHERE R.RESTAURANT_ID IS NOT NULL  
     GROUP BY R.RESTAURANT_ID
     `
 
@@ -67,7 +69,8 @@ const getStat = async (payload) => {
     FROM TRIPBOOKINGS TB FULL OUTER JOIN TRIPS T
     ON (TB.TRIP_ID = T.TRIP_ID)
     FULL OUTER JOIN FAVORITES F 
-    ON (T.TRIP_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'trip')   
+    ON (T.TRIP_ID = F.OBJECT_ID AND F.OBJECT_TYPE = 'trip')  
+    WHERE T.TRIP_ID IS NOT NULL 
     GROUP BY T.TRIP_ID
     `
 
@@ -101,9 +104,14 @@ const getStat = async (payload) => {
 
 
     try{
+
+        console.log(sql)
+
         const result = await db.execute(sql,{},db.options)
 
         let stat = result.rows
+
+        console.log(stat)
 
         let result_objects = []
 
