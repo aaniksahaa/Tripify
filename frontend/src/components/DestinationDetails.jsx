@@ -1,82 +1,60 @@
 'use client'
-import ActivityCard from './ActivityCard'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import {
     Box,
-    chakra,
-    Container,
-    Stack,
-    Text,
-    Image,
-    Flex,
-    VStack,
     Button,
-    Heading,
-    SimpleGrid,
-    StackDivider,
-    useColorModeValue,
-    VisuallyHidden,
-    List,
-    ListItem,
-    Badge,
+    Card,
+    Container,
     Divider,
-    TableContainer,
-    Table,
-    Tbody,
-    Tr,
-    Td,
-    Tfoot,
+    Flex,
+    Heading,
     Modal,
-    ModalOverlay,
+    ModalBody,
+    ModalCloseButton,
     ModalContent,
     ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    Textarea,
-    useDisclosure,
-    Card,
-} from '@chakra-ui/react'
-import { MdLocalShipping, MdSportsGymnastics } from 'react-icons/md'
-import Carousel from './Carousel'
-import Carousel2 from './Carousel2'
-import { ImPriceTag } from 'react-icons/im'
-import { CgGym } from 'react-icons/cg'
+    ModalOverlay,
+    SimpleGrid,
+    Stack,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Text,
+    Tr,
+    useColorModeValue,
+    useDisclosure
+} from '@chakra-ui/react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ImPriceTag } from 'react-icons/im';
+import Carousel from './Carousel';
 
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import { AiFillAccountBook, AiFillCar, AiOutlineWifi, AiOutlineMail } from 'react-icons/ai'
-import ColoredCircle from './ColoredCircle'
-import Feature from './Feature'
-import StarRating from './StarRating'
-import RatingBox from './RatingBox'
-import Review from './Review'
-import EmblaCarousel from './EmblaCarousel'
+import { AiOutlineMail } from 'react-icons/ai';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 // import { EmblaCarousel } from './EmblaCarousel'
-import React, { useState } from 'react'
-import { addToList } from '../LocalStorage';
-import CardSlider from './CardSlider';
+import React, { useEffect, useState } from 'react';
+import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
-import { useEffect } from 'react'
+import CardSlider from './CardSlider';
 
-export default function DestDetails({ props }) {
+export default function DestDetails({ data }) {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
-
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
+    const [props, setProps] = useState({})
+    const [aid, setaid] = useLocalStorage('aid', '1')
     function activityClick(id) {
         setActivity(props.activities[id])
+        setaid(props.activities[id].activity_id)
         onOpen2()
     }
     useEffect(() => {
-        if (props) {
-            console.log(props)
-        }
-    }, [props])
+        setProps(JSON.parse(data))
+    }, [data])
 
     function addClick() {
         const data = {
@@ -99,7 +77,7 @@ export default function DestDetails({ props }) {
             >
                 <Box>
                     <Box>
-                        <Carousel images={props.images} />
+                        <Carousel data={JSON.stringify(props.images)} />
                     </Box>
                 </Box>
                 <Stack>
@@ -244,7 +222,7 @@ export default function DestDetails({ props }) {
                             {props.activities && props.activities.map((item, index) =>
                                 <Box onClick={() => activityClick(index)} key={index}>
                                     <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                                        <CardSlider images={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
+                                        <CardSlider imgs={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} />
                                     </Card>
                                 </Box>
                             )}
@@ -276,7 +254,7 @@ export default function DestDetails({ props }) {
                     </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody display={'flex'} justifyContent={'space-between'}>
-                        <ActivityDetails props={activity.activity} price={activity.price} destination={props.name} destinationId={props.destination_id} />
+                        <ActivityDetails t={0} price={activity.price} destination={props.name} destinationId={props.destination_id} />
                     </ModalBody>
                     <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
                         <Box>

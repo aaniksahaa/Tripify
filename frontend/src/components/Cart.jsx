@@ -1,10 +1,10 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Divider, Flex, IconButton, Input, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Textarea, Th, Thead, Tr, useDisclosure } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
-import { getList, removeFromList } from "../LocalStorage"
 import { DeleteIcon, ExternalLinkIcon } from "@chakra-ui/icons"
-import { taka } from "../Constants"
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Flex, IconButton, Input, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Textarea, Th, Tr } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
 import DatePicker from "react-datepicker"
 import { createTrip } from "../API"
+import { taka } from "../Constants"
+import { getList, removeFromList } from "../LocalStorage"
 
 export default function Cart({ open, setOpen }) {
   const [hotels, setHotels] = useState([])
@@ -36,10 +36,12 @@ export default function Cart({ open, setOpen }) {
     setDestinations(getList('_destinations'))
     const a = getList('_activities')
     setActivities(a)
-    setRestaurants(getList('_restaurants'))
+    const r = getList('_restaurants')
+    setRestaurants(r)
     var s = 0
     h.forEach(x => s += parseInt(x.cost))
     a.forEach(x => s += parseInt(x.cost))
+    r.forEach(x => s += parseInt(x.cost))
     setTotalCost(s)
   }
   useEffect(() => {
@@ -49,20 +51,28 @@ export default function Cart({ open, setOpen }) {
   function closeModal() {
     setOpen(false)
   }
-
+  function formatDate(x) {
+    return new Date(x).toISOString().split("T")[0]
+  }
   async function save() {
     var t = body
-    t['from_city_id'] = ''
-    t['to_city_id'] = ''
+    t['from_city_id'] = '1'
+    t['to_city_id'] = '1'
     t['image_url'] = ''
-    t['start_date'] = ''
-    t['end_date'] = ''
+    t['name'] = body.name
+    t['description'] = body.description
+    t['start_date'] = body.startDate.toISOString().split('T')[0]
+    // delete t['startDate']
+    // delete t['endDate']
+    alert(t['start_date'])
+    t['end_date'] = body.endDate.toISOString().split('T')[0]
     t['hotels'] = []
-    hotels.forEach(x => t['hotels'].push({ hotel_id: x.id, checkin_date: x.start, checkout_date: x.end }))
+    hotels.forEach(x => t['hotels'].push({ hotel_id: x.id, checkin_date: formatDate(x.start), checkout_date: formatDate(x.end) }))
     t['contains'] = []
-    activities.forEach(x => t['contains'].push({ destination_id: x.destination_id, activity_id: x.id, tentative_date: x.date }))
-    t['restaurants']=[]
-    t['guides']=[]
+    activities.forEach(x => t['contains'].push({ destination_id: x.destination_id, activity_id: x.id, tentative_date: formatDate(x.date) }))
+    t['restaurants'] = []
+    restaurants.forEach(x => t['restaurants'].push({ restaurant_id: x.id }))
+    t['guides'] = []
 
     console.log(t)
     await createTrip(t)
@@ -244,7 +254,16 @@ export default function Cart({ open, setOpen }) {
                         <TableContainer margin={'10px'}>
                           <Table variant='simple' size='sm'>
                             <Tbody>
-
+                              <Tr><Th>Name</Th><Td>
+                                <Flex alignItems={'center'}>
+                                  <Link href={'/restaurant/' + restaurant.id} isExternal alignItems={'center'}>
+                                    {restaurant.name}
+                                  </Link>
+                                  <ExternalLinkIcon mx='2px' />
+                                </Flex>
+                              </Td></Tr>
+                              <Tr><Th>Address</Th><Td>{restaurant.address}</Td></Tr>
+                              <Tr><Th>Cost</Th><Td>৳{restaurant.cost}</Td></Tr>
                             </Tbody>
                           </Table>
                         </TableContainer>

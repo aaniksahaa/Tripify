@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import { Box, Button, Card, Container, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, FormControl, FormLabel, GridItem, Heading, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import { api_base } from './Constants'
-import HotelCard from './components/HotelCard'
+import { Box, Button, Card, Container, FormControl, FormLabel, GridItem, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import { Select } from 'chakra-react-select'
-import { Link } from 'react-router-dom'
-import { BiFilterAlt } from 'react-icons/bi'
-import Navbar2 from './components/Navbar2'
-import CardSlider from './components/CardSlider'
+import React, { useEffect, useState } from 'react'
 import { getCities, getHotels } from './API'
-import ReactPaginate from 'react-paginate'
+import CardSlider from './components/CardSlider'
+import Navbar2 from './components/Navbar2'
 
 function Hotels() {
   const [hotels, setHotels] = useState([])
@@ -19,7 +13,7 @@ function Hotels() {
     address: '',
     city_id: '',
     min_price: 0,
-    max_price: 5000,
+    max_price: 50000,
     has_wifi: '',
     has_parking: '',
     has_gym: '',
@@ -88,18 +82,18 @@ function Hotels() {
               </FormControl>
               <FormControl>
                 <FormLabel>Price per day</FormLabel>
-                <RangeSlider min={0} max={5000} step={30} value={[filter.min_price, filter.max_price]} onChange={(val) => {
+                <RangeSlider min={0} max={10000} step={100} value={[filter.min_price, filter.max_price]} onChange={(val) => {
                   var obj = { ...filter }
                   obj.min_price = val[0]
                   obj.max_price = val[1]
                   setFilter(obj)
                 }}>
                   <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm'>৳0</RangeSliderMark>
-                  <RangeSliderMark value={1000} mt='5' ml='-2.5' fontSize='sm'>৳1000</RangeSliderMark>
-                  <RangeSliderMark value={2000} mt='5' ml='-2.5' fontSize='sm'>৳2000</RangeSliderMark>
-                  <RangeSliderMark value={3000} mt='5' ml='-2.5' fontSize='sm'>৳3000</RangeSliderMark>
-                  <RangeSliderMark value={4000} mt='5' ml='-2.5' fontSize='sm'>৳4000</RangeSliderMark>
-                  <RangeSliderMark value={5000} mt='5' ml='-2.5' fontSize='sm'>৳5000</RangeSliderMark>
+                  <RangeSliderMark value={1000} mt='5' ml='-2.5' fontSize='sm'>৳2000</RangeSliderMark>
+                  <RangeSliderMark value={2000} mt='5' ml='-2.5' fontSize='sm'>৳4000</RangeSliderMark>
+                  <RangeSliderMark value={3000} mt='5' ml='-2.5' fontSize='sm'>৳6000</RangeSliderMark>
+                  <RangeSliderMark value={4000} mt='5' ml='-2.5' fontSize='sm'>৳8000</RangeSliderMark>
+                  <RangeSliderMark value={5000} mt='5' ml='-2.5' fontSize='sm'>৳10000</RangeSliderMark>
                   <RangeSliderTrack bg='red.100'>
                     <RangeSliderFilledTrack bg='tomato' />
                   </RangeSliderTrack>

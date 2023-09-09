@@ -150,6 +150,18 @@ export async function isFollowing(a, b) {
   const j = await getX(`user/${a}/follow/${b}`, {})
   return j
 }
+export async function getActivityById(id) {
+  const j = await getX(`activity/${id}`)
+  return j
+}
+export async function getHotelById(id) {
+  const j = await getX(`hotel/${id}`)
+  return j
+}
+export async function getTripById(id) {
+  const j = await getX(`trip/details/${id}`)
+  return j
+}
 export async function likePost(id) {
   const j = await postX(`post/${id}/react/1`, {}, {})
   return j

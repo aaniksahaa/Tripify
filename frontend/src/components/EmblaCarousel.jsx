@@ -20,11 +20,10 @@ const EmblaCarousel = ({ type, id }) => {
         }
         const r = await getReviews(filter)
         setReviews(r)
-        console.log(r)
     }
     useEffect(() => {
         initialize()
-    }, [id])
+    }, [id, type])
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
     const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev() }, [emblaApi])
     const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext() }, [emblaApi])
@@ -36,7 +35,13 @@ const EmblaCarousel = ({ type, id }) => {
                     <div className="embla__container">
                         {reviews.map((review, id) => (
                             <div className="embla__slide" key={id}>
-                                <Review {...review} />
+                                <Review
+                                    description={review.description}
+                                    review_id={review.review_id}
+                                    rating={review.rating}
+                                    posting_date={review.posting_date}
+                                    user_id={review.user_id}
+                                />
                             </div>
                         ))}
                     </div>

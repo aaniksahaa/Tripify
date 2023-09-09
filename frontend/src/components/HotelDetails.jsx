@@ -38,17 +38,27 @@ import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
 import React, { useEffect, useState } from 'react';
-import { createReview } from '../API';
+import { useParams } from 'react-router-dom';
+import { createReview, getHotelById } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
-export default function HotelDetails({ props }) {
+export default function HotelDetails() {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
-    const [hotel_id, setHotelId] = useState(1)
+    const [props, setProps] = useState({})
+
+    const { id } = useParams()
+    async function initialize() {
+        const t = await getHotelById(id)
+        setProps(t)
+    }
+    useEffect(() => {
+        initialize()
+    }, [])
 
     async function postReviewClick() {
         const data = {
@@ -56,20 +66,16 @@ export default function HotelDetails({ props }) {
             "rating": rating,
             "image_url": "dummy.jpg",
             "object_type": "hotel",
-            "object_id": hotel_id
+            "object_id": props.hotel_id
         }
         await createReview(data)
         setRating(0)
         setReview('')
     }
-    useEffect(() => {
-        if (props)
-            setHotelId(props.hotel_id)
-    }, [props])
 
     function addClick() {
         const data = {
-            id: hotel_id,
+            id: props.hotel_id,
             name: props.name,
             start: startDate,
             end: endDate,
@@ -88,7 +94,7 @@ export default function HotelDetails({ props }) {
             >
                 <Box>
                     <Box>
-                        <Carousel images={props.images} />
+                        <Carousel data={JSON.stringify(props.images)} />
                     </Box>
                 </Box>
                 <Stack>
@@ -257,7 +263,7 @@ export default function HotelDetails({ props }) {
                             Reviews
                         </Text>
                         <Box marginTop='20px'>
-                            <EmblaCarousel type={'hotel'} id={hotel_id} />
+                            <EmblaCarousel type={'hotel'} id={props.hotel_id} />
                         </Box>
                         <Box marginTop={'20px'}>
                             <Text fontSize='3xl' textAlign={'center'}>

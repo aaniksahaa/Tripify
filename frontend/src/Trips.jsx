@@ -1,17 +1,22 @@
-import { Box, Button, Card, Container, FormControl, FormLabel, GridItem, Input, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Card, Checkbox, Container, Flex, FormControl, FormLabel, GridItem, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Stack, Text } from '@chakra-ui/react'
 import { Select } from 'chakra-react-select'
 import React, { useEffect, useState } from 'react'
 import { getCities, getTrips } from './API'
+import { useLocalStorage } from './LocalStorage'
 import CardSlider from './components/CardSlider'
 import Navbar2 from './components/Navbar2'
 
 function Trips() {
+  const [user, setUser] = useLocalStorage('tripify_user', {})
   const [trips, setTrips] = useState([])
   const [cities, setCities] = useState([])
   const [filter, setFilter] = useState({
     name: '',
+    creator_user_id: '',
     address: '',
     city_id: '',
+    min_price: 0,
+    max_price: 100000,
     page: 1,
     per_page: 10,
     orderby: 'name',
@@ -47,6 +52,13 @@ function Trips() {
     var f = filter
     f['page'] = Math.max(1, f['page'] - 1)
     setFilter(f)
+    fload(f)
+  }
+  function checkboxClick(e) {
+    var f = filter
+    if (e.target.checked) f['creator_user_id'] = user.user_id
+    else delete f['creator_user_id']
+    setFilter(f)
     load(f)
   }
   return (
@@ -60,6 +72,11 @@ function Trips() {
           <GridItem colSpan={{ base: 1, sm: 1, md: 1, lg: 1, xl: 1 }} padding='20px'>
             <Stack spacing={'10px'}>
               <FormControl>
+                <Flex>
+                  <Checkbox size={'lg'} onChange={checkboxClick} />&emsp;<Text fontSize={'lg'}>My Trips</Text>
+                </Flex>
+              </FormControl>
+              <FormControl>
                 <FormLabel>Name</FormLabel>
                 <Input variant='filled' placeholder='' value={filter.name} onChange={(e) => {
                   var obj = { ...filter }
@@ -67,29 +84,52 @@ function Trips() {
                   setFilter(obj)
                 }} />
               </FormControl>
-              <FormControl>
+              {/* <FormControl>
                 <FormLabel>Address</FormLabel>
                 <Input variant='filled' placeholder='' value={filter.address} onChange={(e) => {
                   var obj = { ...filter }
                   obj['address'] = e.target.value
                   setFilter(obj)
                 }} />
-              </FormControl>
+              </FormControl> */}
+              {/* <FormControl>
+                  <FormLabel>City</FormLabel>
+                  <Select
+                    isMulti
+                    options={cities}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                    onChange={(v) => {
+                      var obj = { ...filter }
+                      obj.city_id = ''
+                      v.forEach(x => obj.city_id += x.value + ',')
+                      setFilter(obj)
+                    }}
+                  />
+                </FormControl> */}
               <FormControl>
-                <FormLabel>City</FormLabel>
-                <Select
-                  isMulti
-                  options={cities}
-                  className="basic-multi-select"
-                  classNamePrefix="select"
-                  onChange={(v) => {
-                    var obj = { ...filter }
-                    obj.city_id = ''
-                    v.forEach(x => obj.city_id += x.value + ',')
-                    setFilter(obj)
-                  }}
-                />
+                <FormLabel>Total Price</FormLabel>
+                <RangeSlider min={0} max={100000} step={2000} value={[filter.min_price, filter.max_price]} onChange={(val) => {
+                  var obj = { ...filter }
+                  obj.min_price = val[0]
+                  obj.max_price = val[1]
+                  setFilter(obj)
+                }}>
+                  <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm'>৳0</RangeSliderMark>
+                  <RangeSliderMark value={20000} mt='5' ml='-2.5' fontSize='sm'>৳20000</RangeSliderMark>
+                  <RangeSliderMark value={40000} mt='5' ml='-2.5' fontSize='sm'>৳40000</RangeSliderMark>
+                  <RangeSliderMark value={60000} mt='5' ml='-2.5' fontSize='sm'>৳60000</RangeSliderMark>
+                  <RangeSliderMark value={80000} mt='5' ml='-2.5' fontSize='sm'>৳80000</RangeSliderMark>
+                  <RangeSliderMark value={100000} mt='5' ml='-2.5' fontSize='sm'>৳100000</RangeSliderMark>
+                  <RangeSliderTrack bg='red.100'>
+                    <RangeSliderFilledTrack bg='tomato' />
+                  </RangeSliderTrack>
+                  <RangeSliderThumb boxSize={6} index={0} />
+                  <RangeSliderThumb boxSize={6} index={1} />
+                </RangeSlider>
               </FormControl>
+              <br />
+              <br />
               <FormControl>
                 <FormLabel>Sort by</FormLabel>
                 <Select
@@ -158,7 +198,7 @@ function Trips() {
               {
                 trips.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider imgs={item.images} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={Math.floor(Math.random() * 5)} />
+                    <CardSlider imgs={item.images} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={item.rating_info.rating_avg} price={item.total_price} />
                   </Card>
                 ))
               }

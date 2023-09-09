@@ -1,15 +1,20 @@
 import { Avatar, Box, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import { getSingleUser } from '../API'
 import StarRating from './StarRating'
 
-function Review({ user, description, posting_date, rating }) {
-    const [u, setU] = useState({
-        name: '',
+function Review({ user_id, description, posting_date, rating, review_id }) {
+    const [user, setUser] = useState({
         profile_picture: '',
+        name: ''
     })
+    async function initialize() {
+        const u = await getSingleUser(user_id)
+        setUser(u)
+    }
     useEffect(() => {
-        setU(user)
+        initialize()
     }, [])
     return (
         <div>
@@ -17,9 +22,9 @@ function Review({ user, description, posting_date, rating }) {
                 <CardHeader>
                     <Flex spacing='4'>
                         <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                            <Avatar name={u.name} src={u.profile_picture} />
+                            <Avatar name={user.name} src={user.profile_picture} />
                             <Box>
-                                <Heading size='sm'>{u.name}</Heading>
+                                <Heading size='sm'>{user.name}</Heading>
                                 <Text>{new Date(posting_date).toLocaleString()}</Text>
                             </Box>
                         </Flex>

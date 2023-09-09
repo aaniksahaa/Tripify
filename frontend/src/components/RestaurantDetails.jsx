@@ -25,7 +25,6 @@ import {
     useColorModeValue,
     useDisclosure
 } from '@chakra-ui/react';
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ImPriceTag } from 'react-icons/im';
 
@@ -36,29 +35,43 @@ import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
 import React, { useEffect } from 'react';
+import { createReview } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 
-export default function RestaurantDetails({ props, rating_info }) {
+export default function RestaurantDetails({ restaurant_id, rating_info, data }) {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
+    const [props, setProps] = React.useState({})
 
     useEffect(() => {
-    }, [])
+        setProps(JSON.parse(data))
+    }, [data])
 
     function addClick() {
-        const data = {
-            id: props.hotel_id,
+        const cartData = {
+            id: props.restaurant_id,
+            address: props.address,
             name: props.name,
-            start: startDate,
-            end: endDate,
-            cost: Math.round(Math.abs((endDate - startDate) / 86400000)) * props.price_per_day
+            cost: props.reservation_price,
         }
-        addToList('_hotels', data)
+        addToList('_restaurants', cartData)
         onClose()
+    }
+    async function postReviewClick() {
+        const postData = {
+            "description": review,
+            "rating": rating,
+            "image_url": "dummy.jpg",
+            "object_type": "restaurant",
+            "object_id": props.restaurant_id
+        }
+        await createReview(postData)
+        setRating(0)
+        setReview('')
     }
     return (
         <Container maxW={'7xl'}>
@@ -70,7 +83,7 @@ export default function RestaurantDetails({ props, rating_info }) {
             >
                 <Box>
                     <Box>
-                        <Carousel images={props.images} />
+                        <Carousel data={JSON.stringify(props.images)} />
                     </Box>
                 </Box>
                 <Stack>
@@ -214,14 +227,14 @@ export default function RestaurantDetails({ props, rating_info }) {
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
-                        <RatingBox ratingInfo={rating_info} />
+                        <RatingBox ratingInfo={props.rating_info} />
                     </Flex>
                     <Box>
                         <Text fontSize='3xl' textAlign={'center'}>
                             Reviews
                         </Text>
                         <Box marginTop='20px'>
-                            <EmblaCarousel />
+                            <EmblaCarousel type={'restaurant'} id={props.restaurant_id} />
                         </Box>
                         <Box marginTop={'20px'}>
                             <Text fontSize='3xl' textAlign={'center'}>
@@ -234,7 +247,7 @@ export default function RestaurantDetails({ props, rating_info }) {
                                 <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
                                     setReview(e.target.value)
                                 }} />
-                                <Button colorScheme="blue" size={'md'}>Post</Button>
+                                <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
                             </Box>
                         </Box>
                     </Box>
@@ -245,31 +258,13 @@ export default function RestaurantDetails({ props, rating_info }) {
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Add Hotel to Trip</ModalHeader>
+                    <ModalHeader>Add Restaurant to Trip</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Stack>
-                            <Flex justifyContent={'space-between'}>
-                                <Box>
-                                    <Box>
-                                        <Text fontSize='xl'>Start</Text>
-                                    </Box>
-                                    <Box>
-                                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                                    </Box>
-                                </Box>
-                                <Box>
-                                    <Box>
-                                        <Text fontSize='xl'>End</Text>
-                                    </Box>
-                                    <Box>
-                                        <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
-                                    </Box>
-                                </Box>
-                            </Flex>
                             <Box>
                                 <Text fontSize={'xl'}>Cost</Text>
-                                ৳{Math.round(Math.abs((endDate - startDate) / 86400000)) * props.reservation_price}
+                                ৳{props.reservation_price}
                             </Box>
                         </Stack>
                     </ModalBody>

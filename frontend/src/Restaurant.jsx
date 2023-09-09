@@ -12,16 +12,14 @@ function Restaurant() {
         const t = await fetch(url)
         const j = await t.json()
         setData(j)
-        console.log(j)
-        console.log(j.rating_info)
     }
     useEffect(() => {
         initialize()
-    }, [])
+    }, [id])
     return (
         <div>
             <Navbar2 />
-            <RestaurantDetails ratingInfo={data.rating_info} props={data} />
+            <RestaurantDetails data={JSON.stringify(data)} />
         </div>
     )
 }

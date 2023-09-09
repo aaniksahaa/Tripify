@@ -1,28 +1,30 @@
 'use client'
 
-import React, { useState } from 'react'
 import {
   Box,
   IconButton,
-  useBreakpointValue,
-  Stack,
-  Heading,
-  Text,
-  Container,
-  Image,
-  Flex,
-
+  useBreakpointValue
 } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick'
-import StarRating from './StarRating'
 
 // Settings for the slider
 
-export default function Carousel({images}) {
+export default function Carousel({ data }) {
   const [slider, setSlider] = useState(null)
+  const [images, setImages] = useState([])
+  async function initialize() {
+    try {
+      setImages(JSON.parse(data))
+    }
+    catch { }
+  }
+  useEffect(() => {
+    initialize()
+  }, [data])
   const settings = {
     dots: true,
     arrows: false,

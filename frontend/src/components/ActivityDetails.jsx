@@ -2,6 +2,7 @@
 import {
     Box,
     Button,
+    Card,
     Container,
     Divider,
     Flex,
@@ -37,22 +38,37 @@ import Carousel from './Carousel';
 import React, { useEffect, useState } from 'react';
 import { BiSolidHourglassBottom, BiSolidHourglassTop } from 'react-icons/bi';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import { addToList } from '../LocalStorage';
+import { useParams } from 'react-router-dom';
+import { getActivityById, getDestinations } from '../API';
+import { addToList, useLocalStorage } from '../LocalStorage';
+import CardSlider from './CardSlider';
 
-export default function ActivityDetails({ props, price, destination, destinationId }) {
+export default function ActivityDetails({ t, data, price, destination, destinationId }) {
     const [date, setDate] = useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [destinations, setDestinations] = useState([])
     const [persons, setPersons] = useState(1)
+    const [props, setProps] = useState({})
 
-    async function load() {
-        var url = api_base + '/destination/?'
-        const r = await fetch(url)
-        const j = await r.json()
-        setDests(j)
+    const { id } = useParams()
+    const [aid, setaid] = useLocalStorage('aid', '1')
+
+    async function initialize() {
+        var x;
+        if (t !== undefined) x = aid;
+        else x = id;
+        const p = await getActivityById(x)
+        setProps(p)
+        const filter = {
+            activity_id: p.activity_id
+        }
+        const d = await getDestinations(filter)
+        setDestinations(d)
+        console.log(d)
     }
+
     function okClick() {
         const t = {
             id: props.activity_id,
@@ -67,8 +83,8 @@ export default function ActivityDetails({ props, price, destination, destination
         onClose()
     }
     useEffect(() => {
-        console.log(props)
-    }, [props])
+        initialize()
+    }, [])
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -79,7 +95,7 @@ export default function ActivityDetails({ props, price, destination, destination
             >
                 <Box>
                     <Box>
-                        <Carousel images={props.images}/>
+                        <Carousel data={JSON.stringify(props.images)} />
                     </Box>
                 </Box>
                 <Stack>
@@ -116,20 +132,8 @@ export default function ActivityDetails({ props, price, destination, destination
                             </Text> */}
                         </Box>
                     </Stack>
-                    <Box>
-                            <Text fontSize={'3xl'}>
-                                Destinations
-                            </Text>
-                            <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
-                                {destinations && destinations.map((obj, idx) => {
-                                    return <DestinationCard key={idx} props={obj} />
-                                }
-                                )}
-                            </SimpleGrid>
-                        </Box>
-                </Stack>
-                <Stack spacing={{ base: 6, md: 10 }}>
-                    {/* <Text
+                    <Stack spacing={{ base: 6, md: 10 }}>
+                        {/* <Text
                         fontSize={{ base: '20x', lg: '25px' }}
                         // color={useColorModeValue('yellow.500', 'yellow.300')}
                         // fontWeight={'500'}
@@ -137,106 +141,125 @@ export default function ActivityDetails({ props, price, destination, destination
                         mb={'4'}>
                         More
                     </Text> */}
-                    <Text fontSize='3xl'>
-                        Details
-                    </Text>
-                    <Stack
-                        spacing={{ base: 4, sm: 6 }}
-                        direction={'column'}
-                    >
-                        <Box>
+                        <Text fontSize='3xl'>
+                            Details
+                        </Text>
+                        <Stack
+                            spacing={{ base: 4, sm: 6 }}
+                            direction={'column'}
+                        >
+                            <Box>
 
-                            <TableContainer>
-                                <Table variant='striped'>
-                                    <Tbody>
-                                        {
-                                            price && <Tr>
+                                <TableContainer>
+                                    <Table variant='striped'>
+                                        <Tbody>
+                                            {
+                                                price && <Tr>
+                                                    <Td>
+                                                        <Flex alignItems='center'>
+                                                            <Box><ImPriceTag size={30} /></Box><Box>&emsp;Price Per Person</Box>
+                                                        </Flex>
+                                                    </Td>
+                                                    <Td>
+                                                        ৳{price}
+                                                    </Td>
+                                                </Tr>
+                                            }
+                                            {
+                                                destination && <Tr>
+                                                    <Td>
+                                                        <Flex alignItems='center'>
+                                                            <Box><FaMapMarkerAlt size={30} /></Box><Box>&emsp;Destination</Box>
+                                                        </Flex>
+                                                    </Td>
+                                                    <Td>
+                                                        {destination}
+                                                    </Td>
+                                                </Tr>
+                                            }
+                                            <Tr>
                                                 <Td>
                                                     <Flex alignItems='center'>
-                                                        <Box><ImPriceTag size={30} /></Box><Box>&emsp;Price Per Person</Box>
+                                                        <Box><MdCategory size={30} /></Box><Box>&emsp;Category</Box>
                                                     </Flex>
                                                 </Td>
                                                 <Td>
-                                                    ৳{price}
+                                                    {props.category}
                                                 </Td>
                                             </Tr>
-                                        }
-                                        {
-                                            destination && <Tr>
+                                            <Tr>
                                                 <Td>
                                                     <Flex alignItems='center'>
-                                                        <Box><FaMapMarkerAlt size={30} /></Box><Box>&emsp;Destination</Box>
+                                                        <Box>
+                                                            <BiSolidHourglassBottom size={30} />
+                                                        </Box>
+                                                        <Box>
+                                                            &emsp;Minimum Age
+                                                        </Box>
                                                     </Flex>
                                                 </Td>
                                                 <Td>
-                                                    {destination}
+                                                    {props.min_age}
                                                 </Td>
                                             </Tr>
-                                        }
-                                        <Tr>
-                                            <Td>
-                                                <Flex alignItems='center'>
-                                                    <Box><MdCategory size={30} /></Box><Box>&emsp;Category</Box>
-                                                </Flex>
-                                            </Td>
-                                            <Td>
-                                                {props.category}
-                                            </Td>
-                                        </Tr>
-                                        <Tr>
-                                            <Td>
-                                                <Flex alignItems='center'>
-                                                    <Box>
-                                                        <BiSolidHourglassBottom size={30} />
-                                                    </Box>
-                                                    <Box>
-                                                        &emsp;Minimum Age
-                                                    </Box>
-                                                </Flex>
-                                            </Td>
-                                            <Td>
-                                                {props.min_age}
-                                            </Td>
-                                        </Tr>
-                                        <Tr>
-                                            <Td>
-                                                <Flex alignItems='center'>
-                                                    <Box>
-                                                        <BiSolidHourglassTop size={30} />
-                                                    </Box>
-                                                    <Box>
-                                                        &emsp;Maximum Age
-                                                    </Box>
-                                                </Flex>
-                                            </Td>
-                                            <Td>
-                                                {props.max_age}
-                                            </Td>
-                                        </Tr>
-                                    </Tbody>
-                                </Table>
-                            </TableContainer>
-                        </Box>
-                        {
-                            price && <Button
-                                onClick={onOpen}
-                                rounded={'none'}
-                                w={'full'}
-                                size={'lg'}
-                                bg={useColorModeValue('gray.900', 'gray.50')}
-                                color={useColorModeValue('white', 'gray.900')}
-                                textTransform={'uppercase'}
-                                _hover={{
-                                    transform: 'translateY(2px)',
-                                    boxShadow: 'lg',
-                                }}>
-                                Add to Trip
-                            </Button>
-                        }
-                        
+                                            <Tr>
+                                                <Td>
+                                                    <Flex alignItems='center'>
+                                                        <Box>
+                                                            <BiSolidHourglassTop size={30} />
+                                                        </Box>
+                                                        <Box>
+                                                            &emsp;Maximum Age
+                                                        </Box>
+                                                    </Flex>
+                                                </Td>
+                                                <Td>
+                                                    {props.max_age}
+                                                </Td>
+                                            </Tr>
+                                        </Tbody>
+                                    </Table>
+                                </TableContainer>
+                            </Box>
+                            {
+                                price && <Button
+                                    onClick={onOpen}
+                                    rounded={'none'}
+                                    w={'full'}
+                                    size={'lg'}
+                                    bg={useColorModeValue('gray.900', 'gray.50')}
+                                    color={useColorModeValue('white', 'gray.900')}
+                                    textTransform={'uppercase'}
+                                    _hover={{
+                                        transform: 'translateY(2px)',
+                                        boxShadow: 'lg',
+                                    }}>
+                                    Add to Trip
+                                </Button>
+                            }
+
+                        </Stack>
                     </Stack>
+
+
                 </Stack>
-                
+
+                <Box>
+                    <Stack spacing={{ base: 6, md: 10 }}>
+                        <Text fontSize={'3xl'}>
+                            Destinations
+                        </Text>
+                        <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                            {destinations && destinations.map((destination, index) =>
+                                <Box key={index}>
+                                    <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                                        <CardSlider href={`/destination/${destination.destination_id}`} imgs={destination.images} title={destination.name} info={destination.category} />
+                                    </Card>
+                                </Box>
+                            )}
+                        </SimpleGrid>
+                    </Stack>
+                </Box>
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>

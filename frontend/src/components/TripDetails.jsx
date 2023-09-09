@@ -20,35 +20,49 @@ import {
     Tbody,
     Td,
     Text,
+    Textarea,
+    Thead,
     Tr,
     useColorModeValue,
     useDisclosure
 } from '@chakra-ui/react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { ImPriceTag } from 'react-icons/im';
 import Carousel from './Carousel';
 
-import { AiOutlineMail } from 'react-icons/ai';
-import { FaMapMarkerAlt } from 'react-icons/fa';
 // import { EmblaCarousel } from './EmblaCarousel'
-import React, { useState } from 'react';
-import { addToList } from '../LocalStorage';
+import { DeleteIcon } from '@chakra-ui/icons';
+import React, { useEffect, useState } from 'react';
+import { FaHourglassEnd, FaHourglassStart } from 'react-icons/fa';
+import { ImPriceTag } from 'react-icons/im';
+import { useParams } from 'react-router-dom';
+import { createReview, getTripById } from '../API';
+import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import EmblaCarousel from './EmblaCarousel';
 import RatingBox from './RatingBox';
+import StarRating from './StarRating';
 
-export default function TripDetails({ props }) {
+export default function TripDetails() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
-
+    const [props, setProps] = useState({})
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
+    const { id } = useParams()
+    async function initialize() {
+        const t = await getTripById(id)
+        setProps(t)
+    }
+    useEffect(() => {
+        initialize()
+    }, [id])
+
     function activityClick(id) {
         setActivity(props.activities[id])
         onOpen2()
@@ -64,6 +78,19 @@ export default function TripDetails({ props }) {
         addToList('_destinations', data)
         onClose()
     }
+    async function postReviewClick() {
+        const postData = {
+            "description": review,
+            "rating": rating,
+            "image_url": "dummy.jpg",
+            "object_type": "trip",
+            "object_id": props.trip_id
+        }
+        await createReview(postData)
+        setRating(0)
+        setReview('')
+    }
+    const [user, setUser] = useLocalStorage('tripify_user', {})
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -136,6 +163,36 @@ export default function TripDetails({ props }) {
                                         <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
+                                                    <Box><ImPriceTag size={30} /></Box><Box>&emsp;Total Price</Box>
+                                                </Flex>
+                                            </Td>
+                                            <Td>
+                                                ৳{props.total_price}
+                                            </Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td>
+                                                <Flex alignItems='center'>
+                                                    <Box><FaHourglassStart size={30} /></Box><Box>&emsp;Start Date</Box>
+                                                </Flex>
+                                            </Td>
+                                            <Td>
+                                                ৳{new Date(props.start_date).toLocaleString()}
+                                            </Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td>
+                                                <Flex alignItems='center'>
+                                                    <Box><FaHourglassEnd size={30} /></Box><Box>&emsp;End Date</Box>
+                                                </Flex>
+                                            </Td>
+                                            <Td>
+                                                ৳{new Date(props.end_date).toLocaleString()}
+                                            </Td>
+                                        </Tr>
+                                        {/* <Tr>
+                                            <Td>
+                                                <Flex alignItems='center'>
                                                     <Box><ImPriceTag size={30} /></Box><Box>&emsp;City</Box>
                                                 </Flex>
                                             </Td>
@@ -157,8 +214,8 @@ export default function TripDetails({ props }) {
                                             <Td>
                                                 {props.address}
                                             </Td>
-                                        </Tr>
-                                        <Tr>
+                                        </Tr> */}
+                                        {/* <Tr>
                                             <Td>
                                                 <Flex alignItems='center'>
                                                     <Box>
@@ -172,25 +229,76 @@ export default function TripDetails({ props }) {
                                             <Td>
                                                 <iframe style={{ width: '100%', height: '300px' }} src={`https://maps.google.com/maps?q=${props.latitude},${props.longitude}&output=embed`}></iframe>
                                             </Td>
-                                        </Tr>
+                                        </Tr> */}
                                     </Tbody>
                                 </Table>
                             </TableContainer>
+                            <br />
+                            <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
+                                <Button colorScheme='blue' width={'50%'}>Book</Button>
+                                {
+
+                                    props.creator_user_id == user.user_id ?
+                                        <Button colorScheme='red'><DeleteIcon /></Button> :
+                                        <></>
+                                }
+                            </Stack>
                         </Box>
                         <Box>
                             <Stack spacing={{ base: 6, md: 10 }}>
-                                <Text fontSize={'3xl'}>
-                                    Activities
-                                </Text>
-                                <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
-                                    {props.activities && props.activities.map((item, index) =>
-                                        <Box onClick={() => activityClick(index)} key={index}>
-                                            <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                                                <CardSlider images={item.activity.images} price={item.price} title={item.activity.name} info={item.activity.category} rating={Math.floor(Math.random() * 5)} />
-                                            </Card>
-                                        </Box>
-                                    )}
-                                </SimpleGrid>
+                                <Box>
+                                    <Text fontSize={'3xl'}>
+                                        Hotels
+                                    </Text>
+                                    <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                                        {props.hotels && props.hotels.map((item, index) =>
+                                            <Box key={index}>
+                                                <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                                                    <CardSlider imgs={item.hotel.images} price={item.hotel.price_per_day} title={item.hotel.name} info={item.hotel.address} rating={item.hotel.rating_info.rating_avg} />
+                                                </Card>
+                                            </Box>
+                                        )}
+                                    </SimpleGrid>
+                                </Box>
+                                <Box>
+                                    <Text fontSize={'3xl'}>
+                                        Restaurants
+                                    </Text>
+                                    <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 2, xl: 2 }} spacing={'20px'}>
+                                        {props.restaurants && props.restaurants.map((item, index) =>
+                                            <Box key={index}>
+                                                <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                                                    <CardSlider imgs={item.restaurant.images} price={item.restaurant.reservation_price} title={item.restaurant.name} info={item.restaurant.address} rating={item.restaurant.rating_info.rating_avg} />
+                                                </Card>
+                                            </Box>
+                                        )}
+                                    </SimpleGrid>
+                                </Box>
+                                <Box>
+                                    <Text fontSize={'3xl'}>
+                                        Destination & Activities
+                                    </Text>
+                                    <Table>
+                                        <Thead>
+                                            <Tr>
+                                                <Td>Destination</Td>
+                                                <Td>Activity</Td>
+                                                <Td>Date</Td>
+                                                <Td>Cost</Td>
+                                            </Tr>
+                                        </Thead>
+                                        <Tbody>
+                                            {props.contains && props.contains.map((item, index) =>
+                                                <Tr>
+                                                    <Td>{item.destination_name}</Td>
+                                                    <Td>{item.activity_name}</Td>
+                                                    <Td>{new Date(item.tentative_date).toLocaleString()}</Td>
+                                                    <Td>৳{item.price}</Td>
+                                                </Tr>
+                                            )}
+                                        </Tbody>
+                                    </Table>
+                                </Box>
                             </Stack>
                         </Box>
                     </Stack>
@@ -223,9 +331,22 @@ export default function TripDetails({ props }) {
                                 Reviews
                             </Text>
                             <Box marginTop='20px'>
-                                <EmblaCarousel />
+                                <EmblaCarousel type={'trip'} id={props.trip_id} />
                             </Box>
-
+                            <Box marginTop={'20px'}>
+                                <Text fontSize='3xl' textAlign={'center'}>
+                                    Write a Review
+                                </Text>
+                                <Box margin='10px'>
+                                    <Box marginBottom={'10px'}>
+                                        <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                    </Box>
+                                    <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                        setReview(e.target.value)
+                                    }} />
+                                    <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
+                                </Box>
+                            </Box>
                         </Box>
                     </Stack>
                 </Box>
