@@ -27,6 +27,7 @@ const postRouter = require('./routes/post')
 const commentRouter = require('./routes/comment')
 const feedRouter = require('./routes/feed')
 const statRouter = require('./routes/stat')
+const chatRouter = require('./routes/chat')
 
 // Errorhandler
 
@@ -66,6 +67,7 @@ app.use('/api/v1/post', postRouter)
 app.use('/api/v1/comment', commentRouter)
 app.use('/api/v1/feed', feedRouter)
 app.use('/api/v1/stat', statRouter)
+app.use('/api/v1/chat', chatRouter)
 
 // Use errorhandler
 
