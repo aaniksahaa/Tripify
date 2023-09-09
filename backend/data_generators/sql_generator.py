@@ -1,6 +1,6 @@
 import json
 
-from other_gen_functions import get_follow_sql
+from other_gen_functions import get_follow_sql, get_comment_sql, get_tripbooking_sql, get_react_sql
 
 base_path = './backend/data_generators'
 
@@ -20,6 +20,8 @@ flights = read_json_file('flights.json')
 trips = read_json_file('trips.json')
 users = read_json_file('users.json')
 provides = read_json_file('provides.json')
+posts = read_json_file('posts.json')
+
 
 sql = ""
 
@@ -37,7 +39,7 @@ seq_tables = ['user', 'destination', 'activity', 'trip', 'hotel', 'city', 'fligh
 
 sql += "\n---Deleting previous entries...\n\n"
 
-tables_to_be_modified = ['Users','Guides','Cities', 'Destinations', 'Activities', 'Hotels', 'Flights', 'Restaurants', 'Flights', 'Provides', 'Trips', 'Reviews']
+tables_to_be_modified = ['Users','Guides','Cities', 'Destinations', 'Activities', 'Hotels', 'Flights', 'Restaurants', 'Flights', 'Provides', 'Trips', 'Reviews', 'Posts', 'Comments', 'Reacts']
 
 for t in tables_to_be_modified:
     sql += f"DELETE FROM {t};\n"
@@ -87,7 +89,7 @@ sql += "\n---Destinations\n\n"
 
 destination_id = 1
 for d in destinations:
-    s = f"INSERT INTO Destinations (name, address, city_id, latitude, longitude, description, image_url) VALUES ('{d['name']}', '{d['address']}', {d['city_id']}, {d['latitude']}, {d['longitude']}, '{d['description']}', '{d['image_url']}');\n"
+    s = f"INSERT INTO Destinations (name, address, city_id, latitude, longitude, description, image_url) VALUES ('{d['name']}', '{d['address']}', {d['city_id']}, {d['latitude']}, {d['longitude']}, '{d['description']}', '{destinations[0]['images'][0]}');\n"
     for url in d['images']:
       s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','destination',{destination_id});\n"
     s += '\n'
@@ -98,7 +100,7 @@ sql += "\n---Activities\n\n"
 
 activity_id = 1
 for a in activities:
-    s = f"INSERT INTO Activities (name, category, description, image_url, min_age, max_age) VALUES ('{a['name']}', '{a['category']}', '{a['description']}', '{a['image_url']}', {a['min_age']}, {a['max_age']});\n"
+    s = f"INSERT INTO Activities (name, category, description, image_url, min_age, max_age) VALUES ('{a['name']}', '{a['category']}', '{a['description']}', '{activities[0]['images'][0]}', {a['min_age']}, {a['max_age']});\n"
     for url in a['images']:
       s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','activity',{activity_id});\n"
     s += '\n'
@@ -109,7 +111,7 @@ sql += "\n---Hotels\n\n"
 
 hotel_id = 1
 for h in hotels:
-    s = f"INSERT INTO Hotels (name, address, city_id, description, image_url, price_per_day, phone, email, has_wifi, has_parking, has_gym) VALUES ('{h['name']}', '{h['address']}', {h['city_id']}, '{h['description']}', '{h['image_url']}', {h['price_per_day']}, '{h['phone']}', '{h['email']}', {h['has_wifi']}, {h['has_parking']}, {h['has_gym']});\n"
+    s = f"INSERT INTO Hotels (name, address, city_id, description, image_url, price_per_day, phone, email, has_wifi, has_parking, has_gym) VALUES ('{h['name']}', '{h['address']}', {h['city_id']}, '{h['description']}', '{hotels[0]['images'][0]}', {h['price_per_day']}, '{h['phone']}', '{h['email']}', {h['has_wifi']}, {h['has_parking']}, {h['has_gym']});\n"
     for url in h['images']:
       s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','hotel',{hotel_id});\n"
     s += '\n'
@@ -129,7 +131,7 @@ sql += "\n---Restaurants\n\n"
 
 restaurant_id = 1
 for r in restaurants:
-    s = f"INSERT INTO Restaurants (name, reservation_price, address, city_id, description, image_url, cuisine_type, contact, email) VALUES ('{r['name']}', {r['reservation_price']}, '{r['address']}', {r['city_id']}, '{r['description']}', '{r['image_url']}', '{r['cuisine_type']}', '{r['contact']}', '{r['email']}');\n"
+    s = f"INSERT INTO Restaurants (name, reservation_price, address, city_id, description, image_url, cuisine_type, contact, email) VALUES ('{r['name']}', {r['reservation_price']}, '{r['address']}', {r['city_id']}, '{r['description']}', '{restaurants[0]['images'][0]}', '{r['cuisine_type']}', '{r['contact']}', '{r['email']}');\n"
     for url in r['images']:
       s += f"INSERT INTO ImageCart(image_url, object_type, object_id) VALUES('{url}','restaurant',{restaurant_id});\n"
     s += '\n'
@@ -142,70 +144,6 @@ for p in provides:
     s = f"INSERT INTO Provides (destination_id, activity_id, price, is_available) VALUES ({p['destination_id']}, {p['activity_id']}, {p['price']}, {p['is_available']});"
     sql += s
     sql += "\n"
-
-sql += """
-
--- Insert dummy trips
-
-DECLARE
-  l_hotels HotelDatesList := HotelDatesList(
-    HotelDates(1, TO_DATE('2023-07-01', 'YYYY-MM-DD'), TO_DATE('2023-07-10', 'YYYY-MM-DD')),
-    HotelDates(2, TO_DATE('2023-07-15', 'YYYY-MM-DD'), TO_DATE('2023-07-20', 'YYYY-MM-DD'))
-  );
-  l_restaurants RestaurantList := RestaurantList(1, 2, 3);
-  l_contains DestinationActivitiesList := DestinationActivitiesList(
-    DestinationActivity(1, 1, TO_DATE('2023-07-15', 'YYYY-MM-DD')),
-    DestinationActivity(1, 4, TO_DATE('2023-07-17', 'YYYY-MM-DD'))
-  );
-  l_guides GuideList := GuideList(1, 2);
-  p_trip_id NUMBER;
-BEGIN
-  AddTrip(1, 2, 'Summer Vacation in Paris', 'Enjoy the charm of Paris in summer', 'paris_summer.jpg', TO_DATE('2023-07-01', 'YYYY-MM-DD'), TO_DATE('2023-07-25', 'YYYY-MM-DD'), 1, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
-  
-  DBMS_OUTPUT.PUT_LINE(p_trip_id);
-END;
-/
-
-DECLARE
-  l_hotels HotelDatesList := HotelDatesList(
-    HotelDates(5, TO_DATE('2023-08-10', 'YYYY-MM-DD'), TO_DATE('2023-08-20', 'YYYY-MM-DD')),
-    HotelDates(8, TO_DATE('2023-08-25', 'YYYY-MM-DD'), TO_DATE('2023-08-30', 'YYYY-MM-DD'))
-  );
-  l_restaurants RestaurantList := RestaurantList(10, 15, 20);
-  l_contains DestinationActivitiesList := DestinationActivitiesList(
-    DestinationActivity(2, 8, TO_DATE('2023-08-15', 'YYYY-MM-DD')),
-    DestinationActivity(2, 9, TO_DATE('2023-08-18', 'YYYY-MM-DD'))
-  );
-  l_guides GuideList := GuideList(1);
-  p_trip_id NUMBER;
-BEGIN
-  AddTrip(3, 4, 'Adventure in the Himalayas', 'Experience thrilling adventure in the Himalayas', 'himalayas_adventure.jpg', TO_DATE('2023-08-10', 'YYYY-MM-DD'), TO_DATE('2023-08-30', 'YYYY-MM-DD'), 2, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
-  
-  DBMS_OUTPUT.PUT_LINE(p_trip_id);
-END;
-/
-
-DECLARE
-  l_hotels HotelDatesList := HotelDatesList(
-    HotelDates(25, TO_DATE('2023-09-05', 'YYYY-MM-DD'), TO_DATE('2023-09-10', 'YYYY-MM-DD')),
-    HotelDates(30, TO_DATE('2023-09-15', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'))
-  );
-  l_restaurants RestaurantList := RestaurantList(18, 21, 22);
-  l_contains DestinationActivitiesList := DestinationActivitiesList(
-    DestinationActivity(3, 3, TO_DATE('2023-09-12', 'YYYY-MM-DD')),
-    DestinationActivity(3, 7, TO_DATE('2023-09-15', 'YYYY-MM-DD'))
-  );
-  l_guides GuideList := GuideList(1, 2);
-  p_trip_id NUMBER;
-BEGIN
-  AddTrip(5, 6, 'Relaxing Beach Vacation', 'Unwind on the beautiful beaches of Maldives', 'maldives_beach.jpg', TO_DATE('2023-09-05', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'), 0, l_contains, l_hotels, l_restaurants, l_guides, p_trip_id);
-  
-  DBMS_OUTPUT.PUT_LINE(p_trip_id);
-END;
-/
-
-"""
-
 
 
 def get_sql_from_trip(data):
@@ -274,6 +212,21 @@ for r in reviews:
     s += f"INSERT INTO {r['object_type']}Reviews(review_id, {r['object_type']}_id) VALUES({review_id}, {r['object_id']});\n\n"
     sql += s 
     review_id += 1
+
+sql += get_tripbooking_sql()
+
+sql += "\n---Posts\n\n"
+
+for p in posts:
+    sql += f"INSERT INTO POSTS(USER_ID,DESCRIPTION,IMAGE_URL) VALUES({p['user_id']},'{p['description']}','{p['image_url']}');\n\n"
+
+sql += '\n\n'
+
+sql += get_comment_sql()
+
+sql += get_react_sql()
+
+sql += "\n\nDELETE FROM NOTIFICATIONS;\n\n"
 
 sql += "\n\nSELECT * FROM USERS;\n\n"
 

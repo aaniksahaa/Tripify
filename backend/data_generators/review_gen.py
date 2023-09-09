@@ -120,7 +120,8 @@ def generate_restaurant_review():
 def generate_review():
     review = {}
     types = ['trip','hotel','restaurant']
-    type = random.choice(types)
+    indicator = random.randint(0,4)
+    type = types[indicator//2]
     description = ""
     rating = random.randint(2,5)
     image_url = "dummy.jpg"

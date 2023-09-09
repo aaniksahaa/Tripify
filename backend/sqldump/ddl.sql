@@ -70,7 +70,7 @@ CREATE TABLE Users(
     facebook_url VARCHAR2(50) DEFAULT 'https://www.facebook.com/leomessi',
     twitter_url VARCHAR2(50) DEFAULT 'https://twitter.com/imessi',
 		instagram_url VARCHAR2(50) DEFAULT 'https://www.instagram.com/leomessi',
-    profile_picture VARCHAR2(200) DEFAULT 'https://avatars.dicebear.com/api/avataaars/avatar.svg',
+    profile_picture VARCHAR2(500) DEFAULT 'https://avatars.dicebear.com/api/avataaars/avatar.svg',
     registration_date DATE DEFAULT CURRENT_DATE NOT NULL,
     status VARCHAR2(20) DEFAULT 'active',
     dob DATE NOT NULL,
@@ -172,7 +172,7 @@ CREATE TABLE Destinations (
     latitude NUMBER(8,4) CHECK (latitude >= -90 AND latitude <= 90),
     longitude NUMBER(8,4) CHECK (longitude >= -180 AND longitude <= 180),
     description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
 		created_on DATE DEFAULT CURRENT_DATE,
 		last_updated_on DATE DEFAULT CURRENT_DATE,
 		creator_user_id NUMBER DEFAULT 0,
@@ -211,7 +211,7 @@ CREATE TABLE Activities (
     name VARCHAR2(100) NOT NULL,
     category VARCHAR2(50),
     description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
     min_age NUMBER,
     max_age NUMBER,
 		created_on DATE DEFAULT CURRENT_DATE,
@@ -254,7 +254,7 @@ CREATE TABLE Trips (
     to_city_id NUMBER,
     name VARCHAR2(100) NOT NULL,
     description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
     total_price NUMBER CHECK(total_price > 0),
     start_date DATE,
     end_date DATE,
@@ -301,7 +301,7 @@ CREATE TABLE Hotels (
     address VARCHAR2(200),
     city_id NUMBER NOT NULL,
     description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
     price_per_day NUMBER,
     phone VARCHAR2(20),
     email VARCHAR2(100),
@@ -398,7 +398,7 @@ CREATE TABLE Restaurants (
     address VARCHAR2(200),
     city_id NUMBER NOT NULL,
     description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
     cuisine_type VARCHAR2(200),
     contact VARCHAR2(50),
     email VARCHAR2(100),
@@ -447,6 +447,7 @@ CREATE TABLE TripBookings (
     payment_method VARCHAR2(50),
     transaction_id VARCHAR2(100),
     payment_date DATE,
+		processing_date DATE,
     completion_date DATE,
     is_private NUMBER(1) DEFAULT 0 CHECK (is_private IN (0, 1)),
 		created_on DATE DEFAULT CURRENT_DATE,
@@ -658,7 +659,7 @@ CREATE TABLE Reviews(
     posting_date DATE DEFAULT CURRENT_DATE,
     description VARCHAR2(1000),
     rating NUMBER CHECK (rating >= 0 AND rating <= 5),
-    image_url VARCHAR2(200),
+    image_url VARCHAR2(500),
     upvote_count NUMBER DEFAULT 0 CHECK(upvote_count >= 0),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 )
@@ -827,13 +828,14 @@ SELECT * FROM FOLLOWS;
 */
 
 -- 19. Posts Table
+-- DROP TABLE POSTS CASCADE CONSTRAINTS;
 
 CREATE TABLE Posts(
     post_id NUMBER DEFAULT post_seq.NEXTVAL PRIMARY KEY,
     user_id NUMBER NOT NULL,
     posting_date DATE DEFAULT CURRENT_DATE,
-    description VARCHAR2(1000),
-    image_url VARCHAR2(200),
+    description VARCHAR2(2000),
+    image_url VARCHAR2(500),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 )
 LOGGING
@@ -861,12 +863,13 @@ SELECT * FROM POSTS;
 */
 
 -- 20. Reacts
+-- DROP TABLE REACTS;
 
 CREATE TABLE Reacts(
     user_id NUMBER NOT NULL,
     post_id NUMBER NOT NULL,
     reacting_date DATE DEFAULT CURRENT_DATE,
-    react_type VARCHAR2(20),
+    react_type VARCHAR2(20) DEFAULT 'like',
     PRIMARY KEY (user_id, post_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (post_id) REFERENCES Posts(post_id) ON DELETE CASCADE

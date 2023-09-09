@@ -3,20 +3,26 @@ import json
 from datetime import datetime, timedelta
 from config import hotel_count, restaurant_count, guide_count, trip_count
 
+from scraper_helpers import *
+
 import json
 
 base_path = './backend/data_generators'
 
 def read_json_file(filename):
-    json_file_path = base_path + '/data/' + filename
+    json_file_path = base_path + filename
     with open(json_file_path, 'r') as json_file:
         data = json.load(json_file)
     return data
 
-destinations = read_json_file('destinations.json')
-activities = read_json_file('activities.json')
-cities = read_json_file('cities.json')
-provides = read_json_file('provides.json')
+destinations = read_json_file('/data/destinations.json')
+activities = read_json_file('/data/activities.json')
+cities = read_json_file('/data/cities.json')
+provides = read_json_file('/data/provides.json')
+
+trip_images_api_responses = read_json_file('/scrapers/scraped_data/trip_images.json')
+
+
 
 city_count = len(cities)
 activity_count = len(activities)
@@ -53,12 +59,17 @@ def generate_trip_description():
     ]
     return random.choice(description_options)
 
-def generate_trip_data():
+def generate_trip_data(trip_image_urls):
+
     from_city_id = random.randint(1, city_count)
     to_city_id = random.randint(1, city_count)
     name = generate_trip_name()
     description = generate_trip_description()
-    image_url = "dummy.jpg"
+
+    #api_responses = read_json_file('/scrapers/scraped_data/trip_images.json')
+    #urls = get_images((random.choice(api_responses))['images'],max_images=100,max_size_in_kb=600)
+
+    image_url = random.choice(trip_image_urls)
     
     today = datetime.today()
     days_before = random.randint(5, 10)
@@ -85,9 +96,10 @@ def generate_trip_data():
     #     })
     
     hotels = []
-    for _ in range(random.randint(1, 2)):
+    hotel_ids = random.sample(range(1,hotel_count),random.randint(1,3))
+    for id in hotel_ids:
         hotels.append({
-            "hotel_id": random.randint(1, hotel_count),
+            "hotel_id": id,
             "checkin_date": (start_date + timedelta(random.randint(1,3))).strftime("%Y-%m-%d"),
             "checkout_date": (start_date + timedelta(random.randint(5,7))).strftime("%Y-%m-%d")
         })
@@ -118,12 +130,18 @@ def generate_trip_data():
     
     return trip_data
 
-def generate_random_trips():
+def generate_random_trips(max_size_in_kb):
+
+    trip_image_urls = []
+
+    for r in trip_images_api_responses:
+        trip_image_urls += get_images(r['images'],max_images=100,max_size_in_kb=max_size_in_kb)
+    #print(len(trip_image_urls))
 
     trips = []
 
     for _ in range(trip_count):
-        trips.append(generate_trip_data())
+        trips.append(generate_trip_data(trip_image_urls))
 
     formatted_users = json.dumps(trips, indent=2)
 
@@ -133,4 +151,4 @@ def generate_random_trips():
 
     print(trip_count,'trips successfully generated and written to ',file_path)
 
-#generate_random_trips()
+#generate_random_trips(max_size_in_kb=250)

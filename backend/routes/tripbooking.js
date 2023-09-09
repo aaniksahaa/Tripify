@@ -14,9 +14,9 @@ const {
 
 const router = express.Router();
 
-router.get('/:trip_id', async (req, res, next) => {
+router.get('/:user_id/:trip_id', async (req, res, next) => {
 
-    req.params.user_id = req.user ? req.user.user_id : 1;
+    //req.params.user_id = req.user ? req.user.user_id : 1;
 
     try {
 
@@ -35,7 +35,7 @@ router.get('/:trip_id', async (req, res, next) => {
 
 router.get('/', async (req,res,next) => {
 
-    req.query.user_id = req.user ? req.user.user_id : 1;
+    //req.query.user_id = req.user ? req.user.user_id : 1;
 
     try{
         const tripbookings = await getTripBookings(req.query)
