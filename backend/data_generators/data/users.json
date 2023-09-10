@@ -1,82 +1,82 @@
 [
   {
-    "username": "sanjida.binte",
-    "email": "sanjida.binte@gmail.com",
-    "password": "80toomW9UsoW",
-    "name": "Sanjida Binte",
-    "city_id": 9,
-    "dob": "1949-09-08"
+    "username": "sohel_uddin",
+    "email": "sohel_uddin@gmail.com",
+    "password": "xyz",
+    "name": "Sohel Uddin",
+    "city_id": 7,
+    "dob": "1998-12-23"
   },
   {
-    "username": "jahangir_rahman",
-    "email": "jahangir_rahman@gmail.com",
-    "password": "t2aLmJfuQ",
-    "name": "Jahangir Rahman",
+    "username": "sabina_khatun",
+    "email": "sabina_khatun@yahoo.com",
+    "password": "abc",
+    "name": "Sabina Khatun",
+    "city_id": 24,
+    "dob": "1972-12-28"
+  },
+  {
+    "username": "farida.khatun",
+    "email": "farida.khatun@yahoo.com",
+    "password": "xyz",
+    "name": "Farida Khatun",
     "city_id": 14,
-    "dob": "1962-08-05"
+    "dob": "2005-11-06"
   },
   {
-    "username": "mustafiz.miah",
-    "email": "mustafiz.miah@yahoo.com",
-    "password": "6nFft5GITtC9",
-    "name": "Mustafiz Miah",
-    "city_id": 1,
-    "dob": "1960-08-16"
-  },
-  {
-    "username": "tanisha_ali",
-    "email": "tanisha_ali@gmail.com",
-    "password": "zOiQzyP4HIN",
-    "name": "Tanisha Ali",
+    "username": "jahanara_haque",
+    "email": "jahanara_haque@yahoo.com",
+    "password": "123",
+    "name": "Jahanara Haque",
     "city_id": 11,
-    "dob": "1990-03-09"
+    "dob": "1958-01-14"
   },
   {
-    "username": "khalid.rahman",
-    "email": "khalid.rahman@gmail.com",
-    "password": "UETsfMGp0uGd",
-    "name": "Khalid Rahman",
-    "city_id": 9,
-    "dob": "1949-04-21"
+    "username": "ayesha.siddique",
+    "email": "ayesha.siddique@gmail.com",
+    "password": "123",
+    "name": "Ayesha Siddique",
+    "city_id": 8,
+    "dob": "1952-01-11"
   },
   {
-    "username": "nafisa_nasrin",
-    "email": "nafisa_nasrin@yahoo.com",
-    "password": "XnIEI2No",
-    "name": "Nafisa Nasrin",
-    "city_id": 3,
-    "dob": "1952-11-18"
+    "username": "tahmina_ali",
+    "email": "tahmina_ali@yahoo.com",
+    "password": "xyz",
+    "name": "Tahmina Ali",
+    "city_id": 21,
+    "dob": "1964-10-19"
   },
   {
-    "username": "asif_haque",
-    "email": "asif_haque@gmail.com",
-    "password": "lYokKJTefEKi",
-    "name": "Asif Haque",
-    "city_id": 28,
-    "dob": "1949-07-27"
+    "username": "sohel.chowdhury",
+    "email": "sohel.chowdhury@yahoo.com",
+    "password": "xyz",
+    "name": "Sohel Chowdhury",
+    "city_id": 12,
+    "dob": "1955-06-17"
   },
   {
-    "username": "sabina_chowdhury",
-    "email": "sabina_chowdhury@gmail.com",
-    "password": "qF2GjWqUU6o",
-    "name": "Sabina Chowdhury",
-    "city_id": 1,
-    "dob": "1971-07-01"
+    "username": "momin.mahmud",
+    "email": "momin.mahmud@yahoo.com",
+    "password": "abc",
+    "name": "Momin Mahmud",
+    "city_id": 8,
+    "dob": "1997-03-03"
   },
   {
-    "username": "mahbub_islam",
-    "email": "mahbub_islam@yahoo.com",
-    "password": "vjNKlTmqTu",
-    "name": "Mahbub Islam",
-    "city_id": 29,
-    "dob": "2000-02-14"
+    "username": "ayesha_hossain",
+    "email": "ayesha_hossain@yahoo.com",
+    "password": "abc",
+    "name": "Ayesha Hossain",
+    "city_id": 7,
+    "dob": "2004-12-19"
   },
   {
-    "username": "asif_sultana",
-    "email": "asif_sultana@yahoo.com",
-    "password": "cV8AtDi8bL9",
-    "name": "Asif Sultana",
-    "city_id": 17,
-    "dob": "1974-03-25"
+    "username": "rahim.ali",
+    "email": "rahim.ali@yahoo.com",
+    "password": "123",
+    "name": "Rahim Ali",
+    "city_id": 15,
+    "dob": "1955-03-02"
   }
 ]
