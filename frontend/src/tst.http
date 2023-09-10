@@ -67,3 +67,11 @@ Content-Type: application/json
 
 ###
 get http://localhost:3000/api/v1/feed?page=1&per_page=8&orderby=posting_date&ordertype=desc
+
+###
+post http://localhost:3000/api/v1/login
+Content-Type: application/json
+
+{
+    "]":"asda"
+}

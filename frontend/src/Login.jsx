@@ -12,12 +12,14 @@ import {
     Input,
     Stack,
     Text,
+    useToast,
 } from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
 import { getLogin } from './API'
 import { useLocalStorage } from './LocalStorage'
 
-export default function SplitScreen() {
+export default function Login() {
+    const toast = useToast()
     const [user, setUser] = useLocalStorage('tripify_user', null)
     const userRef = useRef()
     const passRef = useRef()
@@ -25,16 +27,41 @@ export default function SplitScreen() {
         const user = userRef.current.value
         const pass = passRef.current.value
         const result = await getLogin({ username: user, password: pass })
-        if (result.error) {
-            alert('Login failed')
+        if (result.token) {
+            toast({
+                title: 'Success',
+                description: 'Logged in successfully',
+                status: 'success',
+                duration: 5000,
+                isClosable: true,
+            })
+            setTimeout(() => {
+                setUser(result.user)
+                window.location = '/'
+            }, 1000)
+
         }
         else {
-            setUser(result.user)
-            window.location = '/'
+            var message = ''
+            if(result.errors) {
+                result.errors.forEach(x=>{
+                    message+=x.path+','
+                })
+                message = message.substring(0, message.length-1)
+                message += ' missing'
+            }
+            else message = result.message;
+            toast({
+                title: 'Failed',
+                description: message,
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            })
         }
     }
     useEffect(() => {
-        if(user) window.location = '/'
+        if (user) window.location = '/'
     }, [])
     return (
         <Box>

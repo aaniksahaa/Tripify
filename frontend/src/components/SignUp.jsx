@@ -14,6 +14,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  useToast,
 } from '@chakra-ui/react'
 
 import DatePicker from "react-datepicker";
@@ -23,20 +24,22 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 import { useLocalStorage } from '../LocalStorage'
 import { useEffect } from 'react'
+import { createUser } from '../API';
 
 export default function SignupCard() {
+  const toast = useToast()
   const [showPassword, setShowPassword] = useState(false)
   const [dob, setDob] = useState(new Date())
   const [user, setUser] = useLocalStorage('tripify_user', null)
   const [data, setData] = useState({
-    "username": "john_buet",
-    "email": "example@example.com",
-    "password": "123",
-    "name": "John Doe",
-    "dob": "1990-05-15"
+    "username": "",
+    "email": "",
+    "password": "",
+    "name": "",
+    "dob": ""
   })
   useEffect(() => {
-    if(user) window.location = '/'
+    if (user) window.location = '/'
   })
   function setDob_(date) {
     setDob(date)
@@ -52,7 +55,37 @@ export default function SignupCard() {
     })
   }
   async function signUp() {
-    
+    const result = await createUser(data)
+    if (result.username) {
+      toast({
+        title: 'Success',
+        description: 'Account created successfully',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      })
+      setTimeout(() => {
+        window.location = '/login'
+      }, 1000)
+    }
+    else {
+      var message = ''
+      if (result.errors) {
+        result.errors.forEach(x => {
+          message += x.path + ','
+        })
+        message = message.substring(0, message.length - 1)
+        message += ' missing'
+      }
+      else message = result.message;
+      toast({
+        title: 'Failed',
+        description: message,
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+    }
   }
   return (
     <Flex
