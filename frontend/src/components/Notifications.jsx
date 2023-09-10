@@ -24,6 +24,7 @@ function Notifications() {
     useEffect(() => {
         initialize()
     }, [])
+    
     function nextPage() {
         var f = filter
         f['page'] = Math.min(1000, f['page'] + 1)
@@ -46,13 +47,13 @@ function Notifications() {
             </MenuButton>
             <MenuList zIndex="dropdown" maxHeight={"80vh"} overflowY={"scroll"}>
                 {
-                    notifications.map((item, index) =>
+                    notifications.length > 0 && notifications.map((item, index) =>
                         <Box>
-                            <Card key={index}>
+                            <Card key={index} maxW={'500px'}>
                                 <CardBody>
                                     <Stack direction={'column'}>
-                                        <Text>{new Date(item.notifying_date).toLocaleString()}</Text>
-                                        <Text>{item.text}</Text>
+                                        <Text fontSize={'sm'}>{new Date(item.notifying_date).toLocaleString()}</Text>
+                                        <Text >{item.text}</Text>
                                     </Stack>
                                 </CardBody>
                             </Card>

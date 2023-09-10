@@ -17,18 +17,20 @@ export default function Carousel({ data }) {
   const [slider, setSlider] = useState(null)
   const [images, setImages] = useState([])
   async function initialize() {
+    console.log('CAROUSEL ->', data)
     try {
       setImages(data)
     }
     catch { }
   }
-  useEffect(() => {
-    initialize()
-  }, [])
+  // useEffect(() => {
+  //   initialize()
+  // }, [])
   
   useEffect(() => {
     initialize()
   }, [data])
+
   const settings = {
     dots: true,
     arrows: false,

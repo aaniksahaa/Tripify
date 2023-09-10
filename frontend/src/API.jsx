@@ -101,6 +101,11 @@ export async function getRestaurant(id) {
   const j = await getX(`restaurant/${id}`, {})
   return j
 }
+export async function getTrip(id) {
+  const j = await getX(`trip/${id}`, {})
+  return j
+}
+
 export async function getDestination(id) {
   const j = await getX(`destination/${id}`, {})
   return j

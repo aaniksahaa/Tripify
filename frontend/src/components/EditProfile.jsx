@@ -89,11 +89,12 @@ function EditProfile() {
         console.log(x)
         setUser(x)
         toast({
-            position:'bottom-right',
+            position:'top-right',
             title: 'Success',
             description: 'Profile updated successfully',
             status: 'success',
-            duration: 5000,
+            duration: 3000,
+            colorScheme:'whatsapp',
             isClosable: true,
         })
     }
@@ -153,6 +154,7 @@ function EditProfile() {
                             </Tbody>
                         </Table>
                         <Button colorScheme='blue' onClick={save}>Save</Button>
+                        <Box height={'500px'}></Box>
                     </VStack>
                 </VStack>
             </Container>

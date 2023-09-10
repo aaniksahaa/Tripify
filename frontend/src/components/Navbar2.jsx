@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Avatar, Box, Button, Center, CloseButton, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, VStack, chakra, useColorMode, useColorModeValue, useDisclosure } from "@chakra-ui/react";
+import { Avatar, Box, Button, Center, CloseButton, Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, VStack, chakra, useColorMode, useColorModeValue, useDisclosure, useToast } from "@chakra-ui/react";
 import React, { useState } from 'react';
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -8,8 +8,11 @@ import Cart from "./Cart";
 import { doesURLContain } from "../Utils";
 import { IoMdNotifications } from 'react-icons/io';
 import Notifications from "./Notifications";
+import { useEffect } from "react";
+import { getX } from "../API";
 
 function Navbar2({ openDrawer }) {
+    const toast = useToast()
     function logout() {
         localStorage.removeItem('tripify_user')
         location.reload();
@@ -20,6 +23,22 @@ function Navbar2({ openDrawer }) {
     const [open, setOpen] = useState(false)
     const { colorMode, toggleColorMode } = useColorMode()
     const [user, setUser] = useLocalStorage('tripify_user', null)
+    async function polling() {
+        const _notifications = await getX(`user/${user.user_id}/notifications`, { is_read: 0 })
+        _notifications.forEach(x => {
+            toast({
+                position: 'top-right',
+                title: 'Notification',
+                description: x.text,
+                status: 'info',
+                duration: 3000,
+                isClosable: true,
+            })
+        })
+    }
+    useEffect(() => {
+        setInterval(polling, 10000)
+    }, [])
     return (
         <Box style={{ zIndex: '20' }} position={'sticky'} top='0'>
             <Cart open={open} setOpen={setOpen} />

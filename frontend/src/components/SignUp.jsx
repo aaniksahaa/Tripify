@@ -58,11 +58,12 @@ export default function SignupCard() {
     const result = await createUser(data)
     if (result.username) {
       toast({
-        position:'bottom-right',
+        position:'top-right',
         title: 'Success',
         description: 'Account created successfully',
         status: 'success',
-        duration: 5000,
+        duration: 3000,
+        colorScheme:'whatsapp',
         isClosable: true,
       })
       setTimeout(() => {
@@ -80,11 +81,11 @@ export default function SignupCard() {
       }
       else message = result.message;
       toast({
-        position:'bottom-right',
+        position:'top-right',
         title: 'Failed',
         description: message,
         status: 'error',
-        duration: 5000,
+        duration: 3000,
         isClosable: true,
       })
     }

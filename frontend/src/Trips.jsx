@@ -26,6 +26,7 @@ function Trips() {
     var f = filter
     f['page'] = 1
     await load(f)
+    alert(JSON.stringify(f))
     setFilter(f)
   }
   async function load(t) {
@@ -198,7 +199,7 @@ function Trips() {
               {
                 trips.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider imgs={item.images} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={item.rating_info.rating_avg} price={item.total_price} />
+                    <CardSlider imgs={[item.image_url]} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={item.rating_info.rating_avg} price={item.total_price} />
                   </Card>
                 ))
               }

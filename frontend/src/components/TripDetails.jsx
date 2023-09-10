@@ -36,13 +36,14 @@ import React, { useEffect, useState } from 'react';
 import { FaHourglassEnd, FaHourglassStart } from 'react-icons/fa';
 import { ImPriceTag } from 'react-icons/im';
 import { useParams } from 'react-router-dom';
-import { createReview, getTripById } from '../API';
+import { createReview, getRestaurant, getTrip, getTripById } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import EmblaCarousel from './EmblaCarousel';
 import RatingBox from './RatingBox';
 import StarRating from './StarRating';
+import { getParam } from '../Utils';
 
 export default function TripDetails() {
     const [startDate, setStartDate] = useState(new Date());
@@ -54,30 +55,24 @@ export default function TripDetails() {
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
-    const { id } = useParams()
-    async function initialize() {
-        const t = await getTripById(id)
-        setProps(t)
-    }
-    useEffect(() => {
-        initialize()
-    }, [id])
 
     function activityClick(id) {
         setActivity(props.activities[id])
         onOpen2()
     }
-    function addClick() {
-        const data = {
-            id: props.destination_id,
-            name: props.name,
-            start: startDate,
-            end: endDate,
-            address: props.address
-        }
-        addToList('_destinations', data)
-        onClose()
+    
+    async function initialize(id) {
+        const data = await getTrip(id)
+        setProps(data)
     }
+
+    useEffect(() => {
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }, [])
+    
     async function postReviewClick() {
         const postData = {
             "description": review,
@@ -101,7 +96,7 @@ export default function TripDetails() {
             >
                 <Box>
                     <Box>
-                        <Carousel images={props.images} />
+                        <Carousel data={[props.image_url]} />
                     </Box>
                 </Box>
                 <Stack>
@@ -371,40 +366,6 @@ export default function TripDetails() {
                     </Box>
                 </ModalContent>
             </Modal>
-            <Modal onClose={onClose} isOpen={isOpen} isCentered>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Add Destination to Trip</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody display={'flex'} justifyContent={'space-between'}>
-                        <Box>
-                            <Box>
-                                <Text fontSize='xl'>Start</Text>
-                            </Box>
-                            <Box>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                            </Box>
-                        </Box>
-                        <Box>
-                            <Box>
-                                <Text fontSize='xl'>End</Text>
-                            </Box>
-                            <Box>
-                                <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} />
-                            </Box>
-                        </Box>
-                    </ModalBody>
-                    <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
-                        <Box>
-                            <Button margin='10px' colorScheme='blue' onClick={addClick}>OK</Button>
-                        </Box>
-                        <Box>
-                            <Button margin='10px' onClick={onClose}>Cancel</Button>
-                        </Box>
-                    </Box>
-                </ModalContent>
-            </Modal>
-
         </Container>
     )
 }
