@@ -172,7 +172,7 @@ export default function TripDetails() {
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                ৳{new Date(props.start_date).toLocaleString()}
+                                                {new Date(props.start_date).toLocaleString()}
                                             </Td>
                                         </Tr>
                                         <Tr>
@@ -182,7 +182,7 @@ export default function TripDetails() {
                                                 </Flex>
                                             </Td>
                                             <Td>
-                                                ৳{new Date(props.end_date).toLocaleString()}
+                                                {new Date(props.end_date).toLocaleString()}
                                             </Td>
                                         </Tr>
                                         {/* <Tr>
@@ -319,7 +319,7 @@ export default function TripDetails() {
                     </Box>
                     <Stack>
                         <Flex justifyContent={'center'}>
-                            <RatingBox />
+                            <RatingBox ratingInfo={props.rating_info}/>
                         </Flex>
                         <Box>
                             <Text fontSize='3xl' textAlign={'center'}>

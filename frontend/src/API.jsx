@@ -102,7 +102,7 @@ export async function getRestaurant(id) {
   return j
 }
 export async function getTrip(id) {
-  const j = await getX(`trip/${id}`, {})
+  const j = await getX(`trip/details/${id}`, {})
   return j
 }
 
