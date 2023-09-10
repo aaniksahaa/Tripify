@@ -22,6 +22,12 @@ import SignupCard from './components/SignUp'
 import Users from './components/Users'
 import Chat from './Chat'
 
+import AdminStat from './AdminStat'
+import AdminTrips from './AdminTrips'
+import AdminTripBookings from './AdminTripBookings'
+import AdminCreates from './AdminCreates'
+
+
 function App() {
   return (
     <>
@@ -33,7 +39,7 @@ function App() {
           <Route path="/reg" Component={SignupCard} />
           <Route path="/users" Component={Users} />
           <Route path="/chat" Component={Chat} />
-          
+
           <Route path="/hotels" Component={Hotels} />
           <Route path="/hotel/:id" Component={Hotel} />
 
@@ -42,7 +48,7 @@ function App() {
 
           <Route path="/destinations" Component={Destinations} />
           <Route path="/destination/:id" Component={Destination} />
-          
+
           <Route path="/trips" Component={Trips} />
           <Route path="/trip/:id" Component={Trip} />
 
@@ -56,6 +62,10 @@ function App() {
           <Route path="/post/:id" Component={Post} />
           <Route path="/profile" Component={Profile} />
           <Route path="/profile/:id" Component={Profile} />
+
+          <Route path="/statistics" Component={AdminStat} />
+          <Route path="/tripbookings" Component={AdminTripBookings} />
+          <Route path="/create-new" Component={AdminCreates} />
 
         </Routes>
       </BrowserRouter>

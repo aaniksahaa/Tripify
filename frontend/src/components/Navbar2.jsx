@@ -58,6 +58,15 @@ function Navbar2({ openDrawer }) {
                         </Button>
 
                         <HStack spacing={1} mr={1} color="brand.500" display={{ base: "none", md: "inline-flex", }}>
+                            {
+                                user && user.role === 'admin' &&
+                                <>
+                                    <Link to='/statistics'><Button variant="ghost">Statistics</Button></Link>
+                                    <Link to='/create-new'><Button variant="ghost">Create New</Button></Link>
+                                    <Link to='/tripbookings'><Button variant="ghost">TripBookings</Button></Link>
+                                </>
+                            }
+
                             <Link to='/trips'><Button variant={doesURLContain('trips') ? 'solid' : 'ghost'} colorScheme="blue">Trips</Button></Link>
                             <Link to='/hotels'><Button variant={doesURLContain('hotels') ? 'solid' : 'ghost'} colorScheme="blue">Hotels</Button></Link>
                             <Link to='/destinations'><Button variant={doesURLContain('destinations') ? 'solid' : 'ghost'} colorScheme="blue">Destinations</Button></Link>

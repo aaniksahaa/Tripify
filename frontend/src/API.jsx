@@ -217,6 +217,73 @@ export async function createTrip(body) {
 }
 
 
+// Added for Admin
+
+export async function getStat(filter) {
+  const j = await getX('stat', filter)
+  return j
+}
+
+export async function getPrices(filter) {
+  const j = await getX('stat/prices', filter)
+  return j
+}
+
+export async function getTripBookings(filter) {
+  const j = await getX('tripbooking', filter)
+  return j
+}
+
+export async function getSingleTripDetails(id) {
+  const j = await getX(`trip/details/${id}`, {})
+  return j
+}
+
+export async function getSingleTripBooking(user_id, trip_id) {
+  const j = await getX(`tripbooking/${user_id}/${trip_id}`, {})
+  return j
+}
+
+export async function processTripBooking(body) {
+  const j = await fetchX('PUT', 'tripbooking/onlyadmin/processed' , {}, body)
+  console.log(j)
+}
+
+export async function updateHotel(data) {
+  const j = await fetchX('PUT', 'hotel', {}, data)
+}
+
+export async function updateRestaurant(data) {
+  const j = await fetchX('PUT', 'restaurant', {}, data)
+}
+
+export async function updateDestination(data) {
+  const j = await fetchX('PUT', 'destination', {}, data)
+}
+
+export async function updateActivity(data) {
+  const j = await fetchX('PUT', 'activity', {}, data)
+}
+
+export async function deleteX(path) {
+  console.log('deleteX ->', path)
+  var url = `${api_base}/${path}/`
+  
+  const r = await Fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': getAuthToken()
+    }
+  })
+  const j = await r.json()
+  return j
+}
+
+
+////////////////////
+
+
+
 export async function getGeneralChatResponse(text) { 
   const j = await getX('chat/general', {user_text: text}) 
   return j 
