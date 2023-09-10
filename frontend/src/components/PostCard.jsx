@@ -71,7 +71,7 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                                 <Avatar name={name} src={profile_picture} />
                             </Link>
                             <Box>
-                                <Link to='/profile/1'>
+                                <Link to={'/profile/' + userId}>
                                     <Heading size='sm'>{name}</Heading>
                                 </Link>
                                 <Text>{new Date(posting_date).toLocaleString()}</Text>
