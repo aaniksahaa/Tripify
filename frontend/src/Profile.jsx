@@ -1,7 +1,7 @@
 import { Avatar, Box, Button, Center, Container, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, useDisclosure } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { follow, getUserProfile, isFollowing, writePost } from './API'
+import { follow, getUserProfile, isFollowing, unfollow, writePost } from './API'
 import { useLocalStorage } from './LocalStorage'
 import Navbar2 from './components/Navbar2'
 import Posts from './components/Posts'
@@ -29,8 +29,14 @@ function Profile() {
     //     setFilter(f)
     // }
     async function followClick() {
-        await follow(user.user_id, id)
+        if(followed) {
+            await unfollow(user.user_id, id)
+        }
+        else {
+            await follow(user.user_id, id)
+        }
         setFollowed(x => !x)
+        refresh()
     }
     async function refresh() {
         await load(filter)

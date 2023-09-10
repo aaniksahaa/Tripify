@@ -19,6 +19,8 @@ import EditProfile from './components/EditProfile'
 import Feed from './components/Feed'
 import Post from './components/Post'
 import SignupCard from './components/SignUp'
+import Users from './components/Users'
+import Chat from './Chat'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/" Component={Home} />
           <Route path="/login" Component={Login} />
           <Route path="/reg" Component={SignupCard} />
+          <Route path="/users" Component={Users} />
+          <Route path="/chat" Component={Chat} />
           
           <Route path="/hotels" Component={Hotels} />
           <Route path="/hotel/:id" Component={Hotel} />

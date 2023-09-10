@@ -38,6 +38,7 @@ import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import { getDestination } from '../API';
 import { useParams } from 'react-router-dom';
+import { getParam } from '../Utils';
 
 export default function DestDetails({ data }) {
     const [startDate, setStartDate] = useState(new Date());
@@ -50,18 +51,18 @@ export default function DestDetails({ data }) {
     const [props, setProps] = useState({})
     const [aid, setaid] = useLocalStorage('aid', '1')
 
-    const { id } = useParams()
     
-    async function initialize() {
+    async function initialize(id) {
         const data = await getDestination(id)
         setProps(data)
     }
+
     useEffect(() => {
-        initialize()
-    }, [id])
-    useEffect(() => {
-        initialize()
-    },[])
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }, [])
     
     function activityClick(id) {
         setActivity(props.activities[id])

@@ -5,11 +5,15 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useLocalStorage } from "../LocalStorage";
 import Cart from "./Cart";
+import { doesURLContain } from "../Utils";
+import { IoMdNotifications } from 'react-icons/io';
+import Notifications from "./Notifications";
 
 function Navbar2({ openDrawer }) {
     function logout() {
         localStorage.removeItem('tripify_user')
         location.reload();
+        localStorage.removeItem('authToken')
     }
     const bg = useColorModeValue("white", "gray.800");
     const mobileNav = useDisclosure();
@@ -28,21 +32,26 @@ function Navbar2({ openDrawer }) {
                         </chakra.a>
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={1}>
-                        <Button colorScheme="green" size="sm" onClick={() => {
+                        <Button colorScheme="green" onClick={() => {
                             setOpen(true)
                         }}>
                             My Trip
                         </Button>
 
                         <HStack spacing={1} mr={1} color="brand.500" display={{ base: "none", md: "inline-flex", }}>
-                            <Link to='/trips'><Button variant="ghost">Trips</Button></Link>
-                            <Link to='/hotels'><Button variant="ghost">Hotels</Button></Link>
-                            <Link to='/destinations'><Button variant="ghost">Destinations</Button></Link>
-                            <Link to='/activities'><Button variant="ghost">Activities</Button></Link>
-                            <Link to='/restaurants'><Button variant="ghost">Restaurants</Button></Link>
+                            <Link to='/trips'><Button variant={doesURLContain('trips') ? 'solid' : 'ghost'} colorScheme="blue">Trips</Button></Link>
+                            <Link to='/hotels'><Button variant={doesURLContain('hotels') ? 'solid' : 'ghost'} colorScheme="blue">Hotels</Button></Link>
+                            <Link to='/destinations'><Button variant={doesURLContain('destinations') ? 'solid' : 'ghost'} colorScheme="blue">Destinations</Button></Link>
+                            <Link to='/activities'><Button variant={doesURLContain('activities') ? 'solid' : 'ghost'} colorScheme="blue">Activities</Button></Link>
+                            <Link to='/restaurants'><Button variant={doesURLContain('restaurants') ? 'solid' : 'ghost'} colorScheme="blue">Restaurants</Button></Link>
+                            <Link to='/users'><Button variant={doesURLContain('users') ? 'solid' : 'ghost'} colorScheme="blue">Users</Button></Link>
+                            <Link to='/chat'><Button variant={doesURLContain('chat') ? 'solid' : 'ghost'} colorScheme="blue">Chat</Button></Link>
                             <Button onClick={toggleColorMode} variant="ghost">
                                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                             </Button>
+                            {
+                                user ? <Notifications /> : <></>
+                            }
                             {
                                 user ? <Menu>
                                     <MenuButton
@@ -136,12 +145,16 @@ function Navbar2({ openDrawer }) {
                                             <Button>Login</Button>
                                         </Link>
                                 }
-
-                                <Link style={{ width: '100%' }} to='/trips'><Button width='full' variant="ghost">Trips</Button></Link>
-                                <Link style={{ width: '100%' }} to='/hotels'><Button width='full' variant="ghost">Hotels</Button></Link>
-                                <Link style={{ width: '100%' }} to='/destinations'><Button width='full' variant="ghost">Destinations</Button></Link>
-                                <Link style={{ width: '100%' }} to='/activities'><Button width='full' variant="ghost">Activities</Button></Link>
-                                <Link style={{ width: '100%' }} to='/restaurants'><Button width='full' variant="ghost">Restaurants</Button></Link>
+                                {
+                                    user ? <Notifications /> : <></>
+                                }
+                                <Link style={{ width: '100%' }} to='/trips'><Button width='full' variant={doesURLContain('trips') ? 'solid' : 'ghost'} colorScheme="blue">Trips</Button></Link>
+                                <Link style={{ width: '100%' }} to='/hotels'><Button width='full' variant={doesURLContain('hotels') ? 'solid' : 'ghost'} colorScheme="blue">Hotels</Button></Link>
+                                <Link style={{ width: '100%' }} to='/destinations'><Button width='full' variant={doesURLContain('destinations') ? 'solid' : 'ghost'} colorScheme="blue">Destinations</Button></Link>
+                                <Link style={{ width: '100%' }} to='/activities'><Button width='full' variant={doesURLContain('activities') ? 'solid' : 'ghost'} colorScheme="blue">Activities</Button></Link>
+                                <Link style={{ width: '100%' }} to='/restaurants'><Button width='full' variant={doesURLContain('restaurants') ? 'solid' : 'ghost'} colorScheme="blue">Restaurants</Button></Link>
+                                <Link style={{ width: '100%' }} to='/users'><Button width={'full'} variant={doesURLContain('users') ? 'solid' : 'ghost'} colorScheme="blue">Users</Button></Link>
+                                <Link style={{ width: '100%' }} to='/chat'><Button width={'full'} variant={doesURLContain('chat') ? 'solid' : 'ghost'} colorScheme="blue">Chat</Button></Link>
                                 <Button onClick={toggleColorMode} variant="ghost">
                                     {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                                 </Button>

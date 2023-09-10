@@ -76,3 +76,16 @@ Content-Type: application/json
 {
     "]":"asda"
 }
+
+####
+
+get http://localhost:3000/api/v1/restaurant/31
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphYmVyIiwiaWQiOiI2NGIwMTA1MmM2NjVjZTdlOGMyYjcxNWYiLCJpYXQiOjE2ODkzMjExMzR9.qRM9MrsfavGbblEr1628hRL2tNXQmXi2iRVC2VLizp0
+
+###
+get http://localhost:3000/api/v1/hotel/168
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphYmVyIiwiaWQiOiI2NGIwMTA1MmM2NjVjZTdlOGMyYjcxNWYiLCJpYXQiOjE2ODkzMjExMzR9.qRM9MrsfavGbblEr1628hRL2tNXQmXi2iRVC2VLizp0
+
+###
+get http://localhost:3000/api/v1/notification
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphYmVyIiwiaWQiOiI2NGIwMTA1MmM2NjVjZTdlOGMyYjcxNWYiLCJpYXQiOjE2ODkzMjExMzR9.qRM9MrsfavGbblEr1628hRL2tNXQmXi2iRVC2VLizp0

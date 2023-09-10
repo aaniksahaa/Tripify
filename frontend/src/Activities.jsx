@@ -24,7 +24,7 @@ function Activities() {
     setActivities(_acts)
   }
   async function initialize() {
-    load({ orderby: 'name', ordertype: 'asc' })
+    await load({ })
   }
   useEffect(() => {
     initialize()

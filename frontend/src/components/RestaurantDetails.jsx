@@ -39,6 +39,7 @@ import { createReview, getRestaurant } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 import { useParams } from 'react-router-dom';
+import { getParam } from '../Utils';
 
 export default function RestaurantDetails({ restaurant_id, rating_info, data }) {
     const [startDate, setStartDate] = React.useState(new Date());
@@ -46,22 +47,31 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
-    const [props, setProps] = React.useState({})
+    const [props, setProps] = React.useState({
+        images: [],
+        name: '',
+        address: '',
+        cost: '',
+        reservation_price: 0,
+        restaurant_id: 0,
+        email: '',
+        contact: ''
+    })
 
-    const { id } = useParams()
-    
-    async function initialize() {
+
+    async function initialize(id) {
+        
         const data = await getRestaurant(id)
         setProps(data)
     }
-    
+
     useEffect(() => {
-        initialize()
-    }, [id])
-    useEffect(() => {
-        initialize()
-    },[])
-    
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }, [])
+
     function addClick() {
         const cartData = {
             id: props.restaurant_id,
@@ -94,7 +104,7 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
             >
                 <Box>
                     <Box>
-                        <Carousel data={props.images}/>
+                        <Carousel data={props.images} />
                     </Box>
                 </Box>
                 <Stack>
