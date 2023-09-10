@@ -15,3 +15,32 @@ last_names = [
     'Miah', 'Sultana', 'Haque', 'Begum', 'Ahmed', 'Chowdhury', 'Rahman', 'Khatun', 'Hossain', 'Ali',
     'Haque', 'Akter', 'Siddique', 'Islam', 'Haque', 'Mahmud', 'Nasrin', 'Khanom', 'Sultana', 'Kabir'
 ]
+
+# Male full names
+male_full_names = [
+    "James Smith",
+    "John Johnson",
+    "Robert Brown",
+    "Michael Taylor",
+    "William Miller",
+    "David Anderson",
+    "Joseph Williams",
+    "Charles Jones",
+    "Thomas Clark",
+    "Daniel Davis"
+]
+
+# Female full names
+female_full_names = [
+    "Mary Smith",
+    "Jennifer Johnson",
+    "Linda Brown",
+    "Patricia Taylor",
+    "Elizabeth Miller",
+    "Susan Anderson",
+    "Jessica Williams",
+    "Sarah Jones",
+    "Karen Clark",
+    "Nancy Davis"
+]
+

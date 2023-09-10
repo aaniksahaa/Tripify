@@ -1,82 +1,112 @@
 [
   {
-    "username": "sohel_uddin",
-    "email": "sohel_uddin@gmail.com",
+    "username": "robert_brown",
+    "email": "robert_brown@gmail.com",
     "password": "xyz",
-    "name": "Sohel Uddin",
-    "city_id": 7,
-    "dob": "1998-12-23"
-  },
-  {
-    "username": "sabina_khatun",
-    "email": "sabina_khatun@yahoo.com",
-    "password": "abc",
-    "name": "Sabina Khatun",
-    "city_id": 24,
-    "dob": "1972-12-28"
-  },
-  {
-    "username": "farida.khatun",
-    "email": "farida.khatun@yahoo.com",
-    "password": "xyz",
-    "name": "Farida Khatun",
-    "city_id": 14,
-    "dob": "2005-11-06"
-  },
-  {
-    "username": "jahanara_haque",
-    "email": "jahanara_haque@yahoo.com",
-    "password": "123",
-    "name": "Jahanara Haque",
-    "city_id": 11,
-    "dob": "1958-01-14"
-  },
-  {
-    "username": "ayesha.siddique",
-    "email": "ayesha.siddique@gmail.com",
-    "password": "123",
-    "name": "Ayesha Siddique",
-    "city_id": 8,
-    "dob": "1952-01-11"
-  },
-  {
-    "username": "tahmina_ali",
-    "email": "tahmina_ali@yahoo.com",
-    "password": "xyz",
-    "name": "Tahmina Ali",
-    "city_id": 21,
-    "dob": "1964-10-19"
-  },
-  {
-    "username": "sohel.chowdhury",
-    "email": "sohel.chowdhury@yahoo.com",
-    "password": "xyz",
-    "name": "Sohel Chowdhury",
+    "name": "Robert Brown",
     "city_id": 12,
-    "dob": "1955-06-17"
+    "dob": "1948-08-25",
+    "gender": "male",
+    "profile_picture": "https://assets.rbl.ms/13284363/980x.jpg",
+    "user_id": 3
   },
   {
-    "username": "momin.mahmud",
-    "email": "momin.mahmud@yahoo.com",
+    "username": "james_smith",
+    "email": "james_smith@gmail.com",
     "password": "abc",
-    "name": "Momin Mahmud",
-    "city_id": 8,
-    "dob": "1997-03-03"
+    "name": "James Smith",
+    "city_id": 12,
+    "dob": "1982-06-22",
+    "gender": "male",
+    "profile_picture": "https://usercontent1.hubstatic.com/13192620_f520.jpg",
+    "user_id": 4
   },
   {
-    "username": "ayesha_hossain",
-    "email": "ayesha_hossain@yahoo.com",
-    "password": "abc",
-    "name": "Ayesha Hossain",
-    "city_id": 7,
-    "dob": "2004-12-19"
-  },
-  {
-    "username": "rahim.ali",
-    "email": "rahim.ali@yahoo.com",
+    "username": "karen_clark",
+    "email": "karen_clark@gmail.com",
     "password": "123",
-    "name": "Rahim Ali",
-    "city_id": 15,
-    "dob": "1955-03-02"
+    "name": "Karen Clark",
+    "city_id": 29,
+    "dob": "2002-10-04",
+    "gender": "female",
+    "profile_picture": "http://listtop10s.com/wp-content/uploads/2014/05/Sexiest-Hollywood-Actresses-In-2014-.jpg",
+    "user_id": 5
+  },
+  {
+    "username": "sarah.jones",
+    "email": "sarah.jones@yahoo.com",
+    "password": "123",
+    "name": "Sarah Jones",
+    "city_id": 11,
+    "dob": "1996-11-14",
+    "gender": "female",
+    "profile_picture": "http://1.bp.blogspot.com/--skYJ5fQYs4/Tmh8V3YJgaI/AAAAAAAAFeA/-bfTeErP_R4/s1600/hollywood_actress_list+1.jpg",
+    "user_id": 6
+  },
+  {
+    "username": "karen.clark",
+    "email": "karen.clark@gmail.com",
+    "password": "abc",
+    "name": "Karen Clark",
+    "city_id": 6,
+    "dob": "1965-10-22",
+    "gender": "female",
+    "profile_picture": "https://i.ytimg.com/vi/EDgq4y0ew7o/maxresdefault.jpg",
+    "user_id": 7
+  },
+  {
+    "username": "thomas_clark",
+    "email": "thomas_clark@yahoo.com",
+    "password": "xyz",
+    "name": "Thomas Clark",
+    "city_id": 18,
+    "dob": "1951-11-05",
+    "gender": "male",
+    "profile_picture": "http://wallpapercave.com/wp/JDG8r2Y.jpg",
+    "user_id": 8
+  },
+  {
+    "username": "jessica_williams",
+    "email": "jessica_williams@yahoo.com",
+    "password": "123",
+    "name": "Jessica Williams",
+    "city_id": 29,
+    "dob": "1947-06-01",
+    "gender": "female",
+    "profile_picture": "http://1.bp.blogspot.com/--skYJ5fQYs4/Tmh8V3YJgaI/AAAAAAAAFeA/-bfTeErP_R4/s1600/hollywood_actress_list+1.jpg",
+    "user_id": 9
+  },
+  {
+    "username": "charles_jones",
+    "email": "charles_jones@gmail.com",
+    "password": "xyz",
+    "name": "Charles Jones",
+    "city_id": 4,
+    "dob": "1944-07-11",
+    "gender": "male",
+    "profile_picture": "https://qph.fs.quoracdn.net/main-qimg-183fce3cab061672b7515b55bb22c7bc",
+    "user_id": 10
+  },
+  {
+    "username": "mary_smith",
+    "email": "mary_smith@gmail.com",
+    "password": "abc",
+    "name": "Mary Smith",
+    "city_id": 25,
+    "dob": "1965-05-20",
+    "gender": "female",
+    "profile_picture": "https://i.ytimg.com/vi/EDgq4y0ew7o/maxresdefault.jpg",
+    "user_id": 11
+  },
+  {
+    "username": "david_anderson",
+    "email": "david_anderson@yahoo.com",
+    "password": "xyz",
+    "name": "David Anderson",
+    "city_id": 21,
+    "dob": "2011-02-07",
+    "gender": "male",
+    "profile_picture": "http://media2.popsugar-assets.com/files/2015/07/28/879/n/1922398/285466ade50a3012_GettyImages-177184640lxYxGv.xxxlarge.jpg",
+    "user_id": 12
   }
 ]

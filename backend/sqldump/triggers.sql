@@ -147,5 +147,89 @@ END;
 -- DROP TRIGGER NOTIFY_COMMENT;
 -- DROP TRIGGER NOTIFY_REACT;
 
+CREATE OR REPLACE TRIGGER HOTEL_UPD
+AFTER UPDATE
+ON HOTELS
+FOR EACH ROW
+DECLARE 
+	
+	
+	
+BEGIN 
+	
+	
+	INSERT INTO ProcedureLog( procedure_name, user_id, parameters )
+VALUES( 'Hotel Updated', 0, 'hotel_id = ' || :NEW.HOTEL_ID || ', hotel name = ' || :NEW.NAME );
+	
+	
+END;
+/
+
+
+CREATE OR REPLACE TRIGGER RESTAURANT_UPD
+AFTER UPDATE
+ON RESTAURANTS
+FOR EACH ROW
+DECLARE 
+	
+	
+	
+BEGIN 
+	
+	
+	INSERT INTO ProcedureLog( procedure_name, user_id, parameters )
+VALUES( 'Restaurant Updated', 0, 'restaurant_id = ' || :NEW.RESTAURANT_ID || ', restaurant name = ' || :NEW.NAME );
+	
+	
+END;
+/
+
+
+
+
+CREATE OR REPLACE TRIGGER DESTINATION_UPD
+AFTER UPDATE
+ON DESTINATIONS
+FOR EACH ROW
+DECLARE 
+	
+	
+	
+BEGIN 
+	
+	
+	INSERT INTO ProcedureLog( procedure_name, user_id, parameters )
+VALUES( 'Destination Updated', 0, 'destination_id = ' || :NEW.DESTINATION_ID || ', destination name = ' || :NEW.NAME );
+	
+	
+END;
+/
+
+
+CREATE OR REPLACE TRIGGER ACTIVITY_UPD
+AFTER UPDATE
+ON ACTIVITIES
+FOR EACH ROW
+DECLARE 
+	
+	
+	
+BEGIN 
+	
+	
+	INSERT INTO ProcedureLog( procedure_name, user_id, parameters )
+VALUES( 'Activity Updated', 0, 'activity_id = ' || :NEW.ACTIVITY_ID || ', activity name = ' || :NEW.NAME );
+	
+	
+END;
+/
+
+
+
+
+
+
+
+
 
 

@@ -13,7 +13,7 @@ print('\n\n\nWelcome\n\nMaster Generator Starting...\n\n')
 # image_width and image_height must be less than 2400 and a multiple of 100
 
 generate_random_flights()
-generate_random_users()
+generate_random_users(max_size_in_kb=250)
 generate_random_reviews()
 generate_random_trips(max_size_in_kb=250)
 generate_provides()

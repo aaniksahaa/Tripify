@@ -235,6 +235,12 @@ CREATE SEQUENCE notification_seq START WITH 1 INCREMENT BY 1 NOCACHE;
 
 """
 
+sql += "\n--Update User Images\n\n"
+for u in users:
+    sql += f"UPDATE USERS SET PROFILE_PICTURE = '{u['profile_picture']}' WHERE USER_ID = {u['user_id']};\n"
+
+sql += "\n\n"
+
 sql += "\n\nSELECT * FROM USERS;\n\n"
 
 file_path = base_path + '/sql/large_insert.sql' 
