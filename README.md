@@ -5298,141 +5298,297 @@ Example Response:
 ```json
 [
     {
-        "post_id": 13,
-        "user_id": 2,
-        "posting_date": "2023-07-28T18:00:00.000Z",
-        "description": "Enjoying a beautiful sunset!",
-        "image_url": "https://example.com/sunset.jpg",
-        "comments": [],
-        "reacts": []
-    },
-    {
-        "post_id": 14,
-        "user_id": 2,
-        "posting_date": "2023-07-28T18:00:00.000Z",
-        "description": "New Amazing Post",
-        "image_url": "amazing.jpg",
-        "comments": [],
-        "reacts": []
-    },
-    {
-        "post_id": 20,
-        "user_id": 11,
-        "posting_date": "2023-08-03T20:31:17.000Z",
-        "description": "At Canada Guys!",
-        "image_url": "https://example.com/sunset.jpg",
+        "post_id": 39,
+        "user_id": 4,
+        "posting_date": "2023-09-10T08:51:02.000Z",
+        "description": "As the sun dipped below the horizon, the sky painted a vivid canvas of oranges and purples, creating a mesmerizing sunset. Among the ancient ruins, I could almost hear the whispers of history, the stories of those who came before. At the top of the mountain, I felt a sense of accomplishment as I looked out over the sprawling landscape below.",
+        "image_url": "https://eplatfront.villagroup.com/content/themes/base/images/puerto-vallarta/activities/p1/a59/16TIROLESA.jpg?width=920&height=520&mode=crop&autorotate=true",
+        "user": {
+            "user_id": 4,
+            "username": "sabina_khatun",
+            "email": "sabina_khatun@yahoo.com",
+            "role": "client",
+            "name": "Sabina Khatun",
+            "bio": "Hey! I am using Tripify",
+            "city_id": 24,
+            "facebook_url": "https://www.facebook.com/leomessi",
+            "twitter_url": "https://twitter.com/imessi",
+            "instagram_url": "https://www.instagram.com/leomessi",
+            "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+            "dob": "1972-12-27T18:00:00.000Z",
+            "registration_date": "2023-09-10T08:50:26.000Z",
+            "status": "active",
+            "created_on": "2023-09-10T08:50:26.000Z",
+            "last_updated_on": "2023-09-10T08:50:26.000Z",
+            "city": {
+                "city_id": 24,
+                "name": "Jhenaidah",
+                "country_name": "Bangladesh",
+                "population": 126379,
+                "weather_type": "rainy"
+            }
+        },
         "comments": [
             {
-                "comment_id": 9,
-                "user_id": 1,
-                "post_id": 20,
-                "commenting_date": "2023-08-03T20:33:06.000Z",
-                "text": "wow, Canada is cool",
+                "comment_id": 59,
+                "user_id": 8,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "Youre setting the bar high.",
                 "upvote_count": 0,
                 "user": {
-                    "user_id": 1,
-                    "username": "aaniksahaa",
-                    "email": "abc@gmail.com",
+                    "user_id": 8,
+                    "username": "tahmina_ali",
+                    "email": "tahmina_ali@yahoo.com",
                     "role": "client",
-                    "name": "Anik Saha",
-                    "bio": "Little Coder",
-                    "city_id": 1,
-                    "facebook_url": "facebook.com/abc",
-                    "twitter_url": "twitter.com/abc",
-                    "instagram_url": "instagram.com/abc",
-                    "profile_picture": "dummy.jpg",
-                    "dob": "2002-09-16T18:00:00.000Z",
-                    "registration_date": "2023-08-03T07:32:21.000Z",
+                    "name": "Tahmina Ali",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 21,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1964-10-18T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
                     "status": "active",
-                    "created_on": "2023-08-03T07:32:21.000Z",
-                    "last_updated_on": "2023-08-03T07:32:21.000Z",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
                     "city": {
-                        "city_id": 1,
-                        "name": "Dhaka",
+                        "city_id": 21,
+                        "name": "Savar",
                         "country_name": "Bangladesh",
-                        "population": 168957745,
+                        "population": 160242,
+                        "weather_type": "sunny"
+                    }
+                }
+            },
+            {
+                "comment_id": 97,
+                "user_id": 5,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is pure gold. This is revolutionary. Youre making magic here.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 5,
+                    "username": "farida.khatun",
+                    "email": "farida.khatun@yahoo.com",
+                    "role": "client",
+                    "name": "Farida Khatun",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 14,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "2005-11-05T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 14,
+                        "name": "Pabna",
+                        "country_name": "Bangladesh",
+                        "population": 389918,
+                        "weather_type": "sunny"
+                    }
+                }
+            },
+            {
+                "comment_id": 149,
+                "user_id": 3,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "I cant get enough of your photos.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 3,
+                    "username": "sohel_uddin",
+                    "email": "sohel_uddin@gmail.com",
+                    "role": "client",
+                    "name": "Sohel Uddin",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 7,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1998-12-22T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 7,
+                        "name": "Rangpur",
+                        "country_name": "Bangladesh",
+                        "population": 2901390,
+                        "weather_type": "sunny"
+                    }
+                }
+            },
+            {
+                "comment_id": 161,
+                "user_id": 6,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is next level. Youve got skills! Youve captured the moment perfectly.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 6,
+                    "username": "jahanara_haque",
+                    "email": "jahanara_haque@yahoo.com",
+                    "role": "client",
+                    "name": "Jahanara Haque",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 11,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1958-01-13T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 11,
+                        "name": "Gazipur",
+                        "country_name": "Bangladesh",
+                        "population": 1997510,
+                        "weather_type": "sunny"
+                    }
+                }
+            },
+            {
+                "comment_id": 200,
+                "user_id": 5,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is a work of art.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 5,
+                    "username": "farida.khatun",
+                    "email": "farida.khatun@yahoo.com",
+                    "role": "client",
+                    "name": "Farida Khatun",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 14,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "2005-11-05T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 14,
+                        "name": "Pabna",
+                        "country_name": "Bangladesh",
+                        "population": 389918,
+                        "weather_type": "sunny"
+                    }
+                }
+            },
+            {
+                "comment_id": 204,
+                "user_id": 9,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is picture perfect.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 9,
+                    "username": "sohel.chowdhury",
+                    "email": "sohel.chowdhury@yahoo.com",
+                    "role": "client",
+                    "name": "Sohel Chowdhury",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 12,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1955-06-16T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 12,
+                        "name": "Feni",
+                        "country_name": "Bangladesh",
+                        "population": 705768,
                         "weather_type": "rainy"
                     }
                 }
-            }
-        ],
-        "reacts": [
+            },
             {
-                "user_id": 1,
-                "react_type": "care",
-                "reacting_date": "2023-08-03T20:34:20.000Z"
-            }
-        ]
-    },
-    {
-        "post_id": 19,
-        "user_id": 11,
-        "posting_date": "2023-08-03T20:31:08.000Z",
-        "description": "At Bulgeria Guys!",
-        "image_url": "https://example.com/sunset.jpg",
-        "comments": [],
-        "reacts": []
-    },
-    {
-        "post_id": 11,
-        "user_id": 1,
-        "posting_date": "2023-08-03T12:43:56.000Z",
-        "description": "Updated Amazing Post",
-        "image_url": "amazing.jpg",
-        "comments": [],
-        "reacts": []
-    },
-    {
-        "post_id": 9,
-        "user_id": 1,
-        "posting_date": "2023-08-03T09:38:39.000Z",
-        "description": "Amazing Post",
-        "image_url": "amazing.jpg",
-        "comments": [],
-        "reacts": [
-            {
-                "user_id": 1,
-                "react_type": "haha",
-                "reacting_date": "2023-08-03T12:56:51.000Z"
-            }
-        ]
-    },
-    {
-        "post_id": 8,
-        "user_id": 1,
-        "posting_date": "2023-08-03T09:34:47.000Z",
-        "description": "Amazing Post",
-        "image_url": "dummy.jpg",
-        "comments": [
-            {
-                "comment_id": 7,
-                "user_id": 1,
-                "post_id": 8,
-                "commenting_date": "2023-08-03T16:39:19.000Z",
-                "text": "cool post",
+                "comment_id": 215,
+                "user_id": 4,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "Youre a wizard. This is world-class.",
                 "upvote_count": 0,
                 "user": {
-                    "user_id": 1,
-                    "username": "aaniksahaa",
-                    "email": "abc@gmail.com",
+                    "user_id": 4,
+                    "username": "sabina_khatun",
+                    "email": "sabina_khatun@yahoo.com",
                     "role": "client",
-                    "name": "Anik Saha",
-                    "bio": "Little Coder",
-                    "city_id": 1,
-                    "facebook_url": "facebook.com/abc",
-                    "twitter_url": "twitter.com/abc",
-                    "instagram_url": "instagram.com/abc",
-                    "profile_picture": "dummy.jpg",
-                    "dob": "2002-09-16T18:00:00.000Z",
-                    "registration_date": "2023-08-03T07:32:21.000Z",
+                    "name": "Sabina Khatun",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 24,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1972-12-27T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
                     "status": "active",
-                    "created_on": "2023-08-03T07:32:21.000Z",
-                    "last_updated_on": "2023-08-03T07:32:21.000Z",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
                     "city": {
-                        "city_id": 1,
-                        "name": "Dhaka",
+                        "city_id": 24,
+                        "name": "Jhenaidah",
                         "country_name": "Bangladesh",
-                        "population": 168957745,
+                        "population": 126379,
+                        "weather_type": "rainy"
+                    }
+                }
+            },
+            {
+                "comment_id": 239,
+                "user_id": 10,
+                "post_id": 39,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is a work of art. This is picture perfect.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 10,
+                    "username": "momin.mahmud",
+                    "email": "momin.mahmud@yahoo.com",
+                    "role": "client",
+                    "name": "Momin Mahmud",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 8,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1997-03-02T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 8,
+                        "name": "Sylhet",
+                        "country_name": "Bangladesh",
+                        "population": 3482659,
                         "weather_type": "rainy"
                     }
                 }
@@ -5442,18 +5598,123 @@ Example Response:
             {
                 "user_id": 1,
                 "react_type": "like",
-                "reacting_date": "2023-08-03T13:04:17.000Z"
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 3,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 4,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 7,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 10,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
             }
         ]
     },
     {
-        "post_id": 7,
-        "user_id": 1,
-        "posting_date": "2023-08-03T09:34:42.000Z",
-        "description": "Cool Post",
-        "image_url": "dummy.jpg",
-        "comments": [],
-        "reacts": []
+        "post_id": 40,
+        "user_id": 10,
+        "posting_date": "2023-09-10T08:51:02.000Z",
+        "description": "At the heart of the bustling square, a fountain danced with cascading water, a symbol of life and vitality. At the edge of the canyon, I gazed down at the sheer drop, feeling both exhilarated and humbled by natures grandeur. The symphony of nature surrounded me as I hiked through the dense forest, the melody of birdsong in the air.",
+        "image_url": "https://www.hillwalktours.com/wp-content/uploads/2019/08/Wicklow_Way_Hiking_Tour_08.jpg",
+        "user": {
+            "user_id": 10,
+            "username": "momin.mahmud",
+            "email": "momin.mahmud@yahoo.com",
+            "role": "client",
+            "name": "Momin Mahmud",
+            "bio": "Hey! I am using Tripify",
+            "city_id": 8,
+            "facebook_url": "https://www.facebook.com/leomessi",
+            "twitter_url": "https://twitter.com/imessi",
+            "instagram_url": "https://www.instagram.com/leomessi",
+            "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+            "dob": "1997-03-02T18:00:00.000Z",
+            "registration_date": "2023-09-10T08:50:26.000Z",
+            "status": "active",
+            "created_on": "2023-09-10T08:50:26.000Z",
+            "last_updated_on": "2023-09-10T08:50:26.000Z",
+            "city": {
+                "city_id": 8,
+                "name": "Sylhet",
+                "country_name": "Bangladesh",
+                "population": 3482659,
+                "weather_type": "rainy"
+            }
+        },
+        "comments": [
+            {
+                "comment_id": 171,
+                "user_id": 8,
+                "post_id": 40,
+                "commenting_date": "2023-09-10T08:51:02.000Z",
+                "text": "This is world-changing. Youre a true artist.",
+                "upvote_count": 0,
+                "user": {
+                    "user_id": 8,
+                    "username": "tahmina_ali",
+                    "email": "tahmina_ali@yahoo.com",
+                    "role": "client",
+                    "name": "Tahmina Ali",
+                    "bio": "Hey! I am using Tripify",
+                    "city_id": 21,
+                    "facebook_url": "https://www.facebook.com/leomessi",
+                    "twitter_url": "https://twitter.com/imessi",
+                    "instagram_url": "https://www.instagram.com/leomessi",
+                    "profile_picture": "https://avatars.dicebear.com/api/avataaars/avatar.svg",
+                    "dob": "1964-10-18T18:00:00.000Z",
+                    "registration_date": "2023-09-10T08:50:26.000Z",
+                    "status": "active",
+                    "created_on": "2023-09-10T08:50:26.000Z",
+                    "last_updated_on": "2023-09-10T08:50:26.000Z",
+                    "city": {
+                        "city_id": 21,
+                        "name": "Savar",
+                        "country_name": "Bangladesh",
+                        "population": 160242,
+                        "weather_type": "sunny"
+                    }
+                }
+            }
+        ],
+        "reacts": [
+            {
+                "user_id": 1,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 5,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 6,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 7,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            },
+            {
+                "user_id": 9,
+                "react_type": "like",
+                "reacting_date": "2023-09-10T08:51:03.000Z"
+            }
+        ]
     }
 ]
 ```
