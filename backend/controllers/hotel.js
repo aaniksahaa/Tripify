@@ -4,6 +4,29 @@ const db = require('../db/db');
 const { getSingleCity } = require('./city');
 const { getRatingInfoFromObject, getImagesFromObject, deleteImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
+const notifyHotel = async (payload) => {
+
+    console.log('at notifyHotel ', payload)
+
+    const sql = `
+    DECLARE 
+        
+        
+        
+    BEGIN 
+        
+        NOTIFY_HOTEL_RELEVANT_USERS(:hotel_id,:action_msg);
+        
+    END;
+    `
+    const binds = {
+        hotel_id : payload.hotel_id,
+        action_msg : payload.action_msg
+    }
+    await db.execute(sql, binds, db.options);
+    console.log('notified')
+}
+
 const getSingleHotel = async (payload) => {
     
     const hotel_id = payload.hotel_id;
@@ -259,6 +282,9 @@ const createHotel = async (payload) => {
 }
 
 const updateHotel = async (payload) => {
+
+    await notifyHotel({hotel_id: payload.hotel_id, action_msg: 'updated'});
+
     console.log(payload)
     if(payload.hotel_id === undefined){
         console.log('Hotel id not given in req.body')
@@ -324,24 +350,16 @@ const updateHotel = async (payload) => {
 }
 
 const deleteHotel = async (payload) => {
+
+    await notifyHotel({hotel_id: payload.hotel_id, action_msg: 'deleted'});
+
     console.log(payload)
 
-    // const sql = `
-    // DELETE FROM HOTELS
-    // WHERE hotel_id = :hotel_id
-    // `
-
     const sql = `
-    DECLARE 
-        
-        
-        
-    BEGIN 
-        
-        DELETE_HOTEL(:hotel_id);
-        
-    END;
+    DELETE FROM HOTELS
+    WHERE hotel_id = :hotel_id
     `
+
     const binds = {
         hotel_id : payload.hotel_id
     }

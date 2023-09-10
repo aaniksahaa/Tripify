@@ -19,8 +19,10 @@ cities = read_json_file('cities.json')
 city_count = len(cities)
 
 def generate_random_password(length):
-    characters = string.ascii_letters + string.digits
-    return ''.join(random.choice(characters) for _ in range(length))
+    #characters = string.ascii_letters + string.digits
+    #return ''.join(random.choice(characters) for _ in range(length))
+    dummy_passwords = ['abc','123','xyz']
+    return random.choice(dummy_passwords)
 
 def generate_random_user():
     
@@ -64,4 +66,4 @@ def generate_random_users():
 
     print(user_count,'users successfully generated and written to ',file_path)
 
-#generate_random_users()
+generate_random_users()

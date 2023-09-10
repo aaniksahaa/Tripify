@@ -2,6 +2,7 @@ const oracledb = require('oracledb')
 const db = require('../db/db');
 const { getComments } = require('./comment');
 const { getImagesFromObject, insertImagesForObject, deleteImagesFromObject } = require('./global_helpers');
+const { getSingleUser } = require('./user');
 
 const getSinglePost = async (payload) => {
 
@@ -46,6 +47,7 @@ const getSinglePostDetails = async (payload) => {
 
     try {
         const post = await getSinglePost({post_id: post_id})
+        post.user = await getSingleUser({user_id: post.user_id})
         post.comments = await getComments({post_id: post_id})
 
         sql = `

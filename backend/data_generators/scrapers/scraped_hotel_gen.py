@@ -68,11 +68,15 @@ def generate_scraped_hotels(max_hotels_from_each_city, image_width, image_height
             for photo in hotel['cardPhotos']:
                 url = photo['sizes']['urlTemplate'].replace('{width}',str(image_width)).replace('{height}',str(image_height))
                 image_urls.append(url)
+
+            if(len(image_urls) < 4):
+                continue
+            
             email = generate_email_from_title(title)
             scraped_hotel = {
                 "hotel_id": len(scraped_hotels) + 1,
                 "name": title,
-                "address": f"{random.randint(1, 100)} {random.choice(streets)} {cities[city_id-1]['name']} , Bangladesh",
+                "address": f"{random.choice(streets)}, {cities[city_id-1]['name']}",
                 "city_id": city_id,
                 "description": f"A {random.choice(adverbs)} {random.choice(adjectives)} hotel in {cities[city_id-1]['name']}.",
                 "image_url": "dummy.jpg",

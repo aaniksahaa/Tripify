@@ -5,7 +5,7 @@ const { getToken } = require('../controllers/login')
 router.post('/', [
     body('username').notEmpty(),
     body('password').notEmpty()
-], async (req, res) => {
+], async (req, res, next) => {
     console.log(req.body)
     const result = validationResult(req)
     if(result.isEmpty() === false) {
@@ -13,7 +13,13 @@ router.post('/', [
     }
     
     try {
-        const {user,accessToken} = await getToken(req.body)
+        const token = await getToken(req.body)
+        if(token == null)
+        {
+            next({message: 'credentials invalid'});
+            return;
+        }
+        const {user,accessToken} = token
         
         if(accessToken === null) {
             res.send('unauthorized')
@@ -26,12 +32,9 @@ router.post('/', [
             });
         }
     }
-    catch(error) {
-        // not recommended :)
-        res.json({
-            error: error,
-            asda: 123
-        })
+    catch(err) {
+        console.log(err)
+        next(err)
     }
 });
 

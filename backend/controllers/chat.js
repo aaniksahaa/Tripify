@@ -139,4 +139,3 @@ const getChat = async (payload) => {
 }
 
 module.exports = {getChat}
-

@@ -25,7 +25,13 @@ const getToken = async (payload) => {
 
     console.log(is_valid_credentials)
 
-    if(is_valid_credentials === 0) return null   
+    if(is_valid_credentials == 0)
+    {
+        console.log('Credentials invalid')
+        return null 
+    }  
+
+    console.log('Credentials accepted')
     
     const user = await getSingleUserByUsername({ username : payload.username })
 

@@ -2,6 +2,7 @@ const oracledb = require('oracledb')
 const db = require('../db/db');
 const { getPosts } = require('./post');
 const { getComments } = require('./comment');
+const { getSingleUser } = require('./user');
 
 const getFollowees = async(payload) => {
 
@@ -135,6 +136,7 @@ const getFeed = async(payload) => {
 
             post_id = post.post_id
 
+            post.user = await getSingleUser({user_id: post.user_id})
             post.comments = await getComments({post_id: post_id})
 
             sql = `
