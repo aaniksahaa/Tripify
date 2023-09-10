@@ -5,10 +5,11 @@ import Navbar2 from './components/Navbar2'
 import RestaurantDetails from './components/RestaurantDetails'
 
 function Restaurant() {
+    const {id}=useParams()
     return (
         <div>
             <Navbar2 />
-            <RestaurantDetails  />
+            <RestaurantDetails restaurant_id={id}/>
         </div>
     )
 }

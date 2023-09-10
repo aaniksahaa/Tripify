@@ -48,18 +48,16 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
     const [review, setReview] = React.useState('')
     const [props, setProps] = React.useState({})
 
-    const { id } = useParams()
     
-    async function initialize() {
+    async function initialize(id) {
         const data = await getRestaurant(id)
         setProps(data)
     }
-    
+
     useEffect(() => {
-        initialize()
-    }, [id])
-    useEffect(() => {
-        initialize()
+        const all = window.location.href.split('/')
+        const id = all[all.length-1]
+        initialize(id)
     },[])
     
     function addClick() {

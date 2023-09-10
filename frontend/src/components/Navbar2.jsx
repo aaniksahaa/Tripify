@@ -10,6 +10,7 @@ function Navbar2({ openDrawer }) {
     function logout() {
         localStorage.removeItem('tripify_user')
         location.reload();
+        localStorage.removeItem('authToken')
     }
     const bg = useColorModeValue("white", "gray.800");
     const mobileNav = useDisclosure();
