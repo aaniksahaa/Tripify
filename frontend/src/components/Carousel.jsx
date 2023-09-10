@@ -18,7 +18,7 @@ export default function Carousel({ data }) {
   const [images, setImages] = useState([])
   async function initialize() {
     try {
-      setImages(JSON.parse(data))
+      setImages(data)
     }
     catch { }
   }

@@ -36,6 +36,8 @@ import React, { useEffect, useState } from 'react';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
+import { getDestination } from '../API';
+import { useParams } from 'react-router-dom';
 
 export default function DestDetails({ data }) {
     const [startDate, setStartDate] = useState(new Date());
@@ -47,14 +49,25 @@ export default function DestDetails({ data }) {
     const [activity, setActivity] = useState({})
     const [props, setProps] = useState({})
     const [aid, setaid] = useLocalStorage('aid', '1')
+
+    const { id } = useParams()
+    
+    async function initialize() {
+        const data = await getDestination(id)
+        setProps(data)
+    }
+    useEffect(() => {
+        initialize()
+    }, [id])
+    useEffect(() => {
+        initialize()
+    },[])
+    
     function activityClick(id) {
         setActivity(props.activities[id])
         setaid(props.activities[id].activity_id)
         onOpen2()
     }
-    useEffect(() => {
-        setProps(JSON.parse(data))
-    }, [data])
 
     function addClick() {
         const data = {
@@ -77,7 +90,7 @@ export default function DestDetails({ data }) {
             >
                 <Box>
                     <Box>
-                        <Carousel data={JSON.stringify(props.images)} />
+                        <Carousel data={props.images} />
                     </Box>
                 </Box>
                 <Stack>

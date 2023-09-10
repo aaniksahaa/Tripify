@@ -35,9 +35,10 @@ import RatingBox from './RatingBox';
 import StarRating from './StarRating';
 // import { EmblaCarousel } from './EmblaCarousel'
 import React, { useEffect } from 'react';
-import { createReview } from '../API';
+import { createReview, getRestaurant } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
+import { useParams } from 'react-router-dom';
 
 export default function RestaurantDetails({ restaurant_id, rating_info, data }) {
     const [startDate, setStartDate] = React.useState(new Date());
@@ -47,10 +48,19 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
     const [review, setReview] = React.useState('')
     const [props, setProps] = React.useState({})
 
+    const { id } = useParams()
+    
+    async function initialize() {
+        const data = await getRestaurant(id)
+        setProps(data)
+    }
     useEffect(() => {
-        setProps(JSON.parse(data))
-    }, [data])
-
+        initialize()
+    }, [id])
+    useEffect(() => {
+        initialize()
+    },[])
+    
     function addClick() {
         const cartData = {
             id: props.restaurant_id,
@@ -83,7 +93,7 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
             >
                 <Box>
                     <Box>
-                        <Carousel data={JSON.stringify(props.images)} />
+                        <Carousel data={props.images}/>
                     </Box>
                 </Box>
                 <Stack>

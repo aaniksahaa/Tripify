@@ -58,7 +58,10 @@ export default function HotelDetails() {
     }
     useEffect(() => {
         initialize()
-    }, [])
+    }, [id])
+    useEffect(() => {
+        initialize()
+    },[])
 
     async function postReviewClick() {
         const data = {
@@ -94,7 +97,7 @@ export default function HotelDetails() {
             >
                 <Box>
                     <Box>
-                        <Carousel data={JSON.stringify(props.images)} />
+                        <Carousel data={props.images} />
                     </Box>
                 </Box>
                 <Stack>

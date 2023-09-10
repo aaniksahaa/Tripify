@@ -89,12 +89,20 @@ export async function createReview(data) {
 export async function updateUser(data) {
   const j = await fetchX('PUT', 'user', {}, data)
 }
+export async function getRestaurant(id) {
+  const j = await getX(`restaurant/${id}`, {})
+  return j
+}
+export async function getDestination(id) {
+  const j = await getX(`destination/${id}`, {})
+  return j
+}
 export async function getReviews(filter) {
   const j = await getX('review', filter)
   return j
 }
 export async function createUser(data) {
-  const j = await postX('user',{},data)
+  const j = await postX('user', {}, data)
   return j
 }
 export async function getDestinations(filter) {
