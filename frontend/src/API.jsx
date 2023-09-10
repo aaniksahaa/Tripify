@@ -93,6 +93,10 @@ export async function getReviews(filter) {
   const j = await getX('review', filter)
   return j
 }
+export async function createUser(data) {
+  const j = await postX('user',{},data)
+  return j
+}
 export async function getDestinations(filter) {
   const j = await getX('destination', filter)
   return j
@@ -107,6 +111,10 @@ export async function getLogin(data) {
 }
 export async function getTrips(filter) {
   const j = await getX('trip', filter)
+  return j
+}
+export async function getFeed(filter) {
+  const j = await getX(`feed`, filter)
   return j
 }
 export async function getPostDetails(id) {

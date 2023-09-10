@@ -5,6 +5,7 @@ import { follow, getUserProfile, isFollowing, writePost } from './API'
 import { useLocalStorage } from './LocalStorage'
 import Navbar2 from './components/Navbar2'
 import Posts from './components/Posts'
+import ImageUploader from './components/ImageUploader'
 
 function Profile() {
     const [followed, setFollowed] = useState(false)
@@ -31,12 +32,17 @@ function Profile() {
         await follow(user.user_id, id)
         setFollowed(x => !x)
     }
+    async function refresh() {
+        await load(filter)
+    }
     async function load(t) {
+        setProfile({
+            posts_created: []
+        })
         const _profile = await getUserProfile(id ? id : user.user_id, t)
         setProfile(_profile)
     }
     async function initialize() {
-        alert(1)
         load(filter)
         if (id !== undefined) {
             const f = await isFollowing(user.user_id, id)
@@ -64,16 +70,16 @@ function Profile() {
         setFilter(f)
         load(f)
     }
-
+    const [imageURL, setImageURL] = useState('')
     async function postClick() {
         const postData =
         {
             "description": postRef.current.value,
-            "image_url": "amazing.jpg",
+            "image_url": imageURL,
             "images": ["a.jpg", "b.jpg"]
         }
         const response = await writePost(postData)
-        await initialize()
+        await refresh()
         onClose()
     }
     return (
@@ -89,10 +95,10 @@ function Profile() {
                             <Flex alignItems={'center'} justifyContent={'space-between'}>
                                 <Text fontSize={'3xl'}>{profile ? profile.username : ''}</Text>
                                 {
-                                    id != user.user_id ?
-                                        <Button colorScheme={followed ? 'red' : 'blue'} onClick={followClick}>{
-                                            followed ? 'Unfollow' : 'Follow'
-                                        }</Button> : <></>
+                                    id != user.user_id &&
+                                    <Button colorScheme={followed ? 'red' : 'blue'} onClick={followClick}>{
+                                        followed ? 'Unfollow' : 'Follow'
+                                    }</Button>
                                 }
                             </Flex>
                             <Flex fontWeight='600' fontSize='md' alignItems={'center'} justifyContent={'space-between'} maxWidth={'350px'}>
@@ -110,7 +116,6 @@ function Profile() {
                                 &&
                                 <Box>
                                     <Button onClick={onOpen} size={'sm'}>Write a Post</Button>
-                                    <Button onClick={initialize} size={'sm'}>Refresh</Button>
                                 </Box>
                             }
                         </Stack>
@@ -125,7 +130,7 @@ function Profile() {
                     </TabList>
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
-                            <Posts profile={profile} refesh={initialize} />
+                            <Posts profile={profile} refresh={refresh} />
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -138,7 +143,7 @@ function Profile() {
                     <ModalBody>
                         <Textarea rows={'10'} ref={postRef} />
                         <Box mt='10px'>
-                            <input type='file' />
+                            <ImageUploader URL = {imageURL} setURL = {setImageURL}/>
                         </Box>
                     </ModalBody>
                     <ModalFooter justifyContent={'space-between'}>

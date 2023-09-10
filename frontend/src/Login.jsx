@@ -12,27 +12,56 @@ import {
     Input,
     Stack,
     Text,
+    useToast,
 } from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
 import { getLogin } from './API'
 import { useLocalStorage } from './LocalStorage'
 
-export default function SplitScreen() {
-    const [user, setUser] = useLocalStorage('tripify_user', {})
+export default function Login() {
+    const toast = useToast()
+    const [user, setUser] = useLocalStorage('tripify_user', null)
     const userRef = useRef()
     const passRef = useRef()
     async function login() {
         const user = userRef.current.value
         const pass = passRef.current.value
         const result = await getLogin({ username: user, password: pass })
-        if (result.error) {
+        if (result.token) {
+            toast({
+                title: 'Success',
+                description: 'Logged in successfully',
+                status: 'success',
+                duration: 5000,
+                isClosable: true,
+            })
+            setTimeout(() => {
+                setUser(result.user)
+                window.location = '/'
+            }, 1000)
 
         }
         else {
-            setUser(result.user)
+            var message = ''
+            if(result.errors) {
+                result.errors.forEach(x=>{
+                    message+=x.path+','
+                })
+                message = message.substring(0, message.length-1)
+                message += ' missing'
+            }
+            else message = result.message;
+            toast({
+                title: 'Failed',
+                description: message,
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            })
         }
     }
     useEffect(() => {
+        if (user) window.location = '/'
     }, [])
     return (
         <Box>
@@ -59,6 +88,10 @@ export default function SplitScreen() {
                             <Button colorScheme={'blue'} variant={'solid'} onClick={login}>
                                 Login
                             </Button>
+                            <Text>
+                                Don't have an account?
+                            </Text>
+                            <Button onClick={() => window.location = '/reg'} colorScheme='red'>Sign Up</Button>
                         </Stack>
                     </Stack>
                 </Flex>

@@ -21,12 +21,13 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
         reacts: [],
         comments: [],
     })
-    const [user, setUser] = useLocalStorage('tripify_user', {})
+    const [user, setUser] = useLocalStorage('tripify_user', null)
 
     useEffect(() => {
         if (p) {
             setPost(p)
-            p.reacts.forEach(x => { if (x.user_id === user.user_id) setLiked(true) })
+            if (user)
+                p.reacts.forEach(x => { if (x.user_id === user.user_id) setLiked(true) })
             setLikesCount(p.reacts.length)
             setCommentsCount(p.comments.length)
         }
@@ -77,7 +78,7 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                             </Box>
                         </Flex>
                         {
-                            userId == user.user_id && <Menu>
+                            user && userId == user.user_id && <Menu>
                                 <MenuButton>
                                     <IconButton
                                         variant='ghost'
@@ -113,24 +114,29 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                         onClick={onOpen2}
                         _hover={{ cursor: 'pointer' }}
                         objectFit='cover'
-                        src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                        src={
+                            post && post.image_url ? post.image_url : 
+                            'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                        }
                         alt='Chakra UI'
                     />
                 }
                 {/* </Link> */}
-                <CardFooter justify='space-between'>
-                    <Button onClick={likeClick} flex='1' variant={liked ? 'solid' : 'ghost'} leftIcon={
-                        liked ? <BiSolidLike size={30} /> : <BiLike size={30} />
-                    }>
-                        {likesCount}
-                    </Button>
-                    <Button onClick={onOpen} flex='1' variant='ghost' leftIcon={<BiChat size={30} />}>
-                        {commentsCount}
-                    </Button>
-                    <Button flex='1' variant='ghost' leftIcon={<BiShare size={30} />}>
+                {
+                    user && <CardFooter justify='space-between'>
+                        <Button onClick={likeClick} flex='1' variant={liked ? 'solid' : 'ghost'} leftIcon={
+                            liked ? <BiSolidLike size={30} /> : <BiLike size={30} />
+                        }>
+                            {likesCount}
+                        </Button>
+                        <Button onClick={onOpen} flex='1' variant='ghost' leftIcon={<BiChat size={30} />}>
+                            {commentsCount}
+                        </Button>
+                        <Button flex='1' variant='ghost' leftIcon={<BiShare size={30} />}>
 
-                    </Button>
-                </CardFooter>
+                        </Button>
+                    </CardFooter>
+                }
             </Card>
             <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
@@ -185,19 +191,21 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                                 alt='Chakra UI'
                             />
 
-                            <CardFooter justify='space-between'>
-                                <Button onClick={likeClick} flex='1' variant={liked ? 'solid' : 'ghost'} leftIcon={
-                                    liked ? <BiSolidLike size={30} /> : <BiLike size={30} />
-                                }>
-                                    {likesCount}
-                                </Button>
-                                <Button onClick={onOpen} flex='1' variant='ghost' leftIcon={<BiChat size={30} />}>
-                                    {commentsCount}
-                                </Button>
-                                <Button flex='1' variant='ghost' leftIcon={<BiShare size={30} />}>
+                            {
+                                user && <CardFooter justify='space-between'>
+                                    <Button onClick={likeClick} flex='1' variant={liked ? 'solid' : 'ghost'} leftIcon={
+                                        liked ? <BiSolidLike size={30} /> : <BiLike size={30} />
+                                    }>
+                                        {likesCount}
+                                    </Button>
+                                    <Button onClick={onOpen} flex='1' variant='ghost' leftIcon={<BiChat size={30} />}>
+                                        {commentsCount}
+                                    </Button>
+                                    <Button flex='1' variant='ghost' leftIcon={<BiShare size={30} />}>
 
-                                </Button>
-                            </CardFooter>
+                                    </Button>
+                                </CardFooter>
+                            }
                         </Card>
                         <Box mt='10px'>
                             <Comments postId={postId} />

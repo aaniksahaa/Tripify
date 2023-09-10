@@ -1,0 +1,77 @@
+post http://localhost:3000/api/v1/trip
+Content-Type: application/json
+
+{
+    "from_city_id" : 1,
+    "to_city_id" : 2,
+    "name" : "Departmental Tour to Infinity",
+    "description" : "A wonderful Trip, it will be.",
+    "image_url" : "dummy.jpg",
+    "start_date" : "2023-07-01",
+    "end_date" : "2023-07-25",
+    "contains" : [
+        {
+            "destination_id" : 1,
+            "activity_id" : 4,
+            "tentative_date" : "2023-07-15"
+        },
+        {
+            "destination_id" : 1,
+            "activity_id" : 1,
+            "tentative_date" : "2023-07-17"
+        }
+    ],
+    "hotels" : [
+        {
+            "hotel_id" : 1,
+            "checkin_date" : "2023-07-01",
+            "checkout_date" : "2023-07-07"
+        },
+        {
+            "hotel_id" : 2,
+            "checkin_date" : "2023-07-15",
+            "checkout_date" : "2023-07-17"
+        }
+    ],
+    "restaurants" : [
+        {
+            "restaurant_id" : 1
+        },
+        {
+            "restaurant_id" : 2
+        },
+        {
+            "restaurant_id" : 3
+        }
+    ],
+    "guides" : [
+        {
+            "guide_id" : 1
+        },
+        {
+            "guide_id" : 2
+        }
+    ]
+}
+
+
+####
+post http://localhost:3000/api/v1/login
+Content-Type: application/json
+
+{
+    "username": "aaniksahaa",
+    "password": "a123"
+}
+
+
+###
+get http://localhost:3000/api/v1/feed?page=1&per_page=8&orderby=posting_date&ordertype=desc
+
+###
+post http://localhost:3000/api/v1/login
+Content-Type: application/json
+
+{
+    "]":"asda"
+}

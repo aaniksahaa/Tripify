@@ -18,6 +18,7 @@ import Trips from './Trips'
 import EditProfile from './components/EditProfile'
 import Feed from './components/Feed'
 import Post from './components/Post'
+import SignupCard from './components/SignUp'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="" Component={Home} />
           <Route path="/" Component={Home} />
           <Route path="/login" Component={Login} />
+          <Route path="/reg" Component={SignupCard} />
           
           <Route path="/hotels" Component={Hotels} />
           <Route path="/hotel/:id" Component={Hotel} />
