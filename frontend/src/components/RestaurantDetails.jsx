@@ -54,6 +54,7 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
         const data = await getRestaurant(id)
         setProps(data)
     }
+    
     useEffect(() => {
         initialize()
     }, [id])
