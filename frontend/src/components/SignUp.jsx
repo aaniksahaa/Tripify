@@ -58,6 +58,7 @@ export default function SignupCard() {
     const result = await createUser(data)
     if (result.username) {
       toast({
+        position:'bottom-right',
         title: 'Success',
         description: 'Account created successfully',
         status: 'success',
@@ -79,6 +80,7 @@ export default function SignupCard() {
       }
       else message = result.message;
       toast({
+        position:'bottom-right',
         title: 'Failed',
         description: message,
         status: 'error',

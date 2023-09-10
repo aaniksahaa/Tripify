@@ -42,6 +42,7 @@ import { useParams } from 'react-router-dom';
 import { getActivityById, getDestinations } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import CardSlider from './CardSlider';
+import { getParam } from '../Utils';
 
 export default function ActivityDetails({ t, data, price, destination, destinationId }) {
     const [date, setDate] = useState(new Date());
@@ -52,10 +53,9 @@ export default function ActivityDetails({ t, data, price, destination, destinati
     const [persons, setPersons] = useState(1)
     const [props, setProps] = useState({})
 
-    const { id } = useParams()
     const [aid, setaid] = useLocalStorage('aid', '1')
 
-    async function initialize() {
+    async function initialize(id) {
         var x;
         if (t !== undefined) x = aid;
         else x = id;
@@ -83,7 +83,10 @@ export default function ActivityDetails({ t, data, price, destination, destinati
         onClose()
     }
     useEffect(() => {
-        initialize()
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
     }, [])
     return (
         <Container maxW={'7xl'}>
@@ -95,7 +98,7 @@ export default function ActivityDetails({ t, data, price, destination, destinati
             >
                 <Box>
                     <Box>
-                        <Carousel data={JSON.stringify(props.images)} />
+                        <Carousel data={props.images} />
                     </Box>
                 </Box>
                 <Stack>

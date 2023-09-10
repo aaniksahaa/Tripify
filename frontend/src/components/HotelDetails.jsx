@@ -42,6 +42,7 @@ import { useParams } from 'react-router-dom';
 import { createReview, getHotelById } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
+import { getParam } from '../Utils';
 
 export default function HotelDetails() {
     const [startDate, setStartDate] = React.useState(new Date());
@@ -51,17 +52,23 @@ export default function HotelDetails() {
     const [review, setReview] = React.useState('')
     const [props, setProps] = useState({})
 
-    const { id } = useParams()
-    async function initialize() {
+    async function initialize(id) {
+        // setProps({
+        //     images: [],
+        //     hotel_id: 0,
+        //     price_per_day: 0,
+        //     rating_info: []
+
+        // })
         const t = await getHotelById(id)
         setProps(t)
     }
     useEffect(() => {
-        initialize()
-    }, [id])
-    useEffect(() => {
-        initialize()
-    },[])
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 1000)
+    }, [])
 
     async function postReviewClick() {
         const data = {

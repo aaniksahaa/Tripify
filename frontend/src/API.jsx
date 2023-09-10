@@ -82,6 +82,14 @@ export async function getHotels(filter) {
   const j = await getX('hotel', filter)
   return j
 }
+export async function getUsers(filter) {
+  const j = await getX('user', filter)
+  return j
+}
+export async function getNotifications(filter) {
+  const j = await getX('notifications', filter)
+  return j
+}
 export async function createReview(data) {
   const j = await postX('review', {}, data)
   return j
@@ -162,6 +170,10 @@ export async function follow(a, b) {
   const j = await postX(`user/${a}/follow/${b}`, {}, {})
   return j
 }
+export async function unfollow(a, b) {
+  const j = await fetchX('DELETE',`user/${a}/follow/${b}`, {}, {})
+  return j
+}
 export async function isFollowing(a, b) {
   const j = await getX(`user/${a}/follow/${b}`, {})
   return j
@@ -197,4 +209,15 @@ export async function getCities(filter) {
 export async function createTrip(body) {
   const j = await postX('trip', {}, body)
   console.log(j)
+}
+
+
+export async function getGeneralChatResponse(text) { 
+  const j = await getX('chat/general', {user_text: text}) 
+  return j 
+} 
+ 
+export async function getTripSuggestion(text) { 
+  const j = await getX('chat/trip-suggestion', {user_text: text}) 
+  return j 
 }

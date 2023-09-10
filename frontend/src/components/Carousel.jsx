@@ -24,6 +24,10 @@ export default function Carousel({ data }) {
   }
   useEffect(() => {
     initialize()
+  }, [])
+  
+  useEffect(() => {
+    initialize()
   }, [data])
   const settings = {
     dots: true,

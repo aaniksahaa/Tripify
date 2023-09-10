@@ -29,6 +29,7 @@ export default function Login() {
         const result = await getLogin({ username: user, password: pass })
         if (result.token) {
             toast({
+                position:'bottom-right',
                 title: 'Success',
                 description: 'Logged in successfully',
                 status: 'success',
@@ -53,6 +54,7 @@ export default function Login() {
             }
             else message = result.message;
             toast({
+                position:'bottom-right',
                 title: 'Failed',
                 description: message,
                 status: 'error',

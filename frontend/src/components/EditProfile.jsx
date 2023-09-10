@@ -1,12 +1,16 @@
-import { Avatar, Box, Button, Container, Input, Progress, Stack, Table, Tbody, Td, Textarea, Th, Tr, VStack } from '@chakra-ui/react'
+import { Avatar, Box, Button, Container, Input, Progress, Stack, Table, Tbody, Td, Textarea, Th, Tr, VStack, useToast } from '@chakra-ui/react'
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
 import React, { useEffect, useRef, useState } from 'react'
-import { updateUser } from '../API'
+import { getCities, updateUser } from '../API'
 import { storage } from '../Firebase'
 import { useLocalStorage } from '../LocalStorage'
 import Navbar2 from './Navbar2'
+import { Select } from 'chakra-react-select'
 
 function EditProfile() {
+    const toast = useToast()
+    const [cityMap, setCityMap] = useState({})
+    const [cities, setCities] = useState([])
     const [data, setData] = useState({
         name: '',
         email: '',
@@ -15,7 +19,7 @@ function EditProfile() {
         twitter_url: '',
         instagram_url: '',
         propic: '',
-        city: 1
+        city_id: 1
     })
     const fileRef = useRef()
     const imageRef = useRef()
@@ -28,7 +32,15 @@ function EditProfile() {
     const [user, setUser] = useLocalStorage('tripify_user', {})
     const [pp, setPP] = useState('')
 
+    async function init() {
+        const _cities = await getCities({})
+        var m = {}
+        _cities.forEach(x=>m[x.value]=x.label)
+        setCityMap(m)
+        setCities(_cities)
+    }
     useEffect(() => {
+        init()
         setData(user)
         setPP(user.profile_picture)
     }, [])
@@ -76,6 +88,14 @@ function EditProfile() {
         await updateUser(x)
         console.log(x)
         setUser(x)
+        toast({
+            position:'bottom-right',
+            title: 'Success',
+            description: 'Profile updated successfully',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+        })
     }
     async function uploadClick() {
         handleUpload()
@@ -110,6 +130,23 @@ function EditProfile() {
                                 <Tr><Th>Name</Th><Td><Input name='name' variant={'outline'} borderWidth={'2px'} value={data.name} onChange={handleChange} /></Td></Tr>
                                 <Tr><Th>Email</Th><Td><Input type='email' name='email' variant={'outline'} borderWidth={'2px'} value={data.email} onChange={handleChange} /></Td></Tr>
                                 <Tr><Th>Bio</Th><Td><Textarea name='bio' variant={'outline'} borderWidth={'2px'} value={data.bio} onChange={handleChange} /></Td></Tr>
+                                <Tr><Th>City</Th><Td><Select
+                                    options={cities}
+                                    className="basic-multi-select"
+                                    classNamePrefix="select"
+                                    value={
+                                        {
+                                            label: cityMap[data.city_id],
+                                            value: data.city_id
+                                        }
+                                    }
+                                    onChange={(v) => {
+                                        setData({
+                                            ...data,
+                                            city_id: v.value
+                                        })
+                                    }}
+                                /></Td></Tr>
                                 <Tr><Th>Facebook</Th><Td><Input type='url' name='facebook' variant={'outline'} borderWidth={'2px'} value={data.facebook_url} onChange={handleChange} /></Td></Tr>
                                 <Tr><Th>Twitter</Th><Td><Input type='url' name='twitter' variant={'outline'} borderWidth={'2px'} value={data.twitter_url} onChange={handleChange} /></Td></Tr>
                                 <Tr><Th>Instagram</Th><Td><Input type='url' name='instagram' variant={'outline'} borderWidth={'2px'} value={data.instagram_url} onChange={handleChange} /></Td></Tr>
