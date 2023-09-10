@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
 import { getLogin } from './API'
-import { useLocalStorage } from './LocalStorage'
+import { setItem, useLocalStorage } from './LocalStorage'
 
 export default function Login() {
     const toast = useToast()
@@ -36,6 +36,7 @@ export default function Login() {
                 isClosable: true,
             })
             setTimeout(() => {
+                setItem('authToken', result.token)
                 setUser(result.user)
                 window.location = '/'
             }, 1000)

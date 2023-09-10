@@ -67,6 +67,7 @@ Content-Type: application/json
 
 ###
 get http://localhost:3000/api/v1/feed?page=1&per_page=8&orderby=posting_date&ordertype=desc
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphYmVyIiwiaWQiOiI2NGIwMTA1MmM2NjVjZTdlOGMyYjcxNWYiLCJpYXQiOjE2ODkzMjExMzR9.qRM9MrsfavGbblEr1628hRL2tNXQmXi2iRVC2VLizp0
 
 ###
 post http://localhost:3000/api/v1/login
