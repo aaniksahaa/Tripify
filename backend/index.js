@@ -56,18 +56,19 @@ app.use(
 app.use('/api/v1/login', loginRouter)
 app.use('/api/v1/reg', regRouter)
 
-app.use(isAuthorized)
-
 app.use('/api/v1/demo', demoRouter)
 app.use('/api/v1/trip', tripRouter)
 app.use('/api/v1/hotel', hotelRouter)
 app.use('/api/v1/restaurant', restaurantRouter)
 app.use('/api/v1/city', cityRouter)
-app.use('/api/v1/user', userRouter)
 app.use('/api/v1/activity', activityRouter)
 app.use('/api/v1/flight', flightRouter)
 app.use('/api/v1/destination', destinationRouter)
 app.use('/api/v1/review', reviewRouter)
+
+app.use(isAuthorized)
+
+app.use('/api/v1/user', userRouter)
 app.use('/api/v1/tripbooking', tripbookingRouter)
 app.use('/api/v1/mini', miniRouter)
 app.use('/api/v1/post', postRouter)
