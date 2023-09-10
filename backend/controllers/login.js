@@ -35,7 +35,7 @@ const getToken = async (payload) => {
     
     const user = await getSingleUserByUsername({ username : payload.username })
 
-    const accessToken = jwt.sign({ username: payload.username, id: user.user_id }, process.env.SECRET);
+    const accessToken = jwt.sign(user, process.env.SECRET);
     return {user,accessToken}
 }
 module.exports = {getToken}
