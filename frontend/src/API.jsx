@@ -109,6 +109,10 @@ export async function getTrips(filter) {
   const j = await getX('trip', filter)
   return j
 }
+export async function getFeed(filter) {
+  const j = await getX(`feed`, filter)
+  return j
+}
 export async function getPostDetails(id) {
   const j = await getX(`post/details/${id}`, {})
   return j

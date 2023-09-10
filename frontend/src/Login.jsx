@@ -18,7 +18,7 @@ import { getLogin } from './API'
 import { useLocalStorage } from './LocalStorage'
 
 export default function SplitScreen() {
-    const [user, setUser] = useLocalStorage('tripify_user', {})
+    const [user, setUser] = useLocalStorage('tripify_user', null)
     const userRef = useRef()
     const passRef = useRef()
     async function login() {
@@ -26,13 +26,15 @@ export default function SplitScreen() {
         const pass = passRef.current.value
         const result = await getLogin({ username: user, password: pass })
         if (result.error) {
-
+            alert('Login failed')
         }
         else {
             setUser(result.user)
+            window.location = '/'
         }
     }
     useEffect(() => {
+        if(user) window.location = '/'
     }, [])
     return (
         <Box>
@@ -59,6 +61,10 @@ export default function SplitScreen() {
                             <Button colorScheme={'blue'} variant={'solid'} onClick={login}>
                                 Login
                             </Button>
+                            <Text>
+                                Don't have an account?
+                            </Text>
+                            <Button onClick={() => window.location = '/reg'} colorScheme='red'>Sign Up</Button>
                         </Stack>
                     </Stack>
                 </Flex>
