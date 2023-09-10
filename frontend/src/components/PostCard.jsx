@@ -118,7 +118,7 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                             post && post.image_url ? post.image_url : 
                             'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
                         }
-                        alt='Chakra UI'
+                        alt='Shakra...is worst'
                     />
                 }
                 {/* </Link> */}
@@ -187,7 +187,10 @@ function PostCard({ refresh, id, card, name, p, userId, postId, profile_picture,
                             </CardBody>
                             <Image
                                 objectFit='cover'
-                                src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                                src={
+                                    post && post.image_url ? post.image_url : 
+                                    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                                }
                                 alt='Chakra UI'
                             />
 
