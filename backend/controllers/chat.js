@@ -49,6 +49,23 @@ init_prompt_2 = `'
 No extra output is required. Remember you only need to output a perfectly written json and nothing else`
 
 
+const getGeneralChatResponse = async (payload) => {
+    max_words = 30
+    prompt = payload.user_text + ' \n\nPlease give your answer within no more than ' + max_words.toString() + ' words'
+    console.log(prompt);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: prompt }],
+    });
+    //console.log(completion)
+    var response = completion.choices[0].message.content;
+    //console.log(response)
+    
+    chat_response = { answer: response };
+    console.log(chat_response);
+    return chat_response
+};
+
 const getQueries = async (user_text) => {
     prompt = init_prompt_1 + user_text + init_prompt_2
   console.log(prompt);
@@ -56,14 +73,11 @@ const getQueries = async (user_text) => {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
   });
-  console.log(completion)
+  //console.log(completion)
   var response = completion.choices[0].message.content;
   response = response.replace("\n", "").trim();
-  console.log(response)
+  //console.log(response)
   json = JSON.parse(response);
-//   if (json.hasOwnProperty("pages")) {
-//     json = json["pages"];
-//   }
   console.log(json);
   return json;
 };
@@ -77,7 +91,7 @@ const getCityIDfromName = async(city_name) => {
     return 0
 }
 
-const getChat = async (payload) => {
+const getTripSuggestion = async (payload) => {
     
     user_text = payload.user_text
 
@@ -110,18 +124,21 @@ const getChat = async (payload) => {
         ...queries.hotel,
         city_id: city_id_str,
         orderby: 'rating',
-        ordertype: 'desc'
+        ordertype: 'desc',
+        per_page: 6
     }
 
     restaurant_queries = {
         ...queries.restaurant,
         city_id: city_id_str,
         orderby: 'rating',
-        ordertype: 'desc'
+        ordertype: 'desc',
+        per_page: 6
     }
 
     destination_queries = {
-        city_id: city_id_str
+        city_id: city_id_str,
+        per_page: 6
     }
 
     const hotels = await getHotels(hotel_queries)
@@ -138,4 +155,4 @@ const getChat = async (payload) => {
     return response
 }
 
-module.exports = {getChat}
+module.exports = { getGeneralChatResponse, getTripSuggestion}
