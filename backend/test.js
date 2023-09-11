@@ -1,3 +1,35 @@
-sql += "INSERT INTO Users ( username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 'aaniksahaa', 'abc@gmail.com', MY_HASH_PASSWORD('123'), 'client', 'Anik Saha', 'Little Coder', 1, 'facebook.com/abc', 'twitter.com/abc', 'instagram.com/abc', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );\n"
 
-sql += "INSERT INTO Users ( username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 'jab3r', 'xyz@gmail.com', MY_HASH_PASSWORD('456'), 'client', 'Jaber Ahmed Deeder', 'Pro Coder', 1, 'facebook.com/xyz', 'twitter.com/xyz', 'instagram.com/xyz', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );\n"
+require('dotenv').config()
+
+console.log(process.env.MAIL_ID)
+console.log(process.env.MAIL_PASS)
+
+const nodemailer = require('nodemailer');
+
+// Create a transporter
+let transporter = nodemailer.createTransport({
+  service: 'gmail', // Use your email service (e.g., 'smtp.gmail.com' for custom SMTP)
+  auth: {
+    user: process.env.MAIL_ID, // Your email address
+    pass: process.env.MAIL_PASS // Your email password or app-specific password for Gmail
+  }
+});
+
+// Configure the email
+let mailOptions = {
+  from: {
+    name: 'Tripify Admin',
+    address: 'a@gmail.com'
+  },
+  to: 'aaniksahaa.2001@gmail.com', // Recipient's email address
+  subject: 'Hello from Node Mailer',
+  text: 'Hello, this is a test email from Node Mailer!'
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Email sent: ' + info.response);
+  });
+  
