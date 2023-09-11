@@ -367,7 +367,7 @@ const getSingleTrip = async (payload) => {
     SELECT trip_id AS "trip_id", from_city_id AS "from_city_id", to_city_id AS "to_city_id", (SELECT name FROM CITIES WHERE city_id = from_city_id ) AS "from_city_name", (SELECT name FROM CITIES WHERE city_id = to_city_id ) AS "to_city_name", name AS "name", description AS "description", image_url AS "image_url", total_price AS "total_price", start_date AS "start_date", end_date AS "end_date" 
     , creator_user_id AS "creator_user_id", created_on AS "created_on", last_updated_on AS "last_updated_on", deleted_on AS "deleted_on"
     FROM TRIPS 
-    WHERE trip_id = :trip_id AND deleted_on IS NULL
+    WHERE trip_id = :trip_id 
     `;
     const binds = {
       trip_id : trip_id
@@ -400,7 +400,7 @@ const getSingleTripDetails = async (payload) => {
     SELECT trip_id AS "trip_id", from_city_id AS "from_city_id", to_city_id AS "to_city_id", (SELECT name FROM CITIES WHERE city_id = from_city_id ) AS "from_city_name", (SELECT name FROM CITIES WHERE city_id = to_city_id ) AS "to_city_name", name AS "name", description AS "description", image_url AS "image_url", total_price AS "total_price", start_date AS "start_date", end_date AS "end_date" 
     , creator_user_id AS "creator_user_id", created_on AS "created_on", last_updated_on AS "last_updated_on", deleted_on AS "deleted_on"
     FROM TRIPS 
-    WHERE trip_id = :trip_id AND deleted_on IS NULL
+    WHERE trip_id = :trip_id 
     `;
 
     const sql2 = `SELECT DISTINCT C.DESTINATION_ID AS "destination_id", D.NAME AS "destination_name", C.ACTIVITY_ID AS "activity_id", A.NAME AS "activity_name", P.PRICE AS "price", C.TENTATIVE_DATE AS "tentative_date" 

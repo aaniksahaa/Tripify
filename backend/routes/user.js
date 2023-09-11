@@ -188,7 +188,7 @@ router.delete('/:user_id', async (req, res, next) => {
         return res.send({ errors: result.array() });
     }
 
-    if(req.user !== undefined && req.user.user_id != req.params.user_id )
+    if(req.user !== undefined && (req.user_id != 0) && req.user.user_id != req.params.user_id )
     {
         next({message : 'oops, hecker moment, nice try !'})
         return;
@@ -208,7 +208,7 @@ router.delete('/danger/:user_id', async (req, res, next) => {
         return res.send({ errors: result.array() });
     }
 
-    if(req.user !== undefined && req.user.user_id != req.params.user_id )
+    if(req.user !== undefined && (req.user_id != 0) && req.user.user_id != req.params.user_id )
     {
         next({message : 'oops, hecker moment, nice try !'})
         return;
