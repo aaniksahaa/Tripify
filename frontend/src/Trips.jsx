@@ -37,7 +37,7 @@ function Trips() {
   async function initialize() {
     const _cities = await getCities({})
     setCities(_cities)
-    load({ orderby: 'name', ordertype: 'asc' })
+    load({})
   }
   useEffect(() => {
     initialize()

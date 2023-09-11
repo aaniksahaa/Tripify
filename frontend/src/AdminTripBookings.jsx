@@ -22,7 +22,7 @@ function AdminTripBookings() {
     orderby: 'booking_date', 
     ordertype: 'desc',
     page: '1',
-    per_page: '3',
+    per_page: '10',
     user_id: u.role == 'admin' ? '' : u.user_id
   })
 

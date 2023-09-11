@@ -60,7 +60,7 @@ export default function TripDetails() {
         setActivity(props.activities[id])
         onOpen2()
     }
-    
+
     async function initialize(id) {
         const data = await getTrip(id)
         setProps(data)
@@ -72,7 +72,7 @@ export default function TripDetails() {
             initialize(id)
         }, 500)
     }, [])
-    
+
     async function postReviewClick() {
         const postData = {
             "description": review,
@@ -86,7 +86,7 @@ export default function TripDetails() {
         setReview('')
     }
     async function book() {
-        const j = await postX('tripbooking', {}, {trip_id: props.trip_id, is_private: 1})
+        const j = await postX('tripbooking', {}, { trip_id: props.trip_id, is_private: 0 })
         alert(JSON.stringify(j))
     }
     const [user, setUser] = useLocalStorage('tripify_user', {})
@@ -323,7 +323,7 @@ export default function TripDetails() {
                     </Box>
                     <Stack>
                         <Flex justifyContent={'center'}>
-                            <RatingBox ratingInfo={props.rating_info}/>
+                            <RatingBox ratingInfo={props.rating_info} />
                         </Flex>
                         <Box>
                             <Text fontSize='3xl' textAlign={'center'}>

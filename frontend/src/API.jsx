@@ -90,6 +90,10 @@ export async function getNotifications(filter) {
   const j = await getX('notifications', filter)
   return j
 }
+export async function createBooking(data) {
+  const j = await postX('tripbooking', {}, data)
+  return j
+}
 export async function createReview(data) {
   const j = await postX('review', {}, data)
   return j
