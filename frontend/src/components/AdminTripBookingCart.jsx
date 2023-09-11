@@ -1,8 +1,9 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Divider, Flex, IconButton, Input, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Textarea, Th, Thead, Tr, useDisclosure, useToast } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { DeleteIcon, ExternalLinkIcon } from "@chakra-ui/icons"
 import { taka } from "../Constants"
-import { getSingleTripBooking, getSingleTripDetails, processTripBooking } from "../API"
+import { doPayment, getSingleTripBooking, getSingleTripDetails, processTripBooking } from "../API"
+import { userIs } from "../Utils"
 
 export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }) {
 
@@ -21,29 +22,29 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
     "created_on": "2023-08-31T20:06:20.000Z",
     "last_updated_on": "2023-08-31T20:06:20.000Z",
     "user": {
-        "user_id": 1,
-        "username": "aaniksahaa",
-        "email": "abc@gmail.com",
-        "role": "client",
-        "name": "Anik Saha",
-        "bio": "Little Coder",
+      "user_id": 1,
+      "username": "aaniksahaa",
+      "email": "abc@gmail.com",
+      "role": "client",
+      "name": "Anik Saha",
+      "bio": "Little Coder",
+      "city_id": 1,
+      "facebook_url": "facebook.com/abc",
+      "twitter_url": "twitter.com/abc",
+      "instagram_url": "instagram.com/abc",
+      "profile_picture": "dummy.jpg",
+      "dob": "2002-09-16T18:00:00.000Z",
+      "registration_date": "2023-08-28T16:54:56.000Z",
+      "status": "active",
+      "created_on": "2023-08-28T16:54:56.000Z",
+      "last_updated_on": "2023-08-28T16:54:56.000Z",
+      "city": {
         "city_id": 1,
-        "facebook_url": "facebook.com/abc",
-        "twitter_url": "twitter.com/abc",
-        "instagram_url": "instagram.com/abc",
-        "profile_picture": "dummy.jpg",
-        "dob": "2002-09-16T18:00:00.000Z",
-        "registration_date": "2023-08-28T16:54:56.000Z",
-        "status": "active",
-        "created_on": "2023-08-28T16:54:56.000Z",
-        "last_updated_on": "2023-08-28T16:54:56.000Z",
-        "city": {
-            "city_id": 1,
-            "name": "Dhaka",
-            "country_name": "Bangladesh",
-            "population": 168957745,
-            "weather_type": "rainy"
-        }
+        "name": "Dhaka",
+        "country_name": "Bangladesh",
+        "population": 168957745,
+        "weather_type": "rainy"
+      }
     }
   })
   const [hotels, setHotels] = useState([])
@@ -65,11 +66,25 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
     setRestaurants(trip.restaurants)
     setTotalCost(trip.total_price)
     setBody({
-        name: trip.name,
-        description: trip.description,
-        startDate: trip.start_date,
-        endDate: trip.end_date
+      name: trip.name,
+      description: trip.description,
+      startDate: trip.start_date,
+      endDate: trip.end_date
     })
+  }
+  const refTID = useRef()
+  const refMethod = useRef()
+  async function confirmPayment() {
+    const data = {
+      "trip_id": trip_id,
+      "payment_method": refMethod.current.value,
+      "transaction_id": refTID.current.value
+    }
+    // alert(JSON.stringify(data))
+    await doPayment(data)
+    showToast('Success','Payment done successfully')
+    setOpen(false)
+    await refresh()
   }
   useEffect(() => {
     if (open) load(user_id, trip_id)
@@ -80,19 +95,19 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
   }
 
   const toast = useToast()
-  function showToast(title, description){
+  function showToast(title, description) {
     toast({
       title: title,
       description: description,
-      isClosable:'true', 
-      duration: 3000, 
-      position:'top-right', 
-      colorScheme:'whatsapp'
+      isClosable: 'true',
+      duration: 3000,
+      position: 'top-right',
+      colorScheme: 'whatsapp'
     });
   }
 
   function handleConfirmClick() {
-    processTripBooking({user_id: booking.user_id, trip_id: booking.trip_id}); 
+    processTripBooking({ user_id: booking.user_id, trip_id: booking.trip_id });
     closeModal();
     showToast('Processing Confirmed', "Trip Booking Request processed and notified to user")
   }
@@ -105,7 +120,7 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
         <ModalCloseButton />
         <ModalBody>
           <Box>
-            <Accordion defaultIndex={[0,1,2,3,4,5,6]} allowMultiple>
+            <Accordion defaultIndex={[0, 1, 2, 3, 4, 5, 6]} allowMultiple>
               <AccordionItem>
                 <AccordionButton>
                   <Box as="span" flex='1' textAlign='left'>
@@ -220,15 +235,15 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
                         <TableContainer margin={'10px'}>
                           <Table variant='simple' size='sm'>
                             <Tbody>
-                            <Tr><Th>Name</Th><Td>
-                            <Flex alignItems={'center'}>
-                                <Link href={'/restaurant/' + restaurant.restaurant_id} isExternal alignItems={'center'}>
-                                {restaurant.restaurant.name}
-                                </Link>
-                                <ExternalLinkIcon mx='2px' />
-                            </Flex>
-                            </Td></Tr>
-                            <Tr><Th>Reservation Price</Th><Td>৳{restaurant.restaurant.reservation_price}</Td></Tr>
+                              <Tr><Th>Name</Th><Td>
+                                <Flex alignItems={'center'}>
+                                  <Link href={'/restaurant/' + restaurant.restaurant_id} isExternal alignItems={'center'}>
+                                    {restaurant.restaurant.name}
+                                  </Link>
+                                  <ExternalLinkIcon mx='2px' />
+                                </Flex>
+                              </Td></Tr>
+                              <Tr><Th>Reservation Price</Th><Td>৳{restaurant.restaurant.reservation_price}</Td></Tr>
                             </Tbody>
                           </Table>
                         </TableContainer>
@@ -253,61 +268,80 @@ export default function AdminTripBookingCart({ open, setOpen, user_id, trip_id }
                 </AccordionPanel>
               </AccordionItem>
               {
-              booking&&(
-              <AccordionItem>
-                <AccordionButton>
-                  <Box as="span" flex='1' textAlign='left'>
-                    <Text fontSize={'xl'} fontWeight={'500'}>Payment Information</Text>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel pb={4}>
-                  <Table variant={'simple'} size='sm'>
-                    <Tbody>
-                      <Tr><Th>Payment</Th><Td>{booking.is_paid ? 'Done' : 'Pending'}</Td></Tr>
-                      {
-                        booking.is_paid && (
-                          <>
-                        <Tr><Th>Payment Method</Th><Td>{booking.payment_method}</Td></Tr>
-                        <Tr><Th>Transaction ID</Th><Td>{booking.transaction_id}</Td></Tr>
-                        <Tr><Th>Payment Date</Th><Td>{new Date(booking.payment_date).toLocaleDateString()}</Td></Tr>
-                         </>
-                      )}
-                    </Tbody>
-                  </Table>
-                </AccordionPanel>
-              </AccordionItem>
-              )}
-              {
-              booking&&booking.is_paid&&(
-              <AccordionItem>
-                <AccordionButton>
-                  <Box as="span" flex='1' textAlign='left'>
-                    <Text fontSize={'xl'} fontWeight={'500'}>Processing</Text>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel pb={4}>
-                  <Table variant={'simple'} size='sm'>
-                    <Tbody>
-                      <Tr><Th>Processing</Th><Td>{booking.is_processed ? 'Done' : 'Pending'}</Td></Tr>
-                    </Tbody>
-                  </Table>
-                  {
-                    (!booking.is_processed) && (
-                      <Box p={5} display={'flex'} justifyContent={'right'}>
-                      <Button colorScheme="green" onClick={() => {handleConfirmClick()}}>Confirm Processing</Button>
+                booking && (
+                  <AccordionItem>
+                    <AccordionButton>
+                      <Box as="span" flex='1' textAlign='left'>
+                        <Text fontSize={'xl'} fontWeight={'500'}>Payment Information</Text>
                       </Box>
-                  )}
-                </AccordionPanel>
-              </AccordionItem>
-              )}
+                      <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      <Table variant={'simple'} size='sm'>
+                        <Tbody>
+                          <Tr><Th>Payment</Th><Td>{booking.is_paid ? 'Done' : 'Pending'}</Td></Tr>
+                          {
+                            booking.is_paid ? (
+                              <>
+                                <Tr><Th>Payment Method</Th><Td>{booking.payment_method}</Td></Tr>
+                                <Tr><Th>Transaction ID</Th><Td>{booking.transaction_id}</Td></Tr>
+                                <Tr><Th>Payment Date</Th><Td>{new Date(booking.payment_date).toLocaleDateString()}</Td></Tr>
+                              </>
+                            )
+                              : <></>
+                          }
+                          {
+                            !booking.is_paid ? (
+                              <>
+                                <Tr><Th>Payment Method</Th><Td><Input type="text" variant={'filled'} ref={refMethod} value={'bkash'}/></Td></Tr>
+                                <Tr><Th>Transaction ID</Th><Td><Input type="text" variant={'filled'} ref={refTID} /></Td></Tr>
+                                {/* <Tr><Th>Payment Date</Th><Td>{new Date(booking.payment_date).toLocaleDateString()}</Td></Tr> */}
+                                {
+                                  <Button colorScheme="green" onClick={confirmPayment}>Confirm Payment</Button>
+                                }
+                              </>
+                            ) :
+                              <></>}
+                        </Tbody>
+                      </Table>
+                    </AccordionPanel>
+                  </AccordionItem>
+                )}
+              {
+                booking && booking.is_paid ? (
+                  <AccordionItem>
+                    <AccordionButton>
+                      <Box as="span" flex='1' textAlign='left'>
+                        <Text fontSize={'xl'} fontWeight={'500'}>Processing</Text>
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      <Table variant={'simple'} size='sm'>
+                        <Tbody>
+                          <Tr><Th>Processing</Th><Td>{booking.is_processed ? 'Done' : 'Pending'}</Td></Tr>
+                        </Tbody>
+                      </Table>
+                      {
+                        (!booking.is_processed) ? (
+                          <Box p={5} display={'flex'} justifyContent={'right'}>
+                            {
+                              userIs('admin') ?
+                                <Button colorScheme="green" onClick={() => { handleConfirmClick() }}>Confirm Processing</Button>
+                                :
+                                <></>
+                            }
+                          </Box>
+                        ) : <></>}
+                    </AccordionPanel>
+                  </AccordionItem>
+                ) : <></>}
             </Accordion>
           </Box >
         </ModalBody>
         <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} margin='12px'>
           <Box>
-            <Button margin='10px' onClick={closeModal}>Cancel</Button>
+            <Button margin='10px' onClick={closeModal} colorScheme="red">Cancel</Button>
           </Box>
         </Box>
       </ModalContent>

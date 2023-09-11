@@ -6,7 +6,7 @@ import { storage } from '../Firebase'
 import { useLocalStorage } from '../LocalStorage'
 import Navbar2 from './Navbar2'
 
-function ImageUploader({URL, setURL}) {
+function ImageUploader({ setURL }) {
     const fileRef = useRef()
     const [file, setFile] = useState()
     const [percent, setPercent] = useState(0)
@@ -56,13 +56,13 @@ function ImageUploader({URL, setURL}) {
                     {
                         pp !== '' && <img width={'100%'} src={pp} />
                     }
-                    <br/>
+                    <br />
                     {
                         <Box>
                             <Progress width={'300px'} hasStripe size='sm' value={percent} />
                         </Box>
                     }
-                    <br/>
+                    <br />
                 </Box>
                 <Stack direction={'row'}>
                     <Button size={'sm'} onClick={selectFile}>Select Image</Button>

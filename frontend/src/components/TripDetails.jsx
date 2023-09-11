@@ -24,7 +24,8 @@ import {
     Thead,
     Tr,
     useColorModeValue,
-    useDisclosure
+    useDisclosure,
+    useToast
 } from '@chakra-ui/react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -36,14 +37,14 @@ import React, { useEffect, useState } from 'react';
 import { FaHourglassEnd, FaHourglassStart } from 'react-icons/fa';
 import { ImPriceTag } from 'react-icons/im';
 import { useParams } from 'react-router-dom';
-import { createReview, getRestaurant, getTrip, getTripById, postX } from '../API';
+import { createReview, deleteTrip, getRestaurant, getTrip, getTripById, postX } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import EmblaCarousel from './EmblaCarousel';
 import RatingBox from './RatingBox';
 import StarRating from './StarRating';
-import { getParam } from '../Utils';
+import { getParam, isLoggedIn, userIs } from '../Utils';
 
 export default function TripDetails() {
     const [startDate, setStartDate] = useState(new Date());
@@ -56,11 +57,28 @@ export default function TripDetails() {
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
 
+    const toast = useToast()
+
+    async function Delete() {
+        const id = getParam()
+        await deleteTrip(id)
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'Trip has been deleted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => {
+            window.location = '/trips'
+        }, 1000)
+    }
     function activityClick(id) {
         setActivity(props.activities[id])
         onOpen2()
     }
-    
+
     async function initialize(id) {
         const data = await getTrip(id)
         setProps(data)
@@ -72,7 +90,7 @@ export default function TripDetails() {
             initialize(id)
         }, 500)
     }, [])
-    
+
     async function postReviewClick() {
         const postData = {
             "description": review,
@@ -86,10 +104,12 @@ export default function TripDetails() {
         setReview('')
     }
     async function book() {
-        const j = await postX('tripbooking', {}, {trip_id: props.trip_id, is_private: 1})
+        const j = await postX('tripbooking', {}, { trip_id: props.trip_id, is_private: 0 })
         alert(JSON.stringify(j))
     }
-    const [user, setUser] = useLocalStorage('tripify_user', {})
+    const [user, setUser] = useLocalStorage('tripify_user', {
+        user_id: 69
+    })
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -234,11 +254,15 @@ export default function TripDetails() {
                             </TableContainer>
                             <br />
                             <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
-                                <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
+                                {
+                                    isLoggedIn() ?
+                                        <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
+                                        : <></>
+                                }
                                 {
 
-                                    props.creator_user_id == user.user_id ?
-                                        <Button colorScheme='red'><DeleteIcon /></Button> :
+                                    isLoggedIn() && (props.creator_user_id == user.user_id || userIs('admin')) ?
+                                        <Button colorScheme='red' onClick={Delete}><DeleteIcon /></Button> :
                                         <></>
                                 }
                             </Stack>
@@ -323,7 +347,7 @@ export default function TripDetails() {
                     </Box>
                     <Stack>
                         <Flex justifyContent={'center'}>
-                            <RatingBox ratingInfo={props.rating_info}/>
+                            <RatingBox ratingInfo={props.rating_info} />
                         </Flex>
                         <Box>
                             <Text fontSize='3xl' textAlign={'center'}>
@@ -332,20 +356,24 @@ export default function TripDetails() {
                             <Box marginTop='20px'>
                                 <EmblaCarousel type={'trip'} id={props.trip_id} />
                             </Box>
-                            <Box marginTop={'20px'}>
-                                <Text fontSize='3xl' textAlign={'center'}>
-                                    Write a Review
-                                </Text>
-                                <Box margin='10px'>
-                                    <Box marginBottom={'10px'}>
-                                        <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                            {
+                                user.user_id != 69 ?
+                                    <Box marginTop={'20px'}>
+                                        <Text fontSize='3xl' textAlign={'center'}>
+                                            Write a Review
+                                        </Text>
+                                        <Box margin='10px'>
+                                            <Box marginBottom={'10px'}>
+                                                <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                            </Box>
+                                            <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                                setReview(e.target.value)
+                                            }} />
+                                            <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
+                                        </Box>
                                     </Box>
-                                    <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
-                                        setReview(e.target.value)
-                                    }} />
-                                    <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
-                                </Box>
-                            </Box>
+                                    : <></>
+                            }
                         </Box>
                     </Stack>
                 </Box>

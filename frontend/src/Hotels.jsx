@@ -20,7 +20,7 @@ function Hotels() {
     orderby: 'name',
     ordertype: 'asc',
     page: 1,
-    per_page: 10
+    per_page: 12
   })
   async function searchClick() {
     var f = filter
@@ -82,18 +82,18 @@ function Hotels() {
               </FormControl>
               <FormControl>
                 <FormLabel>Price per day</FormLabel>
-                <RangeSlider min={0} max={10000} step={100} value={[filter.min_price, filter.max_price]} onChange={(val) => {
+                <RangeSlider min={0} max={10000} step={1000} value={[filter.min_price, filter.max_price]} onChange={(val) => {
                   var obj = { ...filter }
                   obj.min_price = val[0]
                   obj.max_price = val[1]
                   setFilter(obj)
                 }}>
                   <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm'>৳0</RangeSliderMark>
-                  <RangeSliderMark value={1000} mt='5' ml='-2.5' fontSize='sm'>৳2000</RangeSliderMark>
-                  <RangeSliderMark value={2000} mt='5' ml='-2.5' fontSize='sm'>৳4000</RangeSliderMark>
-                  <RangeSliderMark value={3000} mt='5' ml='-2.5' fontSize='sm'>৳6000</RangeSliderMark>
-                  <RangeSliderMark value={4000} mt='5' ml='-2.5' fontSize='sm'>৳8000</RangeSliderMark>
-                  <RangeSliderMark value={5000} mt='5' ml='-2.5' fontSize='sm'>৳10000</RangeSliderMark>
+                  <RangeSliderMark value={2000} mt='5' ml='-2.5' fontSize='sm'>৳2K</RangeSliderMark>
+                  <RangeSliderMark value={4000} mt='5' ml='-2.5' fontSize='sm'>৳4K</RangeSliderMark>
+                  <RangeSliderMark value={6000} mt='5' ml='-2.5' fontSize='sm'>৳6K</RangeSliderMark>
+                  <RangeSliderMark value={8000} mt='5' ml='-2.5' fontSize='sm'>৳8K</RangeSliderMark>
+                  <RangeSliderMark value={10000} mt='5' ml='-2.5' fontSize='sm'>৳10K</RangeSliderMark>
                   <RangeSliderTrack bg='red.100'>
                     <RangeSliderFilledTrack bg='tomato' />
                   </RangeSliderTrack>
@@ -225,7 +225,7 @@ function Hotels() {
             </Stack>
           </GridItem>
           <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }}>
-            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5} style={{ width: '100%' }} p='30px'>
+            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={1} style={{ width: '100%' }} p='30px'>
               {
                 hotels.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>

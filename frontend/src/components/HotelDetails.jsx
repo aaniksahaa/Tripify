@@ -40,9 +40,9 @@ import StarRating from './StarRating';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createReview, getHotelById } from '../API';
-import { addToList } from "../LocalStorage";
+import { addToList, useLocalStorage } from "../LocalStorage";
 import Carousel from "./Carousel";
-import { getParam } from '../Utils';
+import { getParam, isLoggedIn, userIs } from '../Utils';
 import AdminEditHotel from './AdminEditHotel';
 
 export default function HotelDetails() {
@@ -53,6 +53,11 @@ export default function HotelDetails() {
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
     const [props, setProps] = useState({})
+
+
+    const [user, setUser] = useLocalStorage('tripify_user', {
+        user_id: 69
+    })
 
     async function refresh() {
         const id = getParam()
@@ -127,7 +132,11 @@ export default function HotelDetails() {
                         </Heading>
                     </Box>
                     <br />
-                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                    {
+                        userIs('admin') ?
+                            <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                            : <></>
+                    }
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
@@ -260,20 +269,24 @@ export default function HotelDetails() {
                             </TableContainer>
                         </Box>
                     </Stack>
-                    <Button
-                        onClick={onOpen}
-                        rounded={'none'}
-                        w={'full'}
-                        size={'lg'}
-                        bg={useColorModeValue('gray.900', 'gray.50')}
-                        color={useColorModeValue('white', 'gray.900')}
-                        textTransform={'uppercase'}
-                        _hover={{
-                            transform: 'translateY(2px)',
-                            boxShadow: 'lg',
-                        }}>
-                        Add to Trip
-                    </Button>
+                    {
+                        user.user_id != 69 ?
+                            <Button
+                                onClick={onOpen}
+                                rounded={'none'}
+                                w={'full'}
+                                size={'lg'}
+                                bg={useColorModeValue('gray.900', 'gray.50')}
+                                color={useColorModeValue('white', 'gray.900')}
+                                textTransform={'uppercase'}
+                                _hover={{
+                                    transform: 'translateY(2px)',
+                                    boxShadow: 'lg',
+                                }}>
+                                Add to Trip
+                            </Button>
+                            : <></>
+                    }
                 </Stack>
                 <Stack>
                     <Flex justifyContent={'center'}>
@@ -286,20 +299,25 @@ export default function HotelDetails() {
                         <Box marginTop='20px'>
                             <EmblaCarousel type={'hotel'} id={props.hotel_id} />
                         </Box>
-                        <Box marginTop={'20px'}>
-                            <Text fontSize='3xl' textAlign={'center'}>
-                                Write a Review
-                            </Text>
-                            <Box margin='10px'>
-                                <Box marginBottom={'10px'}>
-                                    <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                        {
+                            isLoggedIn() ?
+                                <Box marginTop={'20px'}>
+                                    <Text fontSize='3xl' textAlign={'center'}>
+                                        Write a Review
+                                    </Text>
+                                    <Box margin='10px'>
+                                        <Box marginBottom={'10px'}>
+                                            <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                        </Box>
+                                        <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                            setReview(e.target.value)
+                                        }} />
+                                        <Button colorScheme="blue" size={'md'} onClick={postReviewClick}>Post</Button>
+                                    </Box>
                                 </Box>
-                                <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
-                                    setReview(e.target.value)
-                                }} />
-                                <Button colorScheme="blue" size={'md'} onClick={postReviewClick}>Post</Button>
-                            </Box>
-                        </Box>
+                                : <>
+                                </>
+                        }
                     </Box>
                 </Stack>
             </SimpleGrid>

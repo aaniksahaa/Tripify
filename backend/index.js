@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const morgan = require('morgan')
-const cors = require('cors') 
+const cors = require('cors')
 
 require('dotenv').config()
 
@@ -43,20 +43,23 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(
-    cors({
-      origin: '*',
-      methods: "GET,POST,PUT,DELETE, PATCH",
-      credentials: true,
-      maxAge: 36000,
-    })
+  cors({
+    origin: '*',
+    methods: "GET,POST,PUT,DELETE, PATCH",
+    credentials: true,
+    maxAge: 36000,
+  })
 );
-  
+
 // Link routes to routers, demo url = 'api/v1/demo?data=anik'
+
 
 app.use('/api/v1/login', loginRouter)
 app.use('/api/v1/reg', regRouter)
 
+
 app.use(isAuthorized)
+
 
 app.use('/api/v1/demo', demoRouter)
 app.use('/api/v1/hotel', hotelRouter)
@@ -66,6 +69,8 @@ app.use('/api/v1/activity', activityRouter)
 app.use('/api/v1/flight', flightRouter)
 app.use('/api/v1/destination', destinationRouter)
 app.use('/api/v1/review', reviewRouter)
+
+app.use(isAuthorized)
 
 app.use('/api/v1/trip', tripRouter)
 app.use('/api/v1/user', userRouter)

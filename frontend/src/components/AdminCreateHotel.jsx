@@ -1,11 +1,17 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Avatar, Box, Button, Checkbox, CheckboxGroup, Container, FormControl, FormLabel, Input, Progress, Stack, Table, Tbody, Td, Text, Textarea, Th, Tr, VStack, useToast } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { deleteX, getCities, postX, updateHotel, updateUser } from '../API'
-import { Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { Select } from 'chakra-react-select'
 
 function AdminCreateHotel() {
 
+    function setImageURL(x) {
+        setData({
+            ...data,
+            
+        })
+    }
     const blank_hotel = {
         "name": "",
         "address": "",
@@ -28,14 +34,14 @@ function AdminCreateHotel() {
     const [created, setCreated] = useState(0)
 
     const toast = useToast()
-    function showToast(title, description){
+    function showToast(title, description) {
         toast({
-        title: title,
-        description: description,
-        isClosable:'true', 
-        duration: 3000, 
-        position:'top-right', 
-        colorScheme:'whatsapp'
+            title: title,
+            description: description,
+            isClosable: 'true',
+            duration: 3000,
+            position: 'top-right',
+            colorScheme: 'whatsapp'
         });
     }
 
@@ -59,8 +65,8 @@ function AdminCreateHotel() {
 
     const handleCheckboxChange = (facility) => {
         setData({
-          ...data,
-          [facility]: data[facility] ? 0 : 1, // Toggle between 0 and 1
+            ...data,
+            [facility]: data[facility] ? 0 : 1, // Toggle between 0 and 1
         });
     };
 
@@ -73,17 +79,15 @@ function AdminCreateHotel() {
         setData(blank_hotel)
     }
 
-    if(created == 1)
-    {
+    if (created == 1) {
         //return <Navigate to="/hotels" />;
     }
 
-    if(cities.length == 0)
-    {
+    if (cities.length == 0) {
         return (<Text>Loading</Text>);
     }
 
-    console.log('\n\n\nCities = \n\n\n',cities)
+    console.log('\n\n\nCities = \n\n\n', cities)
 
     return (
         <Box>
@@ -101,40 +105,43 @@ function AdminCreateHotel() {
                         </Tbody>
                     </Table>
                     <Box fontSize={'xl'}>
-                    <Stack direction="row" align="center" spacing={20}>
-                        <Text>Facilities:</Text>
-                        <CheckboxGroup colorScheme="teal">
-                            <Stack direction="row">
-                                <Checkbox key='has_wifi' isChecked={data.has_wifi === 1} onChange={() => handleCheckboxChange('has_wifi')}>
-                                    Wifi
-                                </Checkbox>
-                                <Checkbox key='has_parking' isChecked={data.has_parking === 1} onChange={() => handleCheckboxChange('has_parking')}>
-                                    Parking
-                                </Checkbox>
-                                <Checkbox key='has_gym' isChecked={data.has_gym === 1} onChange={() => handleCheckboxChange('has_gym')}>
-                                    Gym
-                                </Checkbox>
-                            </Stack>
-                        </CheckboxGroup>
-                    </Stack>
-                    <br></br>
-                    <FormControl>
-                    <FormLabel>City Name</FormLabel>
-                    <Select
-                        placeholder="Select a city"
-                        options={cities}
-                        onChange={(v) => {
-                            var obj = { ...data }
-                            obj['city_id'] = v.value
-                            setData(obj)
-                        }}
+                        <Stack direction="row" align="center" spacing={20}>
+                            <Text>Facilities:</Text>
+                            <CheckboxGroup colorScheme="teal">
+                                <Stack direction="row">
+                                    <Checkbox key='has_wifi' isChecked={data.has_wifi === 1} onChange={() => handleCheckboxChange('has_wifi')}>
+                                        Wifi
+                                    </Checkbox>
+                                    <Checkbox key='has_parking' isChecked={data.has_parking === 1} onChange={() => handleCheckboxChange('has_parking')}>
+                                        Parking
+                                    </Checkbox>
+                                    <Checkbox key='has_gym' isChecked={data.has_gym === 1} onChange={() => handleCheckboxChange('has_gym')}>
+                                        Gym
+                                    </Checkbox>
+                                </Stack>
+                            </CheckboxGroup>
+                        </Stack>
+                        <br></br>
+                        <FormControl>
+                            <FormLabel>City Name</FormLabel>
+                            <Select
+                                placeholder="Select a city"
+                                options={cities}
+                                onChange={(v) => {
+                                    var obj = { ...data }
+                                    obj['city_id'] = v.value
+                                    setData(obj)
+                                }}
 
-                        useBasicStyles
-                    />
-                    </FormControl>
+                                useBasicStyles
+                            />
+                        </FormControl>
                     </Box>
                     <br></br>
                     <br></br>
+                    <ImageUploader setURL={setImageURL_} />
+                    <br/>
+                    <br/>
                     <Button colorScheme='blue' onClick={create}>Create Hotel</Button>
                 </VStack>
             </VStack>

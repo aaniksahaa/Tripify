@@ -5,6 +5,7 @@ import { getCities, getTrips } from './API'
 import { useLocalStorage } from './LocalStorage'
 import CardSlider from './components/CardSlider'
 import Navbar2 from './components/Navbar2'
+import { isLoggedIn } from './Utils'
 
 function Trips() {
   const [user, setUser] = useLocalStorage('tripify_user', {})
@@ -15,8 +16,8 @@ function Trips() {
     creator_user_id: '',
     address: '',
     city_id: '',
-    min_price: 0,
-    max_price: 100000,
+    price_min: 0,
+    price_max: 100000,
     page: 1,
     per_page: 10,
     orderby: 'name',
@@ -26,7 +27,6 @@ function Trips() {
     var f = filter
     f['page'] = 1
     await load(f)
-    alert(JSON.stringify(f))
     setFilter(f)
   }
   async function load(t) {
@@ -37,7 +37,7 @@ function Trips() {
   async function initialize() {
     const _cities = await getCities({})
     setCities(_cities)
-    load({ orderby: 'name', ordertype: 'asc' })
+    load({})
   }
   useEffect(() => {
     initialize()
@@ -74,7 +74,14 @@ function Trips() {
             <Stack spacing={'10px'}>
               <FormControl>
                 <Flex>
-                  <Checkbox size={'lg'} onChange={checkboxClick} />&emsp;<Text fontSize={'lg'}>My Trips</Text>
+                  {
+                    isLoggedIn() ?
+                      <Flex justifyItems={'center'} alignItems={'center'}>
+                        <Checkbox size={'lg'} onChange={checkboxClick} /> &emsp;<Text fontSize={'lg'}>My Trips</Text>
+
+                      </Flex>
+                      : <></>
+                  }
                 </Flex>
               </FormControl>
               <FormControl>
@@ -110,18 +117,18 @@ function Trips() {
                 </FormControl> */}
               <FormControl>
                 <FormLabel>Total Price</FormLabel>
-                <RangeSlider min={0} max={100000} step={2000} value={[filter.min_price, filter.max_price]} onChange={(val) => {
+                <RangeSlider min={0} max={100000} step={2000} value={[filter.price_min, filter.price_max]} onChange={(val) => {
                   var obj = { ...filter }
-                  obj.min_price = val[0]
-                  obj.max_price = val[1]
+                  obj.price_min = val[0]
+                  obj.price_max = val[1]
                   setFilter(obj)
                 }}>
                   <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm'>৳0</RangeSliderMark>
-                  <RangeSliderMark value={20000} mt='5' ml='-2.5' fontSize='sm'>৳20000</RangeSliderMark>
-                  <RangeSliderMark value={40000} mt='5' ml='-2.5' fontSize='sm'>৳40000</RangeSliderMark>
-                  <RangeSliderMark value={60000} mt='5' ml='-2.5' fontSize='sm'>৳60000</RangeSliderMark>
-                  <RangeSliderMark value={80000} mt='5' ml='-2.5' fontSize='sm'>৳80000</RangeSliderMark>
-                  <RangeSliderMark value={100000} mt='5' ml='-2.5' fontSize='sm'>৳100000</RangeSliderMark>
+                  <RangeSliderMark value={20000} mt='5' ml='-2.5' fontSize='sm'>৳20K</RangeSliderMark>
+                  <RangeSliderMark value={40000} mt='5' ml='-2.5' fontSize='sm'>৳40K</RangeSliderMark>
+                  <RangeSliderMark value={60000} mt='5' ml='-2.5' fontSize='sm'>৳60K</RangeSliderMark>
+                  <RangeSliderMark value={80000} mt='5' ml='-2.5' fontSize='sm'>৳80K</RangeSliderMark>
+                  <RangeSliderMark value={100000} mt='5' ml='-2.5' fontSize='sm'>৳100K</RangeSliderMark>
                   <RangeSliderTrack bg='red.100'>
                     <RangeSliderFilledTrack bg='tomato' />
                   </RangeSliderTrack>
@@ -198,9 +205,13 @@ function Trips() {
             <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={1} p='30px'>
               {
                 trips.map((item, index) => (
-                  <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
-                    <CardSlider imgs={[item.image_url]} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={item.rating_info.rating_avg} price={item.total_price} />
-                  </Card>
+                  item ?
+
+                    <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>
+                      <CardSlider imgs={[item.image_url]} href={`/trip/${item.trip_id}`} title={item.name} info={item.address} rating={item.rating_info.rating_avg} price={item.total_price} />
+                    </Card>
+                    :
+                    <></>
                 ))
               }
             </SimpleGrid>

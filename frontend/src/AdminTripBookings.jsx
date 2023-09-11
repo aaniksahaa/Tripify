@@ -14,15 +14,15 @@ function AdminTripBookings() {
     role: 'dummy',
     user_id: 'dummy'
   })
-  const [status,setStatus] = useState(1)
+  const [status, setStatus] = useState(1)
 
   const [filter, setFilter] = useState({
-    is_paid: '',
-    is_processed: '',
-    orderby: 'booking_date', 
+    is_paid: '0',
+    is_processed: '0',
+    orderby: 'booking_date',
     ordertype: 'desc',
     page: '1',
-    per_page: '3',
+    per_page: '10',
     user_id: u.role == 'admin' ? '' : u.user_id
   })
 
@@ -32,15 +32,19 @@ function AdminTripBookings() {
   const [user, setUser] = useState('1')
   const [trip, setTrip] = useState('2')
 
+  async function refresh() {
+    load(filter)
+  }
   async function load(t) {
     const _bookings = await getTripBookings(t)
     setBookings(_bookings)
+    console.log(_bookings)
   }
   async function initialize() {
     load(filter)
   }
   useEffect(() => {
-    if(u.role === 'dummy') window.location = '/'
+    if (u.role === 'dummy') window.location = '/'
     else initialize()
   }, [open, user, trip])
 
@@ -61,7 +65,7 @@ function AdminTripBookings() {
   function notPaid() {
     setStatus(1)
     var f = filter
-    f.is_paid = '0'
+    f.is_paid = 0
     f.is_processed = '0'
     f.orderby = 'booking_date'
     setFilter(f)
@@ -94,27 +98,27 @@ function AdminTripBookings() {
           <Text fontWeight={'bold'} fontSize='4xl'>Tripbookings</Text>
         </Box>
         <HStack p={10} justifyContent={'center'}>
-        <Button size={'lg'} colorScheme={status==1 ? 'blue' : 'gray'} variant={'solid'} onClick={() => {notPaid()}}>Pending Payment</Button>
-        <Button size={'lg'} colorScheme={status==2 ? 'blue' : 'gray'} variant={'solid'} onClick={() => {notProcessed()}}>Pending Processing</Button>
-        <Button size={'lg'} colorScheme={status==3 ? 'blue' : 'gray'} variant={'solid'} onClick={() => {confirmed()}}>Confirmed</Button>
+          <Button size={'lg'} colorScheme={status == 1 ? 'blue' : 'gray'} variant={'solid'} onClick={() => { notPaid() }}>Pending Payment</Button>
+          <Button size={'lg'} colorScheme={status == 2 ? 'blue' : 'gray'} variant={'solid'} onClick={() => { notProcessed() }}>Pending Processing</Button>
+          <Button size={'lg'} colorScheme={status == 3 ? 'blue' : 'gray'} variant={'solid'} onClick={() => { confirmed() }}>Confirmed</Button>
         </HStack>
         <VStack>
-            <SimpleGrid columns={{ base: 1, sm: 1, md: 1, lg: 1, xl: 1 }} spacing={35} p='30px'>
-              {
-                bookings.map((item, index) => (
-                  <>
+          <SimpleGrid columns={{ base: 1, sm: 1, md: 1, lg: 1, xl: 1 }} spacing={35} p='30px'>
+            {
+              bookings.map((item, index) => (
+                <Box key={index}>
                   <Box display={'flex'} justifyContent={'right'}>
-                  <Button width={'25%'} colorScheme='gray' size={'lg'} variant={'solid'} onClick={() => {setOpen(true); setUser(item.user_id); setTrip(item.trip_id)}}>View Booking Details</Button>
+                    <Button width={'25%'} colorScheme='gray' size={'lg'} variant={'solid'} onClick={() => { setOpen(true); setUser(item.user_id); setTrip(item.trip_id) }}>View Booking Details</Button>
                   </Box>
                   <AdminBookingCard booking={item}></AdminBookingCard>
-                  </>
-                ))
-              }
-            </SimpleGrid>
-            <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
-              <Button variant={'solid'} colorScheme={'blue'} onClick={prevPage}>Previous Page</Button>
-              <Button variant={'solid'} colorScheme={'blue'} onClick={nextPage}>Next Page</Button>
-            </Stack>
+                </Box>
+              ))
+            }
+          </SimpleGrid>
+          <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
+            <Button variant={'solid'} colorScheme={'blue'} onClick={prevPage}>Previous Page</Button>
+            <Button variant={'solid'} colorScheme={'blue'} onClick={nextPage}>Next Page</Button>
+          </Stack>
         </VStack>
         <br></br>
       </Container>

@@ -12,6 +12,8 @@ function Activities() {
     category: '',
     min_age: 0,
     max_age: 100,
+    page: 1,
+    per_page: 12,
   })
   async function searchClick() {
     var f = filter

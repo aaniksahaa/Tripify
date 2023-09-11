@@ -14,18 +14,19 @@ import PieChart from './components/PieChart'
 import BarChart from './components/AdminPriceChart'
 import AdminStatGeneral from './AdminStatGeneral'
 import NiceButton from './components/NiceButton'
+import { protectRoute } from './Utils'
 // import AdminNavbar2 from './components/AdminNavbar2'
 
 function AdminStat() {
 
- const [type, setType] = useState('Hotel')
+  const [type, setType] = useState('Hotel')
 
- const object_types = ['Hotel','Restaurant','Trip']
+  const object_types = ['Hotel', 'Restaurant', 'Trip']
 
   useEffect(() => {
-    
+      protectRoute('admin')
   }, [])
-  
+
   return (
     <Box>
       <Navbar2 />
@@ -34,12 +35,12 @@ function AdminStat() {
           <Text fontWeight={'bold'} fontSize='3xl'>Price and Popularity Statistics</Text>
         </Box>
         <HStack justifyContent={'center'}>
-        {
-            object_types.map((item,index) => (
-                <Button size={'lg'} colorScheme={item==type ? 'whatsapp': 'gray'} variant={'solid'} onClick={() => setType(item)}>{item}</Button>
+          {
+            object_types.map((item, index) => (
+              <Button size={'lg'} colorScheme={item == type ? 'whatsapp' : 'gray'} variant={'solid'} onClick={() => setType(item)}>{item}</Button>
             ))
-        }
-        {/* <Button size={'lg'} colorScheme='gray' variant={'solid'} onClick={() => setType('hotel')}>Hotel</Button>
+          }
+          {/* <Button size={'lg'} colorScheme='gray' variant={'solid'} onClick={() => setType('hotel')}>Hotel</Button>
         <Button variant={'ghost'} onClick={() => setType('restaurant')}>Restaurant</Button> */}
         </HStack>
       </center>

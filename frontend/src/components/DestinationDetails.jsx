@@ -38,7 +38,7 @@ import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import { getDestination } from '../API';
 import { useParams } from 'react-router-dom';
-import { getParam } from '../Utils';
+import { getParam, userIs } from '../Utils';
 import AdminEditDestination from './AdminEditDestination';
 
 export default function DestDetails({ data }) {
@@ -111,8 +111,12 @@ export default function DestDetails({ data }) {
                             {props.name}
                         </Heading>
                     </Box>
-                    <br/>
-                    <Button variant={'outline'} onClick={onOpen3} colorScheme='blue'>Edit</Button>
+                    <br />
+                    {
+                        userIs('admin') ?
+                            <Button variant={'outline'} onClick={onOpen3} colorScheme='blue'>Edit</Button>
+                            : <></>
+                    }
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
