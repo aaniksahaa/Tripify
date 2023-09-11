@@ -17,7 +17,7 @@ router.get('/:restaurant_id', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     try {
         const restaurants = await getRestaurants(req.query);
-        console.log(restaurants);
+        //console.log(restaurants);
         res.json(restaurants);
     } catch (err) {
         console.log(err);
