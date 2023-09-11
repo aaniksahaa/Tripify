@@ -23,7 +23,8 @@ import {
     Textarea,
     Tr,
     useColorModeValue,
-    useDisclosure
+    useDisclosure,
+    useToast
 } from '@chakra-ui/react';
 import "react-datepicker/dist/react-datepicker.css";
 import { ImPriceTag } from 'react-icons/im';
@@ -89,6 +90,7 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
         addToList('_restaurants', cartData)
         onClose()
     }
+    const toast = useToast()
     async function postReviewClick() {
         const postData = {
             "description": review,
@@ -100,6 +102,15 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
         await createReview(postData)
         setRating(0)
         setReview('')
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'Review has been posted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => location.reload(), 1000)
     }
     return (
         <Container maxW={'7xl'}>

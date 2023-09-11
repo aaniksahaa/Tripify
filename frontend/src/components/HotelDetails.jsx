@@ -23,7 +23,8 @@ import {
     Textarea,
     Tr,
     useColorModeValue,
-    useDisclosure
+    useDisclosure,
+    useToast
 } from '@chakra-ui/react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -83,7 +84,7 @@ export default function HotelDetails() {
             initialize(id)
         }, 1000)
     }, [])
-
+    const toast = useToast()
     async function postReviewClick() {
         const data = {
             "description": review,
@@ -95,6 +96,15 @@ export default function HotelDetails() {
         await createReview(data)
         setRating(0)
         setReview('')
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'Review has been posted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => location.reload(), 1000)
     }
 
     function addClick() {

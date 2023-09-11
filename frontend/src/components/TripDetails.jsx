@@ -102,6 +102,15 @@ export default function TripDetails() {
         await createReview(postData)
         setRating(0)
         setReview('')
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'Review has been posted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => location.reload(), 1000)
     }
     async function book() {
         const j = await postX('tripbooking', {}, { trip_id: props.trip_id, is_private: 0 })
