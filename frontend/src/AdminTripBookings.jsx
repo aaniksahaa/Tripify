@@ -6,9 +6,14 @@ import CardSlider from './components/AdminRankCardSlider'
 import Navbar2 from './components/Navbar2'
 import AdminTripBookingCart from './components/AdminTripBookingCart'
 import AdminBookingCard from './components/AdminBookingCard'
+import { useLocalStorage } from './LocalStorage'
 
 function AdminTripBookings() {
 
+  const [u, setU] = useLocalStorage('tripify_user', {
+    role: 'dummy',
+    user_id: 'dummy'
+  })
   const [status,setStatus] = useState(1)
 
   const [filter, setFilter] = useState({
@@ -17,7 +22,8 @@ function AdminTripBookings() {
     orderby: 'booking_date', 
     ordertype: 'desc',
     page: '1',
-    per_page: '3'
+    per_page: '3',
+    user_id: u.role == 'admin' ? '' : u.user_id
   })
 
   const [bookings, setBookings] = useState([])
@@ -29,13 +35,13 @@ function AdminTripBookings() {
   async function load(t) {
     const _bookings = await getTripBookings(t)
     setBookings(_bookings)
-    console.log(_bookings);
   }
   async function initialize() {
     load(filter)
   }
   useEffect(() => {
-    initialize()
+    if(u.role === 'dummy') window.location = '/'
+    else initialize()
   }, [open, user, trip])
 
   function nextPage() {
@@ -43,12 +49,14 @@ function AdminTripBookings() {
     f.page = Math.min(1000, parseInt(f.page) + 1)
     setFilter(f)
     load(f)
+    window.scrollTo(0, 0);
   }
   function prevPage() {
     var f = filter
     f.page = Math.max(1, parseInt(f.page) - 1)
     setFilter(f)
     load(f)
+    window.scrollTo(0, 0);
   }
   function notPaid() {
     setStatus(1)

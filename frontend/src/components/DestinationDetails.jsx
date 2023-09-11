@@ -39,31 +39,38 @@ import CardSlider from './CardSlider';
 import { getDestination } from '../API';
 import { useParams } from 'react-router-dom';
 import { getParam } from '../Utils';
+import AdminEditDestination from './AdminEditDestination';
 
 export default function DestDetails({ data }) {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
+    const { isOpen: isOpen3, onOpen: onOpen3, onClose: onClose3 } = useDisclosure()
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
     const [props, setProps] = useState({})
     const [aid, setaid] = useLocalStorage('aid', '1')
 
-    
+
     async function initialize(id) {
         const data = await getDestination(id)
         setProps(data)
     }
-
+    async function refresh() {
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }
     useEffect(() => {
         const id = getParam()
         setTimeout(() => {
             initialize(id)
         }, 500)
     }, [])
-    
+
     function activityClick(id) {
         setActivity(props.activities[id])
         setaid(props.activities[id].activity_id)
@@ -104,6 +111,8 @@ export default function DestDetails({ data }) {
                             {props.name}
                         </Heading>
                     </Box>
+                    <br/>
+                    <Button variant={'outline'} onClick={onOpen3} colorScheme='blue'>Edit</Button>
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
@@ -260,6 +269,18 @@ export default function DestDetails({ data }) {
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
+
+            <Modal size={'2xl'} onClose={onClose3} isOpen={isOpen3} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Edit Destination</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <AdminEditDestination refresh={refresh} />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
+
             <Modal onClose={onClose2} isOpen={isOpen2} isCentered size={'5xl'}>
                 <ModalOverlay />
                 <ModalContent>

@@ -43,10 +43,12 @@ import { getActivityById, getDestinations } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import CardSlider from './CardSlider';
 import { getParam } from '../Utils';
+import AdminEditActivity from './AdminEditActivity'
 
 export default function ActivityDetails({ t, data, price, destination, destinationId }) {
     const [date, setDate] = useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState('')
     const [destinations, setDestinations] = useState([])
@@ -82,6 +84,12 @@ export default function ActivityDetails({ t, data, price, destination, destinati
         addToList('_activities', t)
         onClose()
     }
+    async function refresh() {
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }
     useEffect(() => {
         const id = getParam()
         setTimeout(() => {
@@ -111,6 +119,8 @@ export default function ActivityDetails({ t, data, price, destination, destinati
                             {props.name}
                         </Heading>
                     </Box>
+                    <br />
+                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
@@ -266,6 +276,16 @@ export default function ActivityDetails({ t, data, price, destination, destinati
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
+            <Modal size={'2xl'} onClose={onClose2} isOpen={isOpen2} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Edit Activity</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <AdminEditActivity refresh={refresh} />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>

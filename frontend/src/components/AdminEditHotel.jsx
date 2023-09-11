@@ -4,7 +4,7 @@ import { deleteX, getHotelById, updateHotel, updateUser } from '../API'
 import { Navigate} from 'react-router-dom';
 import { getParam } from '../Utils';
 
-function AdminEditHotel({hotel_data, parent_initializer}) {
+function AdminEditHotel({hotel_data, parent_initializer, refresh}) {
 
     const [deleted,setDeleted] = useState(0)
 
@@ -30,6 +30,8 @@ function AdminEditHotel({hotel_data, parent_initializer}) {
         const id = getParam()
         setTimeout(() => initialize(id), 500);
     }, [])
+
+    
     function handleChange(e) {
         setData({
             ...data,
@@ -76,7 +78,7 @@ function AdminEditHotel({hotel_data, parent_initializer}) {
         console.log('okay parent')
         showToast('Successfully Updated', 'Hotel is updated and changes stored permanently')
         showToast('Users Notified', 'Relevant users have been notified')
-    
+        await refresh()
     }
     async function del(){
         await deleteX(`hotel/${data.hotel_id}`)

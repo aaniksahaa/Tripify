@@ -40,11 +40,13 @@ import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 import { useParams } from 'react-router-dom';
 import { getParam } from '../Utils';
+import AdminEditRestaurant from './AdminEditRestaurant';
 
 export default function RestaurantDetails({ restaurant_id, rating_info, data }) {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
     const [props, setProps] = React.useState({
@@ -60,11 +62,17 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
 
 
     async function initialize(id) {
-        
+
         const data = await getRestaurant(id)
         setProps(data)
     }
-
+    async function refresh() {
+        alert(1)
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }
     useEffect(() => {
         const id = getParam()
         setTimeout(() => {
@@ -117,6 +125,8 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
                             {props.name}
                         </Heading>
                     </Box>
+                    <br />
+                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
@@ -276,6 +286,16 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
+            <Modal size={'2xl'} onClose={onClose2} isOpen={isOpen2} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Edit Restaurant</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <AdminEditRestaurant refresh={refresh} />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>

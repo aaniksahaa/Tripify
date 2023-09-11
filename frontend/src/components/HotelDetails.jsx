@@ -43,14 +43,23 @@ import { createReview, getHotelById } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 import { getParam } from '../Utils';
+import AdminEditHotel from './AdminEditHotel';
 
 export default function HotelDetails() {
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
     const [rating, setRating] = React.useState(0)
     const [review, setReview] = React.useState('')
     const [props, setProps] = useState({})
+
+    async function refresh() {
+        const id = getParam()
+        setTimeout(() => {
+            initialize(id)
+        }, 500)
+    }
 
     async function initialize(id) {
         // setProps({
@@ -117,6 +126,8 @@ export default function HotelDetails() {
                             {props.name}
                         </Heading>
                     </Box>
+                    <br />
+                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text
@@ -294,6 +305,16 @@ export default function HotelDetails() {
             </SimpleGrid>
             <Box height={'500px'}>
             </Box>
+            <Modal size={'2xl'} onClose={onClose2} isOpen={isOpen2} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Edit Hotel</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <AdminEditHotel refresh={refresh} />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>
