@@ -20,7 +20,7 @@ function Profile() {
 
     const [filter, setFilter] = useState({
         page: 1,
-        per_page: 10
+        per_page: 100
     })
 
     // async function searchClick() {
@@ -30,7 +30,7 @@ function Profile() {
     //     setFilter(f)
     // }
     async function followClick() {
-        if(followed) {
+        if (followed) {
             await unfollow(user.user_id, id)
         }
         else {
@@ -62,7 +62,7 @@ function Profile() {
         }
     }
     useEffect(() => {
-        if(!isLoggedIn()) redirectToHomepage()
+        if (!isLoggedIn()) redirectToHomepage()
         initialize()
     }, [id])
 
@@ -139,6 +139,15 @@ function Profile() {
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
                             <Posts profile={profile} refresh={refresh} />
+                            <br/>
+                            <br/>
+                            <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
+                                <Button variant={'solid'} colorScheme={'blue'} onClick={prevPage}>Previous Page</Button>
+                                <Button variant={'solid'} colorScheme={'blue'} onClick={nextPage}>Next Page</Button>
+                            </Stack>
+                            <Box height={'200px'}>
+
+                            </Box>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -151,7 +160,7 @@ function Profile() {
                     <ModalBody>
                         <Textarea rows={'10'} ref={postRef} />
                         <Box mt='10px'>
-                            <ImageUploader URL = {imageURL} setURL = {setImageURL}/>
+                            <ImageUploader URL={imageURL} setURL={setImageURL} />
                         </Box>
                     </ModalBody>
                     <ModalFooter justifyContent={'space-between'}>
