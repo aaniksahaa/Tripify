@@ -70,7 +70,7 @@ app.use('/api/v1/flight', flightRouter)
 app.use('/api/v1/destination', destinationRouter)
 app.use('/api/v1/review', reviewRouter)
 
-app.use(isAuthorized)
+//app.use(isAuthorized)
 
 app.use('/api/v1/trip', tripRouter)
 app.use('/api/v1/user', userRouter)
