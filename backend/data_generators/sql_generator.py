@@ -51,7 +51,7 @@ sql += "INSERT INTO Cities (city_id, name, country_name, population, weather_typ
 
 sql += "\n-- Insert Global Admin User ( user_id = 0 )\n\n"
 
-sql += "INSERT INTO Users ( user_id, username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 0, 'admin', 'admin@gmail.com', 'admin', 'admin', 'Oppenheimer', 'I am from Andromida', 0, 'facebook.com/opp', 'twitter.com/opp', 'instagram.com/opp', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );\n"
+sql += "INSERT INTO Users ( user_id, username, email, password_hash, role, name, bio, city_id, facebook_url, twitter_url, instagram_url, profile_picture, status, dob ) VALUES ( 0, 'admin', 'admin@gmail.com', MY_HASH_PASSWORD('admin'), 'admin', 'Oppenheimer', 'I am from Andromida', 0, 'facebook.com/opp', 'twitter.com/opp', 'instagram.com/opp', 'dummy.jpg', 'active', TO_DATE('2002-09-17', 'YYYY-MM-DD') );\n"
 
     
 
