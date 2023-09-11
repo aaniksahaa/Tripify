@@ -1,14 +1,31 @@
-import { Avatar, Box, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Text } from '@chakra-ui/react'
+import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Menu, MenuButton, MenuItem, MenuList, Text, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-import { getSingleUser } from '../API'
+import { deleteX, getSingleUser } from '../API'
 import StarRating from './StarRating'
+import { useLocalStorage } from '../LocalStorage'
 
 function Review({ user_id, description, posting_date, rating, review_id }) {
     const [user, setUser] = useState({
         profile_picture: '',
         name: ''
     })
+    const toast = useToast()
+    async function Delete() {
+        await deleteX('review/' + review_id)
+        toast({
+            position: 'top-right',
+            title: 'Notification',
+            description: 'Review has been deleted',
+            status: 'success',
+            duration: 3000,
+            colorScheme: 'whatsapp',
+            isClosable: true,
+        })
+        setTimeout(() => location.reload(), 1000)
+    }
+    const [u, setU] = useLocalStorage('tripify_user', null)
+
     async function initialize() {
         const u = await getSingleUser(user_id)
         setUser(u)
@@ -28,12 +45,23 @@ function Review({ user_id, description, posting_date, rating, review_id }) {
                                 <Text>{new Date(posting_date).toLocaleString()}</Text>
                             </Box>
                         </Flex>
-                        <IconButton
-                            variant='ghost'
-                            colorScheme='gray'
-                            aria-label='See menu'
-                            icon={<BsThreeDotsVertical />}
-                        />
+                        {
+                            user && user_id === user.user_id ?
+                                <Menu>
+                                    <MenuButton as={IconButton}>
+                                        <IconButton
+                                            variant='ghost'
+                                            colorScheme='gray'
+                                            aria-label='See menu'
+                                            icon={<BsThreeDotsVertical />}
+                                        />
+                                    </MenuButton>
+                                    <MenuList>
+                                        <MenuItem onClick={Delete}>Delete</MenuItem>
+                                    </MenuList>
+                                </Menu>
+                                : <></>
+                        }
                     </Flex>
                 </CardHeader>
                 <CardBody>
