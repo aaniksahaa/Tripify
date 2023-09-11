@@ -2,7 +2,7 @@ const oracledb = require('oracledb');
 const db = require('../db/db');
 const { getSingleCity } = require('./city');
 const { getSingleActivity } = require('./activity');
-const { getImagesFromObject } = require('./global_helpers');
+const { getImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
 const getActivitiesFromDestinationId = async (payload) => {
 
@@ -265,11 +265,20 @@ const createDestination = async (payload) => {
     };
 
     activities = payload.activities
-
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
     try {
         const result1 = await db.execute(sql, binds, db.options);
         const destination_id = result1.outBinds.destination_id;
         console.log("Id of inserted destination = ", destination_id);
+
+        if(images.length > 0){
+            object = {'object_type':'destination','object_id':destination_id, 'images':images}
+            //await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
 
         for(let activity of activities)
         {

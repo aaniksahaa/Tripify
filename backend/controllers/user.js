@@ -586,5 +586,4 @@ const handleRemoveFavorite = async (payload) => {
     }   
 }
 
-
 module.exports = { getSingleUser, getSingleUserByUsername, getUsers, createUser, updateUser, deleteUser, deleteUserPermanent, checkFollow, handleFollow, handleUnFollow, handleFavorite, handleRemoveFavorite };

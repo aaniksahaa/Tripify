@@ -54,7 +54,7 @@ const getNotifications = async (payload) => {
     sql += await getSqlPaginationAndOrdering(payload, attributes, page, per_page, orderby, ordertype)
 
     try {
-        console.log(sql)
+        //console.log(sql)
         const result = await db.execute(sql, binds, db.options);
         notifications = result.rows;
 

@@ -24,7 +24,7 @@ router.get('/:destination_id', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     try {
         const destinations = await getDestinations(req.query);
-        console.log(destinations);
+        //console.log(destinations);
         res.json(destinations);
     } catch (err) {
         console.log(err);
