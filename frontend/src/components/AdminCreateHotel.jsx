@@ -3,13 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { deleteX, getCities, postX, updateHotel, updateUser } from '../API'
 import { Navigate } from 'react-router-dom';
 import { Select } from 'chakra-react-select'
+import ImageUploader from './ImageUploader';
 
 function AdminCreateHotel() {
 
     function setImageURL(x) {
         setData({
             ...data,
-            
+            images: [x]
         })
     }
     const blank_hotel = {
@@ -77,6 +78,9 @@ function AdminCreateHotel() {
         showToast('Successfully Created', 'Hotel is created and changes stored permanently')
         setCreated(1)
         setData(blank_hotel)
+        setTimeout(() => {
+            window.location = '/hotels'
+        }, 1000)
     }
 
     if (created == 1) {
@@ -139,9 +143,9 @@ function AdminCreateHotel() {
                     </Box>
                     <br></br>
                     <br></br>
-                    <ImageUploader setURL={setImageURL_} />
-                    <br/>
-                    <br/>
+                    <ImageUploader setURL={setImageURL} />
+                    <br />
+                    <br />
                     <Button colorScheme='blue' onClick={create}>Create Hotel</Button>
                 </VStack>
             </VStack>

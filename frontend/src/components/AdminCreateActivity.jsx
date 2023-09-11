@@ -1,11 +1,18 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Avatar, Box, Button, Checkbox, CheckboxGroup, Container, FormControl, FormLabel, Input, Progress, Stack, Table, Tbody, Td, Text, Textarea, Th, Tr, VStack, useToast } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { deleteX, getCities, postX, updateActivity, updateUser } from '../API'
-import { Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { Select } from 'chakra-react-select'
+import ImageUploader from './ImageUploader';
 
 function AdminCreateActivity() {
 
+    function setImageURL(x) {
+        setData({
+            ...data,
+            images: [x]
+        })
+    }
     const [cities, setCities] = useState([
         {
             "label": "Dhaka",
@@ -15,14 +22,14 @@ function AdminCreateActivity() {
     const [created, setCreated] = useState(0)
 
     const toast = useToast()
-    function showToast(title, description){
+    function showToast(title, description) {
         toast({
-        title: title,
-        description: description,
-        isClosable:'true', 
-        duration: 3000, 
-        position:'top-right', 
-        colorScheme:'whatsapp'
+            title: title,
+            description: description,
+            isClosable: 'true',
+            duration: 3000,
+            position: 'top-right',
+            colorScheme: 'whatsapp'
         });
     }
 
@@ -49,7 +56,7 @@ function AdminCreateActivity() {
             [e.target.name]: e.target.value
         })
     }
-    
+
     async function create() {
         var x = data
         await postX('activity', {}, data)
@@ -58,17 +65,15 @@ function AdminCreateActivity() {
         setCreated(1)
     }
 
-    if(created == 1)
-    {
+    if (created == 1) {
         return <Navigate to="/activities" />;
     }
 
-    if(cities.length == 0)
-    {
+    if (cities.length == 0) {
         return (<Text>Loading</Text>);
     }
 
-    console.log('\n\n\nCities = \n\n\n',cities)
+    console.log('\n\n\nCities = \n\n\n', cities)
 
     return (
         <Box>
@@ -85,10 +90,13 @@ function AdminCreateActivity() {
                         </Tbody>
                     </Table>
                     <Box fontSize={'xl'}>
-                    <br></br>
+                        <br></br>
                     </Box>
                     <br></br>
                     <br></br>
+                    <ImageUploader setURL={setImageURL} />
+                    <br />
+                    <br />
                     <Button colorScheme='blue' onClick={create}>Create Activity</Button>
                 </VStack>
             </VStack>
