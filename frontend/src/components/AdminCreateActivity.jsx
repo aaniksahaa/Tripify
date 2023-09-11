@@ -59,10 +59,12 @@ function AdminCreateActivity() {
 
     async function create() {
         var x = data
+        // alert(JSON.stringify(x))
         await postX('activity', {}, data)
         console.log(x)
         showToast('Successfully Created', 'Activity is created and changes stored permanently')
-        setCreated(1)
+        // setCreated(1)
+        setTimeout(() => window.location = '/activities', 1000)
     }
 
     if (created == 1) {

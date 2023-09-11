@@ -2,7 +2,7 @@ import { Box, SimpleGrid } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import PostCard from './PostCard'
 
-function Posts({ profile, refresh }) {
+function Reviews({ profile, refresh }) {
     const [posts, setPosts] = useState([])
     useEffect(() => {
         if (profile) {
