@@ -247,6 +247,18 @@ export async function getSingleTripDetails(id) {
   return j
 }
 
+export async function deleteTrip(id) {
+  const j = await deleteX('trip/' + id)
+  return j
+}
+export async function deleteUser(id) {
+  const j = await deleteX('user/' + id)
+  return j
+}
+export async function deleteTripHard(id) {
+  const j = await deleteX('trip/danger/' + id)
+  return j
+}
 export async function getSingleTripBooking(user_id, trip_id) {
   const j = await getX(`tripbooking/${user_id}/${trip_id}`, {})
   return j

@@ -24,7 +24,8 @@ import {
     Thead,
     Tr,
     useColorModeValue,
-    useDisclosure
+    useDisclosure,
+    useToast
 } from '@chakra-ui/react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -36,14 +37,14 @@ import React, { useEffect, useState } from 'react';
 import { FaHourglassEnd, FaHourglassStart } from 'react-icons/fa';
 import { ImPriceTag } from 'react-icons/im';
 import { useParams } from 'react-router-dom';
-import { createReview, getRestaurant, getTrip, getTripById, postX } from '../API';
+import { createReview, deleteTrip, getRestaurant, getTrip, getTripById, postX } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
 import EmblaCarousel from './EmblaCarousel';
 import RatingBox from './RatingBox';
 import StarRating from './StarRating';
-import { getParam } from '../Utils';
+import { getParam, isLoggedIn, userIs } from '../Utils';
 
 export default function TripDetails() {
     const [startDate, setStartDate] = useState(new Date());
@@ -56,6 +57,23 @@ export default function TripDetails() {
     const [review, setReview] = useState('')
     const [activity, setActivity] = useState({})
 
+    const toast = useToast()
+
+    async function Delete() {
+        const id = getParam()
+        await deleteTrip(id)
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'Trip has been deleted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => {
+            window.location = '/trips'
+        }, 1000)
+    }
     function activityClick(id) {
         setActivity(props.activities[id])
         onOpen2()
@@ -237,14 +255,14 @@ export default function TripDetails() {
                             <br />
                             <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
                                 {
-                                    user.user_id != 69 ?
+                                    isLoggedIn() ?
                                         <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
                                         : <></>
                                 }
                                 {
 
-                                    user.user_id != 69 && props.creator_user_id == user.user_id ?
-                                        <Button colorScheme='red'><DeleteIcon /></Button> :
+                                    isLoggedIn() && (props.creator_user_id == user.user_id || userIs('admin')) ?
+                                        <Button colorScheme='red' onClick={Delete}><DeleteIcon /></Button> :
                                         <></>
                                 }
                             </Stack>

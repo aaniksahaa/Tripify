@@ -1,11 +1,13 @@
-import { Avatar, Box, Button, Card, CardBody, Container, FormControl, FormLabel, GridItem, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Stack, Table, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
+import { Avatar, Box, Button, Card, CardBody, Container, FormControl, FormLabel, GridItem, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderMark, RangeSliderThumb, RangeSliderTrack, SimpleGrid, Stack, Table, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useToast } from '@chakra-ui/react'
 import React from 'react'
 import Navbar2 from './Navbar2'
-import { getCities, getHotels, getUsers } from '../API'
+import { deleteUser, getCities, getHotels, getUsers } from '../API'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Select } from 'chakra-react-select'
 import { Link } from 'react-router-dom'
+import { DeleteIcon } from '@chakra-ui/icons'
+import { isLoggedIn, userIs } from '../Utils'
 
 function Users() {
     ///api/v1/user?name=e&city_id=1,2,3&min_age=5&max_age=92&page=1&per_page=3&orderby=name&ordertype=desc
@@ -22,6 +24,22 @@ function Users() {
         page: 1,
         per_page: 10
     })
+
+    const toast = useToast()
+
+
+    async function Delete(id) {
+        await deleteUser(id)
+        toast({
+            position: 'top-right',
+            title: 'Success',
+            description: 'User has been deleted',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+        setTimeout(() => load(filter), 300)
+    }
     async function searchClick() {
         var f = filter
         f['page'] = 1
@@ -190,8 +208,16 @@ function Users() {
                         <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5} style={{ width: '100%' }} p='30px'>
                             {
                                 users.map((user, idx) =>
-                                    <Link to={'/profile/' + user.user_id}>
-                                        <Card maxWidth={'300px'} className='card'>
+                                    <Card maxWidth={'300px'} className='card'>
+                                        {
+                                            isLoggedIn() && userIs('admin') ?
+                                                <Box textAlign={'right'} padding={'5px'}>
+                                                    <Button onClick={() => Delete(user.user_id)} colorScheme='red'><DeleteIcon size={30} /></Button>
+                                                </Box>
+                                                : <></>
+                                        }
+                                        <Link to={'/profile/' + user.user_id}>
+
                                             <CardBody>
                                                 <Stack direction='column' justifyContent={'center'} alignItems={'center'}>
                                                     <Box>
@@ -213,8 +239,9 @@ function Users() {
                                                     </Table>
                                                 </Stack>
                                             </CardBody>
-                                        </Card>
-                                    </Link>
+                                        </Link>
+
+                                    </Card>
                                 )
                             }
                         </SimpleGrid>
