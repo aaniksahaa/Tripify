@@ -18,6 +18,7 @@ import AdminCreateHotel from './components/AdminCreateHotel'
 import AdminCreateRestaurant from './components/AdminCreateRestaurant'
 import AdminCreateDestination from './components/AdminCreateDestination'
 import AdminCreateActivity from './components/AdminCreateActivity'
+import { protectRoute } from './Utils'
 
 function AdminCreates() {
 
@@ -26,7 +27,7 @@ function AdminCreates() {
  const object_types = ['Hotel','Restaurant','Destination','Activity']
 
   useEffect(() => {
-    
+    protectRoute('admin')
   }, [])
   
   return (

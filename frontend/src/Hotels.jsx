@@ -20,7 +20,7 @@ function Hotels() {
     orderby: 'name',
     ordertype: 'asc',
     page: 1,
-    per_page: 10
+    per_page: 12
   })
   async function searchClick() {
     var f = filter
@@ -225,7 +225,7 @@ function Hotels() {
             </Stack>
           </GridItem>
           <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }}>
-            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5} style={{ width: '100%' }} p='30px'>
+            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }} spacing={1} style={{ width: '100%' }} p='30px'>
               {
                 hotels.map((item, index) => (
                   <Card key={index} className="card" paddingBottom={'100%'} width={'100%'} position={'relative'}>

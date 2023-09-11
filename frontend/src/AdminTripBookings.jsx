@@ -102,12 +102,12 @@ function AdminTripBookings() {
             <SimpleGrid columns={{ base: 1, sm: 1, md: 1, lg: 1, xl: 1 }} spacing={35} p='30px'>
               {
                 bookings.map((item, index) => (
-                  <>
+                  <Box key={index}>
                   <Box display={'flex'} justifyContent={'right'}>
                   <Button width={'25%'} colorScheme='gray' size={'lg'} variant={'solid'} onClick={() => {setOpen(true); setUser(item.user_id); setTrip(item.trip_id)}}>View Booking Details</Button>
                   </Box>
                   <AdminBookingCard booking={item}></AdminBookingCard>
-                  </>
+                  </Box>
                 ))
               }
             </SimpleGrid>
