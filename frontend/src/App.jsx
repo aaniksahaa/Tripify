@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
 import Hotel from './Hotel'
@@ -26,12 +26,43 @@ import AdminStat from './AdminStat'
 import AdminTrips from './AdminTrips'
 import AdminTripBookings from './AdminTripBookings'
 import AdminCreates from './AdminCreates'
+import { useEffect } from 'react'
+import { useToast } from '@chakra-ui/react'
+import { getX } from './API'
+import { useLocalStorage } from './LocalStorage'
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
+  const toast = useToast()
+  const [user, setUser] = useLocalStorage('tripify_user', null)
+  async function polling() {
+    const _notifications = await getX(`user/${user.user_id}/notifications`, { is_read: 0 })
+    _notifications.forEach(x => {
+      toast({
+        position: 'top-right',
+        title: 'Notification',
+        description: x.text,
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+      })
+    })
+  }
+  useEffect(() => {
+    setInterval(polling, 5000);
+  }, [])
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="" Component={Home} />
           <Route path="/" Component={Home} />

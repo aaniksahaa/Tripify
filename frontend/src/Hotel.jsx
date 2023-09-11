@@ -8,7 +8,6 @@ function Hotel() {
     return (
         <div>
             <Navbar2 />
-            <AdminEditHotel />
             <HotelDetails />
         </div>
     )

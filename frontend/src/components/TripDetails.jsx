@@ -36,7 +36,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHourglassEnd, FaHourglassStart } from 'react-icons/fa';
 import { ImPriceTag } from 'react-icons/im';
 import { useParams } from 'react-router-dom';
-import { createReview, getRestaurant, getTrip, getTripById } from '../API';
+import { createReview, getRestaurant, getTrip, getTripById, postX } from '../API';
 import { addToList, useLocalStorage } from '../LocalStorage';
 import ActivityDetails from './ActivityDetails';
 import CardSlider from './CardSlider';
@@ -84,6 +84,10 @@ export default function TripDetails() {
         await createReview(postData)
         setRating(0)
         setReview('')
+    }
+    async function book() {
+        const j = await postX('tripbooking', {}, {trip_id: props.trip_id, is_private: 1})
+        alert(JSON.stringify(j))
     }
     const [user, setUser] = useLocalStorage('tripify_user', {})
     return (
@@ -230,7 +234,7 @@ export default function TripDetails() {
                             </TableContainer>
                             <br />
                             <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
-                                <Button colorScheme='blue' width={'50%'}>Book</Button>
+                                <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
                                 {
 
                                     props.creator_user_id == user.user_id ?
