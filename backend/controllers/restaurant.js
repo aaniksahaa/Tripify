@@ -1,7 +1,7 @@
 const oracledb = require('oracledb');
 const db = require('../db/db');
 const { getSingleCity } = require('./city');
-const { getRatingInfoFromObject, getImagesFromObject } = require('./global_helpers');
+const { getRatingInfoFromObject, getImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
 const notifyRestaurant = async (payload) => {
 
@@ -231,10 +231,22 @@ const createRestaurant = async (payload) => {
         creator_user_id: payload.creator_user_id,
         restaurant_id: { type: oracledb.NUMBER, dir: oracledb.BIND_OUT },
     };
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
     try {
         const result1 = await db.execute(sql, binds, db.options);
         const restaurant_id = result1.outBinds.restaurant_id;
         console.log('Id of inserted restaurant = ', restaurant_id);
+
+        if(images.length > 0){
+            console.log(images)
+            object = {'object_type':'restaurant','object_id':restaurant_id, 'images':images}
+            //await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
+
         const payload = { restaurant_id: restaurant_id };
         const result = await getSingleRestaurant(payload);
         console.log(result);
