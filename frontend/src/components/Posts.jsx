@@ -18,7 +18,6 @@ function Posts({ profile, refresh }) {
                     })
                 }
             </SimpleGrid>
-
         </Box>
     )
 }

@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker"
 import { createTrip } from "../API"
 import { taka } from "../Constants"
 import { getList, removeFromList } from "../LocalStorage"
+import ImageUploader from "./ImageUploader"
 
 export default function Cart({ open, setOpen }) {
   const [hotels, setHotels] = useState([])
@@ -78,6 +79,10 @@ export default function Cart({ open, setOpen }) {
     await createTrip(t)
     closeModal()
   }
+  
+  function setImageURL(x) {
+    t['image_url'] = x
+  }
 
   return (
     <Modal onClose={closeModal} size={'lg'} isOpen={open} isCentered scrollBehavior={'inside'}>
@@ -106,6 +111,10 @@ export default function Cart({ open, setOpen }) {
                       <Tr><Th>End Date</Th><Td>
                         <DatePicker selected={body.endDate} onChange={x => handleChange_('endDate', x)} />
                       </Td></Tr>
+                      <Tr><Th>Image</Th><Td>
+                        <ImageUploader setURL={setImageURL} />
+                      </Td></Tr>
+
                     </Tbody>
                   </Table>
                 </AccordionPanel>

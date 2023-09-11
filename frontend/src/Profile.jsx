@@ -7,12 +7,15 @@ import Navbar2 from './components/Navbar2'
 import Posts from './components/Posts'
 import ImageUploader from './components/ImageUploader'
 import { isLoggedIn, protectRoute, redirectToHomepage, userIs } from './Utils'
+import Reviews from './components/Reviews'
 
 function Profile() {
     const [followed, setFollowed] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [profile, setProfile] = useState({
-        posts_created: []
+        posts_created: [],
+        reviews_created: [],
+        trips_created: []
     })
     const [user, setUser] = useLocalStorage('tripify_user', {})
     const { id } = useParams()
@@ -133,14 +136,14 @@ function Profile() {
                 <Tabs >
                     <TabList alignItems={'center'} justifyItems={'center'} justifyContent={'center'}>
                         <Tab>Posts</Tab>
-                        <Tab>Reviews</Tab>
-                        <Tab>Trips</Tab>
+                        {/* <Tab>Reviews</Tab>
+                        <Tab>Trips</Tab> */}
                     </TabList>
                     <TabPanels>
                         <TabPanel padding={0} pt='20px'>
                             <Posts profile={profile} refresh={refresh} />
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
                             <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
                                 <Button variant={'solid'} colorScheme={'blue'} onClick={prevPage}>Previous Page</Button>
                                 <Button variant={'solid'} colorScheme={'blue'} onClick={nextPage}>Next Page</Button>
@@ -148,6 +151,9 @@ function Profile() {
                             <Box height={'200px'}>
 
                             </Box>
+                        </TabPanel>
+                        <TabPanel pt='20px'>
+                            {/* <Reviews profile={profile} refresh={refresh} /> */}
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
