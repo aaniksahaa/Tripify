@@ -318,4 +318,22 @@ router.delete('/:user_id/favorite/:object_id', async (req, res, next) => {
     }
 })
 
+// router.post('/sendmail', [
+//     body('username').notEmpty().withMessage('username is required')
+// ], async (req, res, next) => {
+//     const result = validationResult(req);
+//     console.log(req.body);
+//     if (result.isEmpty() === false) {
+//         return res.send({ errors: result.array() });
+//     }
+
+//     try {
+//         const user = await createUser(req.body);
+//         res.json(user);
+//     } catch (error) {
+//         next(error);
+//     }
+// });
+
+
 module.exports = router;

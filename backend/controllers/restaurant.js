@@ -193,6 +193,11 @@ const getRestaurants = async (payload) => {
     binds.offset = offset;
     binds.per_page = per_page;
 
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
+
     try {
         console.log(sql);
         result = (await db.execute(sql, binds, db.options)).rows;
@@ -239,6 +244,8 @@ const createRestaurant = async (payload) => {
         const result1 = await db.execute(sql, binds, db.options);
         const restaurant_id = result1.outBinds.restaurant_id;
         console.log('Id of inserted restaurant = ', restaurant_id);
+
+        console.log(images)
 
         if(images.length > 0){
             console.log(images)

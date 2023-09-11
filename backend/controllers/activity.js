@@ -1,6 +1,6 @@
 const oracledb = require('oracledb');
 const db = require('../db/db');
-const { getImagesFromObject } = require('./global_helpers');
+const { getImagesFromObject, insertImagesForObject } = require('./global_helpers');
 
 function isNumber(str) {
     return /^\d+(\.\d+)?$/.test(str);
@@ -151,10 +151,21 @@ const createActivity = async (payload) => {
         creator_user_id: payload.creator_user_id,
         activity_id: { type: oracledb.NUMBER, dir: oracledb.BIND_OUT }
     };
+    images = []
+    if(payload.images !== undefined){
+        images = payload.images
+    }
     try {
         const result1 = await db.execute(sql, binds, db.options);
         const activity_id = result1.outBinds.activity_id[0];
         console.log('Id of inserted activity = ', activity_id);
+
+        if(images.length > 0){
+            object = {'object_type':'activity','object_id':activity_id, 'images':images}
+            //await deleteImagesFromObject(object)
+            await insertImagesForObject(object)
+        }
+
         const payload = { activity_id: activity_id };
         const result = await getSingleActivity(payload);
         console.log(result);

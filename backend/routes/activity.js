@@ -17,7 +17,7 @@ router.get('/:activity_id', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     try {
         const activities = await getActivities(req.query);
-        console.log(activities);
+        //console.log(activities);
         res.json(activities);
     } catch (err) {
         console.log(err);
