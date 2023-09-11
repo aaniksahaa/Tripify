@@ -24,7 +24,7 @@ function Notifications() {
     useEffect(() => {
         initialize()
     }, [])
-    
+
     function nextPage() {
         var f = filter
         f['page'] = Math.min(1000, f['page'] + 1)
@@ -42,6 +42,7 @@ function Notifications() {
             <MenuButton
                 as={Button}
                 variant={'ghost'}
+                onClick={initialize}
             >
                 <IoMdNotifications size={20} />
             </MenuButton>
@@ -57,7 +58,7 @@ function Notifications() {
                                     </Stack>
                                 </CardBody>
                             </Card>
-                            <hr/>
+                            <hr />
                         </Box>
                     )
                 }

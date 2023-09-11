@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useLocalStorage } from "../LocalStorage";
 import Cart from "./Cart";
-import { doesURLContain } from "../Utils";
+import { doesURLContain, userIs } from "../Utils";
 import { IoMdNotifications } from 'react-icons/io';
 import Notifications from "./Notifications";
 import { useEffect } from "react";
@@ -26,7 +26,7 @@ function Navbar2({ openDrawer }) {
     const [user, setUser] = useLocalStorage('tripify_user', null)
 
     useEffect(() => {
-        
+
     }, [])
     return (
         <Box style={{ zIndex: '20' }} position={'sticky'} top='0'>
@@ -41,13 +41,14 @@ function Navbar2({ openDrawer }) {
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={1}>
                         {
-                            user &&
-                            <Button colorScheme="green" onClick={() => {
-                                setOpen(true)
-                            }}>
-                                My Trip
-                            </Button>
-
+                            user && userIs('client') ?
+                                <Button colorScheme="green" onClick={() => {
+                                    setOpen(true)
+                                }}>
+                                    My Trip
+                                </Button>
+                                :
+                                <></>
                         }
 
                         <HStack spacing={1} mr={1} color="brand.500" display={{ base: "none", md: "inline-flex", }}>

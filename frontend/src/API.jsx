@@ -94,6 +94,10 @@ export async function createBooking(data) {
   const j = await postX('tripbooking', {}, data)
   return j
 }
+export async function doPayment(data) {
+  const j = await fetchX('PUT','tripbooking/payment', {}, data)
+  return j
+}
 export async function createReview(data) {
   const j = await postX('review', {}, data)
   return j

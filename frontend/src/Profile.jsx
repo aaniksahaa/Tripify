@@ -6,6 +6,7 @@ import { useLocalStorage } from './LocalStorage'
 import Navbar2 from './components/Navbar2'
 import Posts from './components/Posts'
 import ImageUploader from './components/ImageUploader'
+import { isLoggedIn, protectRoute, redirectToHomepage, userIs } from './Utils'
 
 function Profile() {
     const [followed, setFollowed] = useState(false)
@@ -61,6 +62,7 @@ function Profile() {
         }
     }
     useEffect(() => {
+        if(!isLoggedIn()) redirectToHomepage()
         initialize()
     }, [id])
 

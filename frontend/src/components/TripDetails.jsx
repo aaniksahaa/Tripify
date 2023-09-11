@@ -89,7 +89,9 @@ export default function TripDetails() {
         const j = await postX('tripbooking', {}, { trip_id: props.trip_id, is_private: 0 })
         alert(JSON.stringify(j))
     }
-    const [user, setUser] = useLocalStorage('tripify_user', {})
+    const [user, setUser] = useLocalStorage('tripify_user', {
+        user_id: 69
+    })
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -234,10 +236,14 @@ export default function TripDetails() {
                             </TableContainer>
                             <br />
                             <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
-                                <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
+                                {
+                                    user.user_id!=69 ?
+                                        <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
+                                        : <></>
+                                }
                                 {
 
-                                    props.creator_user_id == user.user_id ?
+                                    user.user_id!=69 && props.creator_user_id == user.user_id ?
                                         <Button colorScheme='red'><DeleteIcon /></Button> :
                                         <></>
                                 }

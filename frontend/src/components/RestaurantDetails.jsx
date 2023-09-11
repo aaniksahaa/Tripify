@@ -39,7 +39,7 @@ import { createReview, getRestaurant } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
 import { useParams } from 'react-router-dom';
-import { getParam } from '../Utils';
+import { getParam, userIs } from '../Utils';
 import AdminEditRestaurant from './AdminEditRestaurant';
 
 export default function RestaurantDetails({ restaurant_id, rating_info, data }) {
@@ -67,7 +67,6 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
         setProps(data)
     }
     async function refresh() {
-        alert(1)
         const id = getParam()
         setTimeout(() => {
             initialize(id)
@@ -126,7 +125,11 @@ export default function RestaurantDetails({ restaurant_id, rating_info, data }) 
                         </Heading>
                     </Box>
                     <br />
-                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                    {
+                        userIs('admin') ?
+                            <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                            : <></>
+                    }
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text

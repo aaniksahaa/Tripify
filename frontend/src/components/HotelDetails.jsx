@@ -42,7 +42,7 @@ import { useParams } from 'react-router-dom';
 import { createReview, getHotelById } from '../API';
 import { addToList } from "../LocalStorage";
 import Carousel from "./Carousel";
-import { getParam } from '../Utils';
+import { getParam, userIs } from '../Utils';
 import AdminEditHotel from './AdminEditHotel';
 
 export default function HotelDetails() {
@@ -127,7 +127,11 @@ export default function HotelDetails() {
                         </Heading>
                     </Box>
                     <br />
-                    <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                    {
+                        userIs('admin') ?
+                            <Button variant={'outline'} onClick={onOpen2} colorScheme='blue'>Edit</Button>
+                            : <></>
+                    }
                     <Divider borderWidth={'1px'} m='10px' />
                     <Stack spacing={{ base: 4, sm: 6 }}>
                         <Text

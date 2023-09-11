@@ -14,17 +14,23 @@ export function redirectToHomepage() {
 }
 export function protectRoute(role) {
     const u = getDict('tripify_user')
-    if(u == JSON.stringify('{}')) redirectToHomepage()
+    if (u == JSON.stringify({})) redirectToHomepage()
     else {
-        if(u.role !== role) redirectToHomepage()
+        if (u.role !== role) redirectToHomepage()
     }
 }
 
 export function userIs(role) {
     const u = getDict('tripify_user')
-    if(u == JSON.stringify('{}')) return false
+    if (u == JSON.stringify({})) return false
     else {
-        if(u.role !== role) return false
+        if (u.role !== role) return false
     }
+    return true
+}
+
+export function isLoggedIn() {
+    const u = getDict('tripify_user')
+    if (!u.role) return false
     return true
 }
