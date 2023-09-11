@@ -237,13 +237,13 @@ export default function TripDetails() {
                             <br />
                             <Stack direction={'row'} spacing={'20px'} justifyContent={'space-between'}>
                                 {
-                                    user.user_id!=69 ?
+                                    user.user_id != 69 ?
                                         <Button colorScheme='blue' onClick={book} width={'50%'}>Book</Button>
                                         : <></>
                                 }
                                 {
 
-                                    user.user_id!=69 && props.creator_user_id == user.user_id ?
+                                    user.user_id != 69 && props.creator_user_id == user.user_id ?
                                         <Button colorScheme='red'><DeleteIcon /></Button> :
                                         <></>
                                 }
@@ -338,20 +338,24 @@ export default function TripDetails() {
                             <Box marginTop='20px'>
                                 <EmblaCarousel type={'trip'} id={props.trip_id} />
                             </Box>
-                            <Box marginTop={'20px'}>
-                                <Text fontSize='3xl' textAlign={'center'}>
-                                    Write a Review
-                                </Text>
-                                <Box margin='10px'>
-                                    <Box marginBottom={'10px'}>
-                                        <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                            {
+                                user.user_id != 69 ?
+                                    <Box marginTop={'20px'}>
+                                        <Text fontSize='3xl' textAlign={'center'}>
+                                            Write a Review
+                                        </Text>
+                                        <Box margin='10px'>
+                                            <Box marginBottom={'10px'}>
+                                                <StarRating allowReview={true} rating={rating} setRating={setRating} size={30} />
+                                            </Box>
+                                            <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
+                                                setReview(e.target.value)
+                                            }} />
+                                            <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
+                                        </Box>
                                     </Box>
-                                    <Textarea marginBottom={'10px'} value={review} rows='4' variant='filled' placeholder='Review' onChange={(e) => {
-                                        setReview(e.target.value)
-                                    }} />
-                                    <Button onClick={postReviewClick} colorScheme="blue" size={'md'}>Post</Button>
-                                </Box>
-                            </Box>
+                                    : <></>
+                            }
                         </Box>
                     </Stack>
                 </Box>

@@ -53,10 +53,13 @@ app.use(
 
 // Link routes to routers, demo url = 'api/v1/demo?data=anik'
 
-app.use(isAuthorized)
 
 app.use('/api/v1/login', loginRouter)
 app.use('/api/v1/reg', regRouter)
+
+
+app.use(isAuthorized)
+
 
 app.use('/api/v1/demo', demoRouter)
 app.use('/api/v1/hotel', hotelRouter)

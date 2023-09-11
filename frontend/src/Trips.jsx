@@ -5,6 +5,7 @@ import { getCities, getTrips } from './API'
 import { useLocalStorage } from './LocalStorage'
 import CardSlider from './components/CardSlider'
 import Navbar2 from './components/Navbar2'
+import { isLoggedIn } from './Utils'
 
 function Trips() {
   const [user, setUser] = useLocalStorage('tripify_user', {})
@@ -74,7 +75,13 @@ function Trips() {
             <Stack spacing={'10px'}>
               <FormControl>
                 <Flex>
-                  <Checkbox size={'lg'} onChange={checkboxClick} />&emsp;<Text fontSize={'lg'}>My Trips</Text>
+                  {
+                    isLoggedIn() ?
+                      <Box>
+                        <Checkbox size={'lg'} onChange={checkboxClick} /> & emsp;<Text fontSize={'lg'}>My Trips</Text>
+                      </Box>
+                      : <></>
+                  }
                 </Flex>
               </FormControl>
               <FormControl>
@@ -117,11 +124,11 @@ function Trips() {
                   setFilter(obj)
                 }}>
                   <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm'>৳0</RangeSliderMark>
-                  <RangeSliderMark value={20000} mt='5' ml='-2.5' fontSize='sm'>৳20000</RangeSliderMark>
-                  <RangeSliderMark value={40000} mt='5' ml='-2.5' fontSize='sm'>৳40000</RangeSliderMark>
-                  <RangeSliderMark value={60000} mt='5' ml='-2.5' fontSize='sm'>৳60000</RangeSliderMark>
-                  <RangeSliderMark value={80000} mt='5' ml='-2.5' fontSize='sm'>৳80000</RangeSliderMark>
-                  <RangeSliderMark value={100000} mt='5' ml='-2.5' fontSize='sm'>৳100000</RangeSliderMark>
+                  <RangeSliderMark value={20000} mt='5' ml='-2.5' fontSize='sm'>৳20K</RangeSliderMark>
+                  <RangeSliderMark value={40000} mt='5' ml='-2.5' fontSize='sm'>৳40K</RangeSliderMark>
+                  <RangeSliderMark value={60000} mt='5' ml='-2.5' fontSize='sm'>৳60K</RangeSliderMark>
+                  <RangeSliderMark value={80000} mt='5' ml='-2.5' fontSize='sm'>৳80K</RangeSliderMark>
+                  <RangeSliderMark value={100000} mt='5' ml='-2.5' fontSize='sm'>৳100K</RangeSliderMark>
                   <RangeSliderTrack bg='red.100'>
                     <RangeSliderFilledTrack bg='tomato' />
                   </RangeSliderTrack>
