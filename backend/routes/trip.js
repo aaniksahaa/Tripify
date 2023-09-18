@@ -30,7 +30,7 @@ router.get('/details/:trip_id', async (req,res,next) => {
 router.get('/', async (req,res,next) => {
     try{
         const trips = await getTrips(req.query)
-        console.log(trips)
+        //console.log(trips)
         res.json(trips)
     }
     catch(err){

@@ -255,7 +255,7 @@ CREATE TABLE Trips (
     name VARCHAR2(100) NOT NULL,
     description VARCHAR2(1000),
     image_url VARCHAR2(500),
-    total_price NUMBER CHECK(total_price > 0),
+    total_price NUMBER,
     start_date DATE,
     end_date DATE,
 		created_on DATE DEFAULT CURRENT_DATE,
@@ -549,8 +549,7 @@ CREATE TABLE ResidenceIn(
     checkout_date DATE,
     PRIMARY KEY (trip_id, hotel_id),
     FOREIGN KEY (trip_id) REFERENCES Trips(trip_id) ON DELETE CASCADE,
-    FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id) ON DELETE CASCADE,
-		CHECK (checkout_date > checkin_date)
+    FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id) ON DELETE CASCADE
 )
 LOGGING
 NOCOMPRESS

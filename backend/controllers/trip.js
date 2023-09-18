@@ -662,6 +662,7 @@ const createTrip = async (payload) => {
     console.log(binds)
 
     //return (await db.execute(sql, binds, db.options)).rows;
+
     try{
         const result1 = await db.execute(sql, binds, db.options);
         const trip_id = result1.outBinds.trip_id;
