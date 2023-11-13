@@ -4,6 +4,10 @@
 
 Discover, plan, and explore effortlessly with Tripify: the ultimate travel platform. Curate your ideal journey, connect with fellow adventurers, and unlock AI-powered trip guides. Elevate your travel experience with seamless bookings and personalized recommendations. Your gateway to limitless exploration.
 
+# Video Demonstration
+
+https://www.youtube.com/watch?v=s3t8R-3Z094
+
 # Contents
 
 ## 1. [How to Run](#how-to-run-1)
